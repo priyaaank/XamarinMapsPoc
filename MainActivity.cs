@@ -1,4 +1,4 @@
-
+using Android.Support.V4.App;
 
 namespace Mappy
 {
@@ -9,9 +9,9 @@ namespace Mappy
 	using Android.Widget;
 
 	[Activity (Label = "Mappy", MainLauncher = true)]
-	public class MainActivity : Activity
+	public class MainActivity : FragmentActivity
 	{
-		private MapFragment _mapFragment;
+		private SupportMapFragment _mapFragment;
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -28,7 +28,7 @@ namespace Mappy
 
 		private void InitMapFragment()
 		{
-			_mapFragment = FragmentManager.FindFragmentByTag("map") as MapFragment;
+			_mapFragment = this.SupportFragmentManager.FindFragmentByTag("map") as SupportMapFragment;
 			if (_mapFragment == null)
 			{
 				GoogleMapOptions mapOptions = new GoogleMapOptions()
@@ -36,8 +36,8 @@ namespace Mappy
 						.InvokeZoomControlsEnabled(false)
 						.InvokeCompassEnabled(true);
 
-				FragmentTransaction fragTx = FragmentManager.BeginTransaction();
-				_mapFragment = MapFragment.NewInstance(mapOptions);
+				var fragTx = this.SupportFragmentManager.BeginTransaction();
+				_mapFragment = SupportMapFragment.NewInstance(mapOptions);
 				fragTx.Add(Resource.Id.map, _mapFragment, "map");
 				fragTx.Commit();
 			}

@@ -1,0 +1,5 @@
+/Users/suncorp/temp/monodroid-samples/MapsAndLocationDemo_v2/GooglePlayServices_Froyo/obj/Debug/GooglePlayServices.obj.Debug.__AndroidLibraryProjects__.zip
+/Users/suncorp/temp/monodroid-samples/MapsAndLocationDemo_v2/GooglePlayServices_Froyo/bin/Debug/GooglePlayServices.dll.mdb
+/Users/suncorp/temp/monodroid-samples/MapsAndLocationDemo_v2/GooglePlayServices_Froyo/bin/Debug/GooglePlayServices.dll
+/Users/suncorp/temp/monodroid-samples/MapsAndLocationDemo_v2/GooglePlayServices_Froyo/obj/Debug/GooglePlayServices.dll
+/Users/suncorp/temp/monodroid-samples/MapsAndLocationDemo_v2/GooglePlayServices_Froyo/obj/Debug/GooglePlayServices.dll.mdb

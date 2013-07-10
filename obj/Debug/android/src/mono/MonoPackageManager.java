@@ -68,6 +68,7 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		"Mappy.dll",
 		"GooglePlayServices.dll",
+		"Mono.Android.Support.v4.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
