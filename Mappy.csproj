@@ -64,10 +64,4 @@
     <AndroidResource Include="Resources\layout\MapLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\..\temp\monodroid-samples\MapsAndLocationDemo_v2\GooglePlayServices\GooglePlayServices.csproj">
-      <Project>{C388951C-C427-4F44-A54B-5A64BAE0DA39}</Project>
-      <Name>GooglePlayServices</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
