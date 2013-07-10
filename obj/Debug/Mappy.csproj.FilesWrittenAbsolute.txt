@@ -1,0 +1,13 @@
+/Users/suncorp/Projects/Mappy/bin/Debug/Mappy.dll.mdb
+/Users/suncorp/Projects/Mappy/bin/Debug/Mappy.dll
+/Users/suncorp/Projects/Mappy/bin/Debug/com.blah.apk
+/Users/suncorp/Projects/Mappy/obj/Debug/android/bin/com.blah.apk
+/Users/suncorp/Projects/Mappy/obj/Debug/res/layout/main.xml
+/Users/suncorp/Projects/Mappy/obj/Debug/res/values/strings.xml
+/Users/suncorp/Projects/Mappy/obj/Debug/res/drawable/icon.png
+/Users/suncorp/Projects/Mappy/obj/Debug/res/layout/maplayout.xml
+/Users/suncorp/Projects/Mappy/obj/Debug/R.cs.flag
+/Users/suncorp/Projects/Mappy/bin/Debug/com.blah-Signed.apk
+/Users/suncorp/Projects/Mappy/obj/Debug/uploadflags.txt
+/Users/suncorp/Projects/Mappy/obj/Debug/Mappy.dll
+/Users/suncorp/Projects/Mappy/obj/Debug/Mappy.dll.mdb

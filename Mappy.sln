@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappy", "Mappy.csproj", "{D4FC530F-D7CD-47AF-A375-A8CEFC5DA5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooglePlayServicesForReal", "GooglePlayServicesForReal\GooglePlayServicesForReal.csproj", "{30834915-D6FB-49AA-B352-8A3377A0B626}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30834915-D6FB-49AA-B352-8A3377A0B626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30834915-D6FB-49AA-B352-8A3377A0B626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30834915-D6FB-49AA-B352-8A3377A0B626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30834915-D6FB-49AA-B352-8A3377A0B626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FC530F-D7CD-47AF-A375-A8CEFC5DA5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FC530F-D7CD-47AF-A375-A8CEFC5DA5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FC530F-D7CD-47AF-A375-A8CEFC5DA5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FC530F-D7CD-47AF-A375-A8CEFC5DA5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Mappy.csproj
+	EndGlobalSection
+EndGlobal

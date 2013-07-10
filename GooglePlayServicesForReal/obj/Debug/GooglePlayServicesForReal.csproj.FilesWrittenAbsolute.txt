@@ -1,0 +1,5 @@
+/Users/suncorp/Projects/Mappy/GooglePlayServicesForReal/obj/Debug/GooglePlayServicesForReal.obj.Debug.__AndroidLibraryProjects__.zip
+/Users/suncorp/Projects/Mappy/GooglePlayServicesForReal/bin/Debug/GooglePlayServicesForReal.dll.mdb
+/Users/suncorp/Projects/Mappy/GooglePlayServicesForReal/bin/Debug/GooglePlayServicesForReal.dll
+/Users/suncorp/Projects/Mappy/GooglePlayServicesForReal/obj/Debug/GooglePlayServicesForReal.dll
+/Users/suncorp/Projects/Mappy/GooglePlayServicesForReal/obj/Debug/GooglePlayServicesForReal.dll.mdb

@@ -1,0 +1,2 @@
+/Users/suncorp/Projects/Mappy/bin/Debug/Mappy.dll
+/Users/suncorp/Projects/Mappy/bin/Debug/GooglePlayServices.dll
