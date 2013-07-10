@@ -12,6 +12,9 @@ namespace Mappy
 	public class MainActivity : FragmentActivity
 	{
 		private SupportMapFragment _mapFragment;
+		private GoogleMap _map;
+
+		private BankEntity Atm = new BankEntity(new LatLng(18.5236,73.8478), "Money Plant");
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -23,7 +26,23 @@ namespace Mappy
 
 		protected override void OnResume()
 		{
+			SetupMap ();
 			base.OnResume();
+		}
+
+		void SetupMap ()
+		{
+			if(_map == null)
+			{
+				_map = _mapFragment.Map;
+				if(_map != null) 
+				{
+					MarkerOptions atm = new MarkerOptions ();
+					atm.SetPosition (this.Atm.Location);
+					atm.SetTitle (this.Atm.Name);
+					_map.AddMarker (atm);
+				}
+			}
 		}
 
 		private void InitMapFragment()
