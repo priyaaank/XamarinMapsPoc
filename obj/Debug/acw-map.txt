@@ -1,4 +1,6 @@
 Mappy.MainActivity;mappy.MainActivity
+Mappy.BankEntityMapView;mappy.BankEntityMapView
+Mappy.BankEntityLocator;mappy.BankEntityLocator
 Android.Gms.AppStates.IOnSignOutCompleteListenerImplementor;mono.com.google.android.gms.appstate.OnSignOutCompleteListenerImplementor
 Android.Gms.AppStates.IOnStateDeletedListenerImplementor;mono.com.google.android.gms.appstate.OnStateDeletedListenerImplementor
 Android.Gms.AppStates.IOnStateListLoadedListenerImplementor;mono.com.google.android.gms.appstate.OnStateListLoadedListenerImplementor

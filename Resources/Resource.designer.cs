@@ -226,11 +226,8 @@ namespace Mappy
 			// aapt resource value: 0x7f050004
 			public const int hybrid = 2131034116;
 			
-			// aapt resource value: 0x7f050006
-			public const int map = 2131034118;
-			
 			// aapt resource value: 0x7f050005
-			public const int myButton = 2131034117;
+			public const int map = 2131034117;
 			
 			// aapt resource value: 0x7f050000
 			public const int none = 2131034112;
@@ -258,10 +255,7 @@ namespace Mappy
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
-			
-			// aapt resource value: 0x7f030001
-			public const int MapLayout = 2130903041;
+			public const int MapLayout = 2130903040;
 			
 			static Layout()
 			{

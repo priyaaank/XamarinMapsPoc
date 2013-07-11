@@ -9,7 +9,7 @@ namespace Mappy
 	using Android.OS;
 	using Android.Widget;
 
-	[Activity (Label = "Mappy", MainLauncher = true)]
+	[Activity (Label = "Mappy")]
 	public class MainActivity : FragmentActivity
 	{
 		private SupportMapFragment _mapFragment;
