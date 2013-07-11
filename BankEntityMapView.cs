@@ -18,7 +18,6 @@ namespace Mappy
 {
 	public class BankEntityMapView : SupportMapFragment
 	{
-
 		private BankEntitiesService EntitiesService;
 
 		public static BankEntityMapView newInstance() {
@@ -42,6 +41,7 @@ namespace Mappy
 		void SetupMap ()
 		{
 			if (this.Map != null) {
+				ConfigureMapUiSettings ();
 				MarkerOptions mapMarker = null;
 				List<BankEntity> bankEntities = EntitiesService.fetch ();
 
@@ -53,6 +53,15 @@ namespace Mappy
 				}
 
 			}
+		}
+
+		void ConfigureMapUiSettings ()
+		{
+			UiSettings mapUISettings = this.Map.UiSettings;
+			mapUISettings.CompassEnabled = false;
+			mapUISettings.MyLocationButtonEnabled = true;
+			mapUISettings.ZoomControlsEnabled = false;
+			mapUISettings.SetAllGesturesEnabled (true);
 		}
 	}
 }
