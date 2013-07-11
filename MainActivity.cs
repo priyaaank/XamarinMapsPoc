@@ -15,8 +15,6 @@ namespace Mappy
 		private SupportMapFragment _mapFragment;
 		private GoogleMap _map;
 
-		private BankEntity Atm = new BankEntity(new LatLng(18.5236,73.8478), "Money Plant");
-
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
