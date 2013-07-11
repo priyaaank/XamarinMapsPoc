@@ -1,4 +1,5 @@
 using Android.Support.V4.App;
+using System.Collections.Generic;
 
 namespace Mappy
 {
@@ -37,10 +38,15 @@ namespace Mappy
 				_map = _mapFragment.Map;
 				if(_map != null) 
 				{
-					MarkerOptions atm = new MarkerOptions ();
-					atm.SetPosition (this.Atm.Location);
-					atm.SetTitle (this.Atm.Name);
-					_map.AddMarker (atm);
+					MarkerOptions mapMarker = null;
+					List<BankEntity> bankEntities = new BankEntitiesService ().fetch ();
+					foreach(BankEntity aEntity in bankEntities)
+					{
+						mapMarker = new MarkerOptions ();
+						mapMarker.SetPosition (aEntity.Location);
+						mapMarker.SetTitle (aEntity.Name);
+						_map.AddMarker (mapMarker);
+					}
 				}
 			}
 		}

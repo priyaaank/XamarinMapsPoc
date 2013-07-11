@@ -1,2 +1,3 @@
 /Users/suncorp/Projects/Mappy/bin/Debug/Mappy.dll
 /Users/suncorp/Projects/Mappy/bin/Debug/GooglePlayServices.dll
+/Library/Frameworks/Mono.framework/Versions/2.10.12/lib/mono/gac/Mono.C5/1.1.0.0__ba07f434b1c35cbd/Mono.C5.dll
