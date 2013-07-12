@@ -18,7 +18,7 @@ namespace Mappy
 {
 	public class BankEntityMapView : SupportMapFragment
 	{
-		private BankEntitiesService EntitiesService;
+		private BankEntitiesService EntitiesService = new BankEntitiesService ();;
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
@@ -27,22 +27,24 @@ namespace Mappy
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View view = base.OnCreateView(inflater, container, savedInstanceState);
-			EntitiesService = new BankEntitiesService ();
 			return view;
 		}
 
 		public override void OnResume()
 		{
 			base.OnResume ();
-			EntitiesService = new BankEntitiesService ();
-			if (this.Map != null) 
-			{
+			InitializeMap ();
+		}
+
+		void InitializeMap ()
+		{
+			if (this.Map != null) {
 				ConfigureMapUiSettings ();
-				ThreadPool.QueueUserWorkItem (o => SetupMap ());
+				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap ());
 			}
 		}
 
-		void SetupMap ()
+		void ShowEntitiesOnMap ()
 		{
 			List<BankEntity> bankEntities = EntitiesService.fetch ();
 
