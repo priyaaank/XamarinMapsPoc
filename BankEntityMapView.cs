@@ -22,6 +22,7 @@ namespace Mappy
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
+
 		}
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,33 +35,38 @@ namespace Mappy
 		{
 			base.OnResume ();
 			EntitiesService = new BankEntitiesService ();
-
-			SetupMap ();
+			if (this.Map != null) 
+			{
+				ConfigureMapUiSettings ();
+				ThreadPool.QueueUserWorkItem (o => SetupMap ());
+			}
 		}
 
 		void SetupMap ()
 		{
-			if (this.Map != null) {
-				ConfigureMapUiSettings ();
-				MarkerOptions mapMarker = null;
-				List<BankEntity> bankEntities = EntitiesService.fetch ();
+			List<BankEntity> bankEntities = EntitiesService.fetch ();
 
+			var parentActivity = this.Activity as Activity;
+			parentActivity.RunOnUiThread( () => {
+				MarkerOptions mapMarker = null;
 				foreach (BankEntity aEntity in bankEntities) {
 					mapMarker = new MarkerOptions ();
 					mapMarker.SetPosition (aEntity.Location);
 					mapMarker.SetTitle (aEntity.Name);
 					this.Map.AddMarker (mapMarker);
 				}
-
-			}
+			});
 		}
 
 		void ConfigureMapUiSettings ()
 		{
+			this.Map.MapType = GoogleMap.MapTypeNormal;
+			this.Map.MyLocationEnabled = true;
 			UiSettings mapUISettings = this.Map.UiSettings;
 			mapUISettings.CompassEnabled = false;
 			mapUISettings.MyLocationButtonEnabled = true;
 			mapUISettings.ZoomControlsEnabled = false;
+			mapUISettings.ScrollGesturesEnabled = true;
 			mapUISettings.SetAllGesturesEnabled (true);
 		}
 	}
