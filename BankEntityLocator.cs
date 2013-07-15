@@ -16,6 +16,7 @@ namespace Mappy
 	public class BankEntityLocator : FragmentActivity, MapUpdateListener
 	{
 		private BankEntityMapView MapViewFragment;
+		private GpsManager GpsManager;
 
 		const string MAP_FRAGMENT_TAG = "mapView";
 
@@ -24,6 +25,9 @@ namespace Mappy
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.MapLayout);
+
+			GpsManager = new GpsManager (this);
+			GpsManager.PrepareGPS ();
 
 			MapViewFragment = new BankEntityMapView ();
 			this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MAP_FRAGMENT_TAG).Commit ();
