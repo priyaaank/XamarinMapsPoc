@@ -50,13 +50,14 @@
     <Reference Include="System.Json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\BankEntity.cs" />
     <Compile Include="Services\BankEntitiesService.cs" />
     <Compile Include="BankEntityMapView.cs" />
     <Compile Include="BankEntityLocator.cs" />
+    <Compile Include="TouchableWrapper.cs" />
+    <Compile Include="MapUpdateListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

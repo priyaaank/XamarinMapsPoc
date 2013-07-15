@@ -9,16 +9,16 @@ namespace Mappy
 {
 	public class BankEntitiesService
 	{
-		private static readonly string SERVICE_URI = "http://10.12.25.3:8889/Home/GetLocations?lng=153&lat=-27&results=10&checkboxes=ATM";
+		private static readonly string SERVICE_URI = "http://10.12.25.3:8889/Home/GetLocations?lng={0}&lat={1}&results=10&checkboxes=ATM";
 
 		public BankEntitiesService ()
 		{
 
 		}
 
-		public List<BankEntity> fetch() 
+		public List<BankEntity> fetch(double latitude, double longitude) 
 		{
-			var request = HttpWebRequest.Create(SERVICE_URI);
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI,longitude,latitude));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 

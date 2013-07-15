@@ -13,21 +13,27 @@ using Android.Gms.Maps;
 using Java.Lang;
 using Android.Gms.Maps.Model;
 using System.Threading;
+using Java.Util;
 
 namespace Mappy
 {
 	public class BankEntityMapView : SupportMapFragment
 	{
-		private BankEntitiesService EntitiesService = new BankEntitiesService ();;
+		private BankEntitiesService EntitiesService = new BankEntitiesService ();
+
+		private TouchableWrapper WrapperView;
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
-
 		}
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			View view = base.OnCreateView(inflater, container, savedInstanceState);
-			return view;
+			var view = base.OnCreateView(inflater, container, savedInstanceState);
+
+			WrapperView = new TouchableWrapper(this.Activity);
+			WrapperView.AddView(view);
+
+			return WrapperView;
 		}
 
 		public override void OnResume()
@@ -40,13 +46,19 @@ namespace Mappy
 		{
 			if (this.Map != null) {
 				ConfigureMapUiSettings ();
-				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap ());
+				UpdateMap ();
 			}
 		}
 
-		void ShowEntitiesOnMap ()
+		public void UpdateMap ()
 		{
-			List<BankEntity> bankEntities = EntitiesService.fetch ();
+			LatLng coordinates = this.Map.CameraPosition.Target;
+			ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates));
+		}
+
+		void ShowEntitiesOnMap (LatLng coordinates)
+		{
+			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude);
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {
