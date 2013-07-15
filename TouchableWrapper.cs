@@ -14,7 +14,9 @@ namespace Mappy
 	class TouchableWrapper : FrameLayout
 	{
 		private long LastTouched = 0;
-		private static readonly long SCROLL_TIME = 200L;
+		//Keeping Scroll time very low to account for Double Taps. So this time is 
+		//pointless right now.
+		private static readonly long SCROLL_TIME = 30L;
 		private MapUpdateListener MapUpdateListener;
 
 		public TouchableWrapper(Context context) : base(context)
