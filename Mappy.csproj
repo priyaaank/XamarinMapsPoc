@@ -59,6 +59,7 @@
     <Compile Include="TouchableWrapper.cs" />
     <Compile Include="MapUpdateListener.cs" />
     <Compile Include="GpsManager.cs" />
+    <Compile Include="Models\BankEntityType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -30,6 +30,11 @@ namespace Mappy
 			GpsManager.PrepareGPS ();
 
 			MapViewFragment = new BankEntityMapView ();
+
+			Button optionsButton = FindViewById<Button> (Resource.Id.options);
+			optionsButton.Click += (object sender, EventArgs e) => {
+				MapViewFragment.ToggleBankEntityType();
+			};
 			this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MAP_FRAGMENT_TAG).Commit ();
 		}
 

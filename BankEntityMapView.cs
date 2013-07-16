@@ -22,6 +22,7 @@ namespace Mappy
 		private BankEntitiesService EntitiesService = new BankEntitiesService ();
 
 		private TouchableWrapper WrapperView;
+		private BankEntityType bankEntityType = BankEntityType.ATM;
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
@@ -56,9 +57,23 @@ namespace Mappy
 			ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates));
 		}
 
+		BankEntityType GetRandomBankEntityType ()
+		{
+			Array values = System.Enum.GetValues (typeof(BankEntityType));
+			System.Random random = new System.Random ();
+			return (BankEntityType)values.GetValue (random.Next (values.Length));
+		}
+
+		public void ToggleBankEntityType () {
+			bankEntityType = GetRandomBankEntityType ();
+			this.Map.Clear ();
+			Toast.MakeText(this.Activity, "Is an atm: "+ bankEntityType, ToastLength.Short).Show ();
+			UpdateMap ();
+		}
+
 		void ShowEntitiesOnMap (LatLng coordinates)
 		{
-			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude);
+			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, bankEntityType);
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {

@@ -9,16 +9,16 @@ namespace Mappy
 {
 	public class BankEntitiesService
 	{
-		private static readonly string SERVICE_URI = "http://10.12.25.3:8889/Home/GetLocations?lng={0}&lat={1}&results=10&checkboxes=ATM";
+		private static readonly string SERVICE_URI = "http://10.12.25.3:8889/Home/GetLocations?lng={0}&lat={1}&results=10&checkboxes={2}";
 
 		public BankEntitiesService ()
 		{
 
 		}
 
-		public List<BankEntity> fetch(double latitude, double longitude) 
+		public List<BankEntity> fetch(double latitude, double longitude, BankEntityType bankEntityType) 
 		{
-			var request = HttpWebRequest.Create(string.Format(SERVICE_URI,longitude,latitude));
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI,longitude,latitude, bankEntityType));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 
@@ -33,14 +33,14 @@ namespace Mappy
 						Console.Out.WriteLine("Response contained empty body...");
 					}
 					else {
-						return SerializeJsonToEntities (content);
+						return SerializeJsonToEntities (content, bankEntityType);
 					}
 				}
 				return null;
 			}
 		}
 
-		List<BankEntity> SerializeJsonToEntities (string content)
+		List<BankEntity> SerializeJsonToEntities (string content, BankEntityType bankEntityType)
 		{
 			JsonArray bankEntities = JsonObject.Parse (content)["locations"] as JsonArray;
 			List<BankEntity> bankEntityList = new List<BankEntity>() ; 
@@ -49,7 +49,8 @@ namespace Mappy
 			foreach (JsonObject aBankEntity in bankEntities) 
 			{
 				coordinates = new LatLng (aBankEntity ["Latitude"], aBankEntity ["Longitude"]);
-				entity = new BankEntity (coordinates, aBankEntity["ATMName"]);
+				string name = bankEntityType == BankEntityType.ATM ? aBankEntity ["ATMName"] : aBankEntity ["BranchName"];
+				entity = new BankEntity (coordinates, name);
 				bankEntityList.Add (entity);
 			}
 
