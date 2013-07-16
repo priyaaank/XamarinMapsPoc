@@ -223,20 +223,38 @@ namespace Mappy
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05000c
+			public const int BankEntityOptions = 2131034124;
+			
+			// aapt resource value: 0x7f050008
+			public const int CancelButton = 2131034120;
+			
+			// aapt resource value: 0x7f050009
+			public const int OkButton = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int OptionsButton = 2131034122;
+			
+			// aapt resource value: 0x7f050006
+			public const int SelectAtm = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int SelectBranch = 2131034117;
+			
+			// aapt resource value: 0x7f050007
+			public const int SelectPartnerBanks = 2131034119;
+			
 			// aapt resource value: 0x7f050004
 			public const int hybrid = 2131034116;
 			
-			// aapt resource value: 0x7f050006
-			public const int map = 2131034118;
+			// aapt resource value: 0x7f05000b
+			public const int map = 2131034123;
 			
 			// aapt resource value: 0x7f050000
 			public const int none = 2131034112;
 			
 			// aapt resource value: 0x7f050001
 			public const int normal = 2131034113;
-			
-			// aapt resource value: 0x7f050005
-			public const int options = 2131034117;
 			
 			// aapt resource value: 0x7f050002
 			public const int satellite = 2131034114;
@@ -258,7 +276,10 @@ namespace Mappy
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int MapLayout = 2130903040;
+			public const int BankEntityTypeSelection = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int MapLayout = 2130903041;
 			
 			static Layout()
 			{

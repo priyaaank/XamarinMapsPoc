@@ -31,11 +31,30 @@ namespace Mappy
 
 			MapViewFragment = new BankEntityMapView ();
 
-			Button optionsButton = FindViewById<Button> (Resource.Id.options);
-			optionsButton.Click += (object sender, EventArgs e) => {
-				MapViewFragment.ToggleBankEntityType();
-			};
+			BindBankEntityOptionsView ();
 			this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MAP_FRAGMENT_TAG).Commit ();
+		}
+
+		void BindBankEntityOptionsView ()
+		{
+			LinearLayout bankEntityOptionsView = FindViewById<LinearLayout> (Resource.Id.BankEntityOptions);
+			Button optionsButton = FindViewById<Button> (Resource.Id.OptionsButton);
+			optionsButton.Click += (object sender, EventArgs e) => bankEntityOptionsView.Visibility = ViewStates.Visible;
+
+			Button okButton = FindViewById<Button> (Resource.Id.OkButton);
+			okButton.Click += (object sender, EventArgs e) => {
+				bankEntityOptionsView.Visibility = ViewStates.Gone;
+				UpdateBankEntityType ();
+			};
+
+			Button cancelButton = FindViewById<Button> (Resource.Id.CancelButton);
+			cancelButton.Click += (object sender, EventArgs e) => bankEntityOptionsView.Visibility = ViewStates.Gone;
+
+		}
+
+		private void UpdateBankEntityType () 
+		{
+			MapViewFragment.ToggleBankEntityType ();
 		}
 
 		public void UpdateMapView()
