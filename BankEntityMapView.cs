@@ -57,17 +57,9 @@ namespace Mappy
 			ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates));
 		}
 
-		BankEntityType GetRandomBankEntityType ()
-		{
-			Array values = System.Enum.GetValues (typeof(BankEntityType));
-			System.Random random = new System.Random ();
-			return (BankEntityType)values.GetValue (random.Next (values.Length));
-		}
-
-		public void ToggleBankEntityType () {
-			bankEntityType = GetRandomBankEntityType ();
+		public void UpdateBankEntityType (BankEntityType type) {
+			bankEntityType = type;
 			this.Map.Clear ();
-			Toast.MakeText(this.Activity, "Is an atm: "+ bankEntityType, ToastLength.Short).Show ();
 			UpdateMap ();
 		}
 
@@ -100,4 +92,3 @@ namespace Mappy
 		}
 	}
 }
-

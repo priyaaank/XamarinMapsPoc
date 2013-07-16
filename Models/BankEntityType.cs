@@ -5,8 +5,8 @@ namespace Mappy
 	public enum BankEntityType
 	{
 		ATM,
-		Branch
-//		AtmAndBranch
+		Branch,
+		AtmAndBranch
 	}
 }
 

@@ -50,11 +50,27 @@ namespace Mappy
 			Button cancelButton = FindViewById<Button> (Resource.Id.CancelButton);
 			cancelButton.Click += (object sender, EventArgs e) => bankEntityOptionsView.Visibility = ViewStates.Gone;
 
+
+		}
+
+		private BankEntityType GetBankEntityType (bool isAtmSelected, bool isBranchSelected)
+		{
+			if (isAtmSelected && isBranchSelected)
+				return BankEntityType.AtmAndBranch;
+			else if (isAtmSelected)
+				return BankEntityType.ATM;
+			else if (isBranchSelected)
+				return BankEntityType.Branch;
+			else
+				return BankEntityType.ATM;
 		}
 
 		private void UpdateBankEntityType () 
 		{
-			MapViewFragment.ToggleBankEntityType ();
+			CheckBox atmCheckBox = FindViewById<CheckBox> (Resource.Id.SelectAtm);
+			CheckBox branchCheckBox = FindViewById<CheckBox> (Resource.Id.SelectBranch);
+			BankEntityType type = GetBankEntityType (atmCheckBox.Checked, branchCheckBox.Checked);
+			MapViewFragment.UpdateBankEntityType (type);
 		}
 
 		public void UpdateMapView()
