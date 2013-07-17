@@ -1,12 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/BankEntitiesService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets">
     <Files>
-      <File FileName="BankEntityLocator.cs" Line="44" Column="20" />
-      <File FileName="Services/BankEntitiesService.cs" Line="17" Column="4" />
-      <File FileName="BankEntityMapView.cs" Line="25" Column="61" />
-      <File FileName="Models/BankEntityType.cs" Line="9" Column="13" />
-      <File FileName="TouchableWrapper.cs" Line="14" Column="2" />
+      <File FileName="Models/Atm.cs" Line="18" Column="41" />
+      <File FileName="Models/Branch.cs" Line="18" Column="40" />
+      <File FileName="BankEntityLocator.cs" Line="66" Column="33" />
+      <File FileName="TouchableWrapper.cs" Line="37" Column="30" />
+      <File FileName="MapUpdateListener.cs" Line="14" Column="29" />
+      <File FileName="BankEntityMapView.cs" Line="76" Column="4" />
+      <File FileName="../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="10" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,13 +16,14 @@
           <Node name="Mappy" expanded="True">
             <Node name="Models" expanded="True" />
             <Node name="Resources" expanded="True">
-              <Node name="layout" expanded="True" />
+              <Node name="drawable" expanded="True" />
             </Node>
-            <Node name="Services" expanded="True">
-              <Node name="BankEntitiesService.cs" selected="True" />
-            </Node>
+            <Node name="BankEntityMapView.cs" selected="True" />
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -28,5 +31,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="304D19E4975BD19E" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
+  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="651A0002FFFC0000" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
 </Properties>

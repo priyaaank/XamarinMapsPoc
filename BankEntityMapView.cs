@@ -78,7 +78,8 @@ namespace Mappy
 			parentActivity.RunOnUiThread( () => {
 				MarkerOptions mapMarker = null;
 				foreach (BankEntity aEntity in bankEntities) {
-					mapMarker = new MarkerOptions ();
+					var image = aEntity.IsAtm() ?  Resource.Drawable.atm : Resource.Drawable.branch;
+					mapMarker = new MarkerOptions().InvokeIcon(BitmapDescriptorFactory.FromResource (image));
 					mapMarker.SetPosition (new LatLng(aEntity.Latitude, aEntity.Longitude));
 					mapMarker.SetTitle (aEntity.Description());
 					this.Map.AddMarker (mapMarker);
