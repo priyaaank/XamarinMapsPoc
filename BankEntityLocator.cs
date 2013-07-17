@@ -49,7 +49,7 @@ namespace Mappy
 			Button okButton = FindViewById<Button> (Resource.Id.OkButton);
 			okButton.Click += (object sender, EventArgs e) => {
 				bankEntityOptionsView.Visibility = ViewStates.Gone;
-				UpdateBankEntityType ();
+				UpdateMapWithSelectedTypes ();
 			};
 
 			Button cancelButton = FindViewById<Button> (Resource.Id.CancelButton);
@@ -63,12 +63,13 @@ namespace Mappy
 			if (isBranchSelected) SelectedEntityTypes.Add ("Branch");
 		}
 
-		private void UpdateBankEntityType () 
+		private void UpdateMapWithSelectedTypes () 
 		{
 			CheckBox atmCheckBox = FindViewById<CheckBox> (Resource.Id.SelectAtm);
 			CheckBox branchCheckBox = FindViewById<CheckBox> (Resource.Id.SelectBranch);
 			UpdateSelectedEntityTypes (atmCheckBox.Checked, branchCheckBox.Checked);
-			MapViewFragment.UpdateBankEntityType (SelectedEntityTypes);
+			MapViewFragment.ResetMap ();
+			UpdateMapView ();
 		}
 
 		public void UpdateMapView()

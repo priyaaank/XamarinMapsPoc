@@ -22,6 +22,7 @@ namespace Mappy
 		private BankEntitiesService EntitiesService = new BankEntitiesService ();
 
 		private TouchableWrapper WrapperView;
+		private const float MaxSupportedZoomLevel = 5;
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
@@ -52,14 +53,21 @@ namespace Mappy
 
 		public void UpdateMap (List<string> selectedEntityTypes)
 		{
-			LatLng coordinates = this.Map.CameraPosition.Target;
-			ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, selectedEntityTypes));
+			var zoomLevel = this.Map.CameraPosition.Zoom;
+			if(zoomLevel < MaxSupportedZoomLevel)
+			{
+				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
+			}
+			else
+			{
+				LatLng coordinates = this.Map.CameraPosition.Target;
+				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, selectedEntityTypes));
+			}
 		}
 
-		public void UpdateBankEntityType (List<string> selectedEntityTypes) {
+		public void ResetMap()
+		{
 			this.Map.Clear ();
-
-			UpdateMap (selectedEntityTypes);
 		}
 
 		void ShowEntitiesOnMap (LatLng coordinates, List<string> selectedEntityTypes)
