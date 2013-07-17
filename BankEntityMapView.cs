@@ -22,7 +22,6 @@ namespace Mappy
 		private BankEntitiesService EntitiesService = new BankEntitiesService ();
 
 		private TouchableWrapper WrapperView;
-		private BankEntityType bankEntityType = BankEntityType.ATM;
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
@@ -47,33 +46,33 @@ namespace Mappy
 		{
 			if (this.Map != null) {
 				ConfigureMapUiSettings ();
-				UpdateMap ();
+				UpdateMap ((this.Activity as BankEntityLocator).SelectedEntityTypes);
 			}
 		}
 
-		public void UpdateMap ()
+		public void UpdateMap (List<string> selectedEntityTypes)
 		{
 			LatLng coordinates = this.Map.CameraPosition.Target;
-			ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates));
+			ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, selectedEntityTypes));
 		}
 
-		public void UpdateBankEntityType (BankEntityType type) {
-			bankEntityType = type;
+		public void UpdateBankEntityType (List<string> selectedEntityTypes) {
 			this.Map.Clear ();
-			UpdateMap ();
+
+			UpdateMap (selectedEntityTypes);
 		}
 
-		void ShowEntitiesOnMap (LatLng coordinates)
+		void ShowEntitiesOnMap (LatLng coordinates, List<string> selectedEntityTypes)
 		{
-			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, bankEntityType);
+			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, selectedEntityTypes);
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {
 				MarkerOptions mapMarker = null;
 				foreach (BankEntity aEntity in bankEntities) {
 					mapMarker = new MarkerOptions ();
-					mapMarker.SetPosition (aEntity.Location);
-					mapMarker.SetTitle (aEntity.Name);
+					mapMarker.SetPosition (new LatLng(aEntity.Latitude, aEntity.Longitude));
+					mapMarker.SetTitle (aEntity.Description());
 					this.Map.AddMarker (mapMarker);
 				}
 			});

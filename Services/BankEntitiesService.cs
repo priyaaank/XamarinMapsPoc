@@ -16,9 +16,10 @@ namespace Mappy
 
 		}
 
-		public List<BankEntity> fetch(double latitude, double longitude, BankEntityType bankEntityType) 
+		public List<BankEntity> fetch(double latitude, double longitude, List<string> selectionType) 
 		{
-			var request = HttpWebRequest.Create(string.Format(SERVICE_URI,longitude,latitude, bankEntityType));
+			string selectionCriteria = string.Join (",", selectionType.ToArray());
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, selectionCriteria));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 
@@ -33,25 +34,23 @@ namespace Mappy
 						Console.Out.WriteLine("Response contained empty body...");
 					}
 					else {
-						return SerializeJsonToEntities (content, bankEntityType);
+						return SerializeJsonToEntities (content);
 					}
 				}
 				return null;
 			}
 		}
 
-		List<BankEntity> SerializeJsonToEntities (string content, BankEntityType bankEntityType)
+		List<BankEntity> SerializeJsonToEntities (string content)
 		{
 			JsonArray bankEntities = JsonObject.Parse (content)["locations"] as JsonArray;
+
 			List<BankEntity> bankEntityList = new List<BankEntity>() ; 
-			LatLng coordinates = null;
 			BankEntity entity = null;
 			foreach (JsonObject aBankEntity in bankEntities) 
 			{
-				coordinates = new LatLng (aBankEntity ["Latitude"], aBankEntity ["Longitude"]);
-				string name = bankEntityType == BankEntityType.ATM ? aBankEntity ["ATMName"] : aBankEntity ["BranchName"];
-				entity = new BankEntity (coordinates, name);
-				bankEntityList.Add (entity);
+				entity = aBankEntity.ContainsKey("ATMId") ? BankEntity.AtmFromJsonObject(aBankEntity) as BankEntity : BankEntity.BranchFromJsonObject(aBankEntity) as BankEntity;
+				if (entity != null) bankEntityList.Add (entity);
 			}
 
 			return bankEntityList;

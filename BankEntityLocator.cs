@@ -17,8 +17,11 @@ namespace Mappy
 	{
 		private BankEntityMapView MapViewFragment;
 		private GpsManager GpsManager;
-
-		const string MAP_FRAGMENT_TAG = "mapView";
+		public List<string> SelectedEntityTypes = new List<string>();
+	
+		const string MapFragmentView = "mapView";
+		const bool   SelectAtms      = true;
+		const bool   SelectBranches  = true;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -26,13 +29,15 @@ namespace Mappy
 
 			SetContentView (Resource.Layout.MapLayout);
 
+			UpdateSelectedEntityTypes (SelectAtms, SelectBranches);
+
 			GpsManager = new GpsManager (this);
 			GpsManager.PrepareGPS ();
 
 			MapViewFragment = new BankEntityMapView ();
 
 			BindBankEntityOptionsView ();
-			this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MAP_FRAGMENT_TAG).Commit ();
+			this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MapFragmentView).Commit ();
 		}
 
 		void BindBankEntityOptionsView ()
@@ -49,34 +54,26 @@ namespace Mappy
 
 			Button cancelButton = FindViewById<Button> (Resource.Id.CancelButton);
 			cancelButton.Click += (object sender, EventArgs e) => bankEntityOptionsView.Visibility = ViewStates.Gone;
-
-
 		}
 
-		private BankEntityType GetBankEntityType (bool isAtmSelected, bool isBranchSelected)
+		private void UpdateSelectedEntityTypes (bool isAtmSelected, bool isBranchSelected)
 		{
-			if (isAtmSelected && isBranchSelected)
-				return BankEntityType.AtmAndBranch;
-			else if (isAtmSelected)
-				return BankEntityType.ATM;
-			else if (isBranchSelected)
-				return BankEntityType.Branch;
-			else
-				return BankEntityType.ATM;
+			SelectedEntityTypes.Clear();
+			if (isAtmSelected) SelectedEntityTypes.Add ("ATM");
+			if (isBranchSelected) SelectedEntityTypes.Add ("Branch");
 		}
 
 		private void UpdateBankEntityType () 
 		{
 			CheckBox atmCheckBox = FindViewById<CheckBox> (Resource.Id.SelectAtm);
 			CheckBox branchCheckBox = FindViewById<CheckBox> (Resource.Id.SelectBranch);
-			BankEntityType type = GetBankEntityType (atmCheckBox.Checked, branchCheckBox.Checked);
-			MapViewFragment.UpdateBankEntityType (type);
+			UpdateSelectedEntityTypes (atmCheckBox.Checked, branchCheckBox.Checked);
+			MapViewFragment.UpdateBankEntityType (SelectedEntityTypes);
 		}
 
 		public void UpdateMapView()
 		{
-			BankEntityMapView mapViewFragment = (BankEntityMapView) this.SupportFragmentManager.FindFragmentByTag (MAP_FRAGMENT_TAG);
-			mapViewFragment.UpdateMap ();
+			MapViewFragment.UpdateMap (SelectedEntityTypes);
 		}
 	}
 
