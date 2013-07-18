@@ -47,11 +47,11 @@ namespace Mappy
 		{
 			if (this.Map != null) {
 				ConfigureMapUiSettings ();
-				UpdateMap ((this.Activity as BankEntityLocator).SelectedEntityTypes);
+				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 			}
 		}
 
-		public void UpdateMap (List<string> selectedEntityTypes)
+		public void UpdateMap (Options userSelection)
 		{
 			var zoomLevel = this.Map.CameraPosition.Zoom;
 			if(zoomLevel < MaxSupportedZoomLevel)
@@ -61,7 +61,7 @@ namespace Mappy
 			else
 			{
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, selectedEntityTypes));
+				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, userSelection));
 			}
 		}
 
@@ -70,9 +70,9 @@ namespace Mappy
 			this.Map.Clear ();
 		}
 
-		void ShowEntitiesOnMap (LatLng coordinates, List<string> selectedEntityTypes)
+		void ShowEntitiesOnMap (LatLng coordinates, Options userSelection)
 		{
-			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, selectedEntityTypes);
+			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, userSelection);
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {
@@ -98,5 +98,6 @@ namespace Mappy
 			mapUISettings.ScrollGesturesEnabled = true;
 			mapUISettings.SetAllGesturesEnabled (true);
 		}
+
 	}
 }

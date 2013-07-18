@@ -248,7 +248,7 @@ namespace Mappy
 			public const int SelectBranch = 2131034117;
 			
 			// aapt resource value: 0x7f050007
-			public const int SelectPartnerBanks = 2131034119;
+			public const int SelectPartnerAtms = 2131034119;
 			
 			// aapt resource value: 0x7f050004
 			public const int hybrid = 2131034116;

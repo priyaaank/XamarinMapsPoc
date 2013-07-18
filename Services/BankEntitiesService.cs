@@ -10,16 +10,18 @@ namespace Mappy
 	public class BankEntitiesService
 	{
 		private static readonly string SERVICE_URI = "http://10.12.25.3:8889/Home/GetLocations?lng={0}&lat={1}&results=10&checkboxes={2}";
+		private List<Type> Filters; 
 
 		public BankEntitiesService ()
 		{
-
+			Filters = new List<Type> ();
 		}
 
-		public List<BankEntity> fetch(double latitude, double longitude, List<string> selectionType) 
+		public List<BankEntity> fetch(double latitude, double longitude, Options selectedOptions) 
 		{
-			string selectionCriteria = string.Join (",", selectionType.ToArray());
-			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, selectionCriteria));
+			Filters = selectedOptions.FiltersForSelection ();
+
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, selectedOptions.SelectionCriteria()));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 
@@ -41,7 +43,7 @@ namespace Mappy
 			}
 		}
 
-		List<BankEntity> SerializeJsonToEntities (string content)
+		private List<BankEntity> SerializeJsonToEntities (string content)
 		{
 			JsonArray bankEntities = JsonObject.Parse (content)["locations"] as JsonArray;
 
@@ -53,7 +55,20 @@ namespace Mappy
 				if (entity != null) bankEntityList.Add (entity);
 			}
 
-			return bankEntityList;
+			return Filtered( bankEntityList );
+		}
+
+		private List<BankEntity> Filtered (List<BankEntity> bankEntityList)
+		{
+			if (Filters == null || Filters.Count == 0) return bankEntityList;
+
+			List<BankEntity> bankEntityListCopy = new List<BankEntity>(bankEntityList);
+			foreach (Type aEntityFilter in Filters) 
+			{
+				bankEntityListCopy = ((EntityFilter)Activator.CreateInstance (aEntityFilter, bankEntityListCopy)).FilteredList ();
+			}
+
+			return bankEntityListCopy;
 		}
 	}
 }

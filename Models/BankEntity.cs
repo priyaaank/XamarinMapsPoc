@@ -6,7 +6,7 @@ namespace Mappy
 {
 	public abstract class BankEntity
 	{
-		public enum Type { ATM, Branch }
+		public enum Type { Atm, Branch }
 
 		public long Id { get; private set;}
 		public string Name { get; private set;}
@@ -44,7 +44,8 @@ namespace Mappy
 		public string Description ()
 		{
 			var type = this.IsBranch() ? "Branch" : "Atm";
-			return type + " " + this.Name;
+			var brand = this.IsOwnBrand () ? "Suncorp" : "Other";
+			return type + " " + brand + " " + this.Name;
 		}
 
 		public abstract bool IsBranch();

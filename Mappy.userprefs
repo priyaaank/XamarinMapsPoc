@@ -1,24 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityLocator.cs">
     <Files>
-      <File FileName="Models/Atm.cs" Line="18" Column="41" />
-      <File FileName="Models/Branch.cs" Line="18" Column="40" />
-      <File FileName="BankEntityLocator.cs" Line="66" Column="33" />
-      <File FileName="TouchableWrapper.cs" Line="37" Column="30" />
-      <File FileName="MapUpdateListener.cs" Line="14" Column="29" />
-      <File FileName="BankEntityMapView.cs" Line="76" Column="4" />
-      <File FileName="../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="10" Column="36" />
+      <File FileName="BankEntityLocator.cs" Line="45" Column="46" />
+      <File FileName="TouchableWrapper.cs" Line="1" Column="1" />
+      <File FileName="MapUpdateListener.cs" Line="1" Column="1" />
+      <File FileName="BankEntityMapView.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Mappy" expanded="True">
-            <Node name="Models" expanded="True" />
             <Node name="Resources" expanded="True">
-              <Node name="drawable" expanded="True" />
+              <Node name="layout" expanded="True" />
             </Node>
-            <Node name="BankEntityMapView.cs" selected="True" />
+            <Node name="BankEntityLocator.cs" selected="True" />
           </Node>
         </State>
       </Pad>

@@ -15,9 +15,9 @@ namespace Mappy
 	{
 
 		public string Brand { get; private set; }
-		private const string BrandName = "buzz";
+		private const string BrandName = "suncorp";
 
-		public Atm(long id, string brand, string name, long locationId, double latitude, double longitude, double distance) : base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.ATM)
+		public Atm(long id, string brand, string name, long locationId, double latitude, double longitude, double distance) : base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.Atm)
 		{
 			this.Brand = brand;
 		}

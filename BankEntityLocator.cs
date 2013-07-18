@@ -17,19 +17,19 @@ namespace Mappy
 	{
 		private BankEntityMapView MapViewFragment;
 		private GpsManager GpsManager;
-		public List<string> SelectedEntityTypes = new List<string>();
 	
-		const string MapFragmentView = "mapView";
-		const bool   SelectAtms      = true;
-		const bool   SelectBranches  = true;
+		const string MapFragmentView        = "mapView";
+		const bool   SelectAtms             = true;
+		const bool   SelectBranches         = true;
+		const bool   DontSelectPartnerAtms  = false;
+
+		public Options UserSelection = new Options(SelectAtms, SelectBranches, DontSelectPartnerAtms);
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.MapLayout);
-
-			UpdateSelectedEntityTypes (SelectAtms, SelectBranches);
 
 			GpsManager = new GpsManager (this);
 			GpsManager.PrepareGPS ();
@@ -56,25 +56,19 @@ namespace Mappy
 			cancelButton.Click += (object sender, EventArgs e) => bankEntityOptionsView.Visibility = ViewStates.Gone;
 		}
 
-		private void UpdateSelectedEntityTypes (bool isAtmSelected, bool isBranchSelected)
-		{
-			SelectedEntityTypes.Clear();
-			if (isAtmSelected) SelectedEntityTypes.Add ("ATM");
-			if (isBranchSelected) SelectedEntityTypes.Add ("Branch");
-		}
-
 		private void UpdateMapWithSelectedTypes () 
 		{
 			CheckBox atmCheckBox = FindViewById<CheckBox> (Resource.Id.SelectAtm);
 			CheckBox branchCheckBox = FindViewById<CheckBox> (Resource.Id.SelectBranch);
-			UpdateSelectedEntityTypes (atmCheckBox.Checked, branchCheckBox.Checked);
+			CheckBox partnerAtmCheckbox = FindViewById<CheckBox> (Resource.Id.SelectPartnerAtms);
+			UserSelection = new Options (atmCheckBox.Checked, branchCheckBox.Checked, partnerAtmCheckbox.Checked);
 			MapViewFragment.ResetMap ();
 			UpdateMapView ();
 		}
 
 		public void UpdateMapView()
 		{
-			MapViewFragment.UpdateMap (SelectedEntityTypes);
+			MapViewFragment.UpdateMap (UserSelection);
 		}
 	}
 

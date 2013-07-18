@@ -61,6 +61,11 @@
     <Compile Include="GpsManager.cs" />
     <Compile Include="Models\Atm.cs" />
     <Compile Include="Models\Branch.cs" />
+    <Compile Include="Services\EntityFilter.cs" />
+    <Compile Include="Services\ExcludePartnerEstablishmentsFilter.cs" />
+    <Compile Include="Services\Options.cs" />
+    <Compile Include="Services\ExcludeOwnAtmsFilter.cs" />
+    <Compile Include="Services\ExcludeOwnBranchesFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

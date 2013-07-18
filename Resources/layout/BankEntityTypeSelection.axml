@@ -25,10 +25,10 @@
         android:text="Show ATMs"
         android:checked="true" />
     <CheckBox
-        android:id="@+id/SelectPartnerBanks"
+        android:id="@+id/SelectPartnerAtms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show partner banks" />
+        android:text="Show partner ATMs" />
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
