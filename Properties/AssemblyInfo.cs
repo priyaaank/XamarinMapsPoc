@@ -26,3 +26,8 @@ using Android.App;
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 
+#if RELEASE
+[assembly: Application(Debuggable=false)]
+#else
+[assembly: Application(Debuggable=true)]
+#endif

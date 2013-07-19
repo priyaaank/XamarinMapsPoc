@@ -1,25 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityLocator.cs">
-    <Files>
-      <File FileName="BankEntityLocator.cs" Line="45" Column="46" />
-      <File FileName="TouchableWrapper.cs" Line="1" Column="1" />
-      <File FileName="MapUpdateListener.cs" Line="1" Column="1" />
-      <File FileName="BankEntityMapView.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Mappy" expanded="True">
-            <Node name="Resources" expanded="True">
-              <Node name="layout" expanded="True" />
-            </Node>
-            <Node name="BankEntityLocator.cs" selected="True" />
+          <Node name="Mappy" expanded="True" selected="True">
+            <Node name="Models" expanded="True" />
+            <Node name="Services" expanded="True" />
           </Node>
         </State>
       </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
+        <State>
+          <Value>aBankEntity.Brand</Value>
+          <Value>zoomLevel</Value>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -27,5 +25,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="651A0002FFFC0000" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
+  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="304D19E4975BD19E" />
 </Properties>
