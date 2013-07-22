@@ -53,6 +53,18 @@ namespace Mappy
 			if (this.Map != null) {
 				ConfigureMapUiSettings ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
+				FlyDownToMyLocation ();
+			}
+		}
+
+		private void FlyDownToMyLocation ()
+		{
+			if(this.Map.MyLocation != null)
+			{
+				LatLng myLocation = new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude); 
+				CameraPosition position = new CameraPosition.Builder ().Target (myLocation).Zoom (MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL).Build();
+				CameraUpdate camUpdate = CameraUpdateFactory.NewCameraPosition(position);
+				this.Map.AnimateCamera (camUpdate);
 			}
 		}
 
