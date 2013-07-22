@@ -23,6 +23,8 @@ namespace Mappy
 
 		private TouchableWrapper WrapperView;
 		private const float MaxSupportedZoomLevel = 5;
+		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
+		private float LastZoomLevel = 0;
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
@@ -54,14 +56,29 @@ namespace Mappy
 		public void UpdateMap (Options userSelection)
 		{
 			var zoomLevel = this.Map.CameraPosition.Zoom;
-			if(zoomLevel < MaxSupportedZoomLevel)
-			{
-				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
-			}
-			else
-			{
+
+			if (ShouldIconChange ()) {
+				UpdateMapBasedOnZoomThreshold ();
+			} 
+			if (zoomLevel > MaxSupportedZoomLevel) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
 				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, userSelection));
+			}
+
+			LastZoomLevel = CurrentZoomLevel();
+		}
+
+		private void UpdateMapBasedOnZoomThreshold ()
+		{
+			this.Map.Clear ();
+			EntityMarker.IconType icon = IconForCurrentZoomLevel ();
+			if (icon != EntityMarker.IconType.None) {
+				foreach (EntityMarker location in LocationsPlottedOnMap) {
+					location.ChangeIcon (icon);
+					location.AddMarkerTo (this.Map);
+				}
+			} else {
+				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
 		}
 
@@ -76,13 +93,10 @@ namespace Mappy
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {
-				MarkerOptions mapMarker = null;
 				foreach (BankEntity aEntity in bankEntities) {
-					var image = aEntity.IsAtm() ?  Resource.Drawable.atm : Resource.Drawable.branch;
-					mapMarker = new MarkerOptions().InvokeIcon(BitmapDescriptorFactory.FromResource (image));
-					mapMarker.SetPosition (new LatLng(aEntity.Latitude, aEntity.Longitude));
-					mapMarker.SetTitle (aEntity.Description());
-					this.Map.AddMarker (mapMarker);
+					var marker = new EntityMarker(aEntity, IconForCurrentZoomLevel(), new LatLng(aEntity.Latitude, aEntity.Longitude));
+					marker.AddMarkerTo(this.Map);
+					LocationsPlottedOnMap.Add(marker);
 				}
 			});
 		}
@@ -99,5 +113,26 @@ namespace Mappy
 			mapUISettings.SetAllGesturesEnabled (true);
 		}
 
+		float CurrentZoomLevel ()
+		{
+			return this.Map.CameraPosition.Zoom;
+		}
+
+
+		EntityMarker.IconType IconForCurrentZoomLevel ()
+		{
+			if (CurrentZoomLevel () < MaxSupportedZoomLevel) return EntityMarker.IconType.None;
+			if (CurrentZoomLevel() > MaxSupportedZoomLevel && CurrentZoomLevel() <= EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return EntityMarker.IconType.Small;
+			if (CurrentZoomLevel() > EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return EntityMarker.IconType.Medium;
+			return EntityMarker.IconType.Small;
+		}
+
+		bool ShouldIconChange () {
+			if (LastZoomLevel < MaxSupportedZoomLevel && CurrentZoomLevel() >= MaxSupportedZoomLevel) return true;
+			if (LastZoomLevel < EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && CurrentZoomLevel() >= EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
+			if (LastZoomLevel > EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && CurrentZoomLevel () <= EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
+			if (LastZoomLevel > MaxSupportedZoomLevel && CurrentZoomLevel () < MaxSupportedZoomLevel) return true;
+			return false;
+		}
 	}
 }

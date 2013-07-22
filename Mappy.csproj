@@ -66,6 +66,7 @@
     <Compile Include="Services\Options.cs" />
     <Compile Include="Services\ExcludeOwnAtmsFilter.cs" />
     <Compile Include="Services\ExcludeOwnBranchesFilter.cs" />
+    <Compile Include="EntityMarker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -79,6 +80,10 @@
     <AndroidResource Include="Resources\layout\BankEntityTypeSelection.axml" />
     <AndroidResource Include="Resources\drawable\atm.png" />
     <AndroidResource Include="Resources\drawable\branch.png" />
+    <AndroidResource Include="Resources\drawable\atm_small.png" />
+    <AndroidResource Include="Resources\drawable\branch_small.png" />
+    <AndroidResource Include="Resources\drawable\atm_medium.png" />
+    <AndroidResource Include="Resources\drawable\branch_medium.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
