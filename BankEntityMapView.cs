@@ -22,7 +22,7 @@ namespace Mappy
 		private BankEntitiesService EntitiesService = new BankEntitiesService ();
 
 		private TouchableWrapper WrapperView;
-		private const float MaxSupportedZoomLevel = 5;
+		private const float MaxSupportedZoomLevel = 3.5f;
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
 		private float LastZoomLevel = 0;
 
@@ -78,6 +78,8 @@ namespace Mappy
 			if (zoomLevel > MaxSupportedZoomLevel) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
 				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, userSelection));
+			} else {
+				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
 
 			LastZoomLevel = CurrentZoomLevel();
@@ -92,8 +94,6 @@ namespace Mappy
 					location.ChangeIcon (icon);
 					location.AddMarkerTo (this.Map);
 				}
-			} else {
-				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
 		}
 
