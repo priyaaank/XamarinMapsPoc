@@ -26,6 +26,9 @@ namespace Mappy
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
 		private float LastZoomLevel = 0;
 
+		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 10;
+		public static readonly float MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL = 15;
+
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
 		}
@@ -93,6 +96,7 @@ namespace Mappy
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {
+				if(IconForCurrentZoomLevel() == EntityMarker.IconType.None) return;
 				foreach (BankEntity aEntity in bankEntities) {
 					var marker = new EntityMarker(aEntity, IconForCurrentZoomLevel(), new LatLng(aEntity.Latitude, aEntity.Longitude));
 					marker.AddMarkerTo(this.Map);
@@ -121,17 +125,22 @@ namespace Mappy
 
 		EntityMarker.IconType IconForCurrentZoomLevel ()
 		{
-			if (CurrentZoomLevel () < MaxSupportedZoomLevel) return EntityMarker.IconType.None;
-			if (CurrentZoomLevel() > MaxSupportedZoomLevel && CurrentZoomLevel() <= EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return EntityMarker.IconType.Small;
-			if (CurrentZoomLevel() > EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return EntityMarker.IconType.Medium;
+			float currentZoomLevel = CurrentZoomLevel ();
+			if (currentZoomLevel < MaxSupportedZoomLevel) return EntityMarker.IconType.None;
+			if (currentZoomLevel > MaxSupportedZoomLevel && currentZoomLevel <= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return EntityMarker.IconType.Small;
+			if (currentZoomLevel > SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel < MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return EntityMarker.IconType.Medium;
+			if (currentZoomLevel > MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return EntityMarker.IconType.Large;
 			return EntityMarker.IconType.Small;
 		}
 
 		bool ShouldIconChange () {
-			if (LastZoomLevel < MaxSupportedZoomLevel && CurrentZoomLevel() >= MaxSupportedZoomLevel) return true;
-			if (LastZoomLevel < EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && CurrentZoomLevel() >= EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
-			if (LastZoomLevel > EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && CurrentZoomLevel () <= EntityMarker.SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
-			if (LastZoomLevel > MaxSupportedZoomLevel && CurrentZoomLevel () < MaxSupportedZoomLevel) return true;
+			var currentZoomLevel = CurrentZoomLevel ();
+			if (LastZoomLevel < MaxSupportedZoomLevel && currentZoomLevel >= MaxSupportedZoomLevel) return true;
+			if (LastZoomLevel < SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel >= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
+			if (LastZoomLevel < MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL && currentZoomLevel >= MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return true;
+			if (LastZoomLevel > MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL && currentZoomLevel < MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return true;
+			if (LastZoomLevel > SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel <= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
+			if (LastZoomLevel > MaxSupportedZoomLevel && currentZoomLevel < MaxSupportedZoomLevel) return true;
 			return false;
 		}
 	}

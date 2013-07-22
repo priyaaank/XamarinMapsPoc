@@ -30,9 +30,6 @@ namespace Mappy
 			{ EntityMarker.IconType.Large, Resource.Drawable.branch }
 		};
 
-		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 10;
-//		public static readonly float MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL = 12;
-
 		private MarkerOptions MapMarker;
 		private BankEntity Entity;
 
