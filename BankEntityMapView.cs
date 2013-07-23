@@ -25,6 +25,7 @@ namespace Mappy
 		private const float MaxSupportedZoomLevel = 3.5f;
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
 		private float LastZoomLevel = 0;
+		private EntityMarker ClosestBankEntityMarker;
 
 		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 10;
 		public static readonly float MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL = 15;
@@ -52,8 +53,9 @@ namespace Mappy
 		{
 			if (this.Map != null) {
 				ConfigureMapUiSettings ();
-				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				FlyDownToMyLocation ();
+				SetClosestBankEntityMarker ();
+				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 			}
 		}
 
@@ -62,8 +64,7 @@ namespace Mappy
 			if(this.Map.MyLocation != null)
 			{
 				LatLng myLocation = new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude); 
-				CameraPosition position = new CameraPosition.Builder ().Target (myLocation).Zoom (MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL).Build();
-				CameraUpdate camUpdate = CameraUpdateFactory.NewCameraPosition(position);
+				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (myLocation, MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL + 1);
 				this.Map.AnimateCamera (camUpdate);
 			}
 		}
@@ -88,10 +89,11 @@ namespace Mappy
 		private void UpdateMapBasedOnZoomThreshold ()
 		{
 			this.Map.Clear ();
+
 			EntityMarker.IconType icon = IconForCurrentZoomLevel ();
 			if (icon != EntityMarker.IconType.None) {
 				foreach (EntityMarker location in LocationsPlottedOnMap) {
-					location.ChangeIcon (icon);
+					location.SetIcon (icon);
 					location.AddMarkerTo (this.Map);
 				}
 			}
@@ -104,13 +106,13 @@ namespace Mappy
 
 		void ShowEntitiesOnMap (LatLng coordinates, Options userSelection)
 		{
-			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, userSelection);
+			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, 20, userSelection);
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {
 				if(IconForCurrentZoomLevel() == EntityMarker.IconType.None) return;
 				foreach (BankEntity aEntity in bankEntities) {
-					var marker = new EntityMarker(aEntity, IconForCurrentZoomLevel(), new LatLng(aEntity.Latitude, aEntity.Longitude));
+					var marker = (ClosestBankEntityMarker != null && aEntity.Name == ClosestBankEntityMarker.Entity.Name) ? ClosestBankEntityMarker :new EntityMarker(aEntity, IconForCurrentZoomLevel());
 					marker.AddMarkerTo(this.Map);
 					LocationsPlottedOnMap.Add(marker);
 				}
@@ -147,13 +149,21 @@ namespace Mappy
 
 		bool ShouldIconChange () {
 			var currentZoomLevel = CurrentZoomLevel ();
-			if (LastZoomLevel < MaxSupportedZoomLevel && currentZoomLevel >= MaxSupportedZoomLevel) return true;
-			if (LastZoomLevel < SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel >= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
-			if (LastZoomLevel < MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL && currentZoomLevel >= MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return true;
-			if (LastZoomLevel > MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL && currentZoomLevel < MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return true;
-			if (LastZoomLevel > SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel <= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true;
-			if (LastZoomLevel > MaxSupportedZoomLevel && currentZoomLevel < MaxSupportedZoomLevel) return true;
-			return false;
+			if (LastZoomLevel < MaxSupportedZoomLevel && currentZoomLevel >= MaxSupportedZoomLevel) return true; // no icon to small
+			if (LastZoomLevel < SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel >= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true; //small to medium
+			if (LastZoomLevel < MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL && currentZoomLevel >= MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return true; //medium to large
+			if (LastZoomLevel > MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL && currentZoomLevel < MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL) return true; // large to medium
+			if (LastZoomLevel > SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel <= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true; // medium to small
+			if (LastZoomLevel > MaxSupportedZoomLevel && currentZoomLevel < MaxSupportedZoomLevel) return true; // small to no icon
+			return false; // no change
+		}
+
+		void SetClosestBankEntityMarker ()
+		{
+			if (this.Map.MyLocation != null) {
+				BankEntity closestBankEntity = (EntitiesService.fetch (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude, 1, (this.Activity as BankEntityLocator).UserSelection)).First ();
+				ClosestBankEntityMarker = new EntityMarker (closestBankEntity, EntityMarker.IconType.Closest);
+			}
 		}
 	}
 }

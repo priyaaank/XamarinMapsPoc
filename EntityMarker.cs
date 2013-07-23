@@ -16,7 +16,7 @@ namespace Mappy
 {
 	class EntityMarker
 	{
-		public enum IconType {Small, Medium, Large, None};
+		public enum IconType {Small, Medium, Large, None, Closest};
 
 		private static readonly Dictionary<EntityMarker.IconType, int> AtmIcons = new Dictionary<EntityMarker.IconType, int>{
 			{ EntityMarker.IconType.Small, Resource.Drawable.atm_small },
@@ -31,15 +31,17 @@ namespace Mappy
 		};
 
 		private MarkerOptions MapMarker;
-		private BankEntity Entity;
+		public BankEntity Entity;
+		private IconType CurrentIconType;
 
-		public EntityMarker(BankEntity entity, EntityMarker.IconType iconSize, LatLng position)
+		public EntityMarker(BankEntity entity, EntityMarker.IconType iconType)
 		{
 			this.Entity = entity;
 			this.MapMarker = new MarkerOptions ();
 			this.MapMarker.SetTitle (entity.Description());
-			this.MapMarker.SetPosition (position);
-			this.ChangeIcon (iconSize);
+			this.MapMarker.SetPosition (new LatLng(entity.Latitude, entity.Longitude));
+			this.CurrentIconType = iconType;
+			this.SetIcon ( this.CurrentIconType);
 		}
 
 		public void AddMarkerTo(GoogleMap map)
@@ -47,9 +49,15 @@ namespace Mappy
 			map.AddMarker (this.MapMarker);
 		}
 
-		public void ChangeIcon(EntityMarker.IconType changeIconTo)
+		public void SetIcon(IconType iconType)
 		{
-			this.MapMarker.InvokeIcon (BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(changeIconTo)));
+			var icon = (this.CurrentIconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
+			this.MapMarker.InvokeIcon (icon);
+		}
+
+		public void SetDefaultIcon()
+		{
+			this.MapMarker.InvokeIcon (BitmapDescriptorFactory.DefaultMarker());
 		}
 
 		private int EntityIconForZoomLevel (EntityMarker.IconType changeIconTo)

@@ -9,7 +9,7 @@ namespace Mappy
 {
 	public class BankEntitiesService
 	{
-		private static readonly string SERVICE_URI = "http://10.12.25.3:8889/Home/GetLocations?lng={0}&lat={1}&results=10&checkboxes={2}";
+		private static readonly string SERVICE_URI = "http://10.12.25.3:8889/Home/GetLocations?lng={0}&lat={1}&results={2}&checkboxes={3}";
 		private List<Type> Filters; 
 
 		public BankEntitiesService ()
@@ -17,11 +17,11 @@ namespace Mappy
 			Filters = new List<Type> ();
 		}
 
-		public List<BankEntity> fetch(double latitude, double longitude, Options selectedOptions) 
+		public List<BankEntity> fetch(double latitude, double longitude, int numberOfRecords, Options selectedOptions) 
 		{
 			Filters = selectedOptions.FiltersForSelection ();
 
-			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, selectedOptions.SelectionCriteria()));
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, numberOfRecords, selectedOptions.SelectionCriteria()));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 
