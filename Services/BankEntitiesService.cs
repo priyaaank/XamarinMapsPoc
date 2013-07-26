@@ -9,7 +9,7 @@ namespace Mappy
 {
 	public class BankEntitiesService
 	{
-		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results=10&checkboxes={2}";
+		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results={2}&checkboxes={3}";
 		private List<Type> Filters; 
 
 		public BankEntitiesService ()

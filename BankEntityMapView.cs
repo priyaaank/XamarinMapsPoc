@@ -54,31 +54,35 @@ namespace Mappy
 			if (this.Map != null) {
 				ConfigureMapUiSettings ();
 				FlyDownToMyLocation ();
-				SetClosestBankEntityMarker ();
+				UpdateClosestEntityMarker ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 			}
+		}
+
+		private LatLng GetMyLocation ()
+		{
+			return new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude);
 		}
 
 		private void FlyDownToMyLocation ()
 		{
 			if(this.Map.MyLocation != null)
 			{
-				LatLng myLocation = new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude); 
-				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (myLocation, MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL + 1);
+				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (GetMyLocation (), MEDIUM_TO_LARGE_THRESHOLD_ZOOM_LEVEL + 1);
 				this.Map.AnimateCamera (camUpdate);
 			}
 		}
 
 		public void UpdateMap (Options userSelection)
 		{
-			var zoomLevel = this.Map.CameraPosition.Zoom;
+			var zoomLevel = CurrentZoomLevel();
 
 			if (ShouldIconChange ()) {
 				UpdateMapBasedOnZoomThreshold ();
 			} 
 			if (zoomLevel > MaxSupportedZoomLevel) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, userSelection));
+				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, userSelection, 20));
 			} else {
 				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
@@ -93,7 +97,7 @@ namespace Mappy
 			EntityMarker.IconType icon = IconForCurrentZoomLevel ();
 			if (icon != EntityMarker.IconType.None) {
 				foreach (EntityMarker location in LocationsPlottedOnMap) {
-					location.SetIcon (icon);
+					location.UpdateIcon (icon);
 					location.AddMarkerTo (this.Map);
 				}
 			}
@@ -104,22 +108,23 @@ namespace Mappy
 			this.Map.Clear ();
 		}
 
-		void ShowEntitiesOnMap (LatLng coordinates, Options userSelection)
+		private void ShowEntitiesOnMap (LatLng coordinates, Options userSelection, int noOfRecords)
 		{
-			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, 20, userSelection);
+			List<BankEntity> bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, noOfRecords, userSelection);
 
 			var parentActivity = this.Activity as Activity;
 			parentActivity.RunOnUiThread( () => {
-				if(IconForCurrentZoomLevel() == EntityMarker.IconType.None) return;
+				var iconType = IconForCurrentZoomLevel ();
+				if(iconType == EntityMarker.IconType.None) return;
 				foreach (BankEntity aEntity in bankEntities) {
-					var marker = (ClosestBankEntityMarker != null && aEntity.Name == ClosestBankEntityMarker.Entity.Name) ? ClosestBankEntityMarker :new EntityMarker(aEntity, IconForCurrentZoomLevel());
+					var marker = new EntityMarker (aEntity, iconType);
 					marker.AddMarkerTo(this.Map);
 					LocationsPlottedOnMap.Add(marker);
 				}
 			});
 		}
 
-		void ConfigureMapUiSettings ()
+		private void ConfigureMapUiSettings ()
 		{
 			this.Map.MapType = GoogleMap.MapTypeNormal;
 			this.Map.MyLocationEnabled = true;
@@ -131,13 +136,12 @@ namespace Mappy
 			mapUISettings.SetAllGesturesEnabled (true);
 		}
 
-		float CurrentZoomLevel ()
+		private float CurrentZoomLevel ()
 		{
 			return this.Map.CameraPosition.Zoom;
 		}
 
-
-		EntityMarker.IconType IconForCurrentZoomLevel ()
+		private EntityMarker.IconType IconForCurrentZoomLevel ()
 		{
 			float currentZoomLevel = CurrentZoomLevel ();
 			if (currentZoomLevel < MaxSupportedZoomLevel) return EntityMarker.IconType.None;
@@ -147,7 +151,7 @@ namespace Mappy
 			return EntityMarker.IconType.Small;
 		}
 
-		bool ShouldIconChange () {
+		private bool ShouldIconChange () {
 			var currentZoomLevel = CurrentZoomLevel ();
 			if (LastZoomLevel < MaxSupportedZoomLevel && currentZoomLevel >= MaxSupportedZoomLevel) return true; // no icon to small
 			if (LastZoomLevel < SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL && currentZoomLevel >= SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL) return true; //small to medium
@@ -158,12 +162,22 @@ namespace Mappy
 			return false; // no change
 		}
 
-		void SetClosestBankEntityMarker ()
+		private void UpdateClosestEntityMarker ()
 		{
 			if (this.Map.MyLocation != null) {
-				BankEntity closestBankEntity = (EntitiesService.fetch (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude, 1, (this.Activity as BankEntityLocator).UserSelection)).First ();
-				ClosestBankEntityMarker = new EntityMarker (closestBankEntity, EntityMarker.IconType.Closest);
+				var allEntities = EntitiesService.fetch (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude, 1, (this.Activity as BankEntityLocator).UserSelection);
+				if (allEntities != null && allEntities.Count > 0) {
+					if(ClosestBankEntityMarker != null) ClosestBankEntityMarker.ResetIconFromClosest (IconForCurrentZoomLevel ());
+					BankEntity closestBankEntity = allEntities.First ();
+					ClosestBankEntityMarker = new EntityMarker (closestBankEntity, EntityMarker.IconType.Closest, EntityMarker.MarkerType.Nearest);
+					ClosestBankEntityMarker.AddMarkerTo (this.Map);
+				}
 			}
+		}
+
+		public void UserLocationUpdated ()
+		{
+			UpdateClosestEntityMarker ();
 		}
 	}
 }

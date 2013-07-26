@@ -1,14 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityMapView.cs">
     <Files>
-      <File FileName="BankEntityMapView.cs" Line="79" Column="14" />
+      <File FileName="BankEntityMapView.cs" Line="22" Column="61" />
+      <File FileName="BankEntityLocator.cs" Line="1" Column="1" />
+      <File FileName="Services/BankEntitiesService.cs" Line="1" Column="1" />
+      <File FileName="EntityMarker.cs" Line="1" Column="1" />
+      <File FileName="Models/BankEntity.cs" Line="1" Column="1" />
+      <File FileName="Properties/AndroidManifest.xml" Line="1" Column="1" />
+      <File FileName="../GooglePlayServices/obj/Debug/generated/src/Android.Gms.Maps.GoogleMap.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Mappy" expanded="True" selected="True">
             <Node name="Models" expanded="True" />
+            <Node name="Properties" expanded="True" />
+            <Node name="Services" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -27,5 +35,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="304D19E4975BD19E" />
+  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="304D19E4975BD19E" AndroidDeviceId-Release="304D19E4975BD19E" />
 </Properties>

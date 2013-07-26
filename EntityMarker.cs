@@ -16,6 +16,8 @@ namespace Mappy
 {
 	class EntityMarker
 	{
+
+		public enum MarkerType { Regular, Nearest };
 		public enum IconType {Small, Medium, Large, None, Closest};
 
 		private static readonly Dictionary<EntityMarker.IconType, int> AtmIcons = new Dictionary<EntityMarker.IconType, int>{
@@ -32,7 +34,7 @@ namespace Mappy
 
 		private MarkerOptions MapMarker;
 		public BankEntity Entity;
-		private IconType CurrentIconType;
+		private MarkerType Type;
 
 		public EntityMarker(BankEntity entity, EntityMarker.IconType iconType)
 		{
@@ -40,8 +42,14 @@ namespace Mappy
 			this.MapMarker = new MarkerOptions ();
 			this.MapMarker.SetTitle (entity.Description());
 			this.MapMarker.SetPosition (new LatLng(entity.Latitude, entity.Longitude));
-			this.CurrentIconType = iconType;
-			this.SetIcon ( this.CurrentIconType);
+			this.UpdateIcon (iconType);
+			this.Type = MarkerType.Regular;
+		}
+
+		public EntityMarker(BankEntity entity, EntityMarker.IconType iconType, MarkerType markerType) : this(entity, iconType)
+		{
+			this.Type = markerType;
+			this.UpdateIcon (IconType.Closest);
 		}
 
 		public void AddMarkerTo(GoogleMap map)
@@ -49,15 +57,20 @@ namespace Mappy
 			map.AddMarker (this.MapMarker);
 		}
 
-		public void SetIcon(IconType iconType)
+		public void UpdateIcon(IconType iconType)
 		{
-			var icon = (this.CurrentIconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
-			this.MapMarker.InvokeIcon (icon);
+			var icon = (iconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
+			this.MapMarker.InvokeIcon (icon);          
 		}
 
-		public void SetDefaultIcon()
+		public bool IsNearestToUser()
 		{
-			this.MapMarker.InvokeIcon (BitmapDescriptorFactory.DefaultMarker());
+			return this.Type == MarkerType.Nearest;
+		}
+
+		public void ResetIconFromClosest (IconType iconType) 
+		{
+			UpdateIcon (iconType);
 		}
 
 		private int EntityIconForZoomLevel (EntityMarker.IconType changeIconTo)
