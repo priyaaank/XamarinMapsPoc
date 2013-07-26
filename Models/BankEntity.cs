@@ -53,6 +53,23 @@ namespace Mappy
 		public abstract bool IsAtm ();
 
 		public abstract bool IsOwnBrand ();
+
+		public override bool Equals(System.Object obj)
+		{
+			if (obj == null)
+				return false;
+
+			BankEntity anotherBankEntity = obj as BankEntity;
+			if ((System.Object)anotherBankEntity == null)
+				return false;
+
+			return (LocationId == anotherBankEntity.LocationId);
+		}
+
+		public override int GetHashCode()
+		{
+			return (int) LocationId;
+		}
 	}
 }
 

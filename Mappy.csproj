@@ -67,6 +67,10 @@
     <Compile Include="Services\ExcludeOwnAtmsFilter.cs" />
     <Compile Include="Services\ExcludeOwnBranchesFilter.cs" />
     <Compile Include="EntityMarker.cs" />
+    <Compile Include="Services\EntityCache.cs" />
+    <Compile Include="Services\CacheChangeListener.cs" />
+    <Compile Include="AndroidViewportFilter.cs" />
+    <Compile Include="Services\ViewportFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
