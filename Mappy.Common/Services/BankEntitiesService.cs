@@ -17,11 +17,11 @@ namespace Mappy
 			Filters = new List<Type> ();
 		}
 
-		public List<BankEntity> fetch(double latitude, double longitude, int numberOfRecords, Options selectedOptions) 
+		public List<BankEntity> fetch(double latitude, double longitude, Options selectedOptions) 
 		{
 			Filters = selectedOptions.FiltersForSelection ();
 
-			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, numberOfRecords, selectedOptions.SelectionCriteria()));
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, selectedOptions.SelectionCriteria()));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 
