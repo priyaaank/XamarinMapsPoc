@@ -16,9 +16,18 @@
         <FrameLayout
             android:id="@+id/map"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+            android:layout_height="fill_parent"
+            android:minWidth="25px"
+            android:minHeight="25px" />
         <include
             android:id="@+id/BankEntityOptions"
             layout="@layout/BankEntityTypeSelection" />
+        <TextView
+            android:text="Text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/zoomLevel"
+            android:background="#66000000"
+            android:padding="4dp" />
     </FrameLayout>
 </LinearLayout>

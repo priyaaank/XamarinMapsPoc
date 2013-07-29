@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.MultiPlayer {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='OnInvitationReceivedListener']"
 	[Register ("com/google/android/gms/games/multiplayer/OnInvitationReceivedListener", "", "Android.Gms.Games.MultiPlayer.IOnInvitationReceivedListenerInvoker")]
 	public partial interface IOnInvitationReceivedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='OnInvitationReceivedListener']/method[@name='onInvitationReceived' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.Invitation']]"
 		[Register ("onInvitationReceived", "(Lcom/google/android/gms/games/multiplayer/Invitation;)V", "GetOnInvitationReceived_Lcom_google_android_gms_games_multiplayer_Invitation_Handler:Android.Gms.Games.MultiPlayer.IOnInvitationReceivedListenerInvoker, GooglePlayServices")]
 		void OnInvitationReceived (global::Android.Gms.Games.MultiPlayer.IInvitation p0);
 
@@ -66,7 +68,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		static void n_OnInvitationReceived_Lcom_google_android_gms_games_multiplayer_Invitation_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Games.MultiPlayer.IOnInvitationReceivedListener __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Games.MultiPlayer.IOnInvitationReceivedListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Games.MultiPlayer.IInvitation p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Games.MultiPlayer.IInvitation> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Games.MultiPlayer.IInvitation p0 = (global::Android.Gms.Games.MultiPlayer.IInvitation)global::Java.Lang.Object.GetObject<global::Android.Gms.Games.MultiPlayer.IInvitation> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.OnInvitationReceived (p0);
 		}
 #pragma warning restore 0169
@@ -111,8 +113,9 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		public void OnInvitationReceived (global::Android.Gms.Games.MultiPlayer.IInvitation p0)
 		{
-			if (Handler != null)
-				Handler (sender, new InvitationReceivedEventArgs (p0));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new InvitationReceivedEventArgs (p0));
 		}
 
 		internal static bool __IsEmpty (IOnInvitationReceivedListenerImplementor value)

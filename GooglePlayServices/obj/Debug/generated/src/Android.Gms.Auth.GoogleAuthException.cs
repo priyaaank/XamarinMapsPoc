@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Auth {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthException']"
 	[global::Android.Runtime.Register ("com/google/android/gms/auth/GoogleAuthException", DoNotGenerateAcw=true)]
 	public partial class GoogleAuthException : global::Java.Lang.Exception {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Auth {
 		protected GoogleAuthException (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Ljava_lang_String_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthException']/constructor[@name='GoogleAuthException' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register (".ctor", "(Ljava/lang/String;)V", "")]
 		public GoogleAuthException (string p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{

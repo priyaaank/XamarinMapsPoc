@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/Tile", DoNotGenerateAcw=true)]
 	public sealed partial class Tile : global::Java.Lang.Object {
 
 
 		static IntPtr data_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']/field[@name='data']"
 		[Register ("data")]
 		public IList<byte> Data {
 			get {
@@ -17,11 +19,18 @@ namespace Android.Gms.Maps.Model {
 					data_jfieldId = JNIEnv.GetFieldID (class_ref, "data", "[B");
 				return JavaArray<byte>.FromJniHandle (JNIEnv.GetObjectField (Handle, data_jfieldId), JniHandleOwnership.TransferLocalRef);
 			}
+			set {
+				if (data_jfieldId == IntPtr.Zero)
+					data_jfieldId = JNIEnv.GetFieldID (class_ref, "data", "[B");
+				IntPtr native_value = JavaArray<byte>.ToLocalJniHandle (value);
+				JNIEnv.SetField (Handle, data_jfieldId, native_value);
+				JNIEnv.DeleteLocalRef (native_value);
+			}
 		}
-
 
 		static IntPtr height_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']/field[@name='height']"
 		[Register ("height")]
 		public int Height {
 			get {
@@ -38,6 +47,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr width_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']/field[@name='width']"
 		[Register ("width")]
 		public int Width {
 			get {
@@ -69,6 +79,7 @@ namespace Android.Gms.Maps.Model {
 		internal Tile (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_IIarrayB;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']/constructor[@name='Tile' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='byte[]']]"
 		[Register (".ctor", "(II[B)V", "")]
 		public Tile (int p0, int p1, byte[] p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -95,6 +106,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -104,6 +116,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -113,6 +126,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='Tile']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

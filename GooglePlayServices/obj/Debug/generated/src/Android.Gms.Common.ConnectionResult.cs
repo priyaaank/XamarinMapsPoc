@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Common {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']"
 	[global::Android.Runtime.Register ("com/google/android/gms/common/ConnectionResult", DoNotGenerateAcw=true)]
 	public sealed partial class ConnectionResult : global::Java.Lang.Object {
 
 
 		static IntPtr B_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='B']"
 		[Register ("B")]
 		public static global::Android.Gms.Common.ConnectionResult B {
 			get {
@@ -27,39 +29,51 @@ namespace Android.Gms.Common {
 			}
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='DEVELOPER_ERROR']"
 		[Register ("DEVELOPER_ERROR")]
 		public const int DeveloperError = (int) 10;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='INTERNAL_ERROR']"
 		[Register ("INTERNAL_ERROR")]
 		public const int InternalError = (int) 8;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='INVALID_ACCOUNT']"
 		[Register ("INVALID_ACCOUNT")]
 		public const int InvalidAccount = (int) 5;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='LICENSE_CHECK_FAILED']"
 		[Register ("LICENSE_CHECK_FAILED")]
 		public const int LicenseCheckFailed = (int) 11;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='NETWORK_ERROR']"
 		[Register ("NETWORK_ERROR")]
 		public const int NetworkError = (int) 7;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='RESOLUTION_REQUIRED']"
 		[Register ("RESOLUTION_REQUIRED")]
 		public const int ResolutionRequired = (int) 6;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='SERVICE_DISABLED']"
 		[Register ("SERVICE_DISABLED")]
 		public const int ServiceDisabled = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='SERVICE_INVALID']"
 		[Register ("SERVICE_INVALID")]
 		public const int ServiceInvalid = (int) 9;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='SERVICE_MISSING']"
 		[Register ("SERVICE_MISSING")]
 		public const int ServiceMissing = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='SERVICE_VERSION_UPDATE_REQUIRED']"
 		[Register ("SERVICE_VERSION_UPDATE_REQUIRED")]
 		public const int ServiceVersionUpdateRequired = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='SIGN_IN_REQUIRED']"
 		[Register ("SIGN_IN_REQUIRED")]
 		public const int SignInRequired = (int) 4;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/field[@name='SUCCESS']"
 		[Register ("SUCCESS")]
 		public const int Success = (int) 0;
 		internal static IntPtr java_class_handle;
@@ -80,6 +94,7 @@ namespace Android.Gms.Common {
 		internal ConnectionResult (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_ILandroid_app_PendingIntent_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/constructor[@name='ConnectionResult' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='android.app.PendingIntent']]"
 		[Register (".ctor", "(ILandroid/app/PendingIntent;)V", "")]
 		public ConnectionResult (int p0, global::Android.App.PendingIntent p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -98,6 +113,7 @@ namespace Android.Gms.Common {
 
 		static IntPtr id_getErrorCode;
 		public int ErrorCode {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/method[@name='getErrorCode' and count(parameter)=0]"
 			[Register ("getErrorCode", "()I", "GetGetErrorCodeHandler")]
 			get {
 				if (id_getErrorCode == IntPtr.Zero)
@@ -108,6 +124,7 @@ namespace Android.Gms.Common {
 
 		static IntPtr id_hasResolution;
 		public bool HasResolution {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/method[@name='hasResolution' and count(parameter)=0]"
 			[Register ("hasResolution", "()Z", "GetHasResolutionHandler")]
 			get {
 				if (id_hasResolution == IntPtr.Zero)
@@ -118,6 +135,7 @@ namespace Android.Gms.Common {
 
 		static IntPtr id_isSuccess;
 		public bool IsSuccess {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/method[@name='isSuccess' and count(parameter)=0]"
 			[Register ("isSuccess", "()Z", "GetIsSuccessHandler")]
 			get {
 				if (id_isSuccess == IntPtr.Zero)
@@ -128,6 +146,7 @@ namespace Android.Gms.Common {
 
 		static IntPtr id_getResolution;
 		public global::Android.App.PendingIntent Resolution {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/method[@name='getResolution' and count(parameter)=0]"
 			[Register ("getResolution", "()Landroid/app/PendingIntent;", "GetGetResolutionHandler")]
 			get {
 				if (id_getResolution == IntPtr.Zero)
@@ -137,6 +156,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_startResolutionForResult_Landroid_app_Activity_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='ConnectionResult']/method[@name='startResolutionForResult' and count(parameter)=2 and parameter[1][@type='android.app.Activity'] and parameter[2][@type='int']]"
 		[Register ("startResolutionForResult", "(Landroid/app/Activity;I)V", "")]
 		public void StartResolutionForResult (global::Android.App.Activity p0, int p1)
 		{

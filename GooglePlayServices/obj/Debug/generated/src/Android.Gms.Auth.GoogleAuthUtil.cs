@@ -4,16 +4,20 @@ using Android.Runtime;
 
 namespace Android.Gms.Auth {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']"
 	[global::Android.Runtime.Register ("com/google/android/gms/auth/GoogleAuthUtil", DoNotGenerateAcw=true)]
 	public sealed partial class GoogleAuthUtil : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/field[@name='GOOGLE_ACCOUNT_TYPE']"
 		[Register ("GOOGLE_ACCOUNT_TYPE")]
 		public const string GoogleAccountType = (string) "com.google";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/field[@name='KEY_HANDLE_NOTIFICATION']"
 		[Register ("KEY_HANDLE_NOTIFICATION")]
 		public const string KeyHandleNotification = (string) "handle_notification";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/field[@name='KEY_REQUEST_VISIBLE_ACTIVITIES']"
 		[Register ("KEY_REQUEST_VISIBLE_ACTIVITIES")]
 		public const string KeyRequestVisibleActivities = (string) "request_visible_actions";
 		internal static IntPtr java_class_handle;
@@ -34,6 +38,7 @@ namespace Android.Gms.Auth {
 		internal GoogleAuthUtil (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_getToken_Landroid_content_Context_Ljava_lang_String_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/method[@name='getToken' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]"
 		[Register ("getToken", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", "")]
 		public static string GetToken (global::Android.Content.Context p0, string p1, string p2)
 		{
@@ -48,6 +53,7 @@ namespace Android.Gms.Auth {
 		}
 
 		static IntPtr id_getToken_Landroid_content_Context_Ljava_lang_String_Ljava_lang_String_Landroid_os_Bundle_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/method[@name='getToken' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='android.os.Bundle']]"
 		[Register ("getToken", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;", "")]
 		public static string GetToken (global::Android.Content.Context p0, string p1, string p2, global::Android.OS.Bundle p3)
 		{
@@ -62,6 +68,7 @@ namespace Android.Gms.Auth {
 		}
 
 		static IntPtr id_getTokenWithNotification_Landroid_content_Context_Ljava_lang_String_Ljava_lang_String_Landroid_os_Bundle_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/method[@name='getTokenWithNotification' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='android.os.Bundle']]"
 		[Register ("getTokenWithNotification", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;", "")]
 		public static string GetTokenWithNotification (global::Android.Content.Context p0, string p1, string p2, global::Android.OS.Bundle p3)
 		{
@@ -76,6 +83,7 @@ namespace Android.Gms.Auth {
 		}
 
 		static IntPtr id_getTokenWithNotification_Landroid_content_Context_Ljava_lang_String_Ljava_lang_String_Landroid_os_Bundle_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/method[@name='getTokenWithNotification' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='android.os.Bundle'] and parameter[5][@type='android.content.Intent']]"
 		[Register ("getTokenWithNotification", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Landroid/content/Intent;)Ljava/lang/String;", "")]
 		public static string GetTokenWithNotification (global::Android.Content.Context p0, string p1, string p2, global::Android.OS.Bundle p3, global::Android.Content.Intent p4)
 		{
@@ -90,6 +98,7 @@ namespace Android.Gms.Auth {
 		}
 
 		static IntPtr id_getTokenWithNotification_Landroid_content_Context_Ljava_lang_String_Ljava_lang_String_Landroid_os_Bundle_Ljava_lang_String_Landroid_os_Bundle_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/method[@name='getTokenWithNotification' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='android.os.Bundle'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='android.os.Bundle']]"
 		[Register ("getTokenWithNotification", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;", "")]
 		public static string GetTokenWithNotification (global::Android.Content.Context p0, string p1, string p2, global::Android.OS.Bundle p3, string p4, global::Android.OS.Bundle p5)
 		{
@@ -106,6 +115,7 @@ namespace Android.Gms.Auth {
 		}
 
 		static IntPtr id_invalidateToken_Landroid_content_Context_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GoogleAuthUtil']/method[@name='invalidateToken' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]"
 		[Register ("invalidateToken", "(Landroid/content/Context;Ljava/lang/String;)V", "")]
 		public static void InvalidateToken (global::Android.Content.Context p0, string p1)
 		{

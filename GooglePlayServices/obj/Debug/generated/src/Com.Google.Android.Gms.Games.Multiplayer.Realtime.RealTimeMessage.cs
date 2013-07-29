@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/multiplayer/realtime/RealTimeMessage", DoNotGenerateAcw=true)]
 	public sealed partial class RealTimeMessage : global::Java.Lang.Object, global::Android.OS.IParcelable {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.OS.IParcelableCreator Creator {
 			get {
@@ -27,9 +29,11 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/field[@name='RELIABLE']"
 		[Register ("RELIABLE")]
 		public const int Reliable = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/field[@name='UNRELIABLE']"
 		[Register ("UNRELIABLE")]
 		public const int Unreliable = (int) 0;
 		internal static IntPtr java_class_handle;
@@ -50,6 +54,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		internal RealTimeMessage (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Ljava_lang_String_arrayBI;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/constructor[@name='RealTimeMessage' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='byte[]'] and parameter[3][@type='int']]"
 		[Register (".ctor", "(Ljava/lang/String;[BI)V", "")]
 		public RealTimeMessage (string p0, byte[] p1, int p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -80,6 +85,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_isReliable;
 		public bool IsReliable {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/method[@name='isReliable' and count(parameter)=0]"
 			[Register ("isReliable", "()Z", "GetIsReliableHandler")]
 			get {
 				if (id_isReliable == IntPtr.Zero)
@@ -90,6 +96,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getSenderParticipantId;
 		public string SenderParticipantId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/method[@name='getSenderParticipantId' and count(parameter)=0]"
 			[Register ("getSenderParticipantId", "()Ljava/lang/String;", "GetGetSenderParticipantIdHandler")]
 			get {
 				if (id_getSenderParticipantId == IntPtr.Zero)
@@ -99,6 +106,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -108,6 +116,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_getMessageData;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/method[@name='getMessageData' and count(parameter)=0]"
 		[Register ("getMessageData", "()[B", "")]
 		public byte[] GetMessageData ()
 		{
@@ -117,6 +126,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RealTimeMessage']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, global::Android.OS.ParcelableWriteFlags p1)
 		{

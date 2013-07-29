@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Common.Data {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']"
 	[global::Android.Runtime.Register ("com/google/android/gms/common/data/DataBuffer", DoNotGenerateAcw=true)]
 	public abstract partial class DataBuffer : global::Java.Lang.Object, global::Java.Lang.IIterable {
 
@@ -42,6 +43,7 @@ namespace Android.Gms.Common.Data {
 
 		static IntPtr id_getCount;
 		public virtual int Count {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']/method[@name='getCount' and count(parameter)=0]"
 			[Register ("getCount", "()I", "GetGetCountHandler")]
 			get {
 				if (id_getCount == IntPtr.Zero)
@@ -72,6 +74,7 @@ namespace Android.Gms.Common.Data {
 
 		static IntPtr id_isClosed;
 		public virtual bool IsClosed {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']/method[@name='isClosed' and count(parameter)=0]"
 			[Register ("isClosed", "()Z", "GetIsClosedHandler")]
 			get {
 				if (id_isClosed == IntPtr.Zero)
@@ -101,6 +104,7 @@ namespace Android.Gms.Common.Data {
 #pragma warning restore 0169
 
 		static IntPtr id_close;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']/method[@name='close' and count(parameter)=0]"
 		[Register ("close", "()V", "GetCloseHandler")]
 		public virtual void Close ()
 		{
@@ -130,6 +134,7 @@ namespace Android.Gms.Common.Data {
 #pragma warning restore 0169
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "GetDescribeContentsHandler")]
 		public virtual int DescribeContents ()
 		{
@@ -158,6 +163,7 @@ namespace Android.Gms.Common.Data {
 		}
 #pragma warning restore 0169
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']/method[@name='get' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("get", "(I)Ljava/lang/Object;", "GetGet_IHandler")]
 		public abstract global::Java.Lang.Object Get (int p0);
 
@@ -178,6 +184,7 @@ namespace Android.Gms.Common.Data {
 #pragma warning restore 0169
 
 		static IntPtr id_iterator;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']/method[@name='iterator' and count(parameter)=0]"
 		[Register ("iterator", "()Ljava/util/Iterator;", "GetIteratorHandler")]
 		public virtual global::Java.Util.IIterator Iterator ()
 		{
@@ -202,6 +209,7 @@ namespace Android.Gms.Common.Data {
 		}
 
 		static IntPtr id_get_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBuffer']/method[@name='get' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("get", "(I)Ljava/lang/Object;", "GetGet_IHandler")]
 		public override global::Java.Lang.Object Get (int p0)
 		{

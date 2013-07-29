@@ -11,9 +11,11 @@ namespace Android.Gms.Games.LeaderBoard {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/field[@name='SCORE_ORDER_LARGER_IS_BETTER']"
 		[Register ("SCORE_ORDER_LARGER_IS_BETTER")]
 		public const int ScoreOrderLargerIsBetter = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/field[@name='SCORE_ORDER_SMALLER_IS_BETTER']"
 		[Register ("SCORE_ORDER_SMALLER_IS_BETTER")]
 		public const int ScoreOrderSmallerIsBetter = (int) 0;
 	}
@@ -26,29 +28,36 @@ namespace Android.Gms.Games.LeaderBoard {
 		}
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']"
 	[Register ("com/google/android/gms/games/leaderboard/Leaderboard", "", "Android.Gms.Games.LeaderBoard.ILeaderboardInvoker")]
 	public partial interface ILeaderboard : IJavaObject {
 
 		string DisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/method[@name='getDisplayName' and count(parameter)=0]"
 			[Register ("getDisplayName", "()Ljava/lang/String;", "GetGetDisplayNameHandler:Android.Gms.Games.LeaderBoard.ILeaderboardInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri IconImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/method[@name='getIconImageUri' and count(parameter)=0]"
 			[Register ("getIconImageUri", "()Landroid/net/Uri;", "GetGetIconImageUriHandler:Android.Gms.Games.LeaderBoard.ILeaderboardInvoker, GooglePlayServices")] get;
 		}
 
 		string LeaderboardId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/method[@name='getLeaderboardId' and count(parameter)=0]"
 			[Register ("getLeaderboardId", "()Ljava/lang/String;", "GetGetLeaderboardIdHandler:Android.Gms.Games.LeaderBoard.ILeaderboardInvoker, GooglePlayServices")] get;
 		}
 
 		int ScoreOrder {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/method[@name='getScoreOrder' and count(parameter)=0]"
 			[Register ("getScoreOrder", "()I", "GetGetScoreOrderHandler:Android.Gms.Games.LeaderBoard.ILeaderboardInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Games.LeaderBoard.ILeaderboardVariant> Variants {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/method[@name='getVariants' and count(parameter)=0]"
 			[Register ("getVariants", "()Ljava/util/ArrayList;", "GetGetVariantsHandler:Android.Gms.Games.LeaderBoard.ILeaderboardInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='Leaderboard']/method[@name='getDisplayName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDisplayName", "(Landroid/database/CharArrayBuffer;)V", "GetGetDisplayName_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.LeaderBoard.ILeaderboardInvoker, GooglePlayServices")]
 		void GetDisplayName (global::Android.Database.CharArrayBuffer p0);
 

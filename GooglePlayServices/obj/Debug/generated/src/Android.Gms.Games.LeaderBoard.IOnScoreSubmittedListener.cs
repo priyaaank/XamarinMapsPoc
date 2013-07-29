@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.LeaderBoard {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='OnScoreSubmittedListener']"
 	[Register ("com/google/android/gms/games/leaderboard/OnScoreSubmittedListener", "", "Android.Gms.Games.LeaderBoard.IOnScoreSubmittedListenerInvoker")]
 	public partial interface IOnScoreSubmittedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='OnScoreSubmittedListener']/method[@name='onScoreSubmitted' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='com.google.android.gms.games.leaderboard.SubmitScoreResult']]"
 		[Register ("onScoreSubmitted", "(ILcom/google/android/gms/games/leaderboard/SubmitScoreResult;)V", "GetOnScoreSubmitted_ILcom_google_android_gms_games_leaderboard_SubmitScoreResult_Handler:Android.Gms.Games.LeaderBoard.IOnScoreSubmittedListenerInvoker, GooglePlayServices")]
 		void OnScoreSubmitted (int p0, global::Android.Gms.Games.LeaderBoard.SubmitScoreResult p1);
 
@@ -117,8 +119,9 @@ namespace Android.Gms.Games.LeaderBoard {
 
 		public void OnScoreSubmitted (int p0, global::Android.Gms.Games.LeaderBoard.SubmitScoreResult p1)
 		{
-			if (Handler != null)
-				Handler (sender, new ScoreSubmittedEventArgs (p0, p1));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new ScoreSubmittedEventArgs (p0, p1));
 		}
 
 		internal static bool __IsEmpty (IOnScoreSubmittedListenerImplementor value)

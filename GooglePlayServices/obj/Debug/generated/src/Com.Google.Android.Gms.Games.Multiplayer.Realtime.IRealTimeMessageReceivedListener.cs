@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RealTimeMessageReceivedListener']"
 	[Register ("com/google/android/gms/games/multiplayer/realtime/RealTimeMessageReceivedListener", "", "Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRealTimeMessageReceivedListenerInvoker")]
 	public partial interface IRealTimeMessageReceivedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RealTimeMessageReceivedListener']/method[@name='onRealTimeMessageReceived' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.RealTimeMessage']]"
 		[Register ("onRealTimeMessageReceived", "(Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMessage;)V", "GetOnRealTimeMessageReceived_Lcom_google_android_gms_games_multiplayer_realtime_RealTimeMessage_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRealTimeMessageReceivedListenerInvoker, GooglePlayServices")]
 		void OnRealTimeMessageReceived (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RealTimeMessage p0);
 
@@ -111,8 +113,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnRealTimeMessageReceived (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RealTimeMessage p0)
 		{
-			if (Handler != null)
-				Handler (sender, new RealTimeMessageReceivedEventArgs (p0));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new RealTimeMessageReceivedEventArgs (p0));
 		}
 
 		internal static bool __IsEmpty (IRealTimeMessageReceivedListenerImplementor value)

@@ -4,48 +4,63 @@ using Android.Runtime;
 
 namespace Android.Gms.Plus {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/PlusShare", DoNotGenerateAcw=true)]
 	public sealed partial class PlusShare : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='EXTRA_CALL_TO_ACTION']"
 		[Register ("EXTRA_CALL_TO_ACTION")]
 		public const string ExtraCallToAction = (string) "com.google.android.apps.plus.CALL_TO_ACTION";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='EXTRA_CONTENT_DEEP_LINK_ID']"
 		[Register ("EXTRA_CONTENT_DEEP_LINK_ID")]
 		public const string ExtraContentDeepLinkId = (string) "com.google.android.apps.plus.CONTENT_DEEP_LINK_ID";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='EXTRA_CONTENT_DEEP_LINK_METADATA']"
 		[Register ("EXTRA_CONTENT_DEEP_LINK_METADATA")]
 		public const string ExtraContentDeepLinkMetadata = (string) "com.google.android.apps.plus.CONTENT_DEEP_LINK_METADATA";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='EXTRA_CONTENT_URL']"
 		[Register ("EXTRA_CONTENT_URL")]
 		public const string ExtraContentUrl = (string) "com.google.android.apps.plus.CONTENT_URL";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='EXTRA_IS_INTERACTIVE_POST']"
 		[Register ("EXTRA_IS_INTERACTIVE_POST")]
 		public const string ExtraIsInteractivePost = (string) "com.google.android.apps.plus.GOOGLE_INTERACTIVE_POST";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='EXTRA_SENDER_ID']"
 		[Register ("EXTRA_SENDER_ID")]
 		public const string ExtraSenderId = (string) "com.google.android.apps.plus.SENDER_ID";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='KEY_CALL_TO_ACTION_DEEP_LINK_ID']"
 		[Register ("KEY_CALL_TO_ACTION_DEEP_LINK_ID")]
 		public const string KeyCallToActionDeepLinkId = (string) "deepLinkId";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='KEY_CALL_TO_ACTION_LABEL']"
 		[Register ("KEY_CALL_TO_ACTION_LABEL")]
 		public const string KeyCallToActionLabel = (string) "label";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='KEY_CALL_TO_ACTION_URL']"
 		[Register ("KEY_CALL_TO_ACTION_URL")]
 		public const string KeyCallToActionUrl = (string) "url";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='KEY_CONTENT_DEEP_LINK_METADATA_DESCRIPTION']"
 		[Register ("KEY_CONTENT_DEEP_LINK_METADATA_DESCRIPTION")]
 		public const string KeyContentDeepLinkMetadataDescription = (string) "description";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='KEY_CONTENT_DEEP_LINK_METADATA_THUMBNAIL_URL']"
 		[Register ("KEY_CONTENT_DEEP_LINK_METADATA_THUMBNAIL_URL")]
 		public const string KeyContentDeepLinkMetadataThumbnailUrl = (string) "thumbnailUrl";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='KEY_CONTENT_DEEP_LINK_METADATA_TITLE']"
 		[Register ("KEY_CONTENT_DEEP_LINK_METADATA_TITLE")]
 		public const string KeyContentDeepLinkMetadataTitle = (string) "title";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/field[@name='PARAM_CONTENT_DEEP_LINK_ID']"
 		[Register ("PARAM_CONTENT_DEEP_LINK_ID")]
 		public const string ParamContentDeepLinkId = (string) "deep_link_id";
+		// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']"
 		[global::Android.Runtime.Register ("com/google/android/gms/plus/PlusShare$Builder", DoNotGenerateAcw=true)]
 		public partial class Builder : global::Java.Lang.Object {
 
@@ -67,6 +82,7 @@ namespace Android.Gms.Plus {
 			protected Builder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 			static IntPtr id_ctor;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/constructor[@name='PlusShare.Builder' and count(parameter)=0]"
 			[Register (".ctor", "()V", "")]
 			public Builder () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -84,6 +100,7 @@ namespace Android.Gms.Plus {
 			}
 
 			static IntPtr id_ctor_Ljava_lang_String_;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/constructor[@name='PlusShare.Builder' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 			[Register (".ctor", "(Ljava/lang/String;)V", "")]
 			protected Builder (string p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -104,6 +121,7 @@ namespace Android.Gms.Plus {
 			}
 
 			static IntPtr id_ctor_Ljava_lang_String_Ljava_lang_String_Landroid_content_ComponentName_;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/constructor[@name='PlusShare.Builder' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.ComponentName']]"
 			[Register (".ctor", "(Ljava/lang/String;Ljava/lang/String;Landroid/content/ComponentName;)V", "")]
 			protected Builder (string p0, string p1, global::Android.Content.ComponentName p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -127,6 +145,7 @@ namespace Android.Gms.Plus {
 			}
 
 			static IntPtr id_ctor_Landroid_app_Activity_;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/constructor[@name='PlusShare.Builder' and count(parameter)=1 and parameter[1][@type='android.app.Activity']]"
 			[Register (".ctor", "(Landroid/app/Activity;)V", "")]
 			public Builder (global::Android.App.Activity p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -144,6 +163,7 @@ namespace Android.Gms.Plus {
 			}
 
 			static IntPtr id_ctor_Landroid_app_Activity_Lcom_google_android_gms_plus_PlusClient_;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/constructor[@name='PlusShare.Builder' and count(parameter)=2 and parameter[1][@type='android.app.Activity'] and parameter[2][@type='com.google.android.gms.plus.PlusClient']]"
 			[Register (".ctor", "(Landroid/app/Activity;Lcom/google/android/gms/plus/PlusClient;)V", "")]
 			public Builder (global::Android.App.Activity p0, global::Android.Gms.Plus.PlusClient p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -178,6 +198,7 @@ namespace Android.Gms.Plus {
 
 			static IntPtr id_getIntent;
 			public virtual global::Android.Content.Intent Intent {
+				// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='getIntent' and count(parameter)=0]"
 				[Register ("getIntent", "()Landroid/content/Intent;", "GetGetIntentHandler")]
 				get {
 					if (id_getIntent == IntPtr.Zero)
@@ -211,6 +232,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_addCallToAction_Ljava_lang_String_Landroid_net_Uri_Ljava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='addCallToAction' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='android.net.Uri'] and parameter[3][@type='java.lang.String']]"
 			[Register ("addCallToAction", "(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetAddCallToAction_Ljava_lang_String_Landroid_net_Uri_Ljava_lang_String_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder AddCallToAction (string p0, global::Android.Net.Uri p1, string p2)
 			{
@@ -248,6 +270,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_addStream_Landroid_net_Uri_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='addStream' and count(parameter)=1 and parameter[1][@type='android.net.Uri']]"
 			[Register ("addStream", "(Landroid/net/Uri;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetAddStream_Landroid_net_Uri_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder AddStream (global::Android.Net.Uri p0)
 			{
@@ -281,6 +304,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setContentDeepLinkId_Ljava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='setContentDeepLinkId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 			[Register ("setContentDeepLinkId", "(Ljava/lang/String;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetSetContentDeepLinkId_Ljava_lang_String_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder SetContentDeepLinkId (string p0)
 			{
@@ -319,6 +343,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setContentDeepLinkId_Ljava_lang_String_Ljava_lang_String_Ljava_lang_String_Landroid_net_Uri_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='setContentDeepLinkId' and count(parameter)=4 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='android.net.Uri']]"
 			[Register ("setContentDeepLinkId", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetSetContentDeepLinkId_Ljava_lang_String_Ljava_lang_String_Ljava_lang_String_Landroid_net_Uri_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder SetContentDeepLinkId (string p0, string p1, string p2, global::Android.Net.Uri p3)
 			{
@@ -358,6 +383,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setContentUrl_Landroid_net_Uri_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='setContentUrl' and count(parameter)=1 and parameter[1][@type='android.net.Uri']]"
 			[Register ("setContentUrl", "(Landroid/net/Uri;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetSetContentUrl_Landroid_net_Uri_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder SetContentUrl (global::Android.Net.Uri p0)
 			{
@@ -391,6 +417,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setRecipients_Ljava_util_List_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='setRecipients' and count(parameter)=1 and parameter[1][@type='java.util.List']]"
 			[Register ("setRecipients", "(Ljava/util/List;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetSetRecipients_Ljava_util_List_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder SetRecipients (global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.People.IPerson> p0)
 			{
@@ -400,9 +427,9 @@ namespace Android.Gms.Plus {
 
 				global::Android.Gms.Plus.PlusShare.Builder __ret;
 				if (GetType () == ThresholdType)
-					__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusShare.Builder> (JNIEnv.CallObjectMethod  (Handle, id_setRecipients_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+					__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusShare.Builder> (JNIEnv.CallObjectMethod  (Handle, id_setRecipients_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 				else
-					__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusShare.Builder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setRecipients_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+					__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusShare.Builder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setRecipients_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 				JNIEnv.DeleteLocalRef (native_p0);
 				return __ret;
 			}
@@ -426,6 +453,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setStream_Landroid_net_Uri_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='setStream' and count(parameter)=1 and parameter[1][@type='android.net.Uri']]"
 			[Register ("setStream", "(Landroid/net/Uri;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetSetStream_Landroid_net_Uri_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder SetStream (global::Android.Net.Uri p0)
 			{
@@ -459,6 +487,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setText_Ljava_lang_CharSequence_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='setText' and count(parameter)=1 and parameter[1][@type='java.lang.CharSequence']]"
 			[Register ("setText", "(Ljava/lang/CharSequence;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetSetText_Ljava_lang_CharSequence_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder SetText (global::Java.Lang.ICharSequence p0)
 			{
@@ -502,6 +531,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setType_Ljava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare.Builder']/method[@name='setType' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 			[Register ("setType", "(Ljava/lang/String;)Lcom/google/android/gms/plus/PlusShare$Builder;", "GetSetType_Ljava_lang_String_Handler")]
 			public virtual global::Android.Gms.Plus.PlusShare.Builder SetType (string p0)
 			{
@@ -538,6 +568,7 @@ namespace Android.Gms.Plus {
 		internal PlusShare (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_a_Ljava_lang_String_Ljava_lang_String_Landroid_net_Uri_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/method[@name='a' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.net.Uri']]"
 		[Register ("a", "(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;)Landroid/os/Bundle;", "")]
 		public static global::Android.OS.Bundle A (string p0, string p1, global::Android.Net.Uri p2)
 		{
@@ -552,6 +583,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_createPerson_Ljava_lang_String_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/method[@name='createPerson' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]"
 		[Register ("createPerson", "(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/plus/model/people/Person;", "")]
 		public static global::Android.Gms.Plus.Model.People.IPerson CreatePerson (string p0, string p1)
 		{
@@ -566,6 +598,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_getDeepLinkId_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusShare']/method[@name='getDeepLinkId' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("getDeepLinkId", "(Landroid/content/Intent;)Ljava/lang/String;", "")]
 		public static string GetDeepLinkId (global::Android.Content.Intent p0)
 		{

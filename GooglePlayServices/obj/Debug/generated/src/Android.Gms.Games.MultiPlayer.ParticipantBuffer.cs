@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.MultiPlayer {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantBuffer']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/multiplayer/ParticipantBuffer", DoNotGenerateAcw=true)]
 	public sealed partial class ParticipantBuffer : global::Android.Gms.Common.Data.DataBuffer {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		internal ParticipantBuffer (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_get_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantBuffer']/method[@name='get' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("get", "(I)Lcom/google/android/gms/games/multiplayer/Participant;", "")]
 		public override global::Java.Lang.Object Get (int p0)
 		{

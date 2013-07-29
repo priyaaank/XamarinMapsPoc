@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.MultiPlayer {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/multiplayer/ParticipantEntity", DoNotGenerateAcw=true)]
 	public sealed partial class ParticipantEntity : global::Java.Lang.Object, global::Android.OS.IParcelable, global::Android.Gms.Games.MultiPlayer.IParticipant {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.OS.IParcelableCreator Creator {
 			get {
@@ -31,15 +33,19 @@ namespace Android.Gms.Games.MultiPlayer {
 
 			// The following are fields from: com.google.android.gms.games.multiplayer.Participant
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_DECLINED']"
 			[Register ("STATUS_DECLINED")]
 			public const int StatusDeclined = (int) 3;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_INVITED']"
 			[Register ("STATUS_INVITED")]
 			public const int StatusInvited = (int) 1;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_JOINED']"
 			[Register ("STATUS_JOINED")]
 			public const int StatusJoined = (int) 2;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_LEFT']"
 			[Register ("STATUS_LEFT")]
 			public const int StatusLeft = (int) 4;
 		}
@@ -62,6 +68,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		internal ParticipantEntity (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_games_multiplayer_Participant_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/constructor[@name='ParticipantEntity' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.Participant']]"
 		[Register (".ctor", "(Lcom/google/android/gms/games/multiplayer/Participant;)V", "")]
 		public ParticipantEntity (global::Android.Gms.Games.MultiPlayer.IParticipant p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -80,6 +87,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getClientAddress;
 		public string ClientAddress {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getClientAddress' and count(parameter)=0]"
 			[Register ("getClientAddress", "()Ljava/lang/String;", "GetGetClientAddressHandler")]
 			get {
 				if (id_getClientAddress == IntPtr.Zero)
@@ -90,6 +98,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getDisplayName;
 		public string DisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getDisplayName' and count(parameter)=0]"
 			[Register ("getDisplayName", "()Ljava/lang/String;", "GetGetDisplayNameHandler")]
 			get {
 				if (id_getDisplayName == IntPtr.Zero)
@@ -100,6 +109,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getHiResImageUri;
 		public global::Android.Net.Uri HiResImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getHiResImageUri' and count(parameter)=0]"
 			[Register ("getHiResImageUri", "()Landroid/net/Uri;", "GetGetHiResImageUriHandler")]
 			get {
 				if (id_getHiResImageUri == IntPtr.Zero)
@@ -110,6 +120,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getIconImageUri;
 		public global::Android.Net.Uri IconImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getIconImageUri' and count(parameter)=0]"
 			[Register ("getIconImageUri", "()Landroid/net/Uri;", "GetGetIconImageUriHandler")]
 			get {
 				if (id_getIconImageUri == IntPtr.Zero)
@@ -120,6 +131,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_isConnectedToRoom;
 		public bool IsConnectedToRoom {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='isConnectedToRoom' and count(parameter)=0]"
 			[Register ("isConnectedToRoom", "()Z", "GetIsConnectedToRoomHandler")]
 			get {
 				if (id_isConnectedToRoom == IntPtr.Zero)
@@ -130,6 +142,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getParticipantId;
 		public string ParticipantId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getParticipantId' and count(parameter)=0]"
 			[Register ("getParticipantId", "()Ljava/lang/String;", "GetGetParticipantIdHandler")]
 			get {
 				if (id_getParticipantId == IntPtr.Zero)
@@ -140,6 +153,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getPlayer;
 		public global::Android.Gms.Games.IPlayer Player {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getPlayer' and count(parameter)=0]"
 			[Register ("getPlayer", "()Lcom/google/android/gms/games/Player;", "GetGetPlayerHandler")]
 			get {
 				if (id_getPlayer == IntPtr.Zero)
@@ -150,6 +164,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getStatus;
 		public int Status {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getStatus' and count(parameter)=0]"
 			[Register ("getStatus", "()I", "GetGetStatusHandler")]
 			get {
 				if (id_getStatus == IntPtr.Zero)
@@ -159,6 +174,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_multiplayer_Participant_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='a' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.Participant']]"
 		[Register ("a", "(Lcom/google/android/gms/games/multiplayer/Participant;)I", "")]
 		public static int A (global::Android.Gms.Games.MultiPlayer.IParticipant p0)
 		{
@@ -169,6 +185,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_multiplayer_Participant_Ljava_lang_Object_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='a' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.Participant'] and parameter[2][@type='java.lang.Object']]"
 		[Register ("a", "(Lcom/google/android/gms/games/multiplayer/Participant;Ljava/lang/Object;)Z", "")]
 		public static bool A (global::Android.Gms.Games.MultiPlayer.IParticipant p0, global::Java.Lang.Object p1)
 		{
@@ -179,6 +196,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_b_Lcom_google_android_gms_games_multiplayer_Participant_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='b' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.Participant']]"
 		[Register ("b", "(Lcom/google/android/gms/games/multiplayer/Participant;)Ljava/lang/String;", "")]
 		public static string B (global::Android.Gms.Games.MultiPlayer.IParticipant p0)
 		{
@@ -189,6 +207,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -198,6 +217,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_freeze;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='freeze' and count(parameter)=0]"
 		[Register ("freeze", "()Lcom/google/android/gms/games/multiplayer/Participant;", "")]
 		public global::Java.Lang.Object Freeze ()
 		{
@@ -207,6 +227,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_getDisplayName_Landroid_database_CharArrayBuffer_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='getDisplayName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDisplayName", "(Landroid/database/CharArrayBuffer;)V", "")]
 		public void GetDisplayName (global::Android.Database.CharArrayBuffer p0)
 		{
@@ -216,6 +237,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='ParticipantEntity']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, global::Android.OS.ParcelableWriteFlags p1)
 		{

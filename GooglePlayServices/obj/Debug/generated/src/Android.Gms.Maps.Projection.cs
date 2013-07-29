@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='Projection']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/Projection", DoNotGenerateAcw=true)]
 	public sealed partial class Projection : global::Java.Lang.Object {
 
@@ -26,6 +27,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getVisibleRegion;
 		public global::Android.Gms.Maps.Model.VisibleRegion VisibleRegion {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='Projection']/method[@name='getVisibleRegion' and count(parameter)=0]"
 			[Register ("getVisibleRegion", "()Lcom/google/android/gms/maps/model/VisibleRegion;", "GetGetVisibleRegionHandler")]
 			get {
 				if (id_getVisibleRegion == IntPtr.Zero)
@@ -35,6 +37,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_fromScreenLocation_Landroid_graphics_Point_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='Projection']/method[@name='fromScreenLocation' and count(parameter)=1 and parameter[1][@type='android.graphics.Point']]"
 		[Register ("fromScreenLocation", "(Landroid/graphics/Point;)Lcom/google/android/gms/maps/model/LatLng;", "")]
 		public global::Android.Gms.Maps.Model.LatLng FromScreenLocation (global::Android.Graphics.Point p0)
 		{
@@ -45,6 +48,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_toScreenLocation_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='Projection']/method[@name='toScreenLocation' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register ("toScreenLocation", "(Lcom/google/android/gms/maps/model/LatLng;)Landroid/graphics/Point;", "")]
 		public global::Android.Graphics.Point ToScreenLocation (global::Android.Gms.Maps.Model.LatLng p0)
 		{

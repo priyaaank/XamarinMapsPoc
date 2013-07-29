@@ -4,33 +4,43 @@ using Android.Runtime;
 
 namespace Android.Gms.Dynamic {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']"
 	[Register ("com/google/android/gms/dynamic/LifecycleDelegate", "", "Android.Gms.Dynamic.ILifecycleDelegateInvoker")]
 	public partial interface ILifecycleDelegate : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onCreate' and count(parameter)=1 and parameter[1][@type='android.os.Bundle']]"
 		[Register ("onCreate", "(Landroid/os/Bundle;)V", "GetOnCreate_Landroid_os_Bundle_Handler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnCreate (global::Android.OS.Bundle p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onCreateView' and count(parameter)=3 and parameter[1][@type='android.view.LayoutInflater'] and parameter[2][@type='android.view.ViewGroup'] and parameter[3][@type='android.os.Bundle']]"
 		[Register ("onCreateView", "(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;", "GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		global::Android.Views.View OnCreateView (global::Android.Views.LayoutInflater p0, global::Android.Views.ViewGroup p1, global::Android.OS.Bundle p2);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onDestroy' and count(parameter)=0]"
 		[Register ("onDestroy", "()V", "GetOnDestroyHandler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnDestroy ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onDestroyView' and count(parameter)=0]"
 		[Register ("onDestroyView", "()V", "GetOnDestroyViewHandler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnDestroyView ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onInflate' and count(parameter)=3 and parameter[1][@type='android.app.Activity'] and parameter[2][@type='android.os.Bundle'] and parameter[3][@type='android.os.Bundle']]"
 		[Register ("onInflate", "(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V", "GetOnInflate_Landroid_app_Activity_Landroid_os_Bundle_Landroid_os_Bundle_Handler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnInflate (global::Android.App.Activity p0, global::Android.OS.Bundle p1, global::Android.OS.Bundle p2);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onLowMemory' and count(parameter)=0]"
 		[Register ("onLowMemory", "()V", "GetOnLowMemoryHandler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnLowMemory ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onPause' and count(parameter)=0]"
 		[Register ("onPause", "()V", "GetOnPauseHandler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnPause ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onResume' and count(parameter)=0]"
 		[Register ("onResume", "()V", "GetOnResumeHandler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnResume ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.dynamic']/interface[@name='LifecycleDelegate']/method[@name='onSaveInstanceState' and count(parameter)=1 and parameter[1][@type='android.os.Bundle']]"
 		[Register ("onSaveInstanceState", "(Landroid/os/Bundle;)V", "GetOnSaveInstanceState_Landroid_os_Bundle_Handler:Android.Gms.Dynamic.ILifecycleDelegateInvoker, GooglePlayServices")]
 		void OnSaveInstanceState (global::Android.OS.Bundle p0);
 

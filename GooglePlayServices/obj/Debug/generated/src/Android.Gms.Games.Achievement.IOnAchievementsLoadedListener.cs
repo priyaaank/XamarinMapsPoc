@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.Achievement {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='OnAchievementsLoadedListener']"
 	[Register ("com/google/android/gms/games/achievement/OnAchievementsLoadedListener", "", "Android.Gms.Games.Achievement.IOnAchievementsLoadedListenerInvoker")]
 	public partial interface IOnAchievementsLoadedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='OnAchievementsLoadedListener']/method[@name='onAchievementsLoaded' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='com.google.android.gms.games.achievement.AchievementBuffer']]"
 		[Register ("onAchievementsLoaded", "(ILcom/google/android/gms/games/achievement/AchievementBuffer;)V", "GetOnAchievementsLoaded_ILcom_google_android_gms_games_achievement_AchievementBuffer_Handler:Android.Gms.Games.Achievement.IOnAchievementsLoadedListenerInvoker, GooglePlayServices")]
 		void OnAchievementsLoaded (int p0, global::Android.Gms.Games.Achievement.AchievementBuffer p1);
 
@@ -117,8 +119,9 @@ namespace Android.Gms.Games.Achievement {
 
 		public void OnAchievementsLoaded (int p0, global::Android.Gms.Games.Achievement.AchievementBuffer p1)
 		{
-			if (Handler != null)
-				Handler (sender, new AchievementsLoadedEventArgs (p0, p1));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new AchievementsLoadedEventArgs (p0, p1));
 		}
 
 		internal static bool __IsEmpty (IOnAchievementsLoadedListenerImplementor value)

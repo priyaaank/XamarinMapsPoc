@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.AppStates {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateBuffer']"
 	[global::Android.Runtime.Register ("com/google/android/gms/appstate/AppStateBuffer", DoNotGenerateAcw=true)]
 	public sealed partial class AppStateBuffer : global::Android.Gms.Common.Data.DataBuffer {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.AppStates {
 		internal AppStateBuffer (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_get_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateBuffer']/method[@name='get' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("get", "(I)Lcom/google/android/gms/appstate/AppState;", "")]
 		public override global::Java.Lang.Object Get (int p0)
 		{

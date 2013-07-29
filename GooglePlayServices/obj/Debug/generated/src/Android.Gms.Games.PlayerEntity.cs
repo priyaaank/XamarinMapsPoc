@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Games {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/PlayerEntity", DoNotGenerateAcw=true)]
 	public sealed partial class PlayerEntity : global::Java.Lang.Object, global::Android.Gms.Games.IPlayer {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.OS.IParcelableCreator Creator {
 			get {
@@ -44,6 +46,7 @@ namespace Android.Gms.Games {
 		internal PlayerEntity (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_games_Player_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/constructor[@name='PlayerEntity' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.Player']]"
 		[Register (".ctor", "(Lcom/google/android/gms/games/Player;)V", "")]
 		public PlayerEntity (global::Android.Gms.Games.IPlayer p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -62,6 +65,7 @@ namespace Android.Gms.Games {
 
 		static IntPtr id_getDisplayName;
 		public string DisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='getDisplayName' and count(parameter)=0]"
 			[Register ("getDisplayName", "()Ljava/lang/String;", "GetGetDisplayNameHandler")]
 			get {
 				if (id_getDisplayName == IntPtr.Zero)
@@ -72,6 +76,7 @@ namespace Android.Gms.Games {
 
 		static IntPtr id_hasHiResImage;
 		public bool HasHiResImage {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='hasHiResImage' and count(parameter)=0]"
 			[Register ("hasHiResImage", "()Z", "GetHasHiResImageHandler")]
 			get {
 				if (id_hasHiResImage == IntPtr.Zero)
@@ -82,6 +87,7 @@ namespace Android.Gms.Games {
 
 		static IntPtr id_hasIconImage;
 		public bool HasIconImage {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='hasIconImage' and count(parameter)=0]"
 			[Register ("hasIconImage", "()Z", "GetHasIconImageHandler")]
 			get {
 				if (id_hasIconImage == IntPtr.Zero)
@@ -92,6 +98,7 @@ namespace Android.Gms.Games {
 
 		static IntPtr id_getHiResImageUri;
 		public global::Android.Net.Uri HiResImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='getHiResImageUri' and count(parameter)=0]"
 			[Register ("getHiResImageUri", "()Landroid/net/Uri;", "GetGetHiResImageUriHandler")]
 			get {
 				if (id_getHiResImageUri == IntPtr.Zero)
@@ -102,6 +109,7 @@ namespace Android.Gms.Games {
 
 		static IntPtr id_getIconImageUri;
 		public global::Android.Net.Uri IconImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='getIconImageUri' and count(parameter)=0]"
 			[Register ("getIconImageUri", "()Landroid/net/Uri;", "GetGetIconImageUriHandler")]
 			get {
 				if (id_getIconImageUri == IntPtr.Zero)
@@ -112,6 +120,7 @@ namespace Android.Gms.Games {
 
 		static IntPtr id_getPlayerId;
 		public string PlayerId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='getPlayerId' and count(parameter)=0]"
 			[Register ("getPlayerId", "()Ljava/lang/String;", "GetGetPlayerIdHandler")]
 			get {
 				if (id_getPlayerId == IntPtr.Zero)
@@ -122,6 +131,7 @@ namespace Android.Gms.Games {
 
 		static IntPtr id_getRetrievedTimestamp;
 		public long RetrievedTimestamp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='getRetrievedTimestamp' and count(parameter)=0]"
 			[Register ("getRetrievedTimestamp", "()J", "GetGetRetrievedTimestampHandler")]
 			get {
 				if (id_getRetrievedTimestamp == IntPtr.Zero)
@@ -131,6 +141,7 @@ namespace Android.Gms.Games {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_Player_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='a' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.Player']]"
 		[Register ("a", "(Lcom/google/android/gms/games/Player;)I", "")]
 		public static int A (global::Android.Gms.Games.IPlayer p0)
 		{
@@ -141,6 +152,7 @@ namespace Android.Gms.Games {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_Player_Ljava_lang_Object_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='a' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.Player'] and parameter[2][@type='java.lang.Object']]"
 		[Register ("a", "(Lcom/google/android/gms/games/Player;Ljava/lang/Object;)Z", "")]
 		public static bool A (global::Android.Gms.Games.IPlayer p0, global::Java.Lang.Object p1)
 		{
@@ -151,6 +163,7 @@ namespace Android.Gms.Games {
 		}
 
 		static IntPtr id_b_Lcom_google_android_gms_games_Player_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='b' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.Player']]"
 		[Register ("b", "(Lcom/google/android/gms/games/Player;)Ljava/lang/String;", "")]
 		public static string B (global::Android.Gms.Games.IPlayer p0)
 		{
@@ -161,6 +174,7 @@ namespace Android.Gms.Games {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -170,6 +184,7 @@ namespace Android.Gms.Games {
 		}
 
 		static IntPtr id_freeze;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='freeze' and count(parameter)=0]"
 		[Register ("freeze", "()Lcom/google/android/gms/games/Player;", "")]
 		public global::Java.Lang.Object Freeze ()
 		{
@@ -179,6 +194,7 @@ namespace Android.Gms.Games {
 		}
 
 		static IntPtr id_getDisplayName_Landroid_database_CharArrayBuffer_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='getDisplayName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDisplayName", "(Landroid/database/CharArrayBuffer;)V", "")]
 		public void GetDisplayName (global::Android.Database.CharArrayBuffer p0)
 		{
@@ -188,6 +204,7 @@ namespace Android.Gms.Games {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='PlayerEntity']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, global::Android.OS.ParcelableWriteFlags p1)
 		{

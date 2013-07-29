@@ -4,25 +4,31 @@ using Android.Runtime;
 
 namespace Android.Gms.Games {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='RealTimeSocket']"
 	[Register ("com/google/android/gms/games/RealTimeSocket", "", "Android.Gms.Games.IRealTimeSocketInvoker")]
 	public partial interface IRealTimeSocket : IJavaObject {
 
 		global::System.IO.Stream InputStream {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='RealTimeSocket']/method[@name='getInputStream' and count(parameter)=0]"
 			[Register ("getInputStream", "()Ljava/io/InputStream;", "GetGetInputStreamHandler:Android.Gms.Games.IRealTimeSocketInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsClosed {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='RealTimeSocket']/method[@name='isClosed' and count(parameter)=0]"
 			[Register ("isClosed", "()Z", "GetIsClosedHandler:Android.Gms.Games.IRealTimeSocketInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.IO.Stream OutputStream {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='RealTimeSocket']/method[@name='getOutputStream' and count(parameter)=0]"
 			[Register ("getOutputStream", "()Ljava/io/OutputStream;", "GetGetOutputStreamHandler:Android.Gms.Games.IRealTimeSocketInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.OS.ParcelFileDescriptor ParcelFileDescriptor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='RealTimeSocket']/method[@name='getParcelFileDescriptor' and count(parameter)=0]"
 			[Register ("getParcelFileDescriptor", "()Landroid/os/ParcelFileDescriptor;", "GetGetParcelFileDescriptorHandler:Android.Gms.Games.IRealTimeSocketInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='RealTimeSocket']/method[@name='close' and count(parameter)=0]"
 		[Register ("close", "()V", "GetCloseHandler:Android.Gms.Games.IRealTimeSocketInvoker, GooglePlayServices")]
 		void Close ();
 

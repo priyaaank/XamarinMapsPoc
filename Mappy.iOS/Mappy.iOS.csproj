@@ -99,4 +99,10 @@
     <InterfaceDefinition Include="Mappy_iOSViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Mappy.Common.iOS\Mappy.Common.iOS.csproj">
+      <Project>{E6900DE8-A4EB-4E9C-8AC0-3C3320024E8E}</Project>
+      <Name>Mappy.Common.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

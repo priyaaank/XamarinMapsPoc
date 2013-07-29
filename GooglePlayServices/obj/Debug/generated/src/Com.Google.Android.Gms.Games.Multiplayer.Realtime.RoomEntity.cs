@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/multiplayer/realtime/RoomEntity", DoNotGenerateAcw=true)]
 	public sealed partial class RoomEntity : global::Java.Lang.Object, global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.OS.IParcelableCreator Creator {
 			get {
@@ -31,18 +33,23 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 			// The following are fields from: com.google.android.gms.games.multiplayer.realtime.Room
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_ACTIVE']"
 			[Register ("ROOM_STATUS_ACTIVE")]
 			public const int RoomStatusActive = (int) 3;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_AUTO_MATCHING']"
 			[Register ("ROOM_STATUS_AUTO_MATCHING")]
 			public const int RoomStatusAutoMatching = (int) 1;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_CONNECTING']"
 			[Register ("ROOM_STATUS_CONNECTING")]
 			public const int RoomStatusConnecting = (int) 2;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_INVITING']"
 			[Register ("ROOM_STATUS_INVITING")]
 			public const int RoomStatusInviting = (int) 0;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_VARIANT_ANY']"
 			[Register ("ROOM_VARIANT_ANY")]
 			public const int RoomVariantAny = (int) -1;
 		}
@@ -65,6 +72,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		internal RoomEntity (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_games_multiplayer_realtime_Room_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/constructor[@name='RoomEntity' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register (".ctor", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;)V", "")]
 		public RoomEntity (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -83,6 +91,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getAutoMatchCriteria;
 		public global::Android.OS.Bundle AutoMatchCriteria {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getAutoMatchCriteria' and count(parameter)=0]"
 			[Register ("getAutoMatchCriteria", "()Landroid/os/Bundle;", "GetGetAutoMatchCriteriaHandler")]
 			get {
 				if (id_getAutoMatchCriteria == IntPtr.Zero)
@@ -93,6 +102,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getCreationTimestamp;
 		public long CreationTimestamp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getCreationTimestamp' and count(parameter)=0]"
 			[Register ("getCreationTimestamp", "()J", "GetGetCreationTimestampHandler")]
 			get {
 				if (id_getCreationTimestamp == IntPtr.Zero)
@@ -103,6 +113,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getCreatorId;
 		public string CreatorId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getCreatorId' and count(parameter)=0]"
 			[Register ("getCreatorId", "()Ljava/lang/String;", "GetGetCreatorIdHandler")]
 			get {
 				if (id_getCreatorId == IntPtr.Zero)
@@ -113,6 +124,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getDescription;
 		public string Description {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getDescription' and count(parameter)=0]"
 			[Register ("getDescription", "()Ljava/lang/String;", "GetGetDescriptionHandler")]
 			get {
 				if (id_getDescription == IntPtr.Zero)
@@ -123,6 +135,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getParticipantIds;
 		public global::System.Collections.Generic.IList<string> ParticipantIds {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getParticipantIds' and count(parameter)=0]"
 			[Register ("getParticipantIds", "()Ljava/util/ArrayList;", "GetGetParticipantIdsHandler")]
 			get {
 				if (id_getParticipantIds == IntPtr.Zero)
@@ -133,6 +146,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getParticipants;
 		public global::System.Collections.Generic.IList<global::Android.Gms.Games.MultiPlayer.IParticipant> Participants {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getParticipants' and count(parameter)=0]"
 			[Register ("getParticipants", "()Ljava/util/ArrayList;", "GetGetParticipantsHandler")]
 			get {
 				if (id_getParticipants == IntPtr.Zero)
@@ -143,6 +157,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getRoomId;
 		public string RoomId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getRoomId' and count(parameter)=0]"
 			[Register ("getRoomId", "()Ljava/lang/String;", "GetGetRoomIdHandler")]
 			get {
 				if (id_getRoomId == IntPtr.Zero)
@@ -153,6 +168,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getStatus;
 		public int Status {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getStatus' and count(parameter)=0]"
 			[Register ("getStatus", "()I", "GetGetStatusHandler")]
 			get {
 				if (id_getStatus == IntPtr.Zero)
@@ -163,6 +179,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getVariant;
 		public int Variant {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getVariant' and count(parameter)=0]"
 			[Register ("getVariant", "()I", "GetGetVariantHandler")]
 			get {
 				if (id_getVariant == IntPtr.Zero)
@@ -172,6 +189,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_multiplayer_realtime_Room_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='a' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("a", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;)I", "")]
 		public static int A (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0)
 		{
@@ -182,6 +200,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_lang_Object_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='a' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room'] and parameter[2][@type='java.lang.Object']]"
 		[Register ("a", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/lang/Object;)Z", "")]
 		public static bool A (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::Java.Lang.Object p1)
 		{
@@ -192,6 +211,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_b_Lcom_google_android_gms_games_multiplayer_realtime_Room_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='b' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("b", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;)Ljava/lang/String;", "")]
 		public static string B (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0)
 		{
@@ -202,6 +222,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -211,6 +232,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_freeze;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='freeze' and count(parameter)=0]"
 		[Register ("freeze", "()Lcom/google/android/gms/games/multiplayer/realtime/Room;", "")]
 		public global::Java.Lang.Object Freeze ()
 		{
@@ -220,6 +242,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_getDescription_Landroid_database_CharArrayBuffer_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getDescription' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDescription", "(Landroid/database/CharArrayBuffer;)V", "")]
 		public void GetDescription (global::Android.Database.CharArrayBuffer p0)
 		{
@@ -229,6 +252,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_getParticipantId_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getParticipantId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("getParticipantId", "(Ljava/lang/String;)Ljava/lang/String;", "")]
 		public string GetParticipantId (string p0)
 		{
@@ -241,6 +265,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_getParticipantStatus_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='getParticipantStatus' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("getParticipantStatus", "(Ljava/lang/String;)I", "")]
 		public int GetParticipantStatus (string p0)
 		{
@@ -253,6 +278,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomEntity']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, global::Android.OS.ParcelableWriteFlags p1)
 		{

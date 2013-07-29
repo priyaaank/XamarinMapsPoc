@@ -4,12 +4,15 @@ using Android.Runtime;
 
 namespace Android.Gms.Common {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient.ConnectionCallbacks']"
 	[Register ("com/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks", "", "Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacksInvoker")]
 	public partial interface IGooglePlayServicesClientConnectionCallbacks : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient.ConnectionCallbacks']/method[@name='onConnected' and count(parameter)=1 and parameter[1][@type='android.os.Bundle']]"
 		[Register ("onConnected", "(Landroid/os/Bundle;)V", "GetOnConnected_Landroid_os_Bundle_Handler:Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacksInvoker, GooglePlayServices")]
 		void OnConnected (global::Android.OS.Bundle p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient.ConnectionCallbacks']/method[@name='onDisconnected' and count(parameter)=0]"
 		[Register ("onDisconnected", "()V", "GetOnDisconnectedHandler:Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacksInvoker, GooglePlayServices")]
 		void OnDisconnected ();
 
@@ -109,9 +112,11 @@ namespace Android.Gms.Common {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient.OnConnectionFailedListener']"
 	[Register ("com/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener", "", "Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListenerInvoker")]
 	public partial interface IGooglePlayServicesClientOnConnectionFailedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient.OnConnectionFailedListener']/method[@name='onConnectionFailed' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.ConnectionResult']]"
 		[Register ("onConnectionFailed", "(Lcom/google/android/gms/common/ConnectionResult;)V", "GetOnConnectionFailed_Lcom_google_android_gms_common_ConnectionResult_Handler:Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListenerInvoker, GooglePlayServices")]
 		void OnConnectionFailed (global::Android.Gms.Common.ConnectionResult p0);
 
@@ -216,8 +221,9 @@ namespace Android.Gms.Common {
 
 		public void OnConnectionFailed (global::Android.Gms.Common.ConnectionResult p0)
 		{
-			if (Handler != null)
-				Handler (sender, new GooglePlayServicesClientOnConnectionFailedEventArgs (p0));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new GooglePlayServicesClientOnConnectionFailedEventArgs (p0));
 		}
 
 		internal static bool __IsEmpty (IGooglePlayServicesClientOnConnectionFailedListenerImplementor value)
@@ -227,38 +233,49 @@ namespace Android.Gms.Common {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']"
 	[Register ("com/google/android/gms/common/GooglePlayServicesClient", "", "Android.Gms.Common.IGooglePlayServicesClientInvoker")]
 	public partial interface IGooglePlayServicesClient : IJavaObject {
 
 		bool IsConnected {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='isConnected' and count(parameter)=0]"
 			[Register ("isConnected", "()Z", "GetIsConnectedHandler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsConnecting {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='isConnecting' and count(parameter)=0]"
 			[Register ("isConnecting", "()Z", "GetIsConnectingHandler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='connect' and count(parameter)=0]"
 		[Register ("connect", "()V", "GetConnectHandler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		void Connect ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='disconnect' and count(parameter)=0]"
 		[Register ("disconnect", "()V", "GetDisconnectHandler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		void Disconnect ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='isConnectionCallbacksRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("isConnectionCallbacksRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)Z", "GetIsConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		bool IsConnectionCallbacksRegistered (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='isConnectionFailedListenerRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("isConnectionFailedListenerRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)Z", "GetIsConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		bool IsConnectionFailedListenerRegistered (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='registerConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("registerConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "GetRegisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		void RegisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='registerConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("registerConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "GetRegisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		void RegisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='unregisterConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("unregisterConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "GetUnregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		void UnregisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/interface[@name='GooglePlayServicesClient']/method[@name='unregisterConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("unregisterConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "GetUnregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler:Android.Gms.Common.IGooglePlayServicesClientInvoker, GooglePlayServices")]
 		void UnregisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0);
 
@@ -416,7 +433,7 @@ namespace Android.Gms.Common {
 		static bool n_IsConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Common.IGooglePlayServicesClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			bool __ret = __this.IsConnectionCallbacksRegistered (p0);
 			return __ret;
 		}
@@ -443,7 +460,7 @@ namespace Android.Gms.Common {
 		static bool n_IsConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Common.IGooglePlayServicesClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			bool __ret = __this.IsConnectionFailedListenerRegistered (p0);
 			return __ret;
 		}
@@ -470,7 +487,7 @@ namespace Android.Gms.Common {
 		static void n_RegisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Common.IGooglePlayServicesClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RegisterConnectionCallbacks (p0);
 		}
 #pragma warning restore 0169
@@ -495,7 +512,7 @@ namespace Android.Gms.Common {
 		static void n_RegisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Common.IGooglePlayServicesClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RegisterConnectionFailedListener (p0);
 		}
 #pragma warning restore 0169
@@ -520,7 +537,7 @@ namespace Android.Gms.Common {
 		static void n_UnregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Common.IGooglePlayServicesClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.UnregisterConnectionCallbacks (p0);
 		}
 #pragma warning restore 0169
@@ -545,7 +562,7 @@ namespace Android.Gms.Common {
 		static void n_UnregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Common.IGooglePlayServicesClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.UnregisterConnectionFailedListener (p0);
 		}
 #pragma warning restore 0169

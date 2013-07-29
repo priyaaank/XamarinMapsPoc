@@ -1,4 +1,3 @@
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "android", Managed="Android")]
 [assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.android.gms.appstate", Managed="Android.Gms.AppStates")]
 [assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.android.gms.auth", Managed="Android.Gms.Auth")]
 [assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.android.gms.common", Managed="Android.Gms.Common")]

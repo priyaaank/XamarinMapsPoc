@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/PolygonOptions", DoNotGenerateAcw=true)]
 	public sealed partial class PolygonOptions : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps.Model {
 		internal PolygonOptions (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/constructor[@name='PolygonOptions' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public PolygonOptions () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -43,6 +45,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getFillColor;
 		public int FillColor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='getFillColor' and count(parameter)=0]"
 			[Register ("getFillColor", "()I", "GetGetFillColorHandler")]
 			get {
 				if (id_getFillColor == IntPtr.Zero)
@@ -53,6 +56,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getHoles;
 		public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Android.Gms.Maps.Model.LatLng>> Holes {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='getHoles' and count(parameter)=0]"
 			[Register ("getHoles", "()Ljava/util/List;", "GetGetHolesHandler")]
 			get {
 				if (id_getHoles == IntPtr.Zero)
@@ -63,6 +67,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_isGeodesic;
 		public bool IsGeodesic {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='isGeodesic' and count(parameter)=0]"
 			[Register ("isGeodesic", "()Z", "GetIsGeodesicHandler")]
 			get {
 				if (id_isGeodesic == IntPtr.Zero)
@@ -73,6 +78,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_isVisible;
 		public bool IsVisible {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='isVisible' and count(parameter)=0]"
 			[Register ("isVisible", "()Z", "GetIsVisibleHandler")]
 			get {
 				if (id_isVisible == IntPtr.Zero)
@@ -83,6 +89,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getPoints;
 		public global::System.Collections.Generic.IList<global::Android.Gms.Maps.Model.LatLng> Points {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='getPoints' and count(parameter)=0]"
 			[Register ("getPoints", "()Ljava/util/List;", "GetGetPointsHandler")]
 			get {
 				if (id_getPoints == IntPtr.Zero)
@@ -93,6 +100,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getStrokeColor;
 		public int StrokeColor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='getStrokeColor' and count(parameter)=0]"
 			[Register ("getStrokeColor", "()I", "GetGetStrokeColorHandler")]
 			get {
 				if (id_getStrokeColor == IntPtr.Zero)
@@ -103,6 +111,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getStrokeWidth;
 		public float StrokeWidth {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='getStrokeWidth' and count(parameter)=0]"
 			[Register ("getStrokeWidth", "()F", "GetGetStrokeWidthHandler")]
 			get {
 				if (id_getStrokeWidth == IntPtr.Zero)
@@ -113,6 +122,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getZIndex;
 		public float ZIndex {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='getZIndex' and count(parameter)=0]"
 			[Register ("getZIndex", "()F", "GetGetZIndexHandler")]
 			get {
 				if (id_getZIndex == IntPtr.Zero)
@@ -121,16 +131,8 @@ namespace Android.Gms.Maps.Model {
 			}
 		}
 
-		static IntPtr id_aZ;
-		[Register ("aZ", "()Ljava/util/List;", "")]
-		public global::System.Collections.IList AZ ()
-		{
-			if (id_aZ == IntPtr.Zero)
-				id_aZ = JNIEnv.GetMethodID (class_ref, "aZ", "()Ljava/util/List;");
-			return global::Android.Runtime.JavaList.FromJniHandle (JNIEnv.CallObjectMethod  (Handle, id_aZ), JniHandleOwnership.TransferLocalRef);
-		}
-
 		static IntPtr id_add_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='add' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register ("add", "(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions Add (global::Android.Gms.Maps.Model.LatLng p0)
 		{
@@ -141,6 +143,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_add_arrayLcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='add' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng[]']]"
 		[Register ("add", "([Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions Add (params global:: Android.Gms.Maps.Model.LatLng[] p0)
 		{
@@ -156,6 +159,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_addAll_Ljava_lang_Iterable_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='addAll' and count(parameter)=1 and parameter[1][@type='java.lang.Iterable']]"
 		[Register ("addAll", "(Ljava/lang/Iterable;)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions AddAll (global::Java.Lang.IIterable p0)
 		{
@@ -166,6 +170,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_addHole_Ljava_lang_Iterable_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='addHole' and count(parameter)=1 and parameter[1][@type='java.lang.Iterable']]"
 		[Register ("addHole", "(Ljava/lang/Iterable;)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions AddHole (global::Java.Lang.IIterable p0)
 		{
@@ -175,7 +180,18 @@ namespace Android.Gms.Maps.Model {
 			return __ret;
 		}
 
+		static IntPtr id_ba;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='ba' and count(parameter)=0]"
+		[Register ("ba", "()Ljava/util/List;", "")]
+		public global::System.Collections.IList Ba ()
+		{
+			if (id_ba == IntPtr.Zero)
+				id_ba = JNIEnv.GetMethodID (class_ref, "ba", "()Ljava/util/List;");
+			return global::Android.Runtime.JavaList.FromJniHandle (JNIEnv.CallObjectMethod  (Handle, id_ba), JniHandleOwnership.TransferLocalRef);
+		}
+
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -185,6 +201,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_fillColor_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='fillColor' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("fillColor", "(I)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions InvokeFillColor (int p0)
 		{
@@ -194,6 +211,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_geodesic_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='geodesic' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("geodesic", "(Z)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions Geodesic (bool p0)
 		{
@@ -203,6 +221,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_strokeColor_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='strokeColor' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("strokeColor", "(I)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions InvokeStrokeColor (int p0)
 		{
@@ -212,6 +231,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_strokeWidth_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='strokeWidth' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("strokeWidth", "(F)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions InvokeStrokeWidth (float p0)
 		{
@@ -221,6 +241,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -230,6 +251,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_visible_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='visible' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("visible", "(Z)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions Visible (bool p0)
 		{
@@ -239,6 +261,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{
@@ -248,6 +271,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_zIndex_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolygonOptions']/method[@name='zIndex' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("zIndex", "(F)Lcom/google/android/gms/maps/model/PolygonOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolygonOptions InvokeZIndex (float p0)
 		{

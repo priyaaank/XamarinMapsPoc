@@ -4,37 +4,46 @@ using Android.Runtime;
 
 namespace Android.Gms.Games {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']"
 	[Register ("com/google/android/gms/games/Player", "", "Android.Gms.Games.IPlayerInvoker")]
 	public partial interface IPlayer : global::Android.OS.IParcelable, global::Android.Gms.Common.Data.IFreezable {
 
 		string DisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='getDisplayName' and count(parameter)=0]"
 			[Register ("getDisplayName", "()Ljava/lang/String;", "GetGetDisplayNameHandler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasHiResImage {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='hasHiResImage' and count(parameter)=0]"
 			[Register ("hasHiResImage", "()Z", "GetHasHiResImageHandler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasIconImage {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='hasIconImage' and count(parameter)=0]"
 			[Register ("hasIconImage", "()Z", "GetHasIconImageHandler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri HiResImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='getHiResImageUri' and count(parameter)=0]"
 			[Register ("getHiResImageUri", "()Landroid/net/Uri;", "GetGetHiResImageUriHandler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri IconImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='getIconImageUri' and count(parameter)=0]"
 			[Register ("getIconImageUri", "()Landroid/net/Uri;", "GetGetIconImageUriHandler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")] get;
 		}
 
 		string PlayerId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='getPlayerId' and count(parameter)=0]"
 			[Register ("getPlayerId", "()Ljava/lang/String;", "GetGetPlayerIdHandler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")] get;
 		}
 
 		long RetrievedTimestamp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='getRetrievedTimestamp' and count(parameter)=0]"
 			[Register ("getRetrievedTimestamp", "()J", "GetGetRetrievedTimestampHandler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Player']/method[@name='getDisplayName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDisplayName", "(Landroid/database/CharArrayBuffer;)V", "GetGetDisplayName_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.IPlayerInvoker, GooglePlayServices")]
 		void GetDisplayName (global::Android.Database.CharArrayBuffer p0);
 

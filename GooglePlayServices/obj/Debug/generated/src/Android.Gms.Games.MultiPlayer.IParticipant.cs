@@ -11,23 +11,27 @@ namespace Android.Gms.Games.MultiPlayer {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_DECLINED']"
 		[Register ("STATUS_DECLINED")]
 		public const int StatusDeclined = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_INVITED']"
 		[Register ("STATUS_INVITED")]
 		public const int StatusInvited = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_JOINED']"
 		[Register ("STATUS_JOINED")]
 		public const int StatusJoined = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/field[@name='STATUS_LEFT']"
 		[Register ("STATUS_LEFT")]
 		public const int StatusLeft = (int) 4;
 
 		// The following are fields from: android.os.Parcelable
 
-		// The following are fields from: System.IDisposable
-
 		// The following are fields from: Android.Runtime.IJavaObject
+
+		// The following are fields from: System.IDisposable
 
 		// The following are fields from: com.google.android.gms.common.data.Freezable
 	}
@@ -40,41 +44,51 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']"
 	[Register ("com/google/android/gms/games/multiplayer/Participant", "", "Android.Gms.Games.MultiPlayer.IParticipantInvoker")]
 	public partial interface IParticipant : global::Android.OS.IParcelable, global::Android.Gms.Common.Data.IFreezable {
 
 		string ClientAddress {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getClientAddress' and count(parameter)=0]"
 			[Register ("getClientAddress", "()Ljava/lang/String;", "GetGetClientAddressHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
 		string DisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getDisplayName' and count(parameter)=0]"
 			[Register ("getDisplayName", "()Ljava/lang/String;", "GetGetDisplayNameHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri HiResImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getHiResImageUri' and count(parameter)=0]"
 			[Register ("getHiResImageUri", "()Landroid/net/Uri;", "GetGetHiResImageUriHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri IconImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getIconImageUri' and count(parameter)=0]"
 			[Register ("getIconImageUri", "()Landroid/net/Uri;", "GetGetIconImageUriHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsConnectedToRoom {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='isConnectedToRoom' and count(parameter)=0]"
 			[Register ("isConnectedToRoom", "()Z", "GetIsConnectedToRoomHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
 		string ParticipantId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getParticipantId' and count(parameter)=0]"
 			[Register ("getParticipantId", "()Ljava/lang/String;", "GetGetParticipantIdHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Games.IPlayer Player {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getPlayer' and count(parameter)=0]"
 			[Register ("getPlayer", "()Lcom/google/android/gms/games/Player;", "GetGetPlayerHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
 		int Status {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getStatus' and count(parameter)=0]"
 			[Register ("getStatus", "()I", "GetGetStatusHandler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participant']/method[@name='getDisplayName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDisplayName", "(Landroid/database/CharArrayBuffer;)V", "GetGetDisplayName_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.MultiPlayer.IParticipantInvoker, GooglePlayServices")]
 		void GetDisplayName (global::Android.Database.CharArrayBuffer p0);
 

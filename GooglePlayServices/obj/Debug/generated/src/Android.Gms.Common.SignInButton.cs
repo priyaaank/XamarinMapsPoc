@@ -4,22 +4,28 @@ using Android.Runtime;
 
 namespace Android.Gms.Common {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']"
 	[global::Android.Runtime.Register ("com/google/android/gms/common/SignInButton", DoNotGenerateAcw=true)]
 	public sealed partial class SignInButton : global::Android.Widget.FrameLayout, global::Android.Views.View.IOnClickListener {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/field[@name='COLOR_DARK']"
 		[Register ("COLOR_DARK")]
 		public const int ColorDark = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/field[@name='COLOR_LIGHT']"
 		[Register ("COLOR_LIGHT")]
 		public const int ColorLight = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/field[@name='SIZE_ICON_ONLY']"
 		[Register ("SIZE_ICON_ONLY")]
 		public const int SizeIconOnly = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/field[@name='SIZE_STANDARD']"
 		[Register ("SIZE_STANDARD")]
 		public const int SizeStandard = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/field[@name='SIZE_WIDE']"
 		[Register ("SIZE_WIDE")]
 		public const int SizeWide = (int) 1;
 		internal static IntPtr java_class_handle;
@@ -40,6 +46,7 @@ namespace Android.Gms.Common {
 		internal SignInButton (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Landroid_content_Context_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/constructor[@name='SignInButton' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register (".ctor", "(Landroid/content/Context;)V", "")]
 		public SignInButton (global::Android.Content.Context p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -57,6 +64,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_ctor_Landroid_content_Context_Landroid_util_AttributeSet_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/constructor[@name='SignInButton' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]"
 		[Register (".ctor", "(Landroid/content/Context;Landroid/util/AttributeSet;)V", "")]
 		public SignInButton (global::Android.Content.Context p0, global::Android.Util.IAttributeSet p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -74,6 +82,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_ctor_Landroid_content_Context_Landroid_util_AttributeSet_I;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/constructor[@name='SignInButton' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]"
 		[Register (".ctor", "(Landroid/content/Context;Landroid/util/AttributeSet;I)V", "")]
 		public SignInButton (global::Android.Content.Context p0, global::Android.Util.IAttributeSet p1, int p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -91,6 +100,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_onClick_Landroid_view_View_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/method[@name='onClick' and count(parameter)=1 and parameter[1][@type='android.view.View']]"
 		[Register ("onClick", "(Landroid/view/View;)V", "")]
 		public void OnClick (global::Android.Views.View p0)
 		{
@@ -100,6 +110,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_setColorScheme_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/method[@name='setColorScheme' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setColorScheme", "(I)V", "")]
 		public void SetColorScheme (int p0)
 		{
@@ -109,6 +120,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_setSize_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/method[@name='setSize' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setSize", "(I)V", "")]
 		public void SetSize (int p0)
 		{
@@ -118,6 +130,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_setStyle_II;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='SignInButton']/method[@name='setStyle' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]"
 		[Register ("setStyle", "(II)V", "")]
 		public void SetStyle (int p0, int p1)
 		{

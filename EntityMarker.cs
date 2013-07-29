@@ -14,20 +14,20 @@ using System.Collections;
 
 namespace Mappy
 {
-	class EntityMarker
+	public class EntityMarker
 	{
-		public enum IconType {Small, Medium, Large, None};
+		public enum IconType {Micro, Small, Medium, None};
 
 		private static readonly Dictionary<EntityMarker.IconType, int> AtmIcons = new Dictionary<EntityMarker.IconType, int>{
+			{ EntityMarker.IconType.Micro, Resource.Drawable.atm_micro },
 			{ EntityMarker.IconType.Small, Resource.Drawable.atm_small },
-			{ EntityMarker.IconType.Medium, Resource.Drawable.atm_medium },
-			{ EntityMarker.IconType.Large, Resource.Drawable.atm }
+			{ EntityMarker.IconType.Medium, Resource.Drawable.atm_medium }
 		};
 
 		private static readonly Dictionary<EntityMarker.IconType, int> BranchIcons = new Dictionary<EntityMarker.IconType, int>{
+			{ EntityMarker.IconType.Micro, Resource.Drawable.branch_micro },
 			{ EntityMarker.IconType.Small, Resource.Drawable.branch_small },
-			{ EntityMarker.IconType.Medium, Resource.Drawable.branch_medium },
-			{ EntityMarker.IconType.Large, Resource.Drawable.branch }
+			{ EntityMarker.IconType.Medium, Resource.Drawable.branch_medium }
 		};
 
 		private MarkerOptions MapMarker;

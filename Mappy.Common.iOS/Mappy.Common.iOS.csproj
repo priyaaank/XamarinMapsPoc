@@ -35,9 +35,45 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="System.Json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="..\Mappy.Common\Models\Atm.cs">
+      <Link>Models\Atm.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Models\BankEntity.cs">
+      <Link>Models\BankEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Models\Branch.cs">
+      <Link>Models\Branch.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\BankEntitiesService.cs">
+      <Link>Services\BankEntitiesService.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\EntityFilter.cs">
+      <Link>Services\EntityFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\ExcludeOwnAtmsFilter.cs">
+      <Link>Services\ExcludeOwnAtmsFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\ExcludeOwnBranchesFilter.cs">
+      <Link>Services\ExcludeOwnBranchesFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\ExcludePartnerEstablishmentsFilter.cs">
+      <Link>Services\ExcludePartnerEstablishmentsFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\Options.cs">
+      <Link>Services\Options.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
+      <Link>ViewModels\MapViewModel.cs</Link>
+    </Compile>
+  </ItemGroup>
 </Project>

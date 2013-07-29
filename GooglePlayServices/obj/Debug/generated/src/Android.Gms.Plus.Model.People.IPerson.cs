@@ -4,22 +4,27 @@ using Android.Runtime;
 
 namespace Android.Gms.Plus.Model.People {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.AgeRange']"
 	[Register ("com/google/android/gms/plus/model/people/Person$AgeRange", "", "Android.Gms.Plus.Model.People.IPersonAgeRangeInvoker")]
 	public partial interface IPersonAgeRange : global::Android.Gms.Common.Data.IFreezable {
 
 		bool HasMax {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.AgeRange']/method[@name='hasMax' and count(parameter)=0]"
 			[Register ("hasMax", "()Z", "GetHasMaxHandler:Android.Gms.Plus.Model.People.IPersonAgeRangeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasMin {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.AgeRange']/method[@name='hasMin' and count(parameter)=0]"
 			[Register ("hasMin", "()Z", "GetHasMinHandler:Android.Gms.Plus.Model.People.IPersonAgeRangeInvoker, GooglePlayServices")] get;
 		}
 
 		int Max {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.AgeRange']/method[@name='getMax' and count(parameter)=0]"
 			[Register ("getMax", "()I", "GetGetMaxHandler:Android.Gms.Plus.Model.People.IPersonAgeRangeInvoker, GooglePlayServices")] get;
 		}
 
 		int Min {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.AgeRange']/method[@name='getMin' and count(parameter)=0]"
 			[Register ("getMin", "()I", "GetGetMinHandler:Android.Gms.Plus.Model.People.IPersonAgeRangeInvoker, GooglePlayServices")] get;
 		}
 
@@ -201,6 +206,7 @@ namespace Android.Gms.Plus.Model.People {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Collection']/field[@name='VISIBLE']"
 		[Register ("VISIBLE")]
 		public const int Visible = (int) 0;
 	}
@@ -214,22 +220,27 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverInfo']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Cover$CoverInfo", "", "Android.Gms.Plus.Model.People.IPersonCoverCoverInfoInvoker")]
 	public partial interface IPersonCoverCoverInfo : global::Android.Gms.Common.Data.IFreezable {
 
 		bool HasLeftImageOffset {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverInfo']/method[@name='hasLeftImageOffset' and count(parameter)=0]"
 			[Register ("hasLeftImageOffset", "()Z", "GetHasLeftImageOffsetHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverInfoInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasTopImageOffset {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverInfo']/method[@name='hasTopImageOffset' and count(parameter)=0]"
 			[Register ("hasTopImageOffset", "()Z", "GetHasTopImageOffsetHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverInfoInvoker, GooglePlayServices")] get;
 		}
 
 		int LeftImageOffset {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverInfo']/method[@name='getLeftImageOffset' and count(parameter)=0]"
 			[Register ("getLeftImageOffset", "()I", "GetGetLeftImageOffsetHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverInfoInvoker, GooglePlayServices")] get;
 		}
 
 		int TopImageOffset {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverInfo']/method[@name='getTopImageOffset' and count(parameter)=0]"
 			[Register ("getTopImageOffset", "()I", "GetGetTopImageOffsetHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverInfoInvoker, GooglePlayServices")] get;
 		}
 
@@ -404,30 +415,37 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverPhoto']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Cover$CoverPhoto", "", "Android.Gms.Plus.Model.People.IPersonCoverCoverPhotoInvoker")]
 	public partial interface IPersonCoverCoverPhoto : global::Android.Gms.Common.Data.IFreezable {
 
 		bool HasHeight {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverPhoto']/method[@name='hasHeight' and count(parameter)=0]"
 			[Register ("hasHeight", "()Z", "GetHasHeightHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverPhotoInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverPhoto']/method[@name='hasUrl' and count(parameter)=0]"
 			[Register ("hasUrl", "()Z", "GetHasUrlHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverPhotoInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasWidth {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverPhoto']/method[@name='hasWidth' and count(parameter)=0]"
 			[Register ("hasWidth", "()Z", "GetHasWidthHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverPhotoInvoker, GooglePlayServices")] get;
 		}
 
 		int Height {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverPhoto']/method[@name='getHeight' and count(parameter)=0]"
 			[Register ("getHeight", "()I", "GetGetHeightHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverPhotoInvoker, GooglePlayServices")] get;
 		}
 
 		string Url {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverPhoto']/method[@name='getUrl' and count(parameter)=0]"
 			[Register ("getUrl", "()Ljava/lang/String;", "GetGetUrlHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverPhotoInvoker, GooglePlayServices")] get;
 		}
 
 		int Width {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover.CoverPhoto']/method[@name='getWidth' and count(parameter)=0]"
 			[Register ("getWidth", "()I", "GetGetWidthHandler:Android.Gms.Plus.Model.People.IPersonCoverCoverPhotoInvoker, GooglePlayServices")] get;
 		}
 
@@ -652,10 +670,12 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Cover.Layout']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/Person$Cover$Layout", DoNotGenerateAcw=true)]
 	public sealed partial class PersonCoverLayout : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Cover.Layout']/field[@name='BANNER']"
 		[Register ("BANNER")]
 		public const int Banner = (int) 0;
 		internal static IntPtr java_class_handle;
@@ -677,30 +697,37 @@ namespace Android.Gms.Plus.Model.People {
 
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Cover", "", "Android.Gms.Plus.Model.People.IPersonCoverInvoker")]
 	public partial interface IPersonCover : global::Android.Gms.Common.Data.IFreezable {
 
 		global::Android.Gms.Plus.Model.People.IPersonCoverCoverInfo CoverInfo {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover']/method[@name='getCoverInfo' and count(parameter)=0]"
 			[Register ("getCoverInfo", "()Lcom/google/android/gms/plus/model/people/Person$Cover$CoverInfo;", "GetGetCoverInfoHandler:Android.Gms.Plus.Model.People.IPersonCoverInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.People.IPersonCoverCoverPhoto CoverPhoto {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover']/method[@name='getCoverPhoto' and count(parameter)=0]"
 			[Register ("getCoverPhoto", "()Lcom/google/android/gms/plus/model/people/Person$Cover$CoverPhoto;", "GetGetCoverPhotoHandler:Android.Gms.Plus.Model.People.IPersonCoverInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasCoverInfo {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover']/method[@name='hasCoverInfo' and count(parameter)=0]"
 			[Register ("hasCoverInfo", "()Z", "GetHasCoverInfoHandler:Android.Gms.Plus.Model.People.IPersonCoverInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasCoverPhoto {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover']/method[@name='hasCoverPhoto' and count(parameter)=0]"
 			[Register ("hasCoverPhoto", "()Z", "GetHasCoverPhotoHandler:Android.Gms.Plus.Model.People.IPersonCoverInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasLayout {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover']/method[@name='hasLayout' and count(parameter)=0]"
 			[Register ("hasLayout", "()Z", "GetHasLayoutHandler:Android.Gms.Plus.Model.People.IPersonCoverInvoker, GooglePlayServices")] get;
 		}
 
 		int Layout {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Cover']/method[@name='getLayout' and count(parameter)=0]"
 			[Register ("getLayout", "()I", "GetGetLayoutHandler:Android.Gms.Plus.Model.People.IPersonCoverInvoker, GooglePlayServices")] get;
 		}
 
@@ -925,16 +952,20 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Emails.Type']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/Person$Emails$Type", DoNotGenerateAcw=true)]
 	public sealed partial class PersonEmailsType : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Emails.Type']/field[@name='HOME']"
 		[Register ("HOME")]
 		public const int Home = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Emails.Type']/field[@name='OTHER']"
 		[Register ("OTHER")]
 		public const int Other = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Emails.Type']/field[@name='WORK']"
 		[Register ("WORK")]
 		public const int Work = (int) 1;
 		internal static IntPtr java_class_handle;
@@ -956,30 +987,37 @@ namespace Android.Gms.Plus.Model.People {
 
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Emails']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Emails", "", "Android.Gms.Plus.Model.People.IPersonEmailsInvoker")]
 	public partial interface IPersonEmails : global::Android.Gms.Common.Data.IFreezable {
 
 		bool HasPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Emails']/method[@name='hasPrimary' and count(parameter)=0]"
 			[Register ("hasPrimary", "()Z", "GetHasPrimaryHandler:Android.Gms.Plus.Model.People.IPersonEmailsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Emails']/method[@name='hasType' and count(parameter)=0]"
 			[Register ("hasType", "()Z", "GetHasTypeHandler:Android.Gms.Plus.Model.People.IPersonEmailsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasValue {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Emails']/method[@name='hasValue' and count(parameter)=0]"
 			[Register ("hasValue", "()Z", "GetHasValueHandler:Android.Gms.Plus.Model.People.IPersonEmailsInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Emails']/method[@name='isPrimary' and count(parameter)=0]"
 			[Register ("isPrimary", "()Z", "GetIsPrimaryHandler:Android.Gms.Plus.Model.People.IPersonEmailsInvoker, GooglePlayServices")] get;
 		}
 
 		int Type {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Emails']/method[@name='getType' and count(parameter)=0]"
 			[Register ("getType", "()I", "GetGetTypeHandler:Android.Gms.Plus.Model.People.IPersonEmailsInvoker, GooglePlayServices")] get;
 		}
 
 		string Value {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Emails']/method[@name='getValue' and count(parameter)=0]"
 			[Register ("getValue", "()Ljava/lang/String;", "GetGetValueHandler:Android.Gms.Plus.Model.People.IPersonEmailsInvoker, GooglePlayServices")] get;
 		}
 
@@ -1204,16 +1242,20 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Gender']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/Person$Gender", DoNotGenerateAcw=true)]
 	public sealed partial class PersonGender : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Gender']/field[@name='FEMALE']"
 		[Register ("FEMALE")]
 		public const int Female = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Gender']/field[@name='MALE']"
 		[Register ("MALE")]
 		public const int Male = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Gender']/field[@name='OTHER']"
 		[Register ("OTHER")]
 		public const int Other = (int) 2;
 		internal static IntPtr java_class_handle;
@@ -1235,14 +1277,17 @@ namespace Android.Gms.Plus.Model.People {
 
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Image']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Image", "", "Android.Gms.Plus.Model.People.IPersonImageInvoker")]
 	public partial interface IPersonImage : global::Android.Gms.Common.Data.IFreezable {
 
 		bool HasUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Image']/method[@name='hasUrl' and count(parameter)=0]"
 			[Register ("hasUrl", "()Z", "GetHasUrlHandler:Android.Gms.Plus.Model.People.IPersonImageInvoker, GooglePlayServices")] get;
 		}
 
 		string Url {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Image']/method[@name='getUrl' and count(parameter)=0]"
 			[Register ("getUrl", "()Ljava/lang/String;", "GetGetUrlHandler:Android.Gms.Plus.Model.People.IPersonImageInvoker, GooglePlayServices")] get;
 		}
 
@@ -1367,54 +1412,67 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Name", "", "Android.Gms.Plus.Model.People.IPersonNameInvoker")]
 	public partial interface IPersonName : global::Android.Gms.Common.Data.IFreezable {
 
 		string FamilyName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='getFamilyName' and count(parameter)=0]"
 			[Register ("getFamilyName", "()Ljava/lang/String;", "GetGetFamilyNameHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		string Formatted {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='getFormatted' and count(parameter)=0]"
 			[Register ("getFormatted", "()Ljava/lang/String;", "GetGetFormattedHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		string GivenName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='getGivenName' and count(parameter)=0]"
 			[Register ("getGivenName", "()Ljava/lang/String;", "GetGetGivenNameHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasFamilyName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='hasFamilyName' and count(parameter)=0]"
 			[Register ("hasFamilyName", "()Z", "GetHasFamilyNameHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasFormatted {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='hasFormatted' and count(parameter)=0]"
 			[Register ("hasFormatted", "()Z", "GetHasFormattedHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasGivenName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='hasGivenName' and count(parameter)=0]"
 			[Register ("hasGivenName", "()Z", "GetHasGivenNameHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasHonorificPrefix {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='hasHonorificPrefix' and count(parameter)=0]"
 			[Register ("hasHonorificPrefix", "()Z", "GetHasHonorificPrefixHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasHonorificSuffix {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='hasHonorificSuffix' and count(parameter)=0]"
 			[Register ("hasHonorificSuffix", "()Z", "GetHasHonorificSuffixHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasMiddleName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='hasMiddleName' and count(parameter)=0]"
 			[Register ("hasMiddleName", "()Z", "GetHasMiddleNameHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		string HonorificPrefix {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='getHonorificPrefix' and count(parameter)=0]"
 			[Register ("getHonorificPrefix", "()Ljava/lang/String;", "GetGetHonorificPrefixHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		string HonorificSuffix {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='getHonorificSuffix' and count(parameter)=0]"
 			[Register ("getHonorificSuffix", "()Ljava/lang/String;", "GetGetHonorificSuffixHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
 		string MiddleName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Name']/method[@name='getMiddleName' and count(parameter)=0]"
 			[Register ("getMiddleName", "()Ljava/lang/String;", "GetGetMiddleNameHandler:Android.Gms.Plus.Model.People.IPersonNameInvoker, GooglePlayServices")] get;
 		}
 
@@ -1789,13 +1847,16 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.ObjectType']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/Person$ObjectType", DoNotGenerateAcw=true)]
 	public sealed partial class PersonObjectType : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.ObjectType']/field[@name='PAGE']"
 		[Register ("PAGE")]
 		public const int Page = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.ObjectType']/field[@name='PERSON']"
 		[Register ("PERSON")]
 		public const int Person = (int) 0;
 		internal static IntPtr java_class_handle;
@@ -1824,9 +1885,11 @@ namespace Android.Gms.Plus.Model.People {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.OrderBy']/field[@name='ALPHABETICAL']"
 		[Register ("ALPHABETICAL")]
 		public const int Alphabetical = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.OrderBy']/field[@name='BEST']"
 		[Register ("BEST")]
 		public const int Best = (int) 1;
 	}
@@ -1840,13 +1903,16 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Organizations.Type']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/Person$Organizations$Type", DoNotGenerateAcw=true)]
 	public sealed partial class PersonOrganizationsType : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Organizations.Type']/field[@name='SCHOOL']"
 		[Register ("SCHOOL")]
 		public const int School = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Organizations.Type']/field[@name='WORK']"
 		[Register ("WORK")]
 		public const int Work = (int) 0;
 		internal static IntPtr java_class_handle;
@@ -1868,78 +1934,97 @@ namespace Android.Gms.Plus.Model.People {
 
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Organizations", "", "Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker")]
 	public partial interface IPersonOrganizations : global::Android.Gms.Common.Data.IFreezable {
 
 		string Department {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getDepartment' and count(parameter)=0]"
 			[Register ("getDepartment", "()Ljava/lang/String;", "GetGetDepartmentHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		string Description {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getDescription' and count(parameter)=0]"
 			[Register ("getDescription", "()Ljava/lang/String;", "GetGetDescriptionHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		string EndDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getEndDate' and count(parameter)=0]"
 			[Register ("getEndDate", "()Ljava/lang/String;", "GetGetEndDateHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDepartment {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasDepartment' and count(parameter)=0]"
 			[Register ("hasDepartment", "()Z", "GetHasDepartmentHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDescription {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasDescription' and count(parameter)=0]"
 			[Register ("hasDescription", "()Z", "GetHasDescriptionHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasEndDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasEndDate' and count(parameter)=0]"
 			[Register ("hasEndDate", "()Z", "GetHasEndDateHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasLocation {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasLocation' and count(parameter)=0]"
 			[Register ("hasLocation", "()Z", "GetHasLocationHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasName' and count(parameter)=0]"
 			[Register ("hasName", "()Z", "GetHasNameHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasPrimary' and count(parameter)=0]"
 			[Register ("hasPrimary", "()Z", "GetHasPrimaryHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasStartDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasStartDate' and count(parameter)=0]"
 			[Register ("hasStartDate", "()Z", "GetHasStartDateHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasTitle {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasTitle' and count(parameter)=0]"
 			[Register ("hasTitle", "()Z", "GetHasTitleHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='hasType' and count(parameter)=0]"
 			[Register ("hasType", "()Z", "GetHasTypeHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='isPrimary' and count(parameter)=0]"
 			[Register ("isPrimary", "()Z", "GetIsPrimaryHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		string Location {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getLocation' and count(parameter)=0]"
 			[Register ("getLocation", "()Ljava/lang/String;", "GetGetLocationHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		string Name {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getName' and count(parameter)=0]"
 			[Register ("getName", "()Ljava/lang/String;", "GetGetNameHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		string StartDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getStartDate' and count(parameter)=0]"
 			[Register ("getStartDate", "()Ljava/lang/String;", "GetGetStartDateHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		string Title {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getTitle' and count(parameter)=0]"
 			[Register ("getTitle", "()Ljava/lang/String;", "GetGetTitleHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
 		int Type {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Organizations']/method[@name='getType' and count(parameter)=0]"
 			[Register ("getType", "()I", "GetGetTypeHandler:Android.Gms.Plus.Model.People.IPersonOrganizationsInvoker, GooglePlayServices")] get;
 		}
 
@@ -2464,22 +2549,27 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.PlacesLived']"
 	[Register ("com/google/android/gms/plus/model/people/Person$PlacesLived", "", "Android.Gms.Plus.Model.People.IPersonPlacesLivedInvoker")]
 	public partial interface IPersonPlacesLived : global::Android.Gms.Common.Data.IFreezable {
 
 		bool HasPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.PlacesLived']/method[@name='hasPrimary' and count(parameter)=0]"
 			[Register ("hasPrimary", "()Z", "GetHasPrimaryHandler:Android.Gms.Plus.Model.People.IPersonPlacesLivedInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasValue {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.PlacesLived']/method[@name='hasValue' and count(parameter)=0]"
 			[Register ("hasValue", "()Z", "GetHasValueHandler:Android.Gms.Plus.Model.People.IPersonPlacesLivedInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.PlacesLived']/method[@name='isPrimary' and count(parameter)=0]"
 			[Register ("isPrimary", "()Z", "GetIsPrimaryHandler:Android.Gms.Plus.Model.People.IPersonPlacesLivedInvoker, GooglePlayServices")] get;
 		}
 
 		string Value {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.PlacesLived']/method[@name='getValue' and count(parameter)=0]"
 			[Register ("getValue", "()Ljava/lang/String;", "GetGetValueHandler:Android.Gms.Plus.Model.People.IPersonPlacesLivedInvoker, GooglePlayServices")] get;
 		}
 
@@ -2654,34 +2744,44 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/Person$RelationshipStatus", DoNotGenerateAcw=true)]
 	public sealed partial class PersonRelationshipStatus : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='ENGAGED']"
 		[Register ("ENGAGED")]
 		public const int Engaged = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='IN_A_RELATIONSHIP']"
 		[Register ("IN_A_RELATIONSHIP")]
 		public const int InARelationship = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='IN_CIVIL_UNION']"
 		[Register ("IN_CIVIL_UNION")]
 		public const int InCivilUnion = (int) 8;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='IN_DOMESTIC_PARTNERSHIP']"
 		[Register ("IN_DOMESTIC_PARTNERSHIP")]
 		public const int InDomesticPartnership = (int) 7;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='ITS_COMPLICATED']"
 		[Register ("ITS_COMPLICATED")]
 		public const int ItsComplicated = (int) 4;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='MARRIED']"
 		[Register ("MARRIED")]
 		public const int Married = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='OPEN_RELATIONSHIP']"
 		[Register ("OPEN_RELATIONSHIP")]
 		public const int OpenRelationship = (int) 5;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='SINGLE']"
 		[Register ("SINGLE")]
 		public const int Single = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.RelationshipStatus']/field[@name='WIDOWED']"
 		[Register ("WIDOWED")]
 		public const int Widowed = (int) 6;
 		internal static IntPtr java_class_handle;
@@ -2703,22 +2803,28 @@ namespace Android.Gms.Plus.Model.People {
 
 	}
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Urls.Type']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/Person$Urls$Type", DoNotGenerateAcw=true)]
 	public sealed partial class PersonUrlsType : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Urls.Type']/field[@name='BLOG']"
 		[Register ("BLOG")]
 		public const int Blog = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Urls.Type']/field[@name='HOME']"
 		[Register ("HOME")]
 		public const int Home = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Urls.Type']/field[@name='OTHER']"
 		[Register ("OTHER")]
 		public const int Other = (int) 4;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Urls.Type']/field[@name='PROFILE']"
 		[Register ("PROFILE")]
 		public const int Profile = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='Person.Urls.Type']/field[@name='WORK']"
 		[Register ("WORK")]
 		public const int Work = (int) 1;
 		internal static IntPtr java_class_handle;
@@ -2740,30 +2846,37 @@ namespace Android.Gms.Plus.Model.People {
 
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Urls']"
 	[Register ("com/google/android/gms/plus/model/people/Person$Urls", "", "Android.Gms.Plus.Model.People.IPersonUrlsInvoker")]
 	public partial interface IPersonUrls : global::Android.Gms.Common.Data.IFreezable {
 
 		bool HasPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Urls']/method[@name='hasPrimary' and count(parameter)=0]"
 			[Register ("hasPrimary", "()Z", "GetHasPrimaryHandler:Android.Gms.Plus.Model.People.IPersonUrlsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Urls']/method[@name='hasType' and count(parameter)=0]"
 			[Register ("hasType", "()Z", "GetHasTypeHandler:Android.Gms.Plus.Model.People.IPersonUrlsInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasValue {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Urls']/method[@name='hasValue' and count(parameter)=0]"
 			[Register ("hasValue", "()Z", "GetHasValueHandler:Android.Gms.Plus.Model.People.IPersonUrlsInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsPrimary {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Urls']/method[@name='isPrimary' and count(parameter)=0]"
 			[Register ("isPrimary", "()Z", "GetIsPrimaryHandler:Android.Gms.Plus.Model.People.IPersonUrlsInvoker, GooglePlayServices")] get;
 		}
 
 		int Type {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Urls']/method[@name='getType' and count(parameter)=0]"
 			[Register ("getType", "()I", "GetGetTypeHandler:Android.Gms.Plus.Model.People.IPersonUrlsInvoker, GooglePlayServices")] get;
 		}
 
 		string Value {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person.Urls']/method[@name='getValue' and count(parameter)=0]"
 			[Register ("getValue", "()Ljava/lang/String;", "GetGetValueHandler:Android.Gms.Plus.Model.People.IPersonUrlsInvoker, GooglePlayServices")] get;
 		}
 
@@ -2988,214 +3101,267 @@ namespace Android.Gms.Plus.Model.People {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']"
 	[Register ("com/google/android/gms/plus/model/people/Person", "", "Android.Gms.Plus.Model.People.IPersonInvoker")]
 	public partial interface IPerson : global::Android.Gms.Common.Data.IFreezable {
 
 		string AboutMe {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getAboutMe' and count(parameter)=0]"
 			[Register ("getAboutMe", "()Ljava/lang/String;", "GetGetAboutMeHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.People.IPersonAgeRange AgeRange {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getAgeRange' and count(parameter)=0]"
 			[Register ("getAgeRange", "()Lcom/google/android/gms/plus/model/people/Person$AgeRange;", "GetGetAgeRangeHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string Birthday {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getBirthday' and count(parameter)=0]"
 			[Register ("getBirthday", "()Ljava/lang/String;", "GetGetBirthdayHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string BraggingRights {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getBraggingRights' and count(parameter)=0]"
 			[Register ("getBraggingRights", "()Ljava/lang/String;", "GetGetBraggingRightsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		int CircledByCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getCircledByCount' and count(parameter)=0]"
 			[Register ("getCircledByCount", "()I", "GetGetCircledByCountHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.People.IPersonCover Cover {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getCover' and count(parameter)=0]"
 			[Register ("getCover", "()Lcom/google/android/gms/plus/model/people/Person$Cover;", "GetGetCoverHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string CurrentLocation {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getCurrentLocation' and count(parameter)=0]"
 			[Register ("getCurrentLocation", "()Ljava/lang/String;", "GetGetCurrentLocationHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string DisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getDisplayName' and count(parameter)=0]"
 			[Register ("getDisplayName", "()Ljava/lang/String;", "GetGetDisplayNameHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.People.IPersonEmails> Emails {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getEmails' and count(parameter)=0]"
 			[Register ("getEmails", "()Ljava/util/List;", "GetGetEmailsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		int Gender {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getGender' and count(parameter)=0]"
 			[Register ("getGender", "()I", "GetGetGenderHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAboutMe {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasAboutMe' and count(parameter)=0]"
 			[Register ("hasAboutMe", "()Z", "GetHasAboutMeHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAgeRange {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasAgeRange' and count(parameter)=0]"
 			[Register ("hasAgeRange", "()Z", "GetHasAgeRangeHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasBirthday {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasBirthday' and count(parameter)=0]"
 			[Register ("hasBirthday", "()Z", "GetHasBirthdayHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasBraggingRights {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasBraggingRights' and count(parameter)=0]"
 			[Register ("hasBraggingRights", "()Z", "GetHasBraggingRightsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasCircledByCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasCircledByCount' and count(parameter)=0]"
 			[Register ("hasCircledByCount", "()Z", "GetHasCircledByCountHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasCover {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasCover' and count(parameter)=0]"
 			[Register ("hasCover", "()Z", "GetHasCoverHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasCurrentLocation {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasCurrentLocation' and count(parameter)=0]"
 			[Register ("hasCurrentLocation", "()Z", "GetHasCurrentLocationHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasDisplayName' and count(parameter)=0]"
 			[Register ("hasDisplayName", "()Z", "GetHasDisplayNameHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasEmails {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasEmails' and count(parameter)=0]"
 			[Register ("hasEmails", "()Z", "GetHasEmailsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasGender {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasGender' and count(parameter)=0]"
 			[Register ("hasGender", "()Z", "GetHasGenderHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasHasApp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasHasApp' and count(parameter)=0]"
 			[Register ("hasHasApp", "()Z", "GetHasHasAppHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasId' and count(parameter)=0]"
 			[Register ("hasId", "()Z", "GetHasIdHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasImage {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasImage' and count(parameter)=0]"
 			[Register ("hasImage", "()Z", "GetHasImageHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasIsPlusUser {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasIsPlusUser' and count(parameter)=0]"
 			[Register ("hasIsPlusUser", "()Z", "GetHasIsPlusUserHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasLanguage {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasLanguage' and count(parameter)=0]"
 			[Register ("hasLanguage", "()Z", "GetHasLanguageHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasName' and count(parameter)=0]"
 			[Register ("hasName", "()Z", "GetHasNameHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasNickname {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasNickname' and count(parameter)=0]"
 			[Register ("hasNickname", "()Z", "GetHasNicknameHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasObjectType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasObjectType' and count(parameter)=0]"
 			[Register ("hasObjectType", "()Z", "GetHasObjectTypeHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasOrganizations {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasOrganizations' and count(parameter)=0]"
 			[Register ("hasOrganizations", "()Z", "GetHasOrganizationsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPlacesLived {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasPlacesLived' and count(parameter)=0]"
 			[Register ("hasPlacesLived", "()Z", "GetHasPlacesLivedHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPlusOneCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasPlusOneCount' and count(parameter)=0]"
 			[Register ("hasPlusOneCount", "()Z", "GetHasPlusOneCountHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasRelationshipStatus {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasRelationshipStatus' and count(parameter)=0]"
 			[Register ("hasRelationshipStatus", "()Z", "GetHasRelationshipStatusHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasTagline {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasTagline' and count(parameter)=0]"
 			[Register ("hasTagline", "()Z", "GetHasTaglineHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasUrl' and count(parameter)=0]"
 			[Register ("hasUrl", "()Z", "GetHasUrlHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasUrls {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasUrls' and count(parameter)=0]"
 			[Register ("hasUrls", "()Z", "GetHasUrlsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasVerified {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='hasVerified' and count(parameter)=0]"
 			[Register ("hasVerified", "()Z", "GetHasVerifiedHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string Id {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getId' and count(parameter)=0]"
 			[Register ("getId", "()Ljava/lang/String;", "GetGetIdHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.People.IPersonImage Image {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getImage' and count(parameter)=0]"
 			[Register ("getImage", "()Lcom/google/android/gms/plus/model/people/Person$Image;", "GetGetImageHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsHasApp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='isHasApp' and count(parameter)=0]"
 			[Register ("isHasApp", "()Z", "GetIsHasAppHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsPlusUser {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='isPlusUser' and count(parameter)=0]"
 			[Register ("isPlusUser", "()Z", "GetIsPlusUserHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsVerified {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='isVerified' and count(parameter)=0]"
 			[Register ("isVerified", "()Z", "GetIsVerifiedHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string Language {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getLanguage' and count(parameter)=0]"
 			[Register ("getLanguage", "()Ljava/lang/String;", "GetGetLanguageHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.People.IPersonName Name {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getName' and count(parameter)=0]"
 			[Register ("getName", "()Lcom/google/android/gms/plus/model/people/Person$Name;", "GetGetNameHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string Nickname {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getNickname' and count(parameter)=0]"
 			[Register ("getNickname", "()Ljava/lang/String;", "GetGetNicknameHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		int ObjectType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getObjectType' and count(parameter)=0]"
 			[Register ("getObjectType", "()I", "GetGetObjectTypeHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.People.IPersonOrganizations> Organizations {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getOrganizations' and count(parameter)=0]"
 			[Register ("getOrganizations", "()Ljava/util/List;", "GetGetOrganizationsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.People.IPersonPlacesLived> PlacesLived {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getPlacesLived' and count(parameter)=0]"
 			[Register ("getPlacesLived", "()Ljava/util/List;", "GetGetPlacesLivedHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		int PlusOneCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getPlusOneCount' and count(parameter)=0]"
 			[Register ("getPlusOneCount", "()I", "GetGetPlusOneCountHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		int RelationshipStatus {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getRelationshipStatus' and count(parameter)=0]"
 			[Register ("getRelationshipStatus", "()I", "GetGetRelationshipStatusHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string Tagline {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getTagline' and count(parameter)=0]"
 			[Register ("getTagline", "()Ljava/lang/String;", "GetGetTaglineHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		string Url {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getUrl' and count(parameter)=0]"
 			[Register ("getUrl", "()Ljava/lang/String;", "GetGetUrlHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.People.IPersonUrls> Urls {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/interface[@name='Person']/method[@name='getUrls' and count(parameter)=0]"
 			[Register ("getUrls", "()Ljava/util/List;", "GetGetUrlsHandler:Android.Gms.Plus.Model.People.IPersonInvoker, GooglePlayServices")] get;
 		}
 

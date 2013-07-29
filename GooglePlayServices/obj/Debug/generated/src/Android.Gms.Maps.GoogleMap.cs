@@ -4,30 +4,39 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/GoogleMap", DoNotGenerateAcw=true)]
 	public sealed partial class GoogleMap : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/field[@name='MAP_TYPE_HYBRID']"
 		[Register ("MAP_TYPE_HYBRID")]
 		public const int MapTypeHybrid = (int) 4;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/field[@name='MAP_TYPE_NONE']"
 		[Register ("MAP_TYPE_NONE")]
 		public const int MapTypeNone = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/field[@name='MAP_TYPE_NORMAL']"
 		[Register ("MAP_TYPE_NORMAL")]
 		public const int MapTypeNormal = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/field[@name='MAP_TYPE_SATELLITE']"
 		[Register ("MAP_TYPE_SATELLITE")]
 		public const int MapTypeSatellite = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/field[@name='MAP_TYPE_TERRAIN']"
 		[Register ("MAP_TYPE_TERRAIN")]
 		public const int MapTypeTerrain = (int) 3;
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.CancelableCallback']"
 		[Register ("com/google/android/gms/maps/GoogleMap$CancelableCallback", "", "Android.Gms.Maps.GoogleMap/ICancelableCallbackInvoker")]
 		public partial interface ICancelableCallback : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.CancelableCallback']/method[@name='onCancel' and count(parameter)=0]"
 			[Register ("onCancel", "()V", "GetOnCancelHandler:Android.Gms.Maps.GoogleMap/ICancelableCallbackInvoker, GooglePlayServices")]
 			void OnCancel ();
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.CancelableCallback']/method[@name='onFinish' and count(parameter)=0]"
 			[Register ("onFinish", "()V", "GetOnFinishHandler:Android.Gms.Maps.GoogleMap/ICancelableCallbackInvoker, GooglePlayServices")]
 			void OnFinish ();
 
@@ -126,12 +135,15 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.InfoWindowAdapter']"
 		[Register ("com/google/android/gms/maps/GoogleMap$InfoWindowAdapter", "", "Android.Gms.Maps.GoogleMap/IInfoWindowAdapterInvoker")]
 		public partial interface IInfoWindowAdapter : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.InfoWindowAdapter']/method[@name='getInfoContents' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.Marker']]"
 			[Register ("getInfoContents", "(Lcom/google/android/gms/maps/model/Marker;)Landroid/view/View;", "GetGetInfoContents_Lcom_google_android_gms_maps_model_Marker_Handler:Android.Gms.Maps.GoogleMap/IInfoWindowAdapterInvoker, GooglePlayServices")]
 			global::Android.Views.View GetInfoContents (global::Android.Gms.Maps.Model.Marker p0);
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.InfoWindowAdapter']/method[@name='getInfoWindow' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.Marker']]"
 			[Register ("getInfoWindow", "(Lcom/google/android/gms/maps/model/Marker;)Landroid/view/View;", "GetGetInfoWindow_Lcom_google_android_gms_maps_model_Marker_Handler:Android.Gms.Maps.GoogleMap/IInfoWindowAdapterInvoker, GooglePlayServices")]
 			global::Android.Views.View GetInfoWindow (global::Android.Gms.Maps.Model.Marker p0);
 
@@ -236,9 +248,11 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnCameraChangeListener']"
 		[Register ("com/google/android/gms/maps/GoogleMap$OnCameraChangeListener", "", "Android.Gms.Maps.GoogleMap/IOnCameraChangeListenerInvoker")]
 		public partial interface IOnCameraChangeListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnCameraChangeListener']/method[@name='onCameraChange' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.CameraPosition']]"
 			[Register ("onCameraChange", "(Lcom/google/android/gms/maps/model/CameraPosition;)V", "GetOnCameraChange_Lcom_google_android_gms_maps_model_CameraPosition_Handler:Android.Gms.Maps.GoogleMap/IOnCameraChangeListenerInvoker, GooglePlayServices")]
 			void OnCameraChange (global::Android.Gms.Maps.Model.CameraPosition p0);
 
@@ -343,8 +357,9 @@ namespace Android.Gms.Maps {
 
 			public void OnCameraChange (global::Android.Gms.Maps.Model.CameraPosition p0)
 			{
-				if (Handler != null)
-					Handler (sender, new CameraChangeEventArgs (p0));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new CameraChangeEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnCameraChangeListenerImplementor value)
@@ -354,9 +369,11 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnInfoWindowClickListener']"
 		[Register ("com/google/android/gms/maps/GoogleMap$OnInfoWindowClickListener", "", "Android.Gms.Maps.GoogleMap/IOnInfoWindowClickListenerInvoker")]
 		public partial interface IOnInfoWindowClickListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnInfoWindowClickListener']/method[@name='onInfoWindowClick' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.Marker']]"
 			[Register ("onInfoWindowClick", "(Lcom/google/android/gms/maps/model/Marker;)V", "GetOnInfoWindowClick_Lcom_google_android_gms_maps_model_Marker_Handler:Android.Gms.Maps.GoogleMap/IOnInfoWindowClickListenerInvoker, GooglePlayServices")]
 			void OnInfoWindowClick (global::Android.Gms.Maps.Model.Marker p0);
 
@@ -461,8 +478,9 @@ namespace Android.Gms.Maps {
 
 			public void OnInfoWindowClick (global::Android.Gms.Maps.Model.Marker p0)
 			{
-				if (Handler != null)
-					Handler (sender, new InfoWindowClickEventArgs (p0));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new InfoWindowClickEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnInfoWindowClickListenerImplementor value)
@@ -472,9 +490,11 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMapClickListener']"
 		[Register ("com/google/android/gms/maps/GoogleMap$OnMapClickListener", "", "Android.Gms.Maps.GoogleMap/IOnMapClickListenerInvoker")]
 		public partial interface IOnMapClickListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMapClickListener']/method[@name='onMapClick' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 			[Register ("onMapClick", "(Lcom/google/android/gms/maps/model/LatLng;)V", "GetOnMapClick_Lcom_google_android_gms_maps_model_LatLng_Handler:Android.Gms.Maps.GoogleMap/IOnMapClickListenerInvoker, GooglePlayServices")]
 			void OnMapClick (global::Android.Gms.Maps.Model.LatLng p0);
 
@@ -579,8 +599,9 @@ namespace Android.Gms.Maps {
 
 			public void OnMapClick (global::Android.Gms.Maps.Model.LatLng p0)
 			{
-				if (Handler != null)
-					Handler (sender, new MapClickEventArgs (p0));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new MapClickEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnMapClickListenerImplementor value)
@@ -590,9 +611,11 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMapLongClickListener']"
 		[Register ("com/google/android/gms/maps/GoogleMap$OnMapLongClickListener", "", "Android.Gms.Maps.GoogleMap/IOnMapLongClickListenerInvoker")]
 		public partial interface IOnMapLongClickListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMapLongClickListener']/method[@name='onMapLongClick' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 			[Register ("onMapLongClick", "(Lcom/google/android/gms/maps/model/LatLng;)V", "GetOnMapLongClick_Lcom_google_android_gms_maps_model_LatLng_Handler:Android.Gms.Maps.GoogleMap/IOnMapLongClickListenerInvoker, GooglePlayServices")]
 			void OnMapLongClick (global::Android.Gms.Maps.Model.LatLng p0);
 
@@ -697,8 +720,9 @@ namespace Android.Gms.Maps {
 
 			public void OnMapLongClick (global::Android.Gms.Maps.Model.LatLng p0)
 			{
-				if (Handler != null)
-					Handler (sender, new MapLongClickEventArgs (p0));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new MapLongClickEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnMapLongClickListenerImplementor value)
@@ -708,9 +732,11 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMarkerClickListener']"
 		[Register ("com/google/android/gms/maps/GoogleMap$OnMarkerClickListener", "", "Android.Gms.Maps.GoogleMap/IOnMarkerClickListenerInvoker")]
 		public partial interface IOnMarkerClickListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMarkerClickListener']/method[@name='onMarkerClick' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.Marker']]"
 			[Register ("onMarkerClick", "(Lcom/google/android/gms/maps/model/Marker;)Z", "GetOnMarkerClick_Lcom_google_android_gms_maps_model_Marker_Handler:Android.Gms.Maps.GoogleMap/IOnMarkerClickListenerInvoker, GooglePlayServices")]
 			bool OnMarkerClick (global::Android.Gms.Maps.Model.Marker p0);
 
@@ -839,15 +865,19 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMarkerDragListener']"
 		[Register ("com/google/android/gms/maps/GoogleMap$OnMarkerDragListener", "", "Android.Gms.Maps.GoogleMap/IOnMarkerDragListenerInvoker")]
 		public partial interface IOnMarkerDragListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMarkerDragListener']/method[@name='onMarkerDrag' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.Marker']]"
 			[Register ("onMarkerDrag", "(Lcom/google/android/gms/maps/model/Marker;)V", "GetOnMarkerDrag_Lcom_google_android_gms_maps_model_Marker_Handler:Android.Gms.Maps.GoogleMap/IOnMarkerDragListenerInvoker, GooglePlayServices")]
 			void OnMarkerDrag (global::Android.Gms.Maps.Model.Marker p0);
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMarkerDragListener']/method[@name='onMarkerDragEnd' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.Marker']]"
 			[Register ("onMarkerDragEnd", "(Lcom/google/android/gms/maps/model/Marker;)V", "GetOnMarkerDragEnd_Lcom_google_android_gms_maps_model_Marker_Handler:Android.Gms.Maps.GoogleMap/IOnMarkerDragListenerInvoker, GooglePlayServices")]
 			void OnMarkerDragEnd (global::Android.Gms.Maps.Model.Marker p0);
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMarkerDragListener']/method[@name='onMarkerDragStart' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.Marker']]"
 			[Register ("onMarkerDragStart", "(Lcom/google/android/gms/maps/model/Marker;)V", "GetOnMarkerDragStart_Lcom_google_android_gms_maps_model_Marker_Handler:Android.Gms.Maps.GoogleMap/IOnMarkerDragListenerInvoker, GooglePlayServices")]
 			void OnMarkerDragStart (global::Android.Gms.Maps.Model.Marker p0);
 
@@ -1028,8 +1058,9 @@ namespace Android.Gms.Maps {
 
 			public void OnMarkerDrag (global::Android.Gms.Maps.Model.Marker p0)
 			{
-				if (OnMarkerDragHandler != null)
-					OnMarkerDragHandler (sender, new MarkerDragEventArgs (p0));
+				var __h = OnMarkerDragHandler;
+				if (__h != null)
+					__h (sender, new MarkerDragEventArgs (p0));
 			}
 #pragma warning disable 0649
 			public EventHandler<MarkerDragEndEventArgs> OnMarkerDragEndHandler;
@@ -1037,8 +1068,9 @@ namespace Android.Gms.Maps {
 
 			public void OnMarkerDragEnd (global::Android.Gms.Maps.Model.Marker p0)
 			{
-				if (OnMarkerDragEndHandler != null)
-					OnMarkerDragEndHandler (sender, new MarkerDragEndEventArgs (p0));
+				var __h = OnMarkerDragEndHandler;
+				if (__h != null)
+					__h (sender, new MarkerDragEndEventArgs (p0));
 			}
 #pragma warning disable 0649
 			public EventHandler<MarkerDragStartEventArgs> OnMarkerDragStartHandler;
@@ -1046,8 +1078,9 @@ namespace Android.Gms.Maps {
 
 			public void OnMarkerDragStart (global::Android.Gms.Maps.Model.Marker p0)
 			{
-				if (OnMarkerDragStartHandler != null)
-					OnMarkerDragStartHandler (sender, new MarkerDragStartEventArgs (p0));
+				var __h = OnMarkerDragStartHandler;
+				if (__h != null)
+					__h (sender, new MarkerDragStartEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnMarkerDragListenerImplementor value)
@@ -1057,9 +1090,11 @@ namespace Android.Gms.Maps {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMyLocationChangeListener']"
 		[Register ("com/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener", "", "Android.Gms.Maps.GoogleMap/IOnMyLocationChangeListenerInvoker")]
 		public partial interface IOnMyLocationChangeListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='GoogleMap.OnMyLocationChangeListener']/method[@name='onMyLocationChange' and count(parameter)=1 and parameter[1][@type='android.location.Location']]"
 			[Register ("onMyLocationChange", "(Landroid/location/Location;)V", "GetOnMyLocationChange_Landroid_location_Location_Handler:Android.Gms.Maps.GoogleMap/IOnMyLocationChangeListenerInvoker, GooglePlayServices")]
 			void OnMyLocationChange (global::Android.Locations.Location p0);
 
@@ -1164,8 +1199,9 @@ namespace Android.Gms.Maps {
 
 			public void OnMyLocationChange (global::Android.Locations.Location p0)
 			{
-				if (Handler != null)
-					Handler (sender, new MyLocationChangeEventArgs (p0));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new MyLocationChangeEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnMyLocationChangeListenerImplementor value)
@@ -1194,6 +1230,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getCameraPosition;
 		public global::Android.Gms.Maps.Model.CameraPosition CameraPosition {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='getCameraPosition' and count(parameter)=0]"
 			[Register ("getCameraPosition", "()Lcom/google/android/gms/maps/model/CameraPosition;", "GetGetCameraPositionHandler")]
 			get {
 				if (id_getCameraPosition == IntPtr.Zero)
@@ -1204,6 +1241,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_isIndoorEnabled;
 		public bool IsIndoorEnabled {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='isIndoorEnabled' and count(parameter)=0]"
 			[Register ("isIndoorEnabled", "()Z", "GetIsIndoorEnabledHandler")]
 			get {
 				if (id_isIndoorEnabled == IntPtr.Zero)
@@ -1215,12 +1253,14 @@ namespace Android.Gms.Maps {
 		static IntPtr id_getMapType;
 		static IntPtr id_setMapType_I;
 		public int MapType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='getMapType' and count(parameter)=0]"
 			[Register ("getMapType", "()I", "GetGetMapTypeHandler")]
 			get {
 				if (id_getMapType == IntPtr.Zero)
 					id_getMapType = JNIEnv.GetMethodID (class_ref, "getMapType", "()I");
 				return JNIEnv.CallIntMethod  (Handle, id_getMapType);
 			}
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setMapType' and count(parameter)=1 and parameter[1][@type='int']]"
 			[Register ("setMapType", "(I)V", "GetSetMapType_IHandler")]
 			set {
 				if (id_setMapType_I == IntPtr.Zero)
@@ -1231,6 +1271,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getMaxZoomLevel;
 		public float MaxZoomLevel {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='getMaxZoomLevel' and count(parameter)=0]"
 			[Register ("getMaxZoomLevel", "()F", "GetGetMaxZoomLevelHandler")]
 			get {
 				if (id_getMaxZoomLevel == IntPtr.Zero)
@@ -1241,6 +1282,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getMinZoomLevel;
 		public float MinZoomLevel {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='getMinZoomLevel' and count(parameter)=0]"
 			[Register ("getMinZoomLevel", "()F", "GetGetMinZoomLevelHandler")]
 			get {
 				if (id_getMinZoomLevel == IntPtr.Zero)
@@ -1251,6 +1293,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getMyLocation;
 		public global::Android.Locations.Location MyLocation {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='getMyLocation' and count(parameter)=0]"
 			[Register ("getMyLocation", "()Landroid/location/Location;", "GetGetMyLocationHandler")]
 			get {
 				if (id_getMyLocation == IntPtr.Zero)
@@ -1262,12 +1305,14 @@ namespace Android.Gms.Maps {
 		static IntPtr id_isMyLocationEnabled;
 		static IntPtr id_setMyLocationEnabled_Z;
 		public bool MyLocationEnabled {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='isMyLocationEnabled' and count(parameter)=0]"
 			[Register ("isMyLocationEnabled", "()Z", "GetIsMyLocationEnabledHandler")]
 			get {
 				if (id_isMyLocationEnabled == IntPtr.Zero)
 					id_isMyLocationEnabled = JNIEnv.GetMethodID (class_ref, "isMyLocationEnabled", "()Z");
 				return JNIEnv.CallBooleanMethod  (Handle, id_isMyLocationEnabled);
 			}
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setMyLocationEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]"
 			[Register ("setMyLocationEnabled", "(Z)V", "GetSetMyLocationEnabled_ZHandler")]
 			set {
 				if (id_setMyLocationEnabled_Z == IntPtr.Zero)
@@ -1278,6 +1323,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getProjection;
 		public global::Android.Gms.Maps.Projection Projection {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='getProjection' and count(parameter)=0]"
 			[Register ("getProjection", "()Lcom/google/android/gms/maps/Projection;", "GetGetProjectionHandler")]
 			get {
 				if (id_getProjection == IntPtr.Zero)
@@ -1289,12 +1335,14 @@ namespace Android.Gms.Maps {
 		static IntPtr id_isTrafficEnabled;
 		static IntPtr id_setTrafficEnabled_Z;
 		public bool TrafficEnabled {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='isTrafficEnabled' and count(parameter)=0]"
 			[Register ("isTrafficEnabled", "()Z", "GetIsTrafficEnabledHandler")]
 			get {
 				if (id_isTrafficEnabled == IntPtr.Zero)
 					id_isTrafficEnabled = JNIEnv.GetMethodID (class_ref, "isTrafficEnabled", "()Z");
 				return JNIEnv.CallBooleanMethod  (Handle, id_isTrafficEnabled);
 			}
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setTrafficEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]"
 			[Register ("setTrafficEnabled", "(Z)V", "GetSetTrafficEnabled_ZHandler")]
 			set {
 				if (id_setTrafficEnabled_Z == IntPtr.Zero)
@@ -1305,6 +1353,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getUiSettings;
 		public global::Android.Gms.Maps.UiSettings UiSettings {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='getUiSettings' and count(parameter)=0]"
 			[Register ("getUiSettings", "()Lcom/google/android/gms/maps/UiSettings;", "GetGetUiSettingsHandler")]
 			get {
 				if (id_getUiSettings == IntPtr.Zero)
@@ -1314,6 +1363,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_addCircle_Lcom_google_android_gms_maps_model_CircleOptions_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='addCircle' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.CircleOptions']]"
 		[Register ("addCircle", "(Lcom/google/android/gms/maps/model/CircleOptions;)Lcom/google/android/gms/maps/model/Circle;", "")]
 		public global::Android.Gms.Maps.Model.Circle AddCircle (global::Android.Gms.Maps.Model.CircleOptions p0)
 		{
@@ -1324,6 +1374,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_addGroundOverlay_Lcom_google_android_gms_maps_model_GroundOverlayOptions_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='addGroundOverlay' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.GroundOverlayOptions']]"
 		[Register ("addGroundOverlay", "(Lcom/google/android/gms/maps/model/GroundOverlayOptions;)Lcom/google/android/gms/maps/model/GroundOverlay;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlay AddGroundOverlay (global::Android.Gms.Maps.Model.GroundOverlayOptions p0)
 		{
@@ -1334,6 +1385,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_addMarker_Lcom_google_android_gms_maps_model_MarkerOptions_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='addMarker' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.MarkerOptions']]"
 		[Register ("addMarker", "(Lcom/google/android/gms/maps/model/MarkerOptions;)Lcom/google/android/gms/maps/model/Marker;", "")]
 		public global::Android.Gms.Maps.Model.Marker AddMarker (global::Android.Gms.Maps.Model.MarkerOptions p0)
 		{
@@ -1344,6 +1396,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_addPolygon_Lcom_google_android_gms_maps_model_PolygonOptions_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='addPolygon' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.PolygonOptions']]"
 		[Register ("addPolygon", "(Lcom/google/android/gms/maps/model/PolygonOptions;)Lcom/google/android/gms/maps/model/Polygon;", "")]
 		public global::Android.Gms.Maps.Model.Polygon AddPolygon (global::Android.Gms.Maps.Model.PolygonOptions p0)
 		{
@@ -1354,6 +1407,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_addPolyline_Lcom_google_android_gms_maps_model_PolylineOptions_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='addPolyline' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.PolylineOptions']]"
 		[Register ("addPolyline", "(Lcom/google/android/gms/maps/model/PolylineOptions;)Lcom/google/android/gms/maps/model/Polyline;", "")]
 		public global::Android.Gms.Maps.Model.Polyline AddPolyline (global::Android.Gms.Maps.Model.PolylineOptions p0)
 		{
@@ -1364,6 +1418,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_addTileOverlay_Lcom_google_android_gms_maps_model_TileOverlayOptions_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='addTileOverlay' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.TileOverlayOptions']]"
 		[Register ("addTileOverlay", "(Lcom/google/android/gms/maps/model/TileOverlayOptions;)Lcom/google/android/gms/maps/model/TileOverlay;", "")]
 		public global::Android.Gms.Maps.Model.TileOverlay AddTileOverlay (global::Android.Gms.Maps.Model.TileOverlayOptions p0)
 		{
@@ -1374,6 +1429,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_animateCamera_Lcom_google_android_gms_maps_CameraUpdate_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='animateCamera' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.CameraUpdate']]"
 		[Register ("animateCamera", "(Lcom/google/android/gms/maps/CameraUpdate;)V", "")]
 		public void AnimateCamera (global::Android.Gms.Maps.CameraUpdate p0)
 		{
@@ -1383,6 +1439,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_animateCamera_Lcom_google_android_gms_maps_CameraUpdate_Lcom_google_android_gms_maps_GoogleMap_CancelableCallback_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='animateCamera' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.maps.CameraUpdate'] and parameter[2][@type='com.google.android.gms.maps.GoogleMap.CancelableCallback']]"
 		[Register ("animateCamera", "(Lcom/google/android/gms/maps/CameraUpdate;Lcom/google/android/gms/maps/GoogleMap$CancelableCallback;)V", "")]
 		public void AnimateCamera (global::Android.Gms.Maps.CameraUpdate p0, global::Android.Gms.Maps.GoogleMap.ICancelableCallback p1)
 		{
@@ -1392,6 +1449,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_animateCamera_Lcom_google_android_gms_maps_CameraUpdate_ILcom_google_android_gms_maps_GoogleMap_CancelableCallback_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='animateCamera' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.maps.CameraUpdate'] and parameter[2][@type='int'] and parameter[3][@type='com.google.android.gms.maps.GoogleMap.CancelableCallback']]"
 		[Register ("animateCamera", "(Lcom/google/android/gms/maps/CameraUpdate;ILcom/google/android/gms/maps/GoogleMap$CancelableCallback;)V", "")]
 		public void AnimateCamera (global::Android.Gms.Maps.CameraUpdate p0, int p1, global::Android.Gms.Maps.GoogleMap.ICancelableCallback p2)
 		{
@@ -1401,6 +1459,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_clear;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='clear' and count(parameter)=0]"
 		[Register ("clear", "()V", "")]
 		public void Clear ()
 		{
@@ -1410,6 +1469,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_moveCamera_Lcom_google_android_gms_maps_CameraUpdate_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='moveCamera' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.CameraUpdate']]"
 		[Register ("moveCamera", "(Lcom/google/android/gms/maps/CameraUpdate;)V", "")]
 		public void MoveCamera (global::Android.Gms.Maps.CameraUpdate p0)
 		{
@@ -1419,6 +1479,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setIndoorEnabled_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setIndoorEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("setIndoorEnabled", "(Z)Z", "")]
 		public bool SetIndoorEnabled (bool p0)
 		{
@@ -1428,6 +1489,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setInfoWindowAdapter_Lcom_google_android_gms_maps_GoogleMap_InfoWindowAdapter_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setInfoWindowAdapter' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.InfoWindowAdapter']]"
 		[Register ("setInfoWindowAdapter", "(Lcom/google/android/gms/maps/GoogleMap$InfoWindowAdapter;)V", "")]
 		public void SetInfoWindowAdapter (global::Android.Gms.Maps.GoogleMap.IInfoWindowAdapter p0)
 		{
@@ -1437,6 +1499,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setLocationSource_Lcom_google_android_gms_maps_LocationSource_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setLocationSource' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.LocationSource']]"
 		[Register ("setLocationSource", "(Lcom/google/android/gms/maps/LocationSource;)V", "")]
 		public void SetLocationSource (global::Android.Gms.Maps.ILocationSource p0)
 		{
@@ -1446,6 +1509,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setOnCameraChangeListener_Lcom_google_android_gms_maps_GoogleMap_OnCameraChangeListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setOnCameraChangeListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.OnCameraChangeListener']]"
 		[Register ("setOnCameraChangeListener", "(Lcom/google/android/gms/maps/GoogleMap$OnCameraChangeListener;)V", "")]
 		public void SetOnCameraChangeListener (global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListener p0)
 		{
@@ -1455,6 +1519,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setOnInfoWindowClickListener_Lcom_google_android_gms_maps_GoogleMap_OnInfoWindowClickListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setOnInfoWindowClickListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener']]"
 		[Register ("setOnInfoWindowClickListener", "(Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowClickListener;)V", "")]
 		public void SetOnInfoWindowClickListener (global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListener p0)
 		{
@@ -1464,6 +1529,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setOnMapClickListener_Lcom_google_android_gms_maps_GoogleMap_OnMapClickListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setOnMapClickListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.OnMapClickListener']]"
 		[Register ("setOnMapClickListener", "(Lcom/google/android/gms/maps/GoogleMap$OnMapClickListener;)V", "")]
 		public void SetOnMapClickListener (global::Android.Gms.Maps.GoogleMap.IOnMapClickListener p0)
 		{
@@ -1473,6 +1539,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setOnMapLongClickListener_Lcom_google_android_gms_maps_GoogleMap_OnMapLongClickListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setOnMapLongClickListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.OnMapLongClickListener']]"
 		[Register ("setOnMapLongClickListener", "(Lcom/google/android/gms/maps/GoogleMap$OnMapLongClickListener;)V", "")]
 		public void SetOnMapLongClickListener (global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListener p0)
 		{
@@ -1482,6 +1549,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setOnMarkerClickListener_Lcom_google_android_gms_maps_GoogleMap_OnMarkerClickListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setOnMarkerClickListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.OnMarkerClickListener']]"
 		[Register ("setOnMarkerClickListener", "(Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;)V", "")]
 		public void SetOnMarkerClickListener (global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListener p0)
 		{
@@ -1491,6 +1559,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setOnMarkerDragListener_Lcom_google_android_gms_maps_GoogleMap_OnMarkerDragListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setOnMarkerDragListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.OnMarkerDragListener']]"
 		[Register ("setOnMarkerDragListener", "(Lcom/google/android/gms/maps/GoogleMap$OnMarkerDragListener;)V", "")]
 		public void SetOnMarkerDragListener (global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener p0)
 		{
@@ -1500,6 +1569,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_setOnMyLocationChangeListener_Lcom_google_android_gms_maps_GoogleMap_OnMyLocationChangeListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='setOnMyLocationChangeListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMap.OnMyLocationChangeListener']]"
 		[Register ("setOnMyLocationChangeListener", "(Lcom/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener;)V", "")]
 		public void SetOnMyLocationChangeListener (global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListener p0)
 		{
@@ -1509,6 +1579,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_stopAnimation;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='GoogleMap']/method[@name='stopAnimation' and count(parameter)=0]"
 		[Register ("stopAnimation", "()V", "")]
 		public void StopAnimation ()
 		{
@@ -1520,17 +1591,17 @@ namespace Android.Gms.Maps {
 #region "Event implementation for Android.Gms.Maps.GoogleMap.IOnCameraChangeListener"
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.CameraChangeEventArgs> CameraChange {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListener, global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListener, global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListenerImplementor>(
 						ref weak_implementor_SetOnCameraChangeListener,
 						__CreateIOnCameraChangeListenerImplementor,
 						SetOnCameraChangeListener,
 						__h => __h.Handler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListener, global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListener, global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListenerImplementor>(
 						ref weak_implementor_SetOnCameraChangeListener,
 						global::Android.Gms.Maps.GoogleMap.IOnCameraChangeListenerImplementor.__IsEmpty,
-						SetOnCameraChangeListener,
+						__v => SetOnCameraChangeListener (null),
 						__h => __h.Handler -= value);
 			}
 		}
@@ -1545,17 +1616,17 @@ namespace Android.Gms.Maps {
 #region "Event implementation for Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListener"
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.InfoWindowClickEventArgs> InfoWindowClick {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListener, global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListener, global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListenerImplementor>(
 						ref weak_implementor_SetOnInfoWindowClickListener,
 						__CreateIOnInfoWindowClickListenerImplementor,
 						SetOnInfoWindowClickListener,
 						__h => __h.Handler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListener, global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListener, global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListenerImplementor>(
 						ref weak_implementor_SetOnInfoWindowClickListener,
 						global::Android.Gms.Maps.GoogleMap.IOnInfoWindowClickListenerImplementor.__IsEmpty,
-						SetOnInfoWindowClickListener,
+						__v => SetOnInfoWindowClickListener (null),
 						__h => __h.Handler -= value);
 			}
 		}
@@ -1570,17 +1641,17 @@ namespace Android.Gms.Maps {
 #region "Event implementation for Android.Gms.Maps.GoogleMap.IOnMapClickListener"
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.MapClickEventArgs> MapClick {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapClickListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapClickListenerImplementor>(
 						ref weak_implementor_SetOnMapClickListener,
 						__CreateIOnMapClickListenerImplementor,
 						SetOnMapClickListener,
 						__h => __h.Handler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapClickListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapClickListenerImplementor>(
 						ref weak_implementor_SetOnMapClickListener,
 						global::Android.Gms.Maps.GoogleMap.IOnMapClickListenerImplementor.__IsEmpty,
-						SetOnMapClickListener,
+						__v => SetOnMapClickListener (null),
 						__h => __h.Handler -= value);
 			}
 		}
@@ -1595,17 +1666,17 @@ namespace Android.Gms.Maps {
 #region "Event implementation for Android.Gms.Maps.GoogleMap.IOnMapLongClickListener"
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.MapLongClickEventArgs> MapLongClick {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListenerImplementor>(
 						ref weak_implementor_SetOnMapLongClickListener,
 						__CreateIOnMapLongClickListenerImplementor,
 						SetOnMapLongClickListener,
 						__h => __h.Handler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListener, global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListenerImplementor>(
 						ref weak_implementor_SetOnMapLongClickListener,
 						global::Android.Gms.Maps.GoogleMap.IOnMapLongClickListenerImplementor.__IsEmpty,
-						SetOnMapLongClickListener,
+						__v => SetOnMapLongClickListener (null),
 						__h => __h.Handler -= value);
 			}
 		}
@@ -1620,17 +1691,17 @@ namespace Android.Gms.Maps {
 #region "Event implementation for Android.Gms.Maps.GoogleMap.IOnMarkerClickListener"
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.MarkerClickEventArgs> MarkerClick {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListenerImplementor>(
 						ref weak_implementor_SetOnMarkerClickListener,
 						__CreateIOnMarkerClickListenerImplementor,
 						SetOnMarkerClickListener,
 						__h => __h.Handler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListenerImplementor>(
 						ref weak_implementor_SetOnMarkerClickListener,
 						global::Android.Gms.Maps.GoogleMap.IOnMarkerClickListenerImplementor.__IsEmpty,
-						SetOnMarkerClickListener,
+						__v => SetOnMarkerClickListener (null),
 						__h => __h.Handler -= value);
 			}
 		}
@@ -1645,51 +1716,51 @@ namespace Android.Gms.Maps {
 #region "Event implementation for Android.Gms.Maps.GoogleMap.IOnMarkerDragListener"
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.MarkerDragEventArgs> MarkerDrag {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
 						ref weak_implementor_SetOnMarkerDragListener,
 						__CreateIOnMarkerDragListenerImplementor,
 						SetOnMarkerDragListener,
 						__h => __h.OnMarkerDragHandler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
 						ref weak_implementor_SetOnMarkerDragListener,
 						global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor.__IsEmpty,
-						SetOnMarkerDragListener,
+						__v => SetOnMarkerDragListener (null),
 						__h => __h.OnMarkerDragHandler -= value);
 			}
 		}
 
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.MarkerDragEndEventArgs> MarkerDragEnd {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
 						ref weak_implementor_SetOnMarkerDragListener,
 						__CreateIOnMarkerDragListenerImplementor,
 						SetOnMarkerDragListener,
 						__h => __h.OnMarkerDragEndHandler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
 						ref weak_implementor_SetOnMarkerDragListener,
 						global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor.__IsEmpty,
-						SetOnMarkerDragListener,
+						__v => SetOnMarkerDragListener (null),
 						__h => __h.OnMarkerDragEndHandler -= value);
 			}
 		}
 
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.MarkerDragStartEventArgs> MarkerDragStart {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
 						ref weak_implementor_SetOnMarkerDragListener,
 						__CreateIOnMarkerDragListenerImplementor,
 						SetOnMarkerDragListener,
 						__h => __h.OnMarkerDragStartHandler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListener, global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor>(
 						ref weak_implementor_SetOnMarkerDragListener,
 						global::Android.Gms.Maps.GoogleMap.IOnMarkerDragListenerImplementor.__IsEmpty,
-						SetOnMarkerDragListener,
+						__v => SetOnMarkerDragListener (null),
 						__h => __h.OnMarkerDragStartHandler -= value);
 			}
 		}
@@ -1704,17 +1775,17 @@ namespace Android.Gms.Maps {
 #region "Event implementation for Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListener"
 		public event EventHandler<global::Android.Gms.Maps.GoogleMap.MyLocationChangeEventArgs> MyLocationChange {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListener, global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListener, global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListenerImplementor>(
 						ref weak_implementor_SetOnMyLocationChangeListener,
 						__CreateIOnMyLocationChangeListenerImplementor,
 						SetOnMyLocationChangeListener,
 						__h => __h.Handler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListener, global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListener, global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListenerImplementor>(
 						ref weak_implementor_SetOnMyLocationChangeListener,
 						global::Android.Gms.Maps.GoogleMap.IOnMyLocationChangeListenerImplementor.__IsEmpty,
-						SetOnMyLocationChangeListener,
+						__v => SetOnMyLocationChangeListener (null),
 						__h => __h.Handler -= value);
 			}
 		}

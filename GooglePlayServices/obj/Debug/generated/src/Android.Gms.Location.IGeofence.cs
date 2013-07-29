@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Location {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='Geofence.Builder']"
 	[global::Android.Runtime.Register ("com/google/android/gms/location/Geofence$Builder", DoNotGenerateAcw=true)]
 	public sealed partial class GeofenceBuilder : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Location {
 		internal GeofenceBuilder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='Geofence.Builder']/constructor[@name='Geofence.Builder' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public GeofenceBuilder () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -42,6 +44,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_build;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='Geofence.Builder']/method[@name='build' and count(parameter)=0]"
 		[Register ("build", "()Lcom/google/android/gms/location/Geofence;", "")]
 		public global::Android.Gms.Location.IGeofence Build ()
 		{
@@ -51,6 +54,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setCircularRegion_DDF;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='Geofence.Builder']/method[@name='setCircularRegion' and count(parameter)=3 and parameter[1][@type='double'] and parameter[2][@type='double'] and parameter[3][@type='float']]"
 		[Register ("setCircularRegion", "(DDF)Lcom/google/android/gms/location/Geofence$Builder;", "")]
 		public global::Android.Gms.Location.GeofenceBuilder SetCircularRegion (double p0, double p1, float p2)
 		{
@@ -60,6 +64,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setExpirationDuration_J;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='Geofence.Builder']/method[@name='setExpirationDuration' and count(parameter)=1 and parameter[1][@type='long']]"
 		[Register ("setExpirationDuration", "(J)Lcom/google/android/gms/location/Geofence$Builder;", "")]
 		public global::Android.Gms.Location.GeofenceBuilder SetExpirationDuration (long p0)
 		{
@@ -69,6 +74,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setRequestId_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='Geofence.Builder']/method[@name='setRequestId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setRequestId", "(Ljava/lang/String;)Lcom/google/android/gms/location/Geofence$Builder;", "")]
 		public global::Android.Gms.Location.GeofenceBuilder SetRequestId (string p0)
 		{
@@ -81,6 +87,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setTransitionTypes_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='Geofence.Builder']/method[@name='setTransitionTypes' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setTransitionTypes", "(I)Lcom/google/android/gms/location/Geofence$Builder;", "")]
 		public global::Android.Gms.Location.GeofenceBuilder SetTransitionTypes (int p0)
 		{
@@ -98,12 +105,15 @@ namespace Android.Gms.Location {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='Geofence']/field[@name='GEOFENCE_TRANSITION_ENTER']"
 		[Register ("GEOFENCE_TRANSITION_ENTER")]
 		public const int GeofenceTransitionEnter = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='Geofence']/field[@name='GEOFENCE_TRANSITION_EXIT']"
 		[Register ("GEOFENCE_TRANSITION_EXIT")]
 		public const int GeofenceTransitionExit = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='Geofence']/field[@name='NEVER_EXPIRE']"
 		[Register ("NEVER_EXPIRE")]
 		public const long NeverExpire = (long) -1L;
 	}
@@ -116,10 +126,12 @@ namespace Android.Gms.Location {
 		}
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='Geofence']"
 	[Register ("com/google/android/gms/location/Geofence", "", "Android.Gms.Location.IGeofenceInvoker")]
 	public partial interface IGeofence : IJavaObject {
 
 		string RequestId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='Geofence']/method[@name='getRequestId' and count(parameter)=0]"
 			[Register ("getRequestId", "()Ljava/lang/String;", "GetGetRequestIdHandler:Android.Gms.Location.IGeofenceInvoker, GooglePlayServices")] get;
 		}
 

@@ -6,7 +6,7 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A7025ED5-B104-45CA-816B-1B0BCEFEFE33}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Mappy.Common</RootNamespace>
     <AssemblyName>Mappy.Common</AssemblyName>
   </PropertyGroup>
@@ -29,4 +29,29 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Atm.cs" />
+    <Compile Include="Models\BankEntity.cs" />
+    <Compile Include="Models\Branch.cs" />
+    <Compile Include="Services\BankEntitiesService.cs" />
+    <Compile Include="Services\EntityFilter.cs" />
+    <Compile Include="Services\ExcludeOwnAtmsFilter.cs" />
+    <Compile Include="Services\ExcludeOwnBranchesFilter.cs" />
+    <Compile Include="Services\ExcludePartnerEstablishmentsFilter.cs" />
+    <Compile Include="Services\Options.cs" />
+    <Compile Include="ViewModels\MapViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Json">
+      <HintPath>..\System.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

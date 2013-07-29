@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Location {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']"
 	[global::Android.Runtime.Register ("com/google/android/gms/location/LocationRequest", DoNotGenerateAcw=true)]
 	public sealed partial class LocationRequest : global::Java.Lang.Object {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.Gms.Location.LocationRequestCreator Creator {
 			get {
@@ -27,12 +29,15 @@ namespace Android.Gms.Location {
 			}
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/field[@name='PRIORITY_BALANCED_POWER_ACCURACY']"
 		[Register ("PRIORITY_BALANCED_POWER_ACCURACY")]
 		public const int PriorityBalancedPowerAccuracy = (int) 102;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/field[@name='PRIORITY_HIGH_ACCURACY']"
 		[Register ("PRIORITY_HIGH_ACCURACY")]
 		public const int PriorityHighAccuracy = (int) 100;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/field[@name='PRIORITY_NO_POWER']"
 		[Register ("PRIORITY_NO_POWER")]
 		public const int PriorityNoPower = (int) 105;
 		internal static IntPtr java_class_handle;
@@ -53,6 +58,7 @@ namespace Android.Gms.Location {
 		internal LocationRequest (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/constructor[@name='LocationRequest' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public LocationRequest () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -71,6 +77,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getExpirationTime;
 		public long ExpirationTime {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='getExpirationTime' and count(parameter)=0]"
 			[Register ("getExpirationTime", "()J", "GetGetExpirationTimeHandler")]
 			get {
 				if (id_getExpirationTime == IntPtr.Zero)
@@ -81,6 +88,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getFastestInterval;
 		public long FastestInterval {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='getFastestInterval' and count(parameter)=0]"
 			[Register ("getFastestInterval", "()J", "GetGetFastestIntervalHandler")]
 			get {
 				if (id_getFastestInterval == IntPtr.Zero)
@@ -91,6 +99,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getInterval;
 		public long Interval {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='getInterval' and count(parameter)=0]"
 			[Register ("getInterval", "()J", "GetGetIntervalHandler")]
 			get {
 				if (id_getInterval == IntPtr.Zero)
@@ -101,6 +110,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getNumUpdates;
 		public int NumUpdates {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='getNumUpdates' and count(parameter)=0]"
 			[Register ("getNumUpdates", "()I", "GetGetNumUpdatesHandler")]
 			get {
 				if (id_getNumUpdates == IntPtr.Zero)
@@ -111,6 +121,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getPriority;
 		public int Priority {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='getPriority' and count(parameter)=0]"
 			[Register ("getPriority", "()I", "GetGetPriorityHandler")]
 			get {
 				if (id_getPriority == IntPtr.Zero)
@@ -121,6 +132,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getSmallestDisplacement;
 		public float SmallestDisplacement {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='getSmallestDisplacement' and count(parameter)=0]"
 			[Register ("getSmallestDisplacement", "()F", "GetGetSmallestDisplacementHandler")]
 			get {
 				if (id_getSmallestDisplacement == IntPtr.Zero)
@@ -129,16 +141,18 @@ namespace Android.Gms.Location {
 			}
 		}
 
-		static IntPtr id_I_I;
-		[Register ("I", "(I)Ljava/lang/String;", "")]
-		public static string I (int p0)
+		static IntPtr id_J_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='J' and count(parameter)=1 and parameter[1][@type='int']]"
+		[Register ("J", "(I)Ljava/lang/String;", "")]
+		public static string J (int p0)
 		{
-			if (id_I_I == IntPtr.Zero)
-				id_I_I = JNIEnv.GetStaticMethodID (class_ref, "I", "(I)Ljava/lang/String;");
-			return JNIEnv.GetString (JNIEnv.CallStaticObjectMethod  (class_ref, id_I_I, new JValue (p0)), JniHandleOwnership.TransferLocalRef);
+			if (id_J_I == IntPtr.Zero)
+				id_J_I = JNIEnv.GetStaticMethodID (class_ref, "J", "(I)Ljava/lang/String;");
+			return JNIEnv.GetString (JNIEnv.CallStaticObjectMethod  (class_ref, id_J_I, new JValue (p0)), JniHandleOwnership.TransferLocalRef);
 		}
 
 		static IntPtr id_create;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='create' and count(parameter)=0]"
 		[Register ("create", "()Lcom/google/android/gms/location/LocationRequest;", "")]
 		public static global::Android.Gms.Location.LocationRequest Create ()
 		{
@@ -148,6 +162,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -157,6 +172,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setExpirationDuration_J;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='setExpirationDuration' and count(parameter)=1 and parameter[1][@type='long']]"
 		[Register ("setExpirationDuration", "(J)Lcom/google/android/gms/location/LocationRequest;", "")]
 		public global::Android.Gms.Location.LocationRequest SetExpirationDuration (long p0)
 		{
@@ -166,6 +182,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setExpirationTime_J;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='setExpirationTime' and count(parameter)=1 and parameter[1][@type='long']]"
 		[Register ("setExpirationTime", "(J)Lcom/google/android/gms/location/LocationRequest;", "")]
 		public global::Android.Gms.Location.LocationRequest SetExpirationTime (long p0)
 		{
@@ -175,6 +192,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setFastestInterval_J;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='setFastestInterval' and count(parameter)=1 and parameter[1][@type='long']]"
 		[Register ("setFastestInterval", "(J)Lcom/google/android/gms/location/LocationRequest;", "")]
 		public global::Android.Gms.Location.LocationRequest SetFastestInterval (long p0)
 		{
@@ -184,6 +202,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setInterval_J;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='setInterval' and count(parameter)=1 and parameter[1][@type='long']]"
 		[Register ("setInterval", "(J)Lcom/google/android/gms/location/LocationRequest;", "")]
 		public global::Android.Gms.Location.LocationRequest SetInterval (long p0)
 		{
@@ -193,6 +212,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setNumUpdates_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='setNumUpdates' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setNumUpdates", "(I)Lcom/google/android/gms/location/LocationRequest;", "")]
 		public global::Android.Gms.Location.LocationRequest SetNumUpdates (int p0)
 		{
@@ -202,6 +222,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setPriority_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='setPriority' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setPriority", "(I)Lcom/google/android/gms/location/LocationRequest;", "")]
 		public global::Android.Gms.Location.LocationRequest SetPriority (int p0)
 		{
@@ -211,6 +232,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_setSmallestDisplacement_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='setSmallestDisplacement' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("setSmallestDisplacement", "(F)Lcom/google/android/gms/location/LocationRequest;", "")]
 		public global::Android.Gms.Location.LocationRequest SetSmallestDisplacement (float p0)
 		{
@@ -220,6 +242,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationRequest']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

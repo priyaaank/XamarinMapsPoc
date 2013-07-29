@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/CameraUpdateFactory", DoNotGenerateAcw=true)]
 	public sealed partial class CameraUpdateFactory : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps {
 		internal CameraUpdateFactory (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_newCameraPosition_Lcom_google_android_gms_maps_model_CameraPosition_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='newCameraPosition' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.CameraPosition']]"
 		[Register ("newCameraPosition", "(Lcom/google/android/gms/maps/model/CameraPosition;)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate NewCameraPosition (global::Android.Gms.Maps.Model.CameraPosition p0)
 		{
@@ -35,6 +37,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_newLatLng_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='newLatLng' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register ("newLatLng", "(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate NewLatLng (global::Android.Gms.Maps.Model.LatLng p0)
 		{
@@ -45,6 +48,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_newLatLngBounds_Lcom_google_android_gms_maps_model_LatLngBounds_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='newLatLngBounds' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.maps.model.LatLngBounds'] and parameter[2][@type='int']]"
 		[Register ("newLatLngBounds", "(Lcom/google/android/gms/maps/model/LatLngBounds;I)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate NewLatLngBounds (global::Android.Gms.Maps.Model.LatLngBounds p0, int p1)
 		{
@@ -55,6 +59,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_newLatLngBounds_Lcom_google_android_gms_maps_model_LatLngBounds_III;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='newLatLngBounds' and count(parameter)=4 and parameter[1][@type='com.google.android.gms.maps.model.LatLngBounds'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]"
 		[Register ("newLatLngBounds", "(Lcom/google/android/gms/maps/model/LatLngBounds;III)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate NewLatLngBounds (global::Android.Gms.Maps.Model.LatLngBounds p0, int p1, int p2, int p3)
 		{
@@ -65,6 +70,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_newLatLngZoom_Lcom_google_android_gms_maps_model_LatLng_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='newLatLngZoom' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.maps.model.LatLng'] and parameter[2][@type='float']]"
 		[Register ("newLatLngZoom", "(Lcom/google/android/gms/maps/model/LatLng;F)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate NewLatLngZoom (global::Android.Gms.Maps.Model.LatLng p0, float p1)
 		{
@@ -75,6 +81,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_scrollBy_FF;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='scrollBy' and count(parameter)=2 and parameter[1][@type='float'] and parameter[2][@type='float']]"
 		[Register ("scrollBy", "(FF)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate ScrollBy (float p0, float p1)
 		{
@@ -84,6 +91,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_zoomBy_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='zoomBy' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("zoomBy", "(F)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate ZoomBy (float p0)
 		{
@@ -93,6 +101,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_zoomBy_FLandroid_graphics_Point_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='zoomBy' and count(parameter)=2 and parameter[1][@type='float'] and parameter[2][@type='android.graphics.Point']]"
 		[Register ("zoomBy", "(FLandroid/graphics/Point;)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate ZoomBy (float p0, global::Android.Graphics.Point p1)
 		{
@@ -103,6 +112,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_zoomIn;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='zoomIn' and count(parameter)=0]"
 		[Register ("zoomIn", "()Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate ZoomIn ()
 		{
@@ -112,6 +122,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_zoomOut;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='zoomOut' and count(parameter)=0]"
 		[Register ("zoomOut", "()Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate ZoomOut ()
 		{
@@ -121,6 +132,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_zoomTo_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='CameraUpdateFactory']/method[@name='zoomTo' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("zoomTo", "(F)Lcom/google/android/gms/maps/CameraUpdate;", "")]
 		public static global::Android.Gms.Maps.CameraUpdate ZoomTo (float p0)
 		{

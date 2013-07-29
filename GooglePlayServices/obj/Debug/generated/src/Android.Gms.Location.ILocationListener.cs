@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Location {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='LocationListener']"
 	[Register ("com/google/android/gms/location/LocationListener", "", "Android.Gms.Location.ILocationListenerInvoker")]
 	public partial interface ILocationListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='LocationListener']/method[@name='onLocationChanged' and count(parameter)=1 and parameter[1][@type='android.location.Location']]"
 		[Register ("onLocationChanged", "(Landroid/location/Location;)V", "GetOnLocationChanged_Landroid_location_Location_Handler:Android.Gms.Location.ILocationListenerInvoker, GooglePlayServices")]
 		void OnLocationChanged (global::Android.Locations.Location p0);
 
@@ -111,8 +113,9 @@ namespace Android.Gms.Location {
 
 		public void OnLocationChanged (global::Android.Locations.Location p0)
 		{
-			if (Handler != null)
-				Handler (sender, new LocationEventArgs (p0));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new LocationEventArgs (p0));
 		}
 
 		internal static bool __IsEmpty (ILocationListenerImplementor value)

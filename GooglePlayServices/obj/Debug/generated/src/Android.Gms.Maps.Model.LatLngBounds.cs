@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/LatLngBounds", DoNotGenerateAcw=true)]
 	public sealed partial class LatLngBounds : global::Java.Lang.Object {
 
 
 		static IntPtr northeast_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/field[@name='northeast']"
 		[Register ("northeast")]
 		public global::Android.Gms.Maps.Model.LatLng Northeast {
 			get {
@@ -29,6 +31,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr southwest_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/field[@name='southwest']"
 		[Register ("southwest")]
 		public global::Android.Gms.Maps.Model.LatLng Southwest {
 			get {
@@ -45,6 +48,7 @@ namespace Android.Gms.Maps.Model {
 				JNIEnv.DeleteLocalRef (native_value);
 			}
 		}
+		// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds.Builder']"
 		[global::Android.Runtime.Register ("com/google/android/gms/maps/model/LatLngBounds$Builder", DoNotGenerateAcw=true)]
 		public sealed partial class Builder : global::Java.Lang.Object {
 
@@ -66,6 +70,7 @@ namespace Android.Gms.Maps.Model {
 			internal Builder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 			static IntPtr id_ctor;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds.Builder']/constructor[@name='LatLngBounds.Builder' and count(parameter)=0]"
 			[Register (".ctor", "()V", "")]
 			public Builder () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -83,6 +88,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_build;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds.Builder']/method[@name='build' and count(parameter)=0]"
 			[Register ("build", "()Lcom/google/android/gms/maps/model/LatLngBounds;", "")]
 			public global::Android.Gms.Maps.Model.LatLngBounds Build ()
 			{
@@ -92,6 +98,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_include_Lcom_google_android_gms_maps_model_LatLng_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds.Builder']/method[@name='include' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 			[Register ("include", "(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/LatLngBounds$Builder;", "")]
 			public global::Android.Gms.Maps.Model.LatLngBounds.Builder Include (global::Android.Gms.Maps.Model.LatLng p0)
 			{
@@ -121,6 +128,7 @@ namespace Android.Gms.Maps.Model {
 		internal LatLngBounds (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_maps_model_LatLng_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/constructor[@name='LatLngBounds' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.maps.model.LatLng'] and parameter[2][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register (".ctor", "(Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLng;)V", "")]
 		public LatLngBounds (global::Android.Gms.Maps.Model.LatLng p0, global::Android.Gms.Maps.Model.LatLng p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -138,6 +146,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_builder;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/method[@name='builder' and count(parameter)=0]"
 		[Register ("builder", "()Lcom/google/android/gms/maps/model/LatLngBounds$Builder;", "")]
 		public static global::Android.Gms.Maps.Model.LatLngBounds.Builder InvokeBuilder ()
 		{
@@ -147,6 +156,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_contains_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/method[@name='contains' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register ("contains", "(Lcom/google/android/gms/maps/model/LatLng;)Z", "")]
 		public bool Contains (global::Android.Gms.Maps.Model.LatLng p0)
 		{
@@ -157,6 +167,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -166,6 +177,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_including_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/method[@name='including' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register ("including", "(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/LatLngBounds;", "")]
 		public global::Android.Gms.Maps.Model.LatLngBounds Including (global::Android.Gms.Maps.Model.LatLng p0)
 		{
@@ -176,6 +188,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -185,6 +198,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLngBounds']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

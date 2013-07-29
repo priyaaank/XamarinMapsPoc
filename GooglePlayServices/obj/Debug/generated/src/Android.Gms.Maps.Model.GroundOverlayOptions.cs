@@ -4,10 +4,12 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/GroundOverlayOptions", DoNotGenerateAcw=true)]
 	public sealed partial class GroundOverlayOptions : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/field[@name='NO_DIMENSION']"
 		[Register ("NO_DIMENSION")]
 		public const float NoDimension = (float) -1.000000;
 		internal static IntPtr java_class_handle;
@@ -28,6 +30,7 @@ namespace Android.Gms.Maps.Model {
 		internal GroundOverlayOptions (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/constructor[@name='GroundOverlayOptions' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public GroundOverlayOptions () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -46,6 +49,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getAnchorU;
 		public float AnchorU {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getAnchorU' and count(parameter)=0]"
 			[Register ("getAnchorU", "()F", "GetGetAnchorUHandler")]
 			get {
 				if (id_getAnchorU == IntPtr.Zero)
@@ -56,6 +60,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getAnchorV;
 		public float AnchorV {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getAnchorV' and count(parameter)=0]"
 			[Register ("getAnchorV", "()F", "GetGetAnchorVHandler")]
 			get {
 				if (id_getAnchorV == IntPtr.Zero)
@@ -66,6 +71,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getBearing;
 		public float Bearing {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getBearing' and count(parameter)=0]"
 			[Register ("getBearing", "()F", "GetGetBearingHandler")]
 			get {
 				if (id_getBearing == IntPtr.Zero)
@@ -76,6 +82,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getBounds;
 		public global::Android.Gms.Maps.Model.LatLngBounds Bounds {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getBounds' and count(parameter)=0]"
 			[Register ("getBounds", "()Lcom/google/android/gms/maps/model/LatLngBounds;", "GetGetBoundsHandler")]
 			get {
 				if (id_getBounds == IntPtr.Zero)
@@ -86,6 +93,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getHeight;
 		public float Height {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getHeight' and count(parameter)=0]"
 			[Register ("getHeight", "()F", "GetGetHeightHandler")]
 			get {
 				if (id_getHeight == IntPtr.Zero)
@@ -96,6 +104,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getImage;
 		public global::Android.Gms.Maps.Model.BitmapDescriptor Image {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getImage' and count(parameter)=0]"
 			[Register ("getImage", "()Lcom/google/android/gms/maps/model/BitmapDescriptor;", "GetGetImageHandler")]
 			get {
 				if (id_getImage == IntPtr.Zero)
@@ -106,6 +115,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_isVisible;
 		public bool IsVisible {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='isVisible' and count(parameter)=0]"
 			[Register ("isVisible", "()Z", "GetIsVisibleHandler")]
 			get {
 				if (id_isVisible == IntPtr.Zero)
@@ -116,6 +126,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getLocation;
 		public global::Android.Gms.Maps.Model.LatLng Location {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getLocation' and count(parameter)=0]"
 			[Register ("getLocation", "()Lcom/google/android/gms/maps/model/LatLng;", "GetGetLocationHandler")]
 			get {
 				if (id_getLocation == IntPtr.Zero)
@@ -126,6 +137,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getTransparency;
 		public float Transparency {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getTransparency' and count(parameter)=0]"
 			[Register ("getTransparency", "()F", "GetGetTransparencyHandler")]
 			get {
 				if (id_getTransparency == IntPtr.Zero)
@@ -136,6 +148,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getWidth;
 		public float Width {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getWidth' and count(parameter)=0]"
 			[Register ("getWidth", "()F", "GetGetWidthHandler")]
 			get {
 				if (id_getWidth == IntPtr.Zero)
@@ -146,6 +159,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getZIndex;
 		public float ZIndex {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='getZIndex' and count(parameter)=0]"
 			[Register ("getZIndex", "()F", "GetGetZIndexHandler")]
 			get {
 				if (id_getZIndex == IntPtr.Zero)
@@ -154,16 +168,18 @@ namespace Android.Gms.Maps.Model {
 			}
 		}
 
-		static IntPtr id_aX;
-		[Register ("aX", "()Landroid/os/IBinder;", "")]
-		public global::Android.OS.IBinder AX ()
+		static IntPtr id_aY;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='aY' and count(parameter)=0]"
+		[Register ("aY", "()Landroid/os/IBinder;", "")]
+		public global::Android.OS.IBinder AY ()
 		{
-			if (id_aX == IntPtr.Zero)
-				id_aX = JNIEnv.GetMethodID (class_ref, "aX", "()Landroid/os/IBinder;");
-			return global::Java.Lang.Object.GetObject<global::Android.OS.IBinder> (JNIEnv.CallObjectMethod  (Handle, id_aX), JniHandleOwnership.TransferLocalRef);
+			if (id_aY == IntPtr.Zero)
+				id_aY = JNIEnv.GetMethodID (class_ref, "aY", "()Landroid/os/IBinder;");
+			return global::Java.Lang.Object.GetObject<global::Android.OS.IBinder> (JNIEnv.CallObjectMethod  (Handle, id_aY), JniHandleOwnership.TransferLocalRef);
 		}
 
 		static IntPtr id_anchor_FF;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='anchor' and count(parameter)=2 and parameter[1][@type='float'] and parameter[2][@type='float']]"
 		[Register ("anchor", "(FF)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions Anchor (float p0, float p1)
 		{
@@ -173,6 +189,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_bearing_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='bearing' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("bearing", "(F)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions InvokeBearing (float p0)
 		{
@@ -182,6 +199,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -191,6 +209,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_image_Lcom_google_android_gms_maps_model_BitmapDescriptor_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='image' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.BitmapDescriptor']]"
 		[Register ("image", "(Lcom/google/android/gms/maps/model/BitmapDescriptor;)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions InvokeImage (global::Android.Gms.Maps.Model.BitmapDescriptor p0)
 		{
@@ -201,6 +220,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_position_Lcom_google_android_gms_maps_model_LatLng_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='position' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.maps.model.LatLng'] and parameter[2][@type='float']]"
 		[Register ("position", "(Lcom/google/android/gms/maps/model/LatLng;F)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions Position (global::Android.Gms.Maps.Model.LatLng p0, float p1)
 		{
@@ -211,6 +231,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_position_Lcom_google_android_gms_maps_model_LatLng_FF;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='position' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.maps.model.LatLng'] and parameter[2][@type='float'] and parameter[3][@type='float']]"
 		[Register ("position", "(Lcom/google/android/gms/maps/model/LatLng;FF)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions Position (global::Android.Gms.Maps.Model.LatLng p0, float p1, float p2)
 		{
@@ -221,6 +242,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_positionFromBounds_Lcom_google_android_gms_maps_model_LatLngBounds_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='positionFromBounds' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLngBounds']]"
 		[Register ("positionFromBounds", "(Lcom/google/android/gms/maps/model/LatLngBounds;)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions PositionFromBounds (global::Android.Gms.Maps.Model.LatLngBounds p0)
 		{
@@ -231,6 +253,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_transparency_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='transparency' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("transparency", "(F)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions InvokeTransparency (float p0)
 		{
@@ -240,6 +263,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -249,6 +273,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_visible_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='visible' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("visible", "(Z)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions Visible (bool p0)
 		{
@@ -258,6 +283,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{
@@ -267,6 +293,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_zIndex_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='GroundOverlayOptions']/method[@name='zIndex' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("zIndex", "(F)Lcom/google/android/gms/maps/model/GroundOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.GroundOverlayOptions InvokeZIndex (float p0)
 		{

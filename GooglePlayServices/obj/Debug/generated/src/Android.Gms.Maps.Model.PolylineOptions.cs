@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/PolylineOptions", DoNotGenerateAcw=true)]
 	public sealed partial class PolylineOptions : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps.Model {
 		internal PolylineOptions (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/constructor[@name='PolylineOptions' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public PolylineOptions () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -43,6 +45,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getColor;
 		public int Color {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='getColor' and count(parameter)=0]"
 			[Register ("getColor", "()I", "GetGetColorHandler")]
 			get {
 				if (id_getColor == IntPtr.Zero)
@@ -53,6 +56,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_isGeodesic;
 		public bool IsGeodesic {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='isGeodesic' and count(parameter)=0]"
 			[Register ("isGeodesic", "()Z", "GetIsGeodesicHandler")]
 			get {
 				if (id_isGeodesic == IntPtr.Zero)
@@ -63,6 +67,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_isVisible;
 		public bool IsVisible {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='isVisible' and count(parameter)=0]"
 			[Register ("isVisible", "()Z", "GetIsVisibleHandler")]
 			get {
 				if (id_isVisible == IntPtr.Zero)
@@ -73,6 +78,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getPoints;
 		public global::System.Collections.Generic.IList<global::Android.Gms.Maps.Model.LatLng> Points {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='getPoints' and count(parameter)=0]"
 			[Register ("getPoints", "()Ljava/util/List;", "GetGetPointsHandler")]
 			get {
 				if (id_getPoints == IntPtr.Zero)
@@ -83,6 +89,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getWidth;
 		public float Width {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='getWidth' and count(parameter)=0]"
 			[Register ("getWidth", "()F", "GetGetWidthHandler")]
 			get {
 				if (id_getWidth == IntPtr.Zero)
@@ -93,6 +100,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getZIndex;
 		public float ZIndex {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='getZIndex' and count(parameter)=0]"
 			[Register ("getZIndex", "()F", "GetGetZIndexHandler")]
 			get {
 				if (id_getZIndex == IntPtr.Zero)
@@ -102,6 +110,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_add_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='add' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register ("add", "(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions Add (global::Android.Gms.Maps.Model.LatLng p0)
 		{
@@ -112,6 +121,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_add_arrayLcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='add' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng[]']]"
 		[Register ("add", "([Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions Add (params global:: Android.Gms.Maps.Model.LatLng[] p0)
 		{
@@ -127,6 +137,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_addAll_Ljava_lang_Iterable_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='addAll' and count(parameter)=1 and parameter[1][@type='java.lang.Iterable']]"
 		[Register ("addAll", "(Ljava/lang/Iterable;)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions AddAll (global::Java.Lang.IIterable p0)
 		{
@@ -137,6 +148,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_color_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='color' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("color", "(I)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions InvokeColor (int p0)
 		{
@@ -146,6 +158,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -155,6 +168,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_geodesic_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='geodesic' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("geodesic", "(Z)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions Geodesic (bool p0)
 		{
@@ -164,6 +178,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -173,6 +188,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_visible_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='visible' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("visible", "(Z)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions Visible (bool p0)
 		{
@@ -182,6 +198,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_width_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='width' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("width", "(F)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions InvokeWidth (float p0)
 		{
@@ -191,6 +208,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{
@@ -200,6 +218,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_zIndex_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='PolylineOptions']/method[@name='zIndex' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("zIndex", "(F)Lcom/google/android/gms/maps/model/PolylineOptions;", "")]
 		public global::Android.Gms.Maps.Model.PolylineOptions InvokeZIndex (float p0)
 		{

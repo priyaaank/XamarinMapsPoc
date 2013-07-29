@@ -4,15 +4,18 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.LeaderBoard {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/leaderboard/SubmitScoreResult", DoNotGenerateAcw=true)]
 	public sealed partial class SubmitScoreResult : global::Java.Lang.Object {
 
+		// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult.Result']"
 		[global::Android.Runtime.Register ("com/google/android/gms/games/leaderboard/SubmitScoreResult$Result", DoNotGenerateAcw=true)]
 		public sealed partial class Result : global::Java.Lang.Object {
 
 
 			static IntPtr formattedScore_jfieldId;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult.Result']/field[@name='formattedScore']"
 			[Register ("formattedScore")]
 			public string FormattedScore {
 				get {
@@ -32,6 +35,7 @@ namespace Android.Gms.Games.LeaderBoard {
 
 			static IntPtr newBest_jfieldId;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult.Result']/field[@name='newBest']"
 			[Register ("newBest")]
 			public bool NewBest {
 				get {
@@ -48,6 +52,7 @@ namespace Android.Gms.Games.LeaderBoard {
 
 			static IntPtr rawScore_jfieldId;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult.Result']/field[@name='rawScore']"
 			[Register ("rawScore")]
 			public long RawScore {
 				get {
@@ -79,6 +84,7 @@ namespace Android.Gms.Games.LeaderBoard {
 			internal Result (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 			static IntPtr id_ctor_JLjava_lang_String_Z;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult.Result']/constructor[@name='SubmitScoreResult.Result' and count(parameter)=3 and parameter[1][@type='long'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='boolean']]"
 			[Register (".ctor", "(JLjava/lang/String;Z)V", "")]
 			public Result (long p0, string p1, bool p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -118,6 +124,7 @@ namespace Android.Gms.Games.LeaderBoard {
 		internal SubmitScoreResult (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_ILjava_lang_String_Ljava_lang_String_Ljava_util_HashMap_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult']/constructor[@name='SubmitScoreResult' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='java.util.HashMap']]"
 		[Register (".ctor", "(ILjava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)V", "")]
 		public SubmitScoreResult (int p0, string p1, string p2, global::System.Collections.Generic.IDictionary<global::Java.Lang.Integer, global::Android.Gms.Games.LeaderBoard.SubmitScoreResult.Result> p3) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -128,7 +135,7 @@ namespace Android.Gms.Games.LeaderBoard {
 			IntPtr native_p2 = JNIEnv.NewString (p2);;
 			IntPtr native_p3 = global::Android.Runtime.JavaDictionary<global::Java.Lang.Integer, global::Android.Gms.Games.LeaderBoard.SubmitScoreResult.Result>.ToLocalJniHandle (p3);;
 			if (GetType () != typeof (SubmitScoreResult)) {
-				SetHandle (global::Android.Runtime.JNIEnv.CreateInstance (GetType (), "(ILjava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)V", new JValue (p0), new JValue (native_p1), new JValue (native_p2), new JValue (native_p3)), JniHandleOwnership.TransferLocalRef);
+				SetHandle (global::Android.Runtime.JNIEnv.CreateInstance (GetType (), "(ILjava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)V", new JValue (p0), new JValue (native_p1), new JValue (native_p2), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p3))), JniHandleOwnership.TransferLocalRef);
 				JNIEnv.DeleteLocalRef (native_p1);
 				JNIEnv.DeleteLocalRef (native_p2);
 				JNIEnv.DeleteLocalRef (native_p3);
@@ -137,13 +144,14 @@ namespace Android.Gms.Games.LeaderBoard {
 
 			if (id_ctor_ILjava_lang_String_Ljava_lang_String_Ljava_util_HashMap_ == IntPtr.Zero)
 				id_ctor_ILjava_lang_String_Ljava_lang_String_Ljava_util_HashMap_ = JNIEnv.GetMethodID (class_ref, "<init>", "(ILjava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)V");
-			SetHandle (JNIEnv.NewObject (class_ref, id_ctor_ILjava_lang_String_Ljava_lang_String_Ljava_util_HashMap_, new JValue (p0), new JValue (native_p1), new JValue (native_p2), new JValue (native_p3)), JniHandleOwnership.TransferLocalRef);
+			SetHandle (JNIEnv.NewObject (class_ref, id_ctor_ILjava_lang_String_Ljava_lang_String_Ljava_util_HashMap_, new JValue (p0), new JValue (native_p1), new JValue (native_p2), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p3))), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p1);
 			JNIEnv.DeleteLocalRef (native_p2);
 			JNIEnv.DeleteLocalRef (native_p3);
 		}
 
 		static IntPtr id_ctor_ILjava_lang_String_Ljava_lang_String_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult']/constructor[@name='SubmitScoreResult' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]"
 		[Register (".ctor", "(ILjava/lang/String;Ljava/lang/String;)V", "")]
 		public SubmitScoreResult (int p0, string p1, string p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -168,6 +176,7 @@ namespace Android.Gms.Games.LeaderBoard {
 
 		static IntPtr id_getLeaderboardId;
 		public string LeaderboardId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult']/method[@name='getLeaderboardId' and count(parameter)=0]"
 			[Register ("getLeaderboardId", "()Ljava/lang/String;", "GetGetLeaderboardIdHandler")]
 			get {
 				if (id_getLeaderboardId == IntPtr.Zero)
@@ -178,6 +187,7 @@ namespace Android.Gms.Games.LeaderBoard {
 
 		static IntPtr id_getPlayerId;
 		public string PlayerId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult']/method[@name='getPlayerId' and count(parameter)=0]"
 			[Register ("getPlayerId", "()Ljava/lang/String;", "GetGetPlayerIdHandler")]
 			get {
 				if (id_getPlayerId == IntPtr.Zero)
@@ -188,6 +198,7 @@ namespace Android.Gms.Games.LeaderBoard {
 
 		static IntPtr id_getStatusCode;
 		public int StatusCode {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult']/method[@name='getStatusCode' and count(parameter)=0]"
 			[Register ("getStatusCode", "()I", "GetGetStatusCodeHandler")]
 			get {
 				if (id_getStatusCode == IntPtr.Zero)
@@ -197,6 +208,7 @@ namespace Android.Gms.Games.LeaderBoard {
 		}
 
 		static IntPtr id_getScoreResult_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/class[@name='SubmitScoreResult']/method[@name='getScoreResult' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("getScoreResult", "(I)Lcom/google/android/gms/games/leaderboard/SubmitScoreResult$Result;", "")]
 		public global::Android.Gms.Games.LeaderBoard.SubmitScoreResult.Result GetScoreResult (int p0)
 		{

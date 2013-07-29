@@ -4,26 +4,32 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.MultiPlayer {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Invitation']"
 	[Register ("com/google/android/gms/games/multiplayer/Invitation", "", "Android.Gms.Games.MultiPlayer.IInvitationInvoker")]
 	public partial interface IInvitation : global::Android.OS.IParcelable, global::Android.Gms.Common.Data.IFreezable, global::Android.Gms.Games.MultiPlayer.IParticipatable {
 
 		long CreationTimestamp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Invitation']/method[@name='getCreationTimestamp' and count(parameter)=0]"
 			[Register ("getCreationTimestamp", "()J", "GetGetCreationTimestampHandler:Android.Gms.Games.MultiPlayer.IInvitationInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Games.IGame Game {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Invitation']/method[@name='getGame' and count(parameter)=0]"
 			[Register ("getGame", "()Lcom/google/android/gms/games/Game;", "GetGetGameHandler:Android.Gms.Games.MultiPlayer.IInvitationInvoker, GooglePlayServices")] get;
 		}
 
 		string InvitationId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Invitation']/method[@name='getInvitationId' and count(parameter)=0]"
 			[Register ("getInvitationId", "()Ljava/lang/String;", "GetGetInvitationIdHandler:Android.Gms.Games.MultiPlayer.IInvitationInvoker, GooglePlayServices")] get;
 		}
 
 		int InvitationType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Invitation']/method[@name='getInvitationType' and count(parameter)=0]"
 			[Register ("getInvitationType", "()I", "GetGetInvitationTypeHandler:Android.Gms.Games.MultiPlayer.IInvitationInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Games.MultiPlayer.IParticipant Inviter {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Invitation']/method[@name='getInviter' and count(parameter)=0]"
 			[Register ("getInviter", "()Lcom/google/android/gms/games/multiplayer/Participant;", "GetGetInviterHandler:Android.Gms.Games.MultiPlayer.IInvitationInvoker, GooglePlayServices")] get;
 		}
 

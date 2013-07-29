@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Plus.Model.People {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='PersonBuffer']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/people/PersonBuffer", DoNotGenerateAcw=true)]
 	public sealed partial class PersonBuffer : global::Android.Gms.Common.Data.DataBuffer {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Plus.Model.People {
 		internal PersonBuffer (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_get_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.people']/class[@name='PersonBuffer']/method[@name='get' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("get", "(I)Lcom/google/android/gms/plus/model/people/Person;", "")]
 		public override global::Java.Lang.Object Get (int p0)
 		{

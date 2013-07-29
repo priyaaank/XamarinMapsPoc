@@ -4,25 +4,32 @@ using Android.Runtime;
 
 namespace Android.Gms.Plus {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/GooglePlusUtil", DoNotGenerateAcw=true)]
 	public partial class GooglePlusUtil : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/field[@name='APP_DISABLED']"
 		[Register ("APP_DISABLED")]
 		public const int AppDisabled = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/field[@name='APP_MISSING']"
 		[Register ("APP_MISSING")]
 		public const int AppMissing = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/field[@name='APP_UPDATE_REQUIRED']"
 		[Register ("APP_UPDATE_REQUIRED")]
 		public const int AppUpdateRequired = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/field[@name='GOOGLE_PLUS_PACKAGE']"
 		[Register ("GOOGLE_PLUS_PACKAGE")]
 		public const string GooglePlusPackage = (string) "com.google.android.apps.plus";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/field[@name='PLATFORM_LOGGING_TAG']"
 		[Register ("PLATFORM_LOGGING_TAG")]
 		public const string PlatformLoggingTag = (string) "GooglePlusPlatform";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/field[@name='SUCCESS']"
 		[Register ("SUCCESS")]
 		public const int Success = (int) 0;
 		internal static IntPtr java_class_handle;
@@ -43,6 +50,7 @@ namespace Android.Gms.Plus {
 		protected GooglePlusUtil (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_checkGooglePlusApp_Landroid_content_Context_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/method[@name='checkGooglePlusApp' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register ("checkGooglePlusApp", "(Landroid/content/Context;)I", "")]
 		public static int CheckGooglePlusApp (global::Android.Content.Context p0)
 		{
@@ -53,6 +61,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_getErrorDialog_ILandroid_app_Activity_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='GooglePlusUtil']/method[@name='getErrorDialog' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='android.app.Activity'] and parameter[3][@type='int']]"
 		[Register ("getErrorDialog", "(ILandroid/app/Activity;I)Landroid/app/Dialog;", "")]
 		public static global::Android.App.Dialog GetErrorDialog (int p0, global::Android.App.Activity p1, int p2)
 		{

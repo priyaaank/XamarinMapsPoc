@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/CameraPosition", DoNotGenerateAcw=true)]
 	public sealed partial class CameraPosition : global::Java.Lang.Object {
 
 
 		static IntPtr bearing_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/field[@name='bearing']"
 		[Register ("bearing")]
 		public float Bearing {
 			get {
@@ -26,6 +28,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr target_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/field[@name='target']"
 		[Register ("target")]
 		public global::Android.Gms.Maps.Model.LatLng Target {
 			get {
@@ -45,6 +48,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr tilt_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/field[@name='tilt']"
 		[Register ("tilt")]
 		public float Tilt {
 			get {
@@ -61,6 +65,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr zoom_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/field[@name='zoom']"
 		[Register ("zoom")]
 		public float Zoom {
 			get {
@@ -74,6 +79,7 @@ namespace Android.Gms.Maps.Model {
 				JNIEnv.SetField (Handle, zoom_jfieldId, value);
 			}
 		}
+		// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']"
 		[global::Android.Runtime.Register ("com/google/android/gms/maps/model/CameraPosition$Builder", DoNotGenerateAcw=true)]
 		public sealed partial class Builder : global::Java.Lang.Object {
 
@@ -95,6 +101,7 @@ namespace Android.Gms.Maps.Model {
 			internal Builder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 			static IntPtr id_ctor;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']/constructor[@name='CameraPosition.Builder' and count(parameter)=0]"
 			[Register (".ctor", "()V", "")]
 			public Builder () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -112,6 +119,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_ctor_Lcom_google_android_gms_maps_model_CameraPosition_;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']/constructor[@name='CameraPosition.Builder' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.CameraPosition']]"
 			[Register (".ctor", "(Lcom/google/android/gms/maps/model/CameraPosition;)V", "")]
 			public Builder (global::Android.Gms.Maps.Model.CameraPosition p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -129,6 +137,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_bearing_F;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']/method[@name='bearing' and count(parameter)=1 and parameter[1][@type='float']]"
 			[Register ("bearing", "(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;", "")]
 			public global::Android.Gms.Maps.Model.CameraPosition.Builder Bearing (float p0)
 			{
@@ -138,6 +147,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_build;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']/method[@name='build' and count(parameter)=0]"
 			[Register ("build", "()Lcom/google/android/gms/maps/model/CameraPosition;", "")]
 			public global::Android.Gms.Maps.Model.CameraPosition Build ()
 			{
@@ -147,6 +157,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_target_Lcom_google_android_gms_maps_model_LatLng_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']/method[@name='target' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 			[Register ("target", "(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/CameraPosition$Builder;", "")]
 			public global::Android.Gms.Maps.Model.CameraPosition.Builder Target (global::Android.Gms.Maps.Model.LatLng p0)
 			{
@@ -157,6 +168,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_tilt_F;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']/method[@name='tilt' and count(parameter)=1 and parameter[1][@type='float']]"
 			[Register ("tilt", "(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;", "")]
 			public global::Android.Gms.Maps.Model.CameraPosition.Builder Tilt (float p0)
 			{
@@ -166,6 +178,7 @@ namespace Android.Gms.Maps.Model {
 			}
 
 			static IntPtr id_zoom_F;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition.Builder']/method[@name='zoom' and count(parameter)=1 and parameter[1][@type='float']]"
 			[Register ("zoom", "(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;", "")]
 			public global::Android.Gms.Maps.Model.CameraPosition.Builder Zoom (float p0)
 			{
@@ -194,6 +207,7 @@ namespace Android.Gms.Maps.Model {
 		internal CameraPosition (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_maps_model_LatLng_FFF;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/constructor[@name='CameraPosition' and count(parameter)=4 and parameter[1][@type='com.google.android.gms.maps.model.LatLng'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='float']]"
 		[Register (".ctor", "(Lcom/google/android/gms/maps/model/LatLng;FFF)V", "")]
 		public CameraPosition (global::Android.Gms.Maps.Model.LatLng p0, float p1, float p2, float p3) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -211,6 +225,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_builder;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/method[@name='builder' and count(parameter)=0]"
 		[Register ("builder", "()Lcom/google/android/gms/maps/model/CameraPosition$Builder;", "")]
 		public static global::Android.Gms.Maps.Model.CameraPosition.Builder InvokeBuilder ()
 		{
@@ -220,6 +235,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_builder_Lcom_google_android_gms_maps_model_CameraPosition_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/method[@name='builder' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.CameraPosition']]"
 		[Register ("builder", "(Lcom/google/android/gms/maps/model/CameraPosition;)Lcom/google/android/gms/maps/model/CameraPosition$Builder;", "")]
 		public static global::Android.Gms.Maps.Model.CameraPosition.Builder InvokeBuilder (global::Android.Gms.Maps.Model.CameraPosition p0)
 		{
@@ -230,6 +246,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_createFromAttributes_Landroid_content_Context_Landroid_util_AttributeSet_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/method[@name='createFromAttributes' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]"
 		[Register ("createFromAttributes", "(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/google/android/gms/maps/model/CameraPosition;", "")]
 		public static global::Android.Gms.Maps.Model.CameraPosition CreateFromAttributes (global::Android.Content.Context p0, global::Android.Util.IAttributeSet p1)
 		{
@@ -240,6 +257,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -249,6 +267,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_fromLatLngZoom_Lcom_google_android_gms_maps_model_LatLng_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/method[@name='fromLatLngZoom' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.maps.model.LatLng'] and parameter[2][@type='float']]"
 		[Register ("fromLatLngZoom", "(Lcom/google/android/gms/maps/model/LatLng;F)Lcom/google/android/gms/maps/model/CameraPosition;", "")]
 		public static global::Android.Gms.Maps.Model.CameraPosition FromLatLngZoom (global::Android.Gms.Maps.Model.LatLng p0, float p1)
 		{
@@ -259,6 +278,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -268,6 +288,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CameraPosition']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

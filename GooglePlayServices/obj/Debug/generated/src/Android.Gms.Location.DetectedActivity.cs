@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Location {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']"
 	[global::Android.Runtime.Register ("com/google/android/gms/location/DetectedActivity", DoNotGenerateAcw=true)]
 	public partial class DetectedActivity : global::Java.Lang.Object {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.Gms.Location.DetectedActivityCreator Creator {
 			get {
@@ -27,21 +29,27 @@ namespace Android.Gms.Location {
 			}
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/field[@name='IN_VEHICLE']"
 		[Register ("IN_VEHICLE")]
 		public const int InVehicle = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/field[@name='ON_BICYCLE']"
 		[Register ("ON_BICYCLE")]
 		public const int OnBicycle = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/field[@name='ON_FOOT']"
 		[Register ("ON_FOOT")]
 		public const int OnFoot = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/field[@name='STILL']"
 		[Register ("STILL")]
 		public const int Still = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/field[@name='TILTING']"
 		[Register ("TILTING")]
 		public const int Tilting = (int) 5;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/field[@name='UNKNOWN']"
 		[Register ("UNKNOWN")]
 		public const int Unknown = (int) 4;
 		internal static IntPtr java_class_handle;
@@ -62,6 +70,7 @@ namespace Android.Gms.Location {
 		protected DetectedActivity (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_II;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/constructor[@name='DetectedActivity' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]"
 		[Register (".ctor", "(II)V", "")]
 		public DetectedActivity (int p0, int p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -79,6 +88,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/constructor[@name='DetectedActivity' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public DetectedActivity () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -113,6 +123,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getConfidence;
 		public virtual int Confidence {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/method[@name='getConfidence' and count(parameter)=0]"
 			[Register ("getConfidence", "()I", "GetGetConfidenceHandler")]
 			get {
 				if (id_getConfidence == IntPtr.Zero)
@@ -143,6 +154,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getType;
 		public virtual int Type {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/method[@name='getType' and count(parameter)=0]"
 			[Register ("getType", "()I", "GetGetTypeHandler")]
 			get {
 				if (id_getType == IntPtr.Zero)
@@ -172,6 +184,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "GetDescribeContentsHandler")]
 		public virtual int DescribeContents ()
 		{
@@ -202,6 +215,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='DetectedActivity']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "GetWriteToParcel_Landroid_os_Parcel_IHandler")]
 		public virtual void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

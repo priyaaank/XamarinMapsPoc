@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <api>
-<package name="android">
-<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="UnusedStub" static="false" visibility="public"/>
-</package>
 <package name="com.google.android.gms.appstate">
 <interface abstract="true" deprecated="not deprecated" final="false" name="AppState" static="false" visibility="public">
 <implements name="com.google.android.gms.common.data.Freezable" name-generic-aware="com.google.android.gms.common.data.Freezable&lt;com.google.android.gms.appstate.AppState&gt;">
@@ -568,9 +565,13 @@
 </method>
 <field deprecated="not deprecated" final="true" name="GOOGLE_PLAY_SERVICES_PACKAGE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.google.android.gms&quot;" visibility="public" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="GOOGLE_PLAY_SERVICES_VERSION_CODE" static="true" transient="false" type="int" type-generic-aware="int" value="3136100" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="GOOGLE_PLAY_SERVICES_VERSION_CODE" static="true" transient="false" type="int" type-generic-aware="int" value="3159100" visibility="public" volatile="false">
 </field>
 <field deprecated="not deprecated" final="true" name="GOOGLE_PLAY_STORE_PACKAGE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.android.vending&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="H" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="I" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
 </field>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Scopes" static="false" visibility="public">
@@ -710,9 +711,49 @@
 <parameter name="p1" type="int">
 </parameter>
 </method>
+<method abstract="false" deprecated="not deprecated" final="false" name="loadImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.common.images.ImageManager.OnImageLoadedListener">
+</parameter>
+<parameter name="p1" type="android.net.Uri">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="loadImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.common.images.ImageManager.OnImageLoadedListener">
+</parameter>
+<parameter name="p1" type="android.net.Uri">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ImageManager.1" obfuscated="true" static="true" visibility=""/>
-<class abstract="false" deprecated="not deprecated" extends="android.os.ResultReceiver" extends-generic-aware="android.os.ResultReceiver" final="true" name="ImageManager.ImageReceiver" static="false" visibility="public">
+<interface abstract="true" deprecated="not deprecated" final="false" name="ImageManager.OnImageLoadedListener" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onImageLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<parameter name="p1" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.common.images.ImageManager.d" extends-generic-aware="com.google.android.gms.common.images.ImageManager.d" final="true" name="ImageManager.a" obfuscated="true" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<parameter name="p1" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onImageLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<parameter name="p1" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.os.ResultReceiver" extends-generic-aware="android.os.ResultReceiver" final="true" name="ImageManager.b" obfuscated="true" static="false" visibility="public">
 <method abstract="false" deprecated="not deprecated" final="false" name="getUri" native="false" return="android.net.Uri" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="onReceiveResult" native="false" return="void" static="false" synchronized="false" visibility="public">
@@ -722,10 +763,32 @@
 </parameter>
 </method>
 </class>
-<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ImageManager.ListenerHolder" static="false" visibility="">
+<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.common.images.ImageManager.d" extends-generic-aware="com.google.android.gms.common.images.ImageManager.d" final="true" name="ImageManager.c" obfuscated="true" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<parameter name="p1" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onImageLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<parameter name="p1" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ImageManager.d" obfuscated="true" static="false" visibility="">
 <implements name="com.google.android.gms.common.images.ImageManager.OnImageLoadedListener" name-generic-aware="com.google.android.gms.common.images.ImageManager.OnImageLoadedListener">
 </implements>
-<method abstract="true" deprecated="not deprecated" final="false" name="handleCachedDrawable" native="false" return="void" static="false" synchronized="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="a" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="android.net.Uri">
 </parameter>
 <parameter name="p1" type="android.graphics.drawable.Drawable">
@@ -737,56 +800,26 @@
 <parameter name="p1" type="android.graphics.drawable.Drawable">
 </parameter>
 </method>
-<method abstract="true" deprecated="not deprecated" final="false" name="shouldLoadImage" native="false" return="boolean" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
-</parameter>
-</method>
-<field deprecated="not deprecated" final="true" name="mDefaultResId" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="aq" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="mHashCode" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="ar" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
 </field>
 </class>
-<interface abstract="true" deprecated="not deprecated" final="false" name="ImageManager.OnImageLoadedListener" static="true" visibility="public">
-<method abstract="true" deprecated="not deprecated" final="false" name="onImageLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="ImageManager.e" obfuscated="true" static="true" visibility="">
+<implements name="android.content.ComponentCallbacks2" name-generic-aware="android.content.ComponentCallbacks2">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ImageManager.e" static="false" type="com.google.android.gms.common.images.ImageManager.e" visibility="public">
+<parameter name="p0" type="com.google.android.gms.internal.af&lt;android.net.Uri, java.lang.ref.WeakReference&lt;android.graphics.drawable.Drawable.ConstantState&gt;&gt;">
 </parameter>
-<parameter name="p1" type="android.graphics.drawable.Drawable">
-</parameter>
-</method>
-</interface>
-<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.common.images.ImageManager.ListenerHolder" extends-generic-aware="com.google.android.gms.common.images.ImageManager.ListenerHolder" final="true" name="ImageManager.a" obfuscated="true" static="false" visibility="">
-<method abstract="false" deprecated="not deprecated" final="false" name="handleCachedDrawable" native="false" return="void" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
-</parameter>
-<parameter name="p1" type="android.graphics.drawable.Drawable">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="onConfigurationChanged" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.res.Configuration">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="onImageLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
-</parameter>
-<parameter name="p1" type="android.graphics.drawable.Drawable">
-</parameter>
+<method abstract="false" deprecated="not deprecated" final="false" name="onLowMemory" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="shouldLoadImage" native="false" return="boolean" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
-</parameter>
-</method>
-</class>
-<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.common.images.ImageManager.ListenerHolder" extends-generic-aware="com.google.android.gms.common.images.ImageManager.ListenerHolder" final="true" name="ImageManager.b" obfuscated="true" static="false" visibility="">
-<method abstract="false" deprecated="not deprecated" final="false" name="handleCachedDrawable" native="false" return="void" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
-</parameter>
-<parameter name="p1" type="android.graphics.drawable.Drawable">
-</parameter>
-</method>
-<method abstract="false" deprecated="not deprecated" final="false" name="onImageLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
-</parameter>
-<parameter name="p1" type="android.graphics.drawable.Drawable">
-</parameter>
-</method>
-<method abstract="false" deprecated="not deprecated" final="false" name="shouldLoadImage" native="false" return="boolean" static="false" synchronized="false" visibility="public">
-<parameter name="p0" type="android.net.Uri">
+<method abstract="false" deprecated="not deprecated" final="false" name="onTrimMemory" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
 </parameter>
 </method>
 </class>
@@ -1028,6 +1061,8 @@
 <method abstract="false" deprecated="not deprecated" final="false" name="getAppId" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getCurrentAccountName" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCurrentGame" native="false" return="com.google.android.gms.games.Game" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getCurrentPlayer" native="false" return="com.google.android.gms.games.Player" static="false" synchronized="false" visibility="public">
 </method>
@@ -1401,12 +1436,6 @@
 </parameter>
 </method>
 </class>
-<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="GamesClientSettings" static="false" visibility="public">
-<field deprecated="not deprecated" final="true" name="POPUP_POSITION_BOTTOM" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
-</field>
-<field deprecated="not deprecated" final="true" name="POPUP_POSITION_TOP" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
-</field>
-</class>
 <interface abstract="true" deprecated="not deprecated" final="false" name="OnGamesLoadedListener" static="false" visibility="public">
 <method abstract="true" deprecated="not deprecated" final="false" name="onGamesLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
@@ -1718,7 +1747,7 @@
 <parameter name="p0" type="com.google.android.gms.internal.k">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aq" native="false" return="com.google.android.gms.internal.bs" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ar" native="false" return="com.google.android.gms.internal.bs" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="get" native="false" return="com.google.android.gms.games.leaderboard.LeaderboardScore" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
@@ -1920,7 +1949,7 @@
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="InvitationEntity.1" static="true" visibility="">
 <implements name="android.os.Parcelable.Creator" name-generic-aware="android.os.Parcelable.Creator&lt;com.google.android.gms.games.multiplayer.InvitationEntity&gt;">
 </implements>
-<method abstract="false" deprecated="not deprecated" final="false" name="C" native="false" return="com.google.android.gms.games.multiplayer.InvitationEntity[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="D" native="false" return="com.google.android.gms.games.multiplayer.InvitationEntity[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -2050,7 +2079,7 @@
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ParticipantEntity.1" static="true" visibility="">
 <implements name="android.os.Parcelable.Creator" name-generic-aware="android.os.Parcelable.Creator&lt;com.google.android.gms.games.multiplayer.ParticipantEntity&gt;">
 </implements>
-<method abstract="false" deprecated="not deprecated" final="false" name="D" native="false" return="com.google.android.gms.games.multiplayer.ParticipantEntity[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="E" native="false" return="com.google.android.gms.games.multiplayer.ParticipantEntity[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -2120,7 +2149,7 @@
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="RealTimeMessage.1" static="true" visibility="">
 <implements name="android.os.Parcelable.Creator" name-generic-aware="android.os.Parcelable.Creator&lt;com.google.android.gms.games.multiplayer.realtime.RealTimeMessage&gt;">
 </implements>
-<method abstract="false" deprecated="not deprecated" final="false" name="E" native="false" return="com.google.android.gms.games.multiplayer.realtime.RealTimeMessage[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="F" native="false" return="com.google.android.gms.games.multiplayer.realtime.RealTimeMessage[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -2333,7 +2362,7 @@
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="RoomEntity.1" static="true" visibility="">
 <implements name="android.os.Parcelable.Creator" name-generic-aware="android.os.Parcelable.Creator&lt;com.google.android.gms.games.multiplayer.realtime.RoomEntity&gt;">
 </implements>
-<method abstract="false" deprecated="not deprecated" final="false" name="F" native="false" return="com.google.android.gms.games.multiplayer.realtime.RoomEntity[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="com.google.android.gms.games.multiplayer.realtime.RoomEntity[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -3403,19 +3432,19 @@
 </method>
 <field deprecated="not deprecated" final="true" name="CREATOR" static="true" transient="false" type="com.google.android.gms.internal.ao" type-generic-aware="com.google.android.gms.internal.ao" visibility="public" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="bA" static="false" transient="false" type="java.lang.Class" type-generic-aware="java.lang.Class&lt;? extends com.google.android.gms.internal.an&gt;" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="bA" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
 </field>
 <field deprecated="not deprecated" final="true" name="bB" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="bu" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="bC" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="bv" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="bD" static="false" transient="false" type="java.lang.Class" type-generic-aware="java.lang.Class&lt;? extends com.google.android.gms.internal.an&gt;" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="bw" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="bE" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="bx" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="bx" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="by" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="by" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
 </field>
 <field deprecated="not deprecated" final="true" name="bz" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
 </field>
@@ -4378,6 +4407,8 @@
 <method abstract="false" deprecated="not deprecated" final="false" name="getAppId" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getCurrentAccountName" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCurrentGame" native="false" return="com.google.android.gms.games.Game" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getCurrentPlayer" native="false" return="com.google.android.gms.games.Player" static="false" synchronized="false" visibility="public">
 </method>
@@ -5777,6 +5808,10 @@
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
+<method abstract="true" deprecated="not deprecated" final="false" name="am" native="false" return="com.google.android.gms.internal.k" static="false" synchronized="false" visibility="public">
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
 <method abstract="true" deprecated="not deprecated" final="false" name="b" native="false" return="int" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="byte[]">
 </parameter>
@@ -5821,6 +5856,20 @@
 <parameter name="p2" type="android.os.IBinder">
 </parameter>
 <parameter name="p3" type="android.os.Bundle">
+</parameter>
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="b" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.internal.bl">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="boolean">
+</parameter>
+<parameter name="p4" type="boolean">
 </parameter>
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
@@ -6397,6 +6446,10 @@
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
+<method abstract="false" deprecated="not deprecated" final="false" name="am" native="false" return="com.google.android.gms.internal.k" static="false" synchronized="false" visibility="public">
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
 <method abstract="false" deprecated="not deprecated" final="false" name="asBinder" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="b" native="false" return="int" static="false" synchronized="false" visibility="public">
@@ -6443,6 +6496,20 @@
 <parameter name="p2" type="android.os.IBinder">
 </parameter>
 <parameter name="p3" type="android.os.Bundle">
+</parameter>
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="b" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.internal.bl">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="boolean">
+</parameter>
+<parameter name="p4" type="boolean">
 </parameter>
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
@@ -6732,15 +6799,45 @@
 </exception>
 </method>
 </class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="bn" obfuscated="true" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="B" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.view.View">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="com.google.android.gms.internal.bn" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.internal.bj">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="an" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="ao" native="false" return="android.os.Bundle" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="ap" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setGravity" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="false" name="cv" static="false" transient="false" type="com.google.android.gms.internal.bj" type-generic-aware="com.google.android.gms.internal.bj" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="dl" static="false" transient="false" type="com.google.android.gms.internal.bn.a" type-generic-aware="com.google.android.gms.internal.bn.a" visibility="protected" volatile="false">
+</field>
+</class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="bn.1" obfuscated="true" static="true" visibility=""/>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="bn.a" obfuscated="true" static="true" visibility="public">
-<method abstract="false" deprecated="not deprecated" final="false" name="ap" native="false" return="android.os.Bundle" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aq" native="false" return="android.os.Bundle" static="false" synchronized="false" visibility="public">
 </method>
 <field deprecated="not deprecated" final="false" name="bottom" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
 </field>
-<field deprecated="not deprecated" final="false" name="di" static="false" transient="false" type="android.os.IBinder" type-generic-aware="android.os.IBinder" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="false" name="dm" static="false" transient="false" type="android.os.IBinder" type-generic-aware="android.os.IBinder" visibility="public" volatile="false">
 </field>
-<field deprecated="not deprecated" final="false" name="dj" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="false" name="dn" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
 </field>
 <field deprecated="not deprecated" final="false" name="gravity" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
 </field>
@@ -6750,6 +6847,28 @@
 </field>
 <field deprecated="not deprecated" final="false" name="top" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
 </field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.internal.bn" extends-generic-aware="com.google.android.gms.internal.bn" final="true" name="bn.b" obfuscated="true" static="true" visibility="">
+<implements name="android.view.View.OnAttachStateChangeListener" name-generic-aware="android.view.View.OnAttachStateChangeListener">
+</implements>
+<implements name="android.view.ViewTreeObserver.OnGlobalLayoutListener" name-generic-aware="android.view.ViewTreeObserver.OnGlobalLayoutListener">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="bn.b" static="false" type="com.google.android.gms.internal.bn.b" visibility="protected">
+<parameter name="p0" type="com.google.android.gms.internal.bj">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="onGlobalLayout" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onViewAttachedToWindow" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.view.View">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onViewDetachedFromWindow" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.view.View">
+</parameter>
+</method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="bo" obfuscated="true" static="false" visibility="">
 <implements name="com.google.android.gms.games.RealTimeSocket" name-generic-aware="com.google.android.gms.games.RealTimeSocket">
@@ -6774,13 +6893,13 @@
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="bp" obfuscated="true" static="false" visibility="public">
-<method abstract="false" deprecated="not deprecated" final="false" name="B" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="C" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="bq" obfuscated="true" static="false" visibility="public">
-<method abstract="false" deprecated="not deprecated" final="false" name="B" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="C" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -6816,7 +6935,7 @@
 <parameter name="p0" type="android.os.Bundle">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="ar" native="false" return="android.os.Bundle" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="as" native="false" return="android.os.Bundle" static="false" synchronized="false" visibility="public">
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="bt" obfuscated="true" static="false" visibility="public">
@@ -6826,7 +6945,7 @@
 <parameter name="p0" type="com.google.android.gms.games.leaderboard.LeaderboardScore">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="as" native="false" return="com.google.android.gms.games.leaderboard.LeaderboardScore" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="at" native="false" return="com.google.android.gms.games.leaderboard.LeaderboardScore" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getDisplayRank" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
@@ -6868,7 +6987,7 @@
 <parameter name="p1" type="int">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="as" native="false" return="com.google.android.gms.games.leaderboard.LeaderboardScore" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="at" native="false" return="com.google.android.gms.games.leaderboard.LeaderboardScore" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getDisplayRank" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
@@ -6904,11 +7023,11 @@
 <class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.internal.j" extends-generic-aware="com.google.android.gms.internal.j" final="true" name="bv" obfuscated="true" static="false" visibility="public">
 <implements name="com.google.android.gms.games.leaderboard.LeaderboardVariant" name-generic-aware="com.google.android.gms.games.leaderboard.LeaderboardVariant">
 </implements>
-<method abstract="false" deprecated="not deprecated" final="false" name="at" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
-</method>
 <method abstract="false" deprecated="not deprecated" final="false" name="au" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="av" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="aw" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getCollection" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -7292,7 +7411,7 @@
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
-<method abstract="true" deprecated="not deprecated" final="false" name="ay" native="false" return="android.location.Location" static="false" synchronized="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="az" native="false" return="android.location.Location" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
@@ -7406,7 +7525,7 @@
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="asBinder" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="ay" native="false" return="android.location.Location" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="az" native="false" return="android.location.Location" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
@@ -7609,7 +7728,7 @@
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="ce.c" obfuscated="true" static="false" visibility="">
 <implements name="com.google.android.gms.internal.ch" name-generic-aware="com.google.android.gms.internal.ch&lt;com.google.android.gms.internal.cc&gt;">
 </implements>
-<method abstract="false" deprecated="not deprecated" final="false" name="az" native="false" return="com.google.android.gms.internal.cc" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aA" native="false" return="com.google.android.gms.internal.cc" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="n" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
@@ -7685,11 +7804,11 @@
 <parameter name="p6" type="long">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aA" native="false" return="short" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aB" native="false" return="short" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="aB" native="false" return="float" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aC" native="false" return="float" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="aC" native="false" return="int" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aD" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="c" native="false" return="com.google.android.gms.internal.cf" static="true" synchronized="false" visibility="public">
 <parameter name="p0" type="byte[]">
@@ -7721,7 +7840,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="cg" static="false" type="com.google.android.gms.internal.cg" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="M" native="false" return="com.google.android.gms.internal.cf[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="N" native="false" return="com.google.android.gms.internal.cf[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -7832,11 +7951,11 @@
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
-<method abstract="true" deprecated="not deprecated" final="false" name="aR" native="false" return="com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate" static="false" synchronized="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="aS" native="false" return="com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
-<method abstract="true" deprecated="not deprecated" final="false" name="aS" native="false" return="com.google.android.gms.internal.dj" static="false" synchronized="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="aT" native="false" return="com.google.android.gms.internal.dj" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
@@ -7892,11 +8011,11 @@
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="aR" native="false" return="com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aS" native="false" return="com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="aS" native="false" return="com.google.android.gms.internal.dj" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aT" native="false" return="com.google.android.gms.internal.dj" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
@@ -8374,7 +8493,7 @@
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="cw" obfuscated="true" static="false" visibility="public">
 <constructor deprecated="not deprecated" final="false" name="cw" static="false" type="com.google.android.gms.internal.cw" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aT" native="false" return="boolean" static="true" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aU" native="false" return="boolean" static="true" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="g" native="false" return="com.google.android.gms.internal.cl" static="true" synchronized="false" visibility="public">
 <parameter name="p0" type="android.content.Context">
@@ -8390,7 +8509,7 @@
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="cx" obfuscated="true" static="false" visibility="public">
-<method abstract="false" deprecated="not deprecated" final="false" name="aV" native="false" return="boolean" static="true" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aW" native="false" return="boolean" static="true" synchronized="false" visibility="public">
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="cy" obfuscated="true" static="false" visibility="public">
@@ -8532,7 +8651,7 @@
 <interface abstract="true" deprecated="not deprecated" final="false" name="dj" obfuscated="true" static="false" visibility="public">
 <implements name="android.os.IInterface" name-generic-aware="android.os.IInterface">
 </implements>
-<method abstract="true" deprecated="not deprecated" final="false" name="N" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="O" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 <exception name="RemoteException" type="android.os.RemoteException">
@@ -8544,7 +8663,7 @@
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
-<method abstract="true" deprecated="not deprecated" final="false" name="bb" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="bc" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
@@ -8596,7 +8715,7 @@
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="dj.a.a" obfuscated="true" static="true" visibility="">
 <implements name="com.google.android.gms.internal.dj" name-generic-aware="com.google.android.gms.internal.dj">
 </implements>
-<method abstract="false" deprecated="not deprecated" final="false" name="N" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="O" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 <exception name="RemoteException" type="android.os.RemoteException">
@@ -8610,7 +8729,7 @@
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="asBinder" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bb" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bc" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
 <exception name="RemoteException" type="android.os.RemoteException">
 </exception>
 </method>
@@ -9852,9 +9971,9 @@
 <parameter name="p0" type="java.lang.Object">
 </parameter>
 </method>
-<field deprecated="not deprecated" final="true" name="gD" static="false" transient="false" type="com.google.android.gms.common.ConnectionResult" type-generic-aware="com.google.android.gms.common.ConnectionResult" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="gH" static="false" transient="false" type="com.google.android.gms.common.ConnectionResult" type-generic-aware="com.google.android.gms.common.ConnectionResult" visibility="public" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="gE" static="false" transient="false" type="android.content.Intent" type-generic-aware="android.content.Intent" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="gI" static="false" transient="false" type="android.content.Intent" type-generic-aware="android.content.Intent" visibility="public" volatile="false">
 </field>
 <field deprecated="not deprecated" final="true" name="type" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
 </field>
@@ -9946,13 +10065,13 @@
 <parameter name="p0" type="android.os.Bundle">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="bd" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="be" native="false" return="boolean" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="be" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bf" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bf" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bg" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bg" native="false" return="android.net.Uri[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bh" native="false" return="android.net.Uri[]" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getIntent" native="false" return="android.content.Intent" static="false" synchronized="false" visibility="public">
 </method>
@@ -10423,6 +10542,18 @@
 </parameter>
 <parameter name="p1" type="java.lang.String">
 </parameter>
+<parameter name="p2" type="boolean">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.internal.dw">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
 <parameter name="p2" type="com.google.android.gms.internal.eb">
 </parameter>
 <exception name="RemoteException" type="android.os.RemoteException">
@@ -10667,6 +10798,18 @@
 </parameter>
 <parameter name="p1" type="java.lang.String">
 </parameter>
+<parameter name="p2" type="boolean">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.internal.dw">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
 <parameter name="p2" type="com.google.android.gms.internal.eb">
 </parameter>
 <exception name="RemoteException" type="android.os.RemoteException">
@@ -10805,15 +10948,17 @@
 </parameter>
 <parameter name="p3" type="java.lang.String">
 </parameter>
-<parameter name="p4" type="com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks">
+<parameter name="p4" type="java.lang.String">
 </parameter>
-<parameter name="p5" type="com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener">
+<parameter name="p5" type="com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks">
 </parameter>
-<parameter name="p6" type="java.lang.String[]">
+<parameter name="p6" type="com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener">
 </parameter>
 <parameter name="p7" type="java.lang.String[]">
 </parameter>
 <parameter name="p8" type="java.lang.String[]">
+</parameter>
+<parameter name="p9" type="java.lang.String[]">
 </parameter>
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="W" native="false" return="com.google.android.gms.internal.dx" static="false" synchronized="false" visibility="protected">
@@ -10999,9 +11144,11 @@
 </parameter>
 </method>
 </class>
-<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.internal.t.a" extends-generic-aware="com.google.android.gms.internal.t.a" final="true" name="dy.i" obfuscated="true" static="false" visibility="public">
+<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.internal.t.a" extends-generic-aware="com.google.android.gms.internal.t.a" final="true" name="dy.i" obfuscated="true" static="true" visibility="public">
 <constructor deprecated="not deprecated" final="false" name="dy.i" static="false" type="com.google.android.gms.internal.dy.i" visibility="public">
-<parameter name="p1" type="com.google.android.gms.internal.p.d">
+<parameter name="p0" type="com.google.android.gms.internal.p.d">
+</parameter>
+<parameter name="p1" type="com.google.android.gms.internal.dy">
 </parameter>
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
@@ -11011,6 +11158,8 @@
 </parameter>
 <parameter name="p2" type="android.os.Bundle">
 </parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="clear" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.internal.dv" extends-generic-aware="com.google.android.gms.internal.dv" final="true" name="dy.j" obfuscated="true" static="false" visibility="">
@@ -11036,9 +11185,9 @@
 <parameter name="p0" type="java.lang.Object">
 </parameter>
 </method>
-<field deprecated="not deprecated" final="true" name="gD" static="false" transient="false" type="com.google.android.gms.common.ConnectionResult" type-generic-aware="com.google.android.gms.common.ConnectionResult" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="gH" static="false" transient="false" type="com.google.android.gms.common.ConnectionResult" type-generic-aware="com.google.android.gms.common.ConnectionResult" visibility="public" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="hp" static="false" transient="false" type="com.google.android.gms.internal.du" type-generic-aware="com.google.android.gms.internal.du" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="hw" static="false" transient="false" type="com.google.android.gms.internal.du" type-generic-aware="com.google.android.gms.internal.du" visibility="public" volatile="false">
 </field>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.internal.dv" extends-generic-aware="com.google.android.gms.internal.dv" final="true" name="dy.l" obfuscated="true" static="false" visibility="">
@@ -11074,19 +11223,19 @@
 <parameter name="p1" type="android.util.AttributeSet">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="bc" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<method abstract="false" deprecated="not deprecated" final="false" name="bd" native="false" return="void" static="false" synchronized="false" visibility="protected">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bi" native="false" return="void" static="false" synchronized="false" visibility="protected">
-</method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bk" native="false" return="void" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bj" native="false" return="void" static="false" synchronized="false" visibility="protected">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="bl" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bm" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<method abstract="false" deprecated="not deprecated" final="false" name="bm" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="bn" native="false" return="void" static="false" synchronized="false" visibility="protected">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="bo" native="false" return="void" static="false" synchronized="false" visibility="protected">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="bp" native="false" return="void" static="false" synchronized="false" visibility="protected">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="initialize" native="false" return="void" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="com.google.android.gms.plus.PlusClient">
@@ -11122,29 +11271,29 @@
 <parameter name="p0" type="int">
 </parameter>
 </method>
-<field deprecated="not deprecated" final="false" name="bi" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="bl" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="false" name="gY" static="false" transient="false" type="com.google.android.gms.plus.PlusClient" type-generic-aware="com.google.android.gms.plus.PlusClient" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="hA" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="false" name="hE" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="hB" static="false" transient="false" type="android.widget.LinearLayout" type-generic-aware="android.widget.LinearLayout" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="false" name="hF" static="false" transient="false" type="com.google.android.gms.internal.du" type-generic-aware="com.google.android.gms.internal.du" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="hC" static="false" transient="false" type="android.widget.FrameLayout" type-generic-aware="android.widget.FrameLayout" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="hG" static="false" transient="false" type="android.content.res.Resources" type-generic-aware="android.content.res.Resources" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="hD" static="false" transient="false" type="android.widget.CompoundButton" type-generic-aware="android.widget.CompoundButton" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="hH" static="false" transient="false" type="android.view.LayoutInflater" type-generic-aware="android.view.LayoutInflater" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="hF" static="false" transient="false" type="com.google.android.gms.internal.ea" type-generic-aware="com.google.android.gms.internal.ea" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="false" name="hs" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="hL" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="false" name="ht" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="hM" static="false" transient="false" type="com.google.android.gms.internal.du" type-generic-aware="com.google.android.gms.internal.du" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="hu" static="false" transient="false" type="android.widget.LinearLayout" type-generic-aware="android.widget.LinearLayout" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="hN" static="false" transient="false" type="android.content.res.Resources" type-generic-aware="android.content.res.Resources" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="hv" static="false" transient="false" type="android.widget.FrameLayout" type-generic-aware="android.widget.FrameLayout" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="true" name="hO" static="false" transient="false" type="android.view.LayoutInflater" type-generic-aware="android.view.LayoutInflater" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="hw" static="false" transient="false" type="android.widget.CompoundButton" type-generic-aware="android.widget.CompoundButton" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="hd" static="false" transient="false" type="com.google.android.gms.plus.PlusClient" type-generic-aware="com.google.android.gms.plus.PlusClient" visibility="protected" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="hy" static="false" transient="false" type="com.google.android.gms.internal.ea" type-generic-aware="com.google.android.gms.internal.ea" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="hz" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
 </field>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="dz.a" obfuscated="true" static="false" visibility="">
@@ -11350,7 +11499,7 @@
 <parameter name="p0" type="android.content.Context">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="b" native="false" return="void" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="android.net.Uri">
 </parameter>
 </method>
@@ -11390,11 +11539,11 @@
 <parameter name="p4" type="boolean">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="bv" native="false" return="java.util.ArrayList&lt;com.google.android.gms.internal.ag&gt;" static="false" synchronized="false" visibility="public">
-</method>
 <method abstract="false" deprecated="not deprecated" final="false" name="bw" native="false" return="java.util.ArrayList&lt;com.google.android.gms.internal.ag&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bx" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bx" native="false" return="java.util.ArrayList&lt;com.google.android.gms.internal.ag&gt;" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="by" native="false" return="boolean" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -11416,7 +11565,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="ec" static="false" type="com.google.android.gms.internal.ec" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="O" native="false" return="com.google.android.gms.internal.eb[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="P" native="false" return="com.google.android.gms.internal.eb[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11546,7 +11695,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bO" native="false" return="com.google.android.gms.internal.ed" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bP" native="false" return="com.google.android.gms.internal.ed" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -11788,7 +11937,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="ee" static="false" type="com.google.android.gms.internal.ee" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="P" native="false" return="com.google.android.gms.internal.ed[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="Q" native="false" return="com.google.android.gms.internal.ed[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11820,7 +11969,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bR" native="false" return="com.google.android.gms.internal.ef" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bS" native="false" return="com.google.android.gms.internal.ef" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -11866,7 +12015,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="eg" static="false" type="com.google.android.gms.internal.eg" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="Q" native="false" return="com.google.android.gms.internal.ef[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="R" native="false" return="com.google.android.gms.internal.ef[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11884,7 +12033,7 @@
 <parameter name="p1" type="int">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="bR" native="false" return="com.google.android.gms.internal.ef" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bS" native="false" return="com.google.android.gms.internal.ef" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getId" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
@@ -11912,7 +12061,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="ei" static="false" type="com.google.android.gms.internal.ei" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="R" native="false" return="com.google.android.gms.internal.eq.a[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="S" native="false" return="com.google.android.gms.internal.eq.a[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11926,7 +12075,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="ej" static="false" type="com.google.android.gms.internal.ej" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="S" native="false" return="com.google.android.gms.internal.eq.b[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="T" native="false" return="com.google.android.gms.internal.eq.b[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11940,7 +12089,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="ek" static="false" type="com.google.android.gms.internal.ek" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="T" native="false" return="com.google.android.gms.internal.eq.b.a[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="U" native="false" return="com.google.android.gms.internal.eq.b.a[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11958,7 +12107,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="U" native="false" return="com.google.android.gms.internal.eq.b.b[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="V" native="false" return="com.google.android.gms.internal.eq.b.b[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11972,7 +12121,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="V" native="false" return="com.google.android.gms.internal.eq.c[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="W" native="false" return="com.google.android.gms.internal.eq.c[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -11986,7 +12135,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="W" native="false" return="com.google.android.gms.internal.eq.d[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="X" native="false" return="com.google.android.gms.internal.eq.d[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -12000,7 +12149,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="X" native="false" return="com.google.android.gms.internal.eq.e[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="Y" native="false" return="com.google.android.gms.internal.eq.e[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -12014,7 +12163,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="Y" native="false" return="com.google.android.gms.internal.eq.g[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="Z" native="false" return="com.google.android.gms.internal.eq.g[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -12040,9 +12189,9 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="bW" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bX" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cc" native="false" return="com.google.android.gms.internal.eq" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cd" native="false" return="com.google.android.gms.internal.eq" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="d" native="false" return="com.google.android.gms.internal.eq" static="true" synchronized="false" visibility="public">
 <parameter name="p0" type="byte[]">
@@ -12180,7 +12329,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cd" native="false" return="com.google.android.gms.internal.eq.a" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ce" native="false" return="com.google.android.gms.internal.eq.a" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12218,7 +12367,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cg" native="false" return="com.google.android.gms.internal.eq.b" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ch" native="false" return="com.google.android.gms.internal.eq.b" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12260,7 +12409,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="ch" native="false" return="com.google.android.gms.internal.eq.b.a" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ci" native="false" return="com.google.android.gms.internal.eq.b.a" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12298,7 +12447,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="ci" native="false" return="com.google.android.gms.internal.eq.b.b" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cj" native="false" return="com.google.android.gms.internal.eq.b.b" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12340,7 +12489,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cj" native="false" return="com.google.android.gms.internal.eq.c" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ck" native="false" return="com.google.android.gms.internal.eq.c" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12386,7 +12535,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="ck" native="false" return="com.google.android.gms.internal.eq.d" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cl" native="false" return="com.google.android.gms.internal.eq.d" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12420,7 +12569,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cl" native="false" return="com.google.android.gms.internal.eq.e" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cm" native="false" return="com.google.android.gms.internal.eq.e" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12480,7 +12629,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cm" native="false" return="com.google.android.gms.internal.eq.g" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cn" native="false" return="com.google.android.gms.internal.eq.g" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12546,7 +12695,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cn" native="false" return="com.google.android.gms.internal.eq.h" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="co" native="false" return="com.google.android.gms.internal.eq.h" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12584,7 +12733,7 @@
 </constructor>
 <method abstract="false" deprecated="not deprecated" final="false" name="G" native="false" return="java.util.HashMap&lt;java.lang.String, com.google.android.gms.internal.an.a&lt;?, ?&gt;&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="co" native="false" return="com.google.android.gms.internal.eq.i" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cp" native="false" return="com.google.android.gms.internal.eq.i" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -12626,7 +12775,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="Z" native="false" return="com.google.android.gms.internal.eq[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aa" native="false" return="com.google.android.gms.internal.eq[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -12640,15 +12789,15 @@
 <parameter name="p1" type="int">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="cp" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.Emails&gt;" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cq" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.Emails&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cq" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.Organizations&gt;" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cr" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.Organizations&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cr" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.PlacesLived&gt;" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cs" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.PlacesLived&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="cs" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.Urls&gt;" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ct" native="false" return="java.util.ArrayList&lt;com.google.android.gms.plus.model.people.Person.Urls&gt;" static="false" synchronized="false" visibility="public">
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="ct" native="false" return="com.google.android.gms.plus.model.people.Person" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="cu" native="false" return="com.google.android.gms.plus.model.people.Person" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="getAboutMe" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
 </method>
@@ -12756,7 +12905,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="aa" native="false" return="com.google.android.gms.internal.eq.h[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ab" native="false" return="com.google.android.gms.internal.eq.h[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -12770,7 +12919,7 @@
 <parameter name="p0" type="android.os.Parcel">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="ab" native="false" return="com.google.android.gms.internal.eq.i[]" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="ac" native="false" return="com.google.android.gms.internal.eq.i[]" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -13399,7 +13548,7 @@
 <parameter name="p0" type="com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener">
 </parameter>
 </method>
-<field deprecated="not deprecated" final="true" name="aE" static="true" transient="false" type="java.lang.String[]" type-generic-aware="java.lang.String[]" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="aG" static="true" transient="false" type="java.lang.String[]" type-generic-aware="java.lang.String[]" visibility="public" volatile="false">
 </field>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="android.os.Handler" extends-generic-aware="android.os.Handler" final="true" name="p.a" obfuscated="true" static="false" visibility="">
@@ -13423,6 +13572,8 @@
 <method abstract="false" deprecated="not deprecated" final="false" name="p" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="q" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="unregister" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
 </class>
 <class abstract="true" deprecated="not deprecated" extends="com.google.android.gms.internal.p.b" extends-generic-aware="com.google.android.gms.internal.p.b&lt;TListener&gt;" final="false" name="p.c" obfuscated="true" static="false" visibility="public">
@@ -13481,9 +13632,9 @@
 <parameter name="p0" type="java.lang.Boolean">
 </parameter>
 </method>
-<field deprecated="not deprecated" final="true" name="aG" static="false" transient="false" type="android.os.Bundle" type-generic-aware="android.os.Bundle" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="aJ" static="false" transient="false" type="android.os.Bundle" type-generic-aware="android.os.Bundle" visibility="public" volatile="false">
 </field>
-<field deprecated="not deprecated" final="true" name="aH" static="false" transient="false" type="android.os.IBinder" type-generic-aware="android.os.IBinder" visibility="public" volatile="false">
+<field deprecated="not deprecated" final="true" name="aK" static="false" transient="false" type="android.os.IBinder" type-generic-aware="android.os.IBinder" visibility="public" volatile="false">
 </field>
 <field deprecated="not deprecated" final="true" name="statusCode" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
 </field>
@@ -14474,7 +14625,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="LocationRequest" static="false" type="com.google.android.gms.location.LocationRequest" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="I" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="J" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -14554,7 +14705,7 @@
 </field>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="LocationStatusCodes" static="false" visibility="public">
-<method abstract="false" deprecated="not deprecated" final="false" name="J" native="false" return="int" static="true" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="K" native="false" return="int" static="true" synchronized="false" visibility="public">
 <parameter name="p0" type="int">
 </parameter>
 </method>
@@ -14572,7 +14723,7 @@
 </package>
 <package name="com.google.android.gms.maps">
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="CameraUpdate" static="false" visibility="public">
-<method abstract="false" deprecated="not deprecated" final="false" name="aD" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aE" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="CameraUpdateFactory" static="false" visibility="public">
@@ -14922,8 +15073,6 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="GoogleMapOptions" static="false" type="com.google.android.gms.maps.GoogleMapOptions" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aG" native="false" return="byte" static="false" synchronized="false" visibility="public">
-</method>
 <method abstract="false" deprecated="not deprecated" final="false" name="aH" native="false" return="byte" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="aI" native="false" return="byte" static="false" synchronized="false" visibility="public">
@@ -14937,6 +15086,8 @@
 <method abstract="false" deprecated="not deprecated" final="false" name="aM" native="false" return="byte" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="aN" native="false" return="byte" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="aO" native="false" return="byte" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="camera" native="false" return="com.google.android.gms.maps.GoogleMapOptions" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="com.google.android.gms.maps.model.CameraPosition">
@@ -15047,6 +15198,76 @@
 </parameter>
 </method>
 </interface>
+<class abstract="false" deprecated="not deprecated" extends="android.app.Fragment" extends-generic-aware="android.app.Fragment" final="false" name="MapFragment" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="MapFragment" static="false" type="com.google.android.gms.maps.MapFragment" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="aP" native="false" return="com.google.android.gms.maps.internal.IMapFragmentDelegate" static="false" synchronized="false" visibility="protected">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="getMap" native="false" return="com.google.android.gms.maps.GoogleMap" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="newInstance" native="false" return="com.google.android.gms.maps.MapFragment" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="newInstance" native="false" return="com.google.android.gms.maps.MapFragment" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.android.gms.maps.GoogleMapOptions">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="MapFragment.a" obfuscated="true" static="true" visibility="">
+<implements name="com.google.android.gms.dynamic.LifecycleDelegate" name-generic-aware="com.google.android.gms.dynamic.LifecycleDelegate">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="MapFragment.a" static="false" type="com.google.android.gms.maps.MapFragment.a" visibility="public">
+<parameter name="p0" type="android.app.Fragment">
+</parameter>
+<parameter name="p1" type="com.google.android.gms.maps.internal.IMapFragmentDelegate">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="aP" native="false" return="com.google.android.gms.maps.internal.IMapFragmentDelegate" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onCreate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.os.Bundle">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onCreateView" native="false" return="android.view.View" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.view.LayoutInflater">
+</parameter>
+<parameter name="p1" type="android.view.ViewGroup">
+</parameter>
+<parameter name="p2" type="android.os.Bundle">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onDestroy" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onDestroyView" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onInflate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+<parameter name="p1" type="android.os.Bundle">
+</parameter>
+<parameter name="p2" type="android.os.Bundle">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onLowMemory" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onPause" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onResume" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onSaveInstanceState" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.os.Bundle">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.google.android.gms.internal.bb" extends-generic-aware="com.google.android.gms.internal.bb&lt;com.google.android.gms.maps.MapFragment.a&gt;" final="false" name="MapFragment.b" obfuscated="true" static="true" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="a" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.MapFragment.a&gt;">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="aQ" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="false" name="fA" static="false" transient="false" type="com.google.android.gms.internal.be" type-generic-aware="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.MapFragment.a&gt;" visibility="protected" volatile="false">
+</field>
+</class>
 <class abstract="false" deprecated="not deprecated" extends="android.widget.FrameLayout" extends-generic-aware="android.widget.FrameLayout" final="false" name="MapView" static="false" visibility="public">
 <constructor deprecated="not deprecated" final="false" name="MapView" static="false" type="com.google.android.gms.maps.MapView" visibility="public">
 <parameter name="p0" type="android.content.Context">
@@ -15100,7 +15321,7 @@
 <parameter name="p1" type="com.google.android.gms.maps.internal.IMapViewDelegate">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aQ" native="false" return="com.google.android.gms.maps.internal.IMapViewDelegate" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aR" native="false" return="com.google.android.gms.maps.internal.IMapViewDelegate" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="onCreate" native="false" return="void" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="android.os.Bundle">
@@ -15142,9 +15363,9 @@
 <parameter name="p0" type="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.MapView.a&gt;">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="aP" native="false" return="void" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aQ" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
-<field deprecated="not deprecated" final="false" name="fw" static="false" transient="false" type="com.google.android.gms.internal.be" type-generic-aware="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.MapView.a&gt;" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="fA" static="false" transient="false" type="com.google.android.gms.internal.be" type-generic-aware="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.MapView.a&gt;" visibility="protected" volatile="false">
 </field>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="MapsInitializer" static="false" visibility="public">
@@ -15170,7 +15391,7 @@
 <class abstract="false" deprecated="not deprecated" extends="android.support.v4.app.Fragment" extends-generic-aware="android.support.v4.app.Fragment" final="false" name="SupportMapFragment" static="false" visibility="public">
 <constructor deprecated="not deprecated" final="false" name="SupportMapFragment" static="false" type="com.google.android.gms.maps.SupportMapFragment" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aO" native="false" return="com.google.android.gms.maps.internal.IMapFragmentDelegate" static="false" synchronized="false" visibility="protected">
+<method abstract="false" deprecated="not deprecated" final="false" name="aP" native="false" return="com.google.android.gms.maps.internal.IMapFragmentDelegate" static="false" synchronized="false" visibility="protected">
 </method>
 <method abstract="false" deprecated="not deprecated" final="true" name="getMap" native="false" return="com.google.android.gms.maps.GoogleMap" static="false" synchronized="false" visibility="public">
 </method>
@@ -15190,7 +15411,7 @@
 <parameter name="p1" type="com.google.android.gms.maps.internal.IMapFragmentDelegate">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aO" native="false" return="com.google.android.gms.maps.internal.IMapFragmentDelegate" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aP" native="false" return="com.google.android.gms.maps.internal.IMapFragmentDelegate" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="onCreate" native="false" return="void" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="android.os.Bundle">
@@ -15232,9 +15453,9 @@
 <parameter name="p0" type="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.SupportMapFragment.a&gt;">
 </parameter>
 </method>
-<method abstract="false" deprecated="not deprecated" final="false" name="aP" native="false" return="void" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aQ" native="false" return="void" static="false" synchronized="false" visibility="public">
 </method>
-<field deprecated="not deprecated" final="false" name="fw" static="false" transient="false" type="com.google.android.gms.internal.be" type-generic-aware="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.SupportMapFragment.a&gt;" visibility="protected" volatile="false">
+<field deprecated="not deprecated" final="false" name="fA" static="false" transient="false" type="com.google.android.gms.internal.be" type-generic-aware="com.google.android.gms.internal.be&lt;com.google.android.gms.maps.SupportMapFragment.a&gt;" visibility="protected" volatile="false">
 </field>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="UiSettings" static="false" visibility="public">
@@ -16452,7 +16673,7 @@
 <parameter name="p0" type="com.google.android.gms.internal.bc">
 </parameter>
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aD" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aE" native="false" return="com.google.android.gms.internal.bc" static="false" synchronized="false" visibility="public">
 </method>
 </class>
 <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="BitmapDescriptorFactory" static="false" visibility="public">
@@ -16794,7 +17015,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="GroundOverlayOptions" static="false" type="com.google.android.gms.maps.model.GroundOverlayOptions" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aX" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aY" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="anchor" native="false" return="com.google.android.gms.maps.model.GroundOverlayOptions" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="float">
@@ -17058,7 +17279,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="MarkerOptions" static="false" type="com.google.android.gms.maps.model.MarkerOptions" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aY" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="aZ" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="anchor" native="false" return="com.google.android.gms.maps.model.MarkerOptions" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="float">
@@ -17198,8 +17419,6 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="PolygonOptions" static="false" type="com.google.android.gms.maps.model.PolygonOptions" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="aZ" native="false" return="java.util.List" static="false" synchronized="false" visibility="public">
-</method>
 <method abstract="false" deprecated="not deprecated" final="false" name="add" native="false" return="com.google.android.gms.maps.model.PolygonOptions" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="com.google.android.gms.maps.model.LatLng">
 </parameter>
@@ -17215,6 +17434,8 @@
 <method abstract="false" deprecated="not deprecated" final="false" name="addHole" native="false" return="com.google.android.gms.maps.model.PolygonOptions" static="false" synchronized="false" visibility="public">
 <parameter name="p0" type="java.lang.Iterable&lt;com.google.android.gms.maps.model.LatLng&gt;">
 </parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="ba" native="false" return="java.util.List" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>
@@ -17490,7 +17711,7 @@
 </implements>
 <constructor deprecated="not deprecated" final="false" name="TileOverlayOptions" static="false" type="com.google.android.gms.maps.model.TileOverlayOptions" visibility="public">
 </constructor>
-<method abstract="false" deprecated="not deprecated" final="false" name="ba" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="bb" native="false" return="android.os.IBinder" static="false" synchronized="false" visibility="public">
 </method>
 <method abstract="false" deprecated="not deprecated" final="false" name="describeContents" native="false" return="int" static="false" synchronized="false" visibility="public">
 </method>

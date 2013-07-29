@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Games {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='OnSignOutCompleteListener']"
 	[Register ("com/google/android/gms/games/OnSignOutCompleteListener", "", "Android.Gms.Games.IOnSignOutCompleteListenerInvoker")]
 	public partial interface IOnSignOutCompleteListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='OnSignOutCompleteListener']/method[@name='onSignOutComplete' and count(parameter)=0]"
 		[Register ("onSignOutComplete", "()V", "GetOnSignOutCompleteHandler:Android.Gms.Games.IOnSignOutCompleteListenerInvoker, GooglePlayServices")]
 		void OnSignOutComplete ();
 
@@ -97,8 +99,9 @@ namespace Android.Gms.Games {
 
 		public void OnSignOutComplete ()
 		{
-			if (Handler != null)
-				Handler (sender, new EventArgs ());
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new EventArgs ());
 		}
 
 		internal static bool __IsEmpty (IOnSignOutCompleteListenerImplementor value)

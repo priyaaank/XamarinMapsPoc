@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.MultiPlayer {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/multiplayer/InvitationEntity", DoNotGenerateAcw=true)]
 	public sealed partial class InvitationEntity : global::Java.Lang.Object, global::Android.Gms.Games.MultiPlayer.IInvitation {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.OS.IParcelableCreator Creator {
 			get {
@@ -44,6 +46,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		internal InvitationEntity (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_games_multiplayer_Invitation_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/constructor[@name='InvitationEntity' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.Invitation']]"
 		[Register (".ctor", "(Lcom/google/android/gms/games/multiplayer/Invitation;)V", "")]
 		public InvitationEntity (global::Android.Gms.Games.MultiPlayer.IInvitation p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -62,6 +65,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getCreationTimestamp;
 		public long CreationTimestamp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='getCreationTimestamp' and count(parameter)=0]"
 			[Register ("getCreationTimestamp", "()J", "GetGetCreationTimestampHandler")]
 			get {
 				if (id_getCreationTimestamp == IntPtr.Zero)
@@ -72,6 +76,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getGame;
 		public global::Android.Gms.Games.IGame Game {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='getGame' and count(parameter)=0]"
 			[Register ("getGame", "()Lcom/google/android/gms/games/Game;", "GetGetGameHandler")]
 			get {
 				if (id_getGame == IntPtr.Zero)
@@ -82,6 +87,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getInvitationId;
 		public string InvitationId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='getInvitationId' and count(parameter)=0]"
 			[Register ("getInvitationId", "()Ljava/lang/String;", "GetGetInvitationIdHandler")]
 			get {
 				if (id_getInvitationId == IntPtr.Zero)
@@ -92,6 +98,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getInvitationType;
 		public int InvitationType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='getInvitationType' and count(parameter)=0]"
 			[Register ("getInvitationType", "()I", "GetGetInvitationTypeHandler")]
 			get {
 				if (id_getInvitationType == IntPtr.Zero)
@@ -102,6 +109,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getInviter;
 		public global::Android.Gms.Games.MultiPlayer.IParticipant Inviter {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='getInviter' and count(parameter)=0]"
 			[Register ("getInviter", "()Lcom/google/android/gms/games/multiplayer/Participant;", "GetGetInviterHandler")]
 			get {
 				if (id_getInviter == IntPtr.Zero)
@@ -112,6 +120,7 @@ namespace Android.Gms.Games.MultiPlayer {
 
 		static IntPtr id_getParticipants;
 		public global::System.Collections.Generic.IList<global::Android.Gms.Games.MultiPlayer.IParticipant> Participants {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='getParticipants' and count(parameter)=0]"
 			[Register ("getParticipants", "()Ljava/util/ArrayList;", "GetGetParticipantsHandler")]
 			get {
 				if (id_getParticipants == IntPtr.Zero)
@@ -121,6 +130,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_multiplayer_Invitation_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='a' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.Invitation']]"
 		[Register ("a", "(Lcom/google/android/gms/games/multiplayer/Invitation;)I", "")]
 		public static int A (global::Android.Gms.Games.MultiPlayer.IInvitation p0)
 		{
@@ -131,6 +141,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_a_Lcom_google_android_gms_games_multiplayer_Invitation_Ljava_lang_Object_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='a' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.Invitation'] and parameter[2][@type='java.lang.Object']]"
 		[Register ("a", "(Lcom/google/android/gms/games/multiplayer/Invitation;Ljava/lang/Object;)Z", "")]
 		public static bool A (global::Android.Gms.Games.MultiPlayer.IInvitation p0, global::Java.Lang.Object p1)
 		{
@@ -141,6 +152,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_b_Lcom_google_android_gms_games_multiplayer_Invitation_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='b' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.Invitation']]"
 		[Register ("b", "(Lcom/google/android/gms/games/multiplayer/Invitation;)Ljava/lang/String;", "")]
 		public static string B (global::Android.Gms.Games.MultiPlayer.IInvitation p0)
 		{
@@ -151,6 +163,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -160,6 +173,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_freeze;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='freeze' and count(parameter)=0]"
 		[Register ("freeze", "()Lcom/google/android/gms/games/multiplayer/Invitation;", "")]
 		public global::Java.Lang.Object Freeze ()
 		{
@@ -169,6 +183,7 @@ namespace Android.Gms.Games.MultiPlayer {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/class[@name='InvitationEntity']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, global::Android.OS.ParcelableWriteFlags p1)
 		{

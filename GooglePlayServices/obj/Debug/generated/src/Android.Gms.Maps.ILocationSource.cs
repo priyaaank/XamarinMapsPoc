@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='LocationSource.OnLocationChangedListener']"
 	[Register ("com/google/android/gms/maps/LocationSource$OnLocationChangedListener", "", "Android.Gms.Maps.ILocationSourceOnLocationChangedListenerInvoker")]
 	public partial interface ILocationSourceOnLocationChangedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='LocationSource.OnLocationChangedListener']/method[@name='onLocationChanged' and count(parameter)=1 and parameter[1][@type='android.location.Location']]"
 		[Register ("onLocationChanged", "(Landroid/location/Location;)V", "GetOnLocationChanged_Landroid_location_Location_Handler:Android.Gms.Maps.ILocationSourceOnLocationChangedListenerInvoker, GooglePlayServices")]
 		void OnLocationChanged (global::Android.Locations.Location p0);
 
@@ -111,8 +113,9 @@ namespace Android.Gms.Maps {
 
 		public void OnLocationChanged (global::Android.Locations.Location p0)
 		{
-			if (Handler != null)
-				Handler (sender, new LocationSourceOnLocationChangedEventArgs (p0));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new LocationSourceOnLocationChangedEventArgs (p0));
 		}
 
 		internal static bool __IsEmpty (ILocationSourceOnLocationChangedListenerImplementor value)
@@ -122,12 +125,15 @@ namespace Android.Gms.Maps {
 	}
 
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='LocationSource']"
 	[Register ("com/google/android/gms/maps/LocationSource", "", "Android.Gms.Maps.ILocationSourceInvoker")]
 	public partial interface ILocationSource : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='LocationSource']/method[@name='activate' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.LocationSource.OnLocationChangedListener']]"
 		[Register ("activate", "(Lcom/google/android/gms/maps/LocationSource$OnLocationChangedListener;)V", "GetActivate_Lcom_google_android_gms_maps_LocationSource_OnLocationChangedListener_Handler:Android.Gms.Maps.ILocationSourceInvoker, GooglePlayServices")]
 		void Activate (global::Android.Gms.Maps.ILocationSourceOnLocationChangedListener p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/interface[@name='LocationSource']/method[@name='deactivate' and count(parameter)=0]"
 		[Register ("deactivate", "()V", "GetDeactivateHandler:Android.Gms.Maps.ILocationSourceInvoker, GooglePlayServices")]
 		void Deactivate ();
 
@@ -187,7 +193,7 @@ namespace Android.Gms.Maps {
 		static void n_Activate_Lcom_google_android_gms_maps_LocationSource_OnLocationChangedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Maps.ILocationSource __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Maps.ILocationSource> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Maps.ILocationSourceOnLocationChangedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Maps.ILocationSourceOnLocationChangedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Maps.ILocationSourceOnLocationChangedListener p0 = (global::Android.Gms.Maps.ILocationSourceOnLocationChangedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Maps.ILocationSourceOnLocationChangedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.Activate (p0);
 		}
 #pragma warning restore 0169

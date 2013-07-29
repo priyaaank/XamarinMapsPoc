@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/multiplayer/realtime/RoomConfig", DoNotGenerateAcw=true)]
 	public sealed partial class RoomConfig : global::Java.Lang.Object {
 
+		// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']"
 		[global::Android.Runtime.Register ("com/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder", DoNotGenerateAcw=true)]
 		public sealed partial class Builder : global::Java.Lang.Object {
 
@@ -28,6 +30,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			internal Builder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 			static IntPtr id_addPlayersToInvite_arrayLjava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='addPlayersToInvite' and count(parameter)=1 and parameter[1][@type='java.lang.String[]']]"
 			[Register ("addPlayersToInvite", "([Ljava/lang/String;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder AddPlayersToInvite (params  string[] p0)
 			{
@@ -43,18 +46,20 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 
 			static IntPtr id_addPlayersToInvite_Ljava_util_ArrayList_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='addPlayersToInvite' and count(parameter)=1 and parameter[1][@type='java.util.ArrayList']]"
 			[Register ("addPlayersToInvite", "(Ljava/util/ArrayList;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder AddPlayersToInvite (global::System.Collections.Generic.IList<string> p0)
 			{
 				if (id_addPlayersToInvite_Ljava_util_ArrayList_ == IntPtr.Zero)
 					id_addPlayersToInvite_Ljava_util_ArrayList_ = JNIEnv.GetMethodID (class_ref, "addPlayersToInvite", "(Ljava/util/ArrayList;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;");
 				IntPtr native_p0 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p0);
-				global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder __ret = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder> (JNIEnv.CallObjectMethod  (Handle, id_addPlayersToInvite_Ljava_util_ArrayList_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder __ret = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder> (JNIEnv.CallObjectMethod  (Handle, id_addPlayersToInvite_Ljava_util_ArrayList_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 				JNIEnv.DeleteLocalRef (native_p0);
 				return __ret;
 			}
 
 			static IntPtr id_build;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='build' and count(parameter)=0]"
 			[Register ("build", "()Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig Build ()
 			{
@@ -64,6 +69,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 
 			static IntPtr id_setAutoMatchCriteria_Landroid_os_Bundle_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='setAutoMatchCriteria' and count(parameter)=1 and parameter[1][@type='android.os.Bundle']]"
 			[Register ("setAutoMatchCriteria", "(Landroid/os/Bundle;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder SetAutoMatchCriteria (global::Android.OS.Bundle p0)
 			{
@@ -74,6 +80,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 
 			static IntPtr id_setInvitationIdToAccept_Ljava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='setInvitationIdToAccept' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 			[Register ("setInvitationIdToAccept", "(Ljava/lang/String;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder SetInvitationIdToAccept (string p0)
 			{
@@ -86,6 +93,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 
 			static IntPtr id_setMessageReceivedListener_Lcom_google_android_gms_games_multiplayer_realtime_RealTimeMessageReceivedListener_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='setMessageReceivedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.RealTimeMessageReceivedListener']]"
 			[Register ("setMessageReceivedListener", "(Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMessageReceivedListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder SetMessageReceivedListener (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRealTimeMessageReceivedListener p0)
 			{
@@ -96,6 +104,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 
 			static IntPtr id_setRoomStatusUpdateListener_Lcom_google_android_gms_games_multiplayer_realtime_RoomStatusUpdateListener_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='setRoomStatusUpdateListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.RoomStatusUpdateListener']]"
 			[Register ("setRoomStatusUpdateListener", "(Lcom/google/android/gms/games/multiplayer/realtime/RoomStatusUpdateListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder SetRoomStatusUpdateListener (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener p0)
 			{
@@ -106,6 +115,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 
 			static IntPtr id_setSocketCommunicationEnabled_Z;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='setSocketCommunicationEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]"
 			[Register ("setSocketCommunicationEnabled", "(Z)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder SetSocketCommunicationEnabled (bool p0)
 			{
@@ -115,6 +125,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			}
 
 			static IntPtr id_setVariant_I;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig.Builder']/method[@name='setVariant' and count(parameter)=1 and parameter[1][@type='int']]"
 			[Register ("setVariant", "(I)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 			public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder SetVariant (int p0)
 			{
@@ -144,6 +155,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getAutoMatchCriteria;
 		public global::Android.OS.Bundle AutoMatchCriteria {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='getAutoMatchCriteria' and count(parameter)=0]"
 			[Register ("getAutoMatchCriteria", "()Landroid/os/Bundle;", "GetGetAutoMatchCriteriaHandler")]
 			get {
 				if (id_getAutoMatchCriteria == IntPtr.Zero)
@@ -154,6 +166,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getInvitationId;
 		public string InvitationId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='getInvitationId' and count(parameter)=0]"
 			[Register ("getInvitationId", "()Ljava/lang/String;", "GetGetInvitationIdHandler")]
 			get {
 				if (id_getInvitationId == IntPtr.Zero)
@@ -164,6 +177,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_isSocketEnabled;
 		public bool IsSocketEnabled {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='isSocketEnabled' and count(parameter)=0]"
 			[Register ("isSocketEnabled", "()Z", "GetIsSocketEnabledHandler")]
 			get {
 				if (id_isSocketEnabled == IntPtr.Zero)
@@ -174,6 +188,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getMessageReceivedListener;
 		public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRealTimeMessageReceivedListener MessageReceivedListener {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='getMessageReceivedListener' and count(parameter)=0]"
 			[Register ("getMessageReceivedListener", "()Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMessageReceivedListener;", "GetGetMessageReceivedListenerHandler")]
 			get {
 				if (id_getMessageReceivedListener == IntPtr.Zero)
@@ -184,6 +199,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getRoomStatusUpdateListener;
 		public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener RoomStatusUpdateListener {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='getRoomStatusUpdateListener' and count(parameter)=0]"
 			[Register ("getRoomStatusUpdateListener", "()Lcom/google/android/gms/games/multiplayer/realtime/RoomStatusUpdateListener;", "GetGetRoomStatusUpdateListenerHandler")]
 			get {
 				if (id_getRoomStatusUpdateListener == IntPtr.Zero)
@@ -194,6 +210,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getRoomUpdateListener;
 		public global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener RoomUpdateListener {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='getRoomUpdateListener' and count(parameter)=0]"
 			[Register ("getRoomUpdateListener", "()Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;", "GetGetRoomUpdateListenerHandler")]
 			get {
 				if (id_getRoomUpdateListener == IntPtr.Zero)
@@ -204,6 +221,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		static IntPtr id_getVariant;
 		public int Variant {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='getVariant' and count(parameter)=0]"
 			[Register ("getVariant", "()I", "GetGetVariantHandler")]
 			get {
 				if (id_getVariant == IntPtr.Zero)
@@ -213,6 +231,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_builder_Lcom_google_android_gms_games_multiplayer_realtime_RoomUpdateListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='builder' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.RoomUpdateListener']]"
 		[Register ("builder", "(Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;", "")]
 		public static global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.RoomConfig.Builder InvokeBuilder (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener p0)
 		{
@@ -223,6 +242,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_createAutoMatchCriteria_IIJ;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='createAutoMatchCriteria' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='long']]"
 		[Register ("createAutoMatchCriteria", "(IIJ)Landroid/os/Bundle;", "")]
 		public static global::Android.OS.Bundle CreateAutoMatchCriteria (int p0, int p1, long p2)
 		{
@@ -232,6 +252,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 
 		static IntPtr id_getInvitedPlayerIds;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/class[@name='RoomConfig']/method[@name='getInvitedPlayerIds' and count(parameter)=0]"
 		[Register ("getInvitedPlayerIds", "()[Ljava/lang/String;", "")]
 		public string[] GetInvitedPlayerIds ()
 		{

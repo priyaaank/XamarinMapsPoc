@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Auth {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='UserRecoverableNotifiedException']"
 	[global::Android.Runtime.Register ("com/google/android/gms/auth/UserRecoverableNotifiedException", DoNotGenerateAcw=true)]
 	public partial class UserRecoverableNotifiedException : global::Android.Gms.Auth.GoogleAuthException {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Auth {
 		protected UserRecoverableNotifiedException (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Ljava_lang_String_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='UserRecoverableNotifiedException']/constructor[@name='UserRecoverableNotifiedException' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register (".ctor", "(Ljava/lang/String;)V", "")]
 		public UserRecoverableNotifiedException (string p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{

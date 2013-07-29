@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Games {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='OnPlayersLoadedListener']"
 	[Register ("com/google/android/gms/games/OnPlayersLoadedListener", "", "Android.Gms.Games.IOnPlayersLoadedListenerInvoker")]
 	public partial interface IOnPlayersLoadedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='OnPlayersLoadedListener']/method[@name='onPlayersLoaded' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='com.google.android.gms.games.PlayerBuffer']]"
 		[Register ("onPlayersLoaded", "(ILcom/google/android/gms/games/PlayerBuffer;)V", "GetOnPlayersLoaded_ILcom_google_android_gms_games_PlayerBuffer_Handler:Android.Gms.Games.IOnPlayersLoadedListenerInvoker, GooglePlayServices")]
 		void OnPlayersLoaded (int p0, global::Android.Gms.Games.PlayerBuffer p1);
 
@@ -117,8 +119,9 @@ namespace Android.Gms.Games {
 
 		public void OnPlayersLoaded (int p0, global::Android.Gms.Games.PlayerBuffer p1)
 		{
-			if (Handler != null)
-				Handler (sender, new PlayersLoadedEventArgs (p0, p1));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new PlayersLoadedEventArgs (p0, p1));
 		}
 
 		internal static bool __IsEmpty (IOnPlayersLoadedListenerImplementor value)

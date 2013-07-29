@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.IO;
 using System.Json;
-using Android.Gms.Maps.Model;
 
 namespace Mappy
 {

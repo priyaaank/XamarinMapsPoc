@@ -4,18 +4,23 @@ using Android.Runtime;
 
 namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomUpdateListener']"
 	[Register ("com/google/android/gms/games/multiplayer/realtime/RoomUpdateListener", "", "Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListenerInvoker")]
 	public partial interface IRoomUpdateListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomUpdateListener']/method[@name='onJoinedRoom' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("onJoinedRoom", "(ILcom/google/android/gms/games/multiplayer/realtime/Room;)V", "GetOnJoinedRoom_ILcom_google_android_gms_games_multiplayer_realtime_Room_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListenerInvoker, GooglePlayServices")]
 		void OnJoinedRoom (int p0, global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomUpdateListener']/method[@name='onLeftRoom' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String']]"
 		[Register ("onLeftRoom", "(ILjava/lang/String;)V", "GetOnLeftRoom_ILjava_lang_String_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListenerInvoker, GooglePlayServices")]
 		void OnLeftRoom (int p0, string p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomUpdateListener']/method[@name='onRoomConnected' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("onRoomConnected", "(ILcom/google/android/gms/games/multiplayer/realtime/Room;)V", "GetOnRoomConnected_ILcom_google_android_gms_games_multiplayer_realtime_Room_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListenerInvoker, GooglePlayServices")]
 		void OnRoomConnected (int p0, global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomUpdateListener']/method[@name='onRoomCreated' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("onRoomCreated", "(ILcom/google/android/gms/games/multiplayer/realtime/Room;)V", "GetOnRoomCreated_ILcom_google_android_gms_games_multiplayer_realtime_Room_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListenerInvoker, GooglePlayServices")]
 		void OnRoomCreated (int p0, global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1);
 
@@ -75,7 +80,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnJoinedRoom_ILcom_google_android_gms_games_multiplayer_realtime_Room_ (IntPtr jnienv, IntPtr native__this, int p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p1, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnJoinedRoom (p0, p1);
 		}
 #pragma warning restore 0169
@@ -127,7 +132,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnRoomConnected_ILcom_google_android_gms_games_multiplayer_realtime_Room_ (IntPtr jnienv, IntPtr native__this, int p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p1, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnRoomConnected (p0, p1);
 		}
 #pragma warning restore 0169
@@ -152,7 +157,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnRoomCreated_ILcom_google_android_gms_games_multiplayer_realtime_Room_ (IntPtr jnienv, IntPtr native__this, int p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p1, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnRoomCreated (p0, p1);
 		}
 #pragma warning restore 0169
@@ -260,8 +265,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnJoinedRoom (int p0, global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1)
 		{
-			if (OnJoinedRoomHandler != null)
-				OnJoinedRoomHandler (sender, new JoinedRoomEventArgs (p0, p1));
+			var __h = OnJoinedRoomHandler;
+			if (__h != null)
+				__h (sender, new JoinedRoomEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<LeftRoomEventArgs> OnLeftRoomHandler;
@@ -269,8 +275,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnLeftRoom (int p0, string p1)
 		{
-			if (OnLeftRoomHandler != null)
-				OnLeftRoomHandler (sender, new LeftRoomEventArgs (p0, p1));
+			var __h = OnLeftRoomHandler;
+			if (__h != null)
+				__h (sender, new LeftRoomEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<RoomConnectedEventArgs> OnRoomConnectedHandler;
@@ -278,8 +285,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnRoomConnected (int p0, global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1)
 		{
-			if (OnRoomConnectedHandler != null)
-				OnRoomConnectedHandler (sender, new RoomConnectedEventArgs (p0, p1));
+			var __h = OnRoomConnectedHandler;
+			if (__h != null)
+				__h (sender, new RoomConnectedEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<RoomCreatedEventArgs> OnRoomCreatedHandler;
@@ -287,8 +295,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnRoomCreated (int p0, global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p1)
 		{
-			if (OnRoomCreatedHandler != null)
-				OnRoomCreatedHandler (sender, new RoomCreatedEventArgs (p0, p1));
+			var __h = OnRoomCreatedHandler;
+			if (__h != null)
+				__h (sender, new RoomCreatedEventArgs (p0, p1));
 		}
 
 		internal static bool __IsEmpty (IRoomUpdateListenerImplementor value)

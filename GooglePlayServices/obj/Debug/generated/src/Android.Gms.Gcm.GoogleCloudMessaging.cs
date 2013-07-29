@@ -4,22 +4,28 @@ using Android.Runtime;
 
 namespace Android.Gms.Gcm {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']"
 	[global::Android.Runtime.Register ("com/google/android/gms/gcm/GoogleCloudMessaging", DoNotGenerateAcw=true)]
 	public partial class GoogleCloudMessaging : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/field[@name='ERROR_MAIN_THREAD']"
 		[Register ("ERROR_MAIN_THREAD")]
 		public const string ErrorMainThread = (string) "MAIN_THREAD";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/field[@name='ERROR_SERVICE_NOT_AVAILABLE']"
 		[Register ("ERROR_SERVICE_NOT_AVAILABLE")]
 		public const string ErrorServiceNotAvailable = (string) "SERVICE_NOT_AVAILABLE";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/field[@name='MESSAGE_TYPE_DELETED']"
 		[Register ("MESSAGE_TYPE_DELETED")]
 		public const string MessageTypeDeleted = (string) "deleted_messages";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/field[@name='MESSAGE_TYPE_MESSAGE']"
 		[Register ("MESSAGE_TYPE_MESSAGE")]
 		public const string MessageTypeMessage = (string) "gcm";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/field[@name='MESSAGE_TYPE_SEND_ERROR']"
 		[Register ("MESSAGE_TYPE_SEND_ERROR")]
 		public const string MessageTypeSendError = (string) "send_error";
 		internal static IntPtr java_class_handle;
@@ -40,6 +46,7 @@ namespace Android.Gms.Gcm {
 		protected GoogleCloudMessaging (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/constructor[@name='GoogleCloudMessaging' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public GoogleCloudMessaging () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -73,6 +80,7 @@ namespace Android.Gms.Gcm {
 #pragma warning restore 0169
 
 		static IntPtr id_close;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/method[@name='close' and count(parameter)=0]"
 		[Register ("close", "()V", "GetCloseHandler")]
 		public virtual void Close ()
 		{
@@ -86,6 +94,7 @@ namespace Android.Gms.Gcm {
 		}
 
 		static IntPtr id_getInstance_Landroid_content_Context_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/method[@name='getInstance' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register ("getInstance", "(Landroid/content/Context;)Lcom/google/android/gms/gcm/GoogleCloudMessaging;", "")]
 		public static global::Android.Gms.Gcm.GoogleCloudMessaging GetInstance (global::Android.Content.Context p0)
 		{
@@ -114,6 +123,7 @@ namespace Android.Gms.Gcm {
 #pragma warning restore 0169
 
 		static IntPtr id_getMessageType_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/method[@name='getMessageType' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("getMessageType", "(Landroid/content/Intent;)Ljava/lang/String;", "GetGetMessageType_Landroid_content_Intent_Handler")]
 		public virtual string GetMessageType (global::Android.Content.Intent p0)
 		{
@@ -149,6 +159,7 @@ namespace Android.Gms.Gcm {
 #pragma warning restore 0169
 
 		static IntPtr id_register_arrayLjava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/method[@name='register' and count(parameter)=1 and parameter[1][@type='java.lang.String[]']]"
 		[Register ("register", "([Ljava/lang/String;)Ljava/lang/String;", "GetRegister_arrayLjava_lang_String_Handler")]
 		public virtual string Register (params  string[] p0)
 		{
@@ -188,6 +199,7 @@ namespace Android.Gms.Gcm {
 #pragma warning restore 0169
 
 		static IntPtr id_send_Ljava_lang_String_Ljava_lang_String_Landroid_os_Bundle_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/method[@name='send' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.os.Bundle']]"
 		[Register ("send", "(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V", "GetSend_Ljava_lang_String_Ljava_lang_String_Landroid_os_Bundle_Handler")]
 		public virtual void Send (string p0, string p1, global::Android.OS.Bundle p2)
 		{
@@ -224,6 +236,7 @@ namespace Android.Gms.Gcm {
 #pragma warning restore 0169
 
 		static IntPtr id_send_Ljava_lang_String_Ljava_lang_String_JLandroid_os_Bundle_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/method[@name='send' and count(parameter)=4 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='long'] and parameter[4][@type='android.os.Bundle']]"
 		[Register ("send", "(Ljava/lang/String;Ljava/lang/String;JLandroid/os/Bundle;)V", "GetSend_Ljava_lang_String_Ljava_lang_String_JLandroid_os_Bundle_Handler")]
 		public virtual void Send (string p0, string p1, long p2, global::Android.OS.Bundle p3)
 		{
@@ -257,6 +270,7 @@ namespace Android.Gms.Gcm {
 #pragma warning restore 0169
 
 		static IntPtr id_unregister;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.gcm']/class[@name='GoogleCloudMessaging']/method[@name='unregister' and count(parameter)=0]"
 		[Register ("unregister", "()V", "GetUnregisterHandler")]
 		public virtual void Unregister ()
 		{

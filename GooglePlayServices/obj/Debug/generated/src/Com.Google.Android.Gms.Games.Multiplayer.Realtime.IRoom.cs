@@ -11,26 +11,31 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_ACTIVE']"
 		[Register ("ROOM_STATUS_ACTIVE")]
 		public const int RoomStatusActive = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_AUTO_MATCHING']"
 		[Register ("ROOM_STATUS_AUTO_MATCHING")]
 		public const int RoomStatusAutoMatching = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_CONNECTING']"
 		[Register ("ROOM_STATUS_CONNECTING")]
 		public const int RoomStatusConnecting = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_STATUS_INVITING']"
 		[Register ("ROOM_STATUS_INVITING")]
 		public const int RoomStatusInviting = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/field[@name='ROOM_VARIANT_ANY']"
 		[Register ("ROOM_VARIANT_ANY")]
 		public const int RoomVariantAny = (int) -1;
 
 		// The following are fields from: android.os.Parcelable
 
-		// The following are fields from: System.IDisposable
-
 		// The following are fields from: Android.Runtime.IJavaObject
+
+		// The following are fields from: System.IDisposable
 
 		// The following are fields from: com.google.android.gms.common.data.Freezable
 
@@ -45,47 +50,59 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		}
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']"
 	[Register ("com/google/android/gms/games/multiplayer/realtime/Room", "", "Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker")]
 	public partial interface IRoom : global::Android.OS.IParcelable, global::Android.Gms.Common.Data.IFreezable, global::Android.Gms.Games.MultiPlayer.IParticipatable {
 
 		global::Android.OS.Bundle AutoMatchCriteria {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getAutoMatchCriteria' and count(parameter)=0]"
 			[Register ("getAutoMatchCriteria", "()Landroid/os/Bundle;", "GetGetAutoMatchCriteriaHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
 		long CreationTimestamp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getCreationTimestamp' and count(parameter)=0]"
 			[Register ("getCreationTimestamp", "()J", "GetGetCreationTimestampHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
 		string CreatorId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getCreatorId' and count(parameter)=0]"
 			[Register ("getCreatorId", "()Ljava/lang/String;", "GetGetCreatorIdHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
 		string Description {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getDescription' and count(parameter)=0]"
 			[Register ("getDescription", "()Ljava/lang/String;", "GetGetDescriptionHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<string> ParticipantIds {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getParticipantIds' and count(parameter)=0]"
 			[Register ("getParticipantIds", "()Ljava/util/ArrayList;", "GetGetParticipantIdsHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
 		string RoomId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getRoomId' and count(parameter)=0]"
 			[Register ("getRoomId", "()Ljava/lang/String;", "GetGetRoomIdHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
 		int Status {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getStatus' and count(parameter)=0]"
 			[Register ("getStatus", "()I", "GetGetStatusHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
 		int Variant {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getVariant' and count(parameter)=0]"
 			[Register ("getVariant", "()I", "GetGetVariantHandler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getDescription' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDescription", "(Landroid/database/CharArrayBuffer;)V", "GetGetDescription_Landroid_database_CharArrayBuffer_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")]
 		void GetDescription (global::Android.Database.CharArrayBuffer p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getParticipantId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("getParticipantId", "(Ljava/lang/String;)Ljava/lang/String;", "GetGetParticipantId_Ljava_lang_String_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")]
 		string GetParticipantId (string p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='Room']/method[@name='getParticipantStatus' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("getParticipantStatus", "(Ljava/lang/String;)I", "GetGetParticipantStatus_Ljava_lang_String_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomInvoker, GooglePlayServices")]
 		int GetParticipantStatus (string p0);
 

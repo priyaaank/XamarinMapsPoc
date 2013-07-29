@@ -4,12 +4,15 @@ using Android.Runtime;
 
 namespace Android.Gms.AppStates {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='OnStateLoadedListener']"
 	[Register ("com/google/android/gms/appstate/OnStateLoadedListener", "", "Android.Gms.AppStates.IOnStateLoadedListenerInvoker")]
 	public partial interface IOnStateLoadedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='OnStateLoadedListener']/method[@name='onStateConflict' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='byte[]'] and parameter[4][@type='byte[]']]"
 		[Register ("onStateConflict", "(ILjava/lang/String;[B[B)V", "GetOnStateConflict_ILjava_lang_String_arrayBarrayBHandler:Android.Gms.AppStates.IOnStateLoadedListenerInvoker, GooglePlayServices")]
 		void OnStateConflict (int p0, string p1, byte[] p2, byte[] p3);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='OnStateLoadedListener']/method[@name='onStateLoaded' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='byte[]']]"
 		[Register ("onStateLoaded", "(II[B)V", "GetOnStateLoaded_IIarrayBHandler:Android.Gms.AppStates.IOnStateLoadedListenerInvoker, GooglePlayServices")]
 		void OnStateLoaded (int p0, int p1, byte[] p2);
 
@@ -207,8 +210,9 @@ namespace Android.Gms.AppStates {
 
 		public void OnStateConflict (int p0, string p1, byte[] p2, byte[] p3)
 		{
-			if (OnStateConflictHandler != null)
-				OnStateConflictHandler (sender, new StateConflictEventArgs (p0, p1, p2, p3));
+			var __h = OnStateConflictHandler;
+			if (__h != null)
+				__h (sender, new StateConflictEventArgs (p0, p1, p2, p3));
 		}
 #pragma warning disable 0649
 		public EventHandler<StateLoadedEventArgs> OnStateLoadedHandler;
@@ -216,8 +220,9 @@ namespace Android.Gms.AppStates {
 
 		public void OnStateLoaded (int p0, int p1, byte[] p2)
 		{
-			if (OnStateLoadedHandler != null)
-				OnStateLoadedHandler (sender, new StateLoadedEventArgs (p0, p1, p2));
+			var __h = OnStateLoadedHandler;
+			if (__h != null)
+				__h (sender, new StateLoadedEventArgs (p0, p1, p2));
 		}
 
 		internal static bool __IsEmpty (IOnStateLoadedListenerImplementor value)

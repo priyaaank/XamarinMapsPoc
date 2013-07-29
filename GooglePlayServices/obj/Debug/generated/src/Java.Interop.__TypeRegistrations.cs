@@ -131,8 +131,6 @@ namespace Java.Interop {
 			if (package_com_google_android_gms_common_images_mappings == null) {
 				package_com_google_android_gms_common_images_mappings = new string[]{
 					"com/google/android/gms/common/images/ImageManager:Android.Gms.Common.Images.ImageManager",
-					"com/google/android/gms/common/images/ImageManager$ImageReceiver:Android.Gms.Common.Images.ImageManager/ImageReceiver",
-					"com/google/android/gms/common/images/ImageManager$ListenerHolder:Android.Gms.Common.Images.ImageManager/ListenerHolder",
 				};
 			}
 
@@ -149,7 +147,6 @@ namespace Java.Interop {
 					"com/google/android/gms/games/GamesActivityResultCodes:Android.Gms.Games.GamesActivityResultCodes",
 					"com/google/android/gms/games/GamesClient:Android.Gms.Games.GamesClient",
 					"com/google/android/gms/games/GamesClient$Builder:Android.Gms.Games.GamesClient/Builder",
-					"com/google/android/gms/games/GamesClientSettings:Android.Gms.Games.GamesClientSettings",
 					"com/google/android/gms/games/PageDirection:Android.Gms.Games.PageDirection",
 					"com/google/android/gms/games/PlayerBuffer:Android.Gms.Games.PlayerBuffer",
 					"com/google/android/gms/games/PlayerEntity:Android.Gms.Games.PlayerEntity",
@@ -242,6 +239,7 @@ namespace Java.Interop {
 					"com/google/android/gms/maps/CameraUpdateFactory:Android.Gms.Maps.CameraUpdateFactory",
 					"com/google/android/gms/maps/GoogleMap:Android.Gms.Maps.GoogleMap",
 					"com/google/android/gms/maps/GoogleMapOptions:Android.Gms.Maps.GoogleMapOptions",
+					"com/google/android/gms/maps/MapFragment:Android.Gms.Maps.MapFragment",
 					"com/google/android/gms/maps/MapsInitializer:Android.Gms.Maps.MapsInitializer",
 					"com/google/android/gms/maps/MapView:Android.Gms.Maps.MapView",
 					"com/google/android/gms/maps/Projection:Android.Gms.Maps.Projection",

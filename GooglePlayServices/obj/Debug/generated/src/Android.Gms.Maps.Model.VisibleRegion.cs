@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/VisibleRegion", DoNotGenerateAcw=true)]
 	public sealed partial class VisibleRegion : global::Java.Lang.Object {
 
 
 		static IntPtr farLeft_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/field[@name='farLeft']"
 		[Register ("farLeft")]
 		public global::Android.Gms.Maps.Model.LatLng FarLeft {
 			get {
@@ -29,6 +31,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr farRight_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/field[@name='farRight']"
 		[Register ("farRight")]
 		public global::Android.Gms.Maps.Model.LatLng FarRight {
 			get {
@@ -48,6 +51,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr latLngBounds_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/field[@name='latLngBounds']"
 		[Register ("latLngBounds")]
 		public global::Android.Gms.Maps.Model.LatLngBounds LatLngBounds {
 			get {
@@ -67,6 +71,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr nearLeft_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/field[@name='nearLeft']"
 		[Register ("nearLeft")]
 		public global::Android.Gms.Maps.Model.LatLng NearLeft {
 			get {
@@ -86,6 +91,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr nearRight_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/field[@name='nearRight']"
 		[Register ("nearRight")]
 		public global::Android.Gms.Maps.Model.LatLng NearRight {
 			get {
@@ -120,6 +126,7 @@ namespace Android.Gms.Maps.Model {
 		internal VisibleRegion (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_maps_model_LatLng_Lcom_google_android_gms_maps_model_LatLng_Lcom_google_android_gms_maps_model_LatLng_Lcom_google_android_gms_maps_model_LatLng_Lcom_google_android_gms_maps_model_LatLngBounds_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/constructor[@name='VisibleRegion' and count(parameter)=5 and parameter[1][@type='com.google.android.gms.maps.model.LatLng'] and parameter[2][@type='com.google.android.gms.maps.model.LatLng'] and parameter[3][@type='com.google.android.gms.maps.model.LatLng'] and parameter[4][@type='com.google.android.gms.maps.model.LatLng'] and parameter[5][@type='com.google.android.gms.maps.model.LatLngBounds']]"
 		[Register (".ctor", "(Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLngBounds;)V", "")]
 		public VisibleRegion (global::Android.Gms.Maps.Model.LatLng p0, global::Android.Gms.Maps.Model.LatLng p1, global::Android.Gms.Maps.Model.LatLng p2, global::Android.Gms.Maps.Model.LatLng p3, global::Android.Gms.Maps.Model.LatLngBounds p4) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -137,6 +144,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -146,6 +154,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -155,6 +164,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='VisibleRegion']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

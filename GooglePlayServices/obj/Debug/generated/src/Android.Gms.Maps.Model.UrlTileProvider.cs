@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='UrlTileProvider']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/UrlTileProvider", DoNotGenerateAcw=true)]
 	public abstract partial class UrlTileProvider : global::Java.Lang.Object, global::Android.Gms.Maps.Model.ITileProvider {
 
@@ -14,6 +15,7 @@ namespace Android.Gms.Maps.Model {
 
 			static IntPtr NO_TILE_jfieldId;
 
+			// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/interface[@name='TileProvider']/field[@name='NO_TILE']"
 			[Register ("NO_TILE")]
 			public static global::Android.Gms.Maps.Model.Tile NoTile {
 				get {
@@ -50,6 +52,7 @@ namespace Android.Gms.Maps.Model {
 		protected UrlTileProvider (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_II;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='UrlTileProvider']/constructor[@name='UrlTileProvider' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]"
 		[Register (".ctor", "(II)V", "")]
 		public UrlTileProvider (int p0, int p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -67,6 +70,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_getTile_III;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='UrlTileProvider']/method[@name='getTile' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int']]"
 		[Register ("getTile", "(III)Lcom/google/android/gms/maps/model/Tile;", "")]
 		public global::Android.Gms.Maps.Model.Tile GetTile (int p0, int p1, int p2)
 		{
@@ -91,6 +95,7 @@ namespace Android.Gms.Maps.Model {
 		}
 #pragma warning restore 0169
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='UrlTileProvider']/method[@name='getTileUrl' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int']]"
 		[Register ("getTileUrl", "(III)Ljava/net/URL;", "GetGetTileUrl_IIIHandler")]
 		public abstract global::Java.Net.URL GetTileUrl (int p0, int p1, int p2);
 
@@ -106,6 +111,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_getTileUrl_III;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='UrlTileProvider']/method[@name='getTileUrl' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int']]"
 		[Register ("getTileUrl", "(III)Ljava/net/URL;", "GetGetTileUrl_IIIHandler")]
 		public override global::Java.Net.URL GetTileUrl (int p0, int p1, int p2)
 		{

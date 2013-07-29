@@ -4,12 +4,15 @@ using Android.Runtime;
 
 namespace Android.Gms.Plus {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/PlusClient", DoNotGenerateAcw=true)]
 	public partial class PlusClient : global::Java.Lang.Object, global::Android.Gms.Common.IGooglePlayServicesClient {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/field[@name='KEY_REQUEST_VISIBLE_ACTIVITIES']"
 		[Register ("KEY_REQUEST_VISIBLE_ACTIVITIES")]
 		public const string KeyRequestVisibleActivities = (string) "request_visible_actions";
+		// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient.Builder']"
 		[global::Android.Runtime.Register ("com/google/android/gms/plus/PlusClient$Builder", DoNotGenerateAcw=true)]
 		public partial class Builder : global::Java.Lang.Object {
 
@@ -31,6 +34,7 @@ namespace Android.Gms.Plus {
 			protected Builder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 			static IntPtr id_ctor_Landroid_content_Context_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient.Builder']/constructor[@name='PlusClient.Builder' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks'] and parameter[3][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 			[Register (".ctor", "(Landroid/content/Context;Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "")]
 			public Builder (global::Android.Content.Context p0, global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p1, global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -64,6 +68,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_build;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient.Builder']/method[@name='build' and count(parameter)=0]"
 			[Register ("build", "()Lcom/google/android/gms/plus/PlusClient;", "GetBuildHandler")]
 			public virtual global::Android.Gms.Plus.PlusClient Build ()
 			{
@@ -93,6 +98,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_clearScopes;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient.Builder']/method[@name='clearScopes' and count(parameter)=0]"
 			[Register ("clearScopes", "()Lcom/google/android/gms/plus/PlusClient$Builder;", "GetClearScopesHandler")]
 			public virtual global::Android.Gms.Plus.PlusClient.Builder ClearScopes ()
 			{
@@ -124,6 +130,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setAccountName_Ljava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient.Builder']/method[@name='setAccountName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 			[Register ("setAccountName", "(Ljava/lang/String;)Lcom/google/android/gms/plus/PlusClient$Builder;", "GetSetAccountName_Ljava_lang_String_Handler")]
 			public virtual global::Android.Gms.Plus.PlusClient.Builder SetAccountName (string p0)
 			{
@@ -161,6 +168,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setScopes_arrayLjava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient.Builder']/method[@name='setScopes' and count(parameter)=1 and parameter[1][@type='java.lang.String[]']]"
 			[Register ("setScopes", "([Ljava/lang/String;)Lcom/google/android/gms/plus/PlusClient$Builder;", "GetSetScopes_arrayLjava_lang_String_Handler")]
 			public virtual global::Android.Gms.Plus.PlusClient.Builder SetScopes (params  string[] p0)
 			{
@@ -201,6 +209,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 			static IntPtr id_setVisibleActivities_arrayLjava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient.Builder']/method[@name='setVisibleActivities' and count(parameter)=1 and parameter[1][@type='java.lang.String[]']]"
 			[Register ("setVisibleActivities", "([Ljava/lang/String;)Lcom/google/android/gms/plus/PlusClient$Builder;", "GetSetVisibleActivities_arrayLjava_lang_String_Handler")]
 			public virtual global::Android.Gms.Plus.PlusClient.Builder SetVisibleActivities (params  string[] p0)
 			{
@@ -222,9 +231,11 @@ namespace Android.Gms.Plus {
 
 		}
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnAccessRevokedListener']"
 		[Register ("com/google/android/gms/plus/PlusClient$OnAccessRevokedListener", "", "Android.Gms.Plus.PlusClient/IOnAccessRevokedListenerInvoker")]
 		public partial interface IOnAccessRevokedListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnAccessRevokedListener']/method[@name='onAccessRevoked' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.ConnectionResult']]"
 			[Register ("onAccessRevoked", "(Lcom/google/android/gms/common/ConnectionResult;)V", "GetOnAccessRevoked_Lcom_google_android_gms_common_ConnectionResult_Handler:Android.Gms.Plus.PlusClient/IOnAccessRevokedListenerInvoker, GooglePlayServices")]
 			void OnAccessRevoked (global::Android.Gms.Common.ConnectionResult p0);
 
@@ -329,8 +340,9 @@ namespace Android.Gms.Plus {
 
 			public void OnAccessRevoked (global::Android.Gms.Common.ConnectionResult p0)
 			{
-				if (Handler != null)
-					Handler (sender, new AccessRevokedEventArgs (p0));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new AccessRevokedEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnAccessRevokedListenerImplementor value)
@@ -340,9 +352,11 @@ namespace Android.Gms.Plus {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnMomentsLoadedListener']"
 		[Register ("com/google/android/gms/plus/PlusClient$OnMomentsLoadedListener", "", "Android.Gms.Plus.PlusClient/IOnMomentsLoadedListenerInvoker")]
 		public partial interface IOnMomentsLoadedListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnMomentsLoadedListener']/method[@name='onMomentsLoaded' and count(parameter)=4 and parameter[1][@type='com.google.android.gms.common.ConnectionResult'] and parameter[2][@type='com.google.android.gms.plus.model.moments.MomentBuffer'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='java.lang.String']]"
 			[Register ("onMomentsLoaded", "(Lcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/plus/model/moments/MomentBuffer;Ljava/lang/String;Ljava/lang/String;)V", "GetOnMomentsLoaded_Lcom_google_android_gms_common_ConnectionResult_Lcom_google_android_gms_plus_model_moments_MomentBuffer_Ljava_lang_String_Ljava_lang_String_Handler:Android.Gms.Plus.PlusClient/IOnMomentsLoadedListenerInvoker, GooglePlayServices")]
 			void OnMomentsLoaded (global::Android.Gms.Common.ConnectionResult p0, global::Android.Gms.Plus.Model.Moments.MomentBuffer p1, string p2, string p3);
 
@@ -472,8 +486,9 @@ namespace Android.Gms.Plus {
 
 			public void OnMomentsLoaded (global::Android.Gms.Common.ConnectionResult p0, global::Android.Gms.Plus.Model.Moments.MomentBuffer p1, string p2, string p3)
 			{
-				if (Handler != null)
-					Handler (sender, new MomentsLoadedEventArgs (p0, p1, p2, p3));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new MomentsLoadedEventArgs (p0, p1, p2, p3));
 			}
 
 			internal static bool __IsEmpty (IOnMomentsLoadedListenerImplementor value)
@@ -483,9 +498,11 @@ namespace Android.Gms.Plus {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnPeopleLoadedListener']"
 		[Register ("com/google/android/gms/plus/PlusClient$OnPeopleLoadedListener", "", "Android.Gms.Plus.PlusClient/IOnPeopleLoadedListenerInvoker")]
 		public partial interface IOnPeopleLoadedListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnPeopleLoadedListener']/method[@name='onPeopleLoaded' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.common.ConnectionResult'] and parameter[2][@type='com.google.android.gms.plus.model.people.PersonBuffer'] and parameter[3][@type='java.lang.String']]"
 			[Register ("onPeopleLoaded", "(Lcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/plus/model/people/PersonBuffer;Ljava/lang/String;)V", "GetOnPeopleLoaded_Lcom_google_android_gms_common_ConnectionResult_Lcom_google_android_gms_plus_model_people_PersonBuffer_Ljava_lang_String_Handler:Android.Gms.Plus.PlusClient/IOnPeopleLoadedListenerInvoker, GooglePlayServices")]
 			void OnPeopleLoaded (global::Android.Gms.Common.ConnectionResult p0, global::Android.Gms.Plus.Model.People.PersonBuffer p1, string p2);
 
@@ -606,8 +623,9 @@ namespace Android.Gms.Plus {
 
 			public void OnPeopleLoaded (global::Android.Gms.Common.ConnectionResult p0, global::Android.Gms.Plus.Model.People.PersonBuffer p1, string p2)
 			{
-				if (Handler != null)
-					Handler (sender, new PeopleLoadedEventArgs (p0, p1, p2));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new PeopleLoadedEventArgs (p0, p1, p2));
 			}
 
 			internal static bool __IsEmpty (IOnPeopleLoadedListenerImplementor value)
@@ -617,9 +635,11 @@ namespace Android.Gms.Plus {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnPersonLoadedListener']"
 		[Register ("com/google/android/gms/plus/PlusClient$OnPersonLoadedListener", "", "Android.Gms.Plus.PlusClient/IOnPersonLoadedListenerInvoker")]
 		public partial interface IOnPersonLoadedListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusClient.OnPersonLoadedListener']/method[@name='onPersonLoaded' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.common.ConnectionResult'] and parameter[2][@type='com.google.android.gms.plus.model.people.Person']]"
 			[Register ("onPersonLoaded", "(Lcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/plus/model/people/Person;)V", "GetOnPersonLoaded_Lcom_google_android_gms_common_ConnectionResult_Lcom_google_android_gms_plus_model_people_Person_Handler:Android.Gms.Plus.PlusClient/IOnPersonLoadedListenerInvoker, GooglePlayServices")]
 			void OnPersonLoaded (global::Android.Gms.Common.ConnectionResult p0, global::Android.Gms.Plus.Model.People.IPerson p1);
 
@@ -680,7 +700,7 @@ namespace Android.Gms.Plus {
 			{
 				global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener> (native__this, JniHandleOwnership.DoNotTransfer);
 				global::Android.Gms.Common.ConnectionResult p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.ConnectionResult> (native_p0, JniHandleOwnership.DoNotTransfer);
-				global::Android.Gms.Plus.Model.People.IPerson p1 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.People.IPerson> (native_p1, JniHandleOwnership.DoNotTransfer);
+				global::Android.Gms.Plus.Model.People.IPerson p1 = (global::Android.Gms.Plus.Model.People.IPerson)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.People.IPerson> (native_p1, JniHandleOwnership.DoNotTransfer);
 				__this.OnPersonLoaded (p0, p1);
 			}
 #pragma warning restore 0169
@@ -731,8 +751,9 @@ namespace Android.Gms.Plus {
 
 			public void OnPersonLoaded (global::Android.Gms.Common.ConnectionResult p0, global::Android.Gms.Plus.Model.People.IPerson p1)
 			{
-				if (Handler != null)
-					Handler (sender, new PersonLoadedEventArgs (p0, p1));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new PersonLoadedEventArgs (p0, p1));
 			}
 
 			internal static bool __IsEmpty (IOnPersonLoadedListenerImplementor value)
@@ -777,6 +798,7 @@ namespace Android.Gms.Plus {
 
 		static IntPtr id_getAccountName;
 		public virtual string AccountName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='getAccountName' and count(parameter)=0]"
 			[Register ("getAccountName", "()Ljava/lang/String;", "GetGetAccountNameHandler")]
 			get {
 				if (id_getAccountName == IntPtr.Zero)
@@ -807,6 +829,7 @@ namespace Android.Gms.Plus {
 
 		static IntPtr id_getCurrentPerson;
 		public virtual global::Android.Gms.Plus.Model.People.IPerson CurrentPerson {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='getCurrentPerson' and count(parameter)=0]"
 			[Register ("getCurrentPerson", "()Lcom/google/android/gms/plus/model/people/Person;", "GetGetCurrentPersonHandler")]
 			get {
 				if (id_getCurrentPerson == IntPtr.Zero)
@@ -837,6 +860,7 @@ namespace Android.Gms.Plus {
 
 		static IntPtr id_isConnected;
 		public virtual bool IsConnected {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='isConnected' and count(parameter)=0]"
 			[Register ("isConnected", "()Z", "GetIsConnectedHandler")]
 			get {
 				if (id_isConnected == IntPtr.Zero)
@@ -867,6 +891,7 @@ namespace Android.Gms.Plus {
 
 		static IntPtr id_isConnecting;
 		public virtual bool IsConnecting {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='isConnecting' and count(parameter)=0]"
 			[Register ("isConnecting", "()Z", "GetIsConnectingHandler")]
 			get {
 				if (id_isConnecting == IntPtr.Zero)
@@ -898,6 +923,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 		static IntPtr id_A_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='A' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("A", "(Ljava/lang/String;)Z", "GetA_Ljava_lang_String_Handler")]
 		public virtual bool A (string p0)
 		{
@@ -931,6 +957,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 		static IntPtr id_clearDefaultAccount;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='clearDefaultAccount' and count(parameter)=0]"
 		[Register ("clearDefaultAccount", "()V", "GetClearDefaultAccountHandler")]
 		public virtual void ClearDefaultAccount ()
 		{
@@ -960,6 +987,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 		static IntPtr id_connect;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='connect' and count(parameter)=0]"
 		[Register ("connect", "()V", "GetConnectHandler")]
 		public virtual void Connect ()
 		{
@@ -989,6 +1017,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 		static IntPtr id_disconnect;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='disconnect' and count(parameter)=0]"
 		[Register ("disconnect", "()V", "GetDisconnectHandler")]
 		public virtual void Disconnect ()
 		{
@@ -1013,13 +1042,14 @@ namespace Android.Gms.Plus {
 		static bool n_IsConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			bool __ret = __this.IsConnectionCallbacksRegistered (p0);
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_isConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='isConnectionCallbacksRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("isConnectionCallbacksRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)Z", "GetIsConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler")]
 		public virtual bool IsConnectionCallbacksRegistered (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -1046,13 +1076,14 @@ namespace Android.Gms.Plus {
 		static bool n_IsConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			bool __ret = __this.IsConnectionFailedListenerRegistered (p0);
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_isConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='isConnectionFailedListenerRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("isConnectionFailedListenerRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)Z", "GetIsConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler")]
 		public virtual bool IsConnectionFailedListenerRegistered (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -1079,12 +1110,13 @@ namespace Android.Gms.Plus {
 		static void n_LoadMoments_Lcom_google_android_gms_plus_PlusClient_OnMomentsLoadedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener p0 = (global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.LoadMoments (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_loadMoments_Lcom_google_android_gms_plus_PlusClient_OnMomentsLoadedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='loadMoments' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.PlusClient.OnMomentsLoadedListener']]"
 		[Register ("loadMoments", "(Lcom/google/android/gms/plus/PlusClient$OnMomentsLoadedListener;)V", "GetLoadMoments_Lcom_google_android_gms_plus_PlusClient_OnMomentsLoadedListener_Handler")]
 		public virtual void LoadMoments (global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener p0)
 		{
@@ -1109,7 +1141,7 @@ namespace Android.Gms.Plus {
 		static void n_LoadMoments_Lcom_google_android_gms_plus_PlusClient_OnMomentsLoadedListener_ILjava_lang_String_Landroid_net_Uri_Ljava_lang_String_Ljava_lang_String_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, int p1, IntPtr native_p2, IntPtr native_p3, IntPtr native_p4, IntPtr native_p5)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener p0 = (global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			string p2 = JNIEnv.GetString (native_p2, JniHandleOwnership.DoNotTransfer);
 			global::Android.Net.Uri p3 = global::Java.Lang.Object.GetObject<global::Android.Net.Uri> (native_p3, JniHandleOwnership.DoNotTransfer);
 			string p4 = JNIEnv.GetString (native_p4, JniHandleOwnership.DoNotTransfer);
@@ -1119,6 +1151,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 		static IntPtr id_loadMoments_Lcom_google_android_gms_plus_PlusClient_OnMomentsLoadedListener_ILjava_lang_String_Landroid_net_Uri_Ljava_lang_String_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='loadMoments' and count(parameter)=6 and parameter[1][@type='com.google.android.gms.plus.PlusClient.OnMomentsLoadedListener'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='android.net.Uri'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='java.lang.String']]"
 		[Register ("loadMoments", "(Lcom/google/android/gms/plus/PlusClient$OnMomentsLoadedListener;ILjava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V", "GetLoadMoments_Lcom_google_android_gms_plus_PlusClient_OnMomentsLoadedListener_ILjava_lang_String_Landroid_net_Uri_Ljava_lang_String_Ljava_lang_String_Handler")]
 		public virtual void LoadMoments (global::Android.Gms.Plus.PlusClient.IOnMomentsLoadedListener p0, int p1, string p2, global::Android.Net.Uri p3, string p4, string p5)
 		{
@@ -1149,12 +1182,13 @@ namespace Android.Gms.Plus {
 		static void n_LoadPeople_Lcom_google_android_gms_plus_PlusClient_OnPeopleLoadedListener_I (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, int p1)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener p0 = (global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.LoadPeople (p0, p1);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_loadPeople_Lcom_google_android_gms_plus_PlusClient_OnPeopleLoadedListener_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='loadPeople' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.plus.PlusClient.OnPeopleLoadedListener'] and parameter[2][@type='int']]"
 		[Register ("loadPeople", "(Lcom/google/android/gms/plus/PlusClient$OnPeopleLoadedListener;I)V", "GetLoadPeople_Lcom_google_android_gms_plus_PlusClient_OnPeopleLoadedListener_IHandler")]
 		public virtual void LoadPeople (global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener p0, int p1)
 		{
@@ -1179,13 +1213,14 @@ namespace Android.Gms.Plus {
 		static void n_LoadPeople_Lcom_google_android_gms_plus_PlusClient_OnPeopleLoadedListener_IIILjava_lang_String_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, int p1, int p2, int p3, IntPtr native_p4)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener p0 = (global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			string p4 = JNIEnv.GetString (native_p4, JniHandleOwnership.DoNotTransfer);
 			__this.LoadPeople (p0, p1, p2, p3, p4);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_loadPeople_Lcom_google_android_gms_plus_PlusClient_OnPeopleLoadedListener_IIILjava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='loadPeople' and count(parameter)=5 and parameter[1][@type='com.google.android.gms.plus.PlusClient.OnPeopleLoadedListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='java.lang.String']]"
 		[Register ("loadPeople", "(Lcom/google/android/gms/plus/PlusClient$OnPeopleLoadedListener;IIILjava/lang/String;)V", "GetLoadPeople_Lcom_google_android_gms_plus_PlusClient_OnPeopleLoadedListener_IIILjava_lang_String_Handler")]
 		public virtual void LoadPeople (global::Android.Gms.Plus.PlusClient.IOnPeopleLoadedListener p0, int p1, int p2, int p3, string p4)
 		{
@@ -1212,13 +1247,14 @@ namespace Android.Gms.Plus {
 		static void n_LoadPerson_Lcom_google_android_gms_plus_PlusClient_OnPersonLoadedListener_Ljava_lang_String_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener p0 = (global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			string p1 = JNIEnv.GetString (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.LoadPerson (p0, p1);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_loadPerson_Lcom_google_android_gms_plus_PlusClient_OnPersonLoadedListener_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='loadPerson' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.plus.PlusClient.OnPersonLoadedListener'] and parameter[2][@type='java.lang.String']]"
 		[Register ("loadPerson", "(Lcom/google/android/gms/plus/PlusClient$OnPersonLoadedListener;Ljava/lang/String;)V", "GetLoadPerson_Lcom_google_android_gms_plus_PlusClient_OnPersonLoadedListener_Ljava_lang_String_Handler")]
 		public virtual void LoadPerson (global::Android.Gms.Plus.PlusClient.IOnPersonLoadedListener p0, string p1)
 		{
@@ -1245,12 +1281,13 @@ namespace Android.Gms.Plus {
 		static void n_RegisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RegisterConnectionCallbacks (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_registerConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='registerConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("registerConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "GetRegisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler")]
 		public virtual void RegisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -1275,12 +1312,13 @@ namespace Android.Gms.Plus {
 		static void n_RegisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RegisterConnectionFailedListener (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_registerConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='registerConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("registerConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "GetRegisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler")]
 		public virtual void RegisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -1311,6 +1349,7 @@ namespace Android.Gms.Plus {
 #pragma warning restore 0169
 
 		static IntPtr id_removeMoment_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='removeMoment' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("removeMoment", "(Ljava/lang/String;)V", "GetRemoveMoment_Ljava_lang_String_Handler")]
 		public virtual void RemoveMoment (string p0)
 		{
@@ -1337,12 +1376,13 @@ namespace Android.Gms.Plus {
 		static void n_RevokeAccessAndDisconnect_Lcom_google_android_gms_plus_PlusClient_OnAccessRevokedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.PlusClient.IOnAccessRevokedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnAccessRevokedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.PlusClient.IOnAccessRevokedListener p0 = (global::Android.Gms.Plus.PlusClient.IOnAccessRevokedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient.IOnAccessRevokedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RevokeAccessAndDisconnect (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_revokeAccessAndDisconnect_Lcom_google_android_gms_plus_PlusClient_OnAccessRevokedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='revokeAccessAndDisconnect' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.PlusClient.OnAccessRevokedListener']]"
 		[Register ("revokeAccessAndDisconnect", "(Lcom/google/android/gms/plus/PlusClient$OnAccessRevokedListener;)V", "GetRevokeAccessAndDisconnect_Lcom_google_android_gms_plus_PlusClient_OnAccessRevokedListener_Handler")]
 		public virtual void RevokeAccessAndDisconnect (global::Android.Gms.Plus.PlusClient.IOnAccessRevokedListener p0)
 		{
@@ -1367,12 +1407,13 @@ namespace Android.Gms.Plus {
 		static void n_UnregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.UnregisterConnectionCallbacks (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_unregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='unregisterConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("unregisterConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "GetUnregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler")]
 		public virtual void UnregisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -1397,12 +1438,13 @@ namespace Android.Gms.Plus {
 		static void n_UnregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.UnregisterConnectionFailedListener (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_unregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='unregisterConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("unregisterConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "GetUnregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler")]
 		public virtual void UnregisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -1427,12 +1469,13 @@ namespace Android.Gms.Plus {
 		static void n_WriteMoment_Lcom_google_android_gms_plus_model_moments_Moment_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.PlusClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.PlusClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IMoment p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IMoment> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IMoment p0 = (global::Android.Gms.Plus.Model.Moments.IMoment)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IMoment> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.WriteMoment (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_writeMoment_Lcom_google_android_gms_plus_model_moments_Moment_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusClient']/method[@name='writeMoment' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.Moment']]"
 		[Register ("writeMoment", "(Lcom/google/android/gms/plus/model/moments/Moment;)V", "GetWriteMoment_Lcom_google_android_gms_plus_model_moments_Moment_Handler")]
 		public virtual void WriteMoment (global::Android.Gms.Plus.Model.Moments.IMoment p0)
 		{

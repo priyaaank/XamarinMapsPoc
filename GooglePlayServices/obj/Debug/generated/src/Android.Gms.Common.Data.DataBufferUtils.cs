@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Common.Data {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBufferUtils']"
 	[global::Android.Runtime.Register ("com/google/android/gms/common/data/DataBufferUtils", DoNotGenerateAcw=true)]
 	public sealed partial class DataBufferUtils : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Common.Data {
 		internal DataBufferUtils (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_freezeAndClose_Lcom_google_android_gms_common_data_DataBuffer_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/class[@name='DataBufferUtils']/method[@name='freezeAndClose' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.data.DataBuffer']]"
 		[Register ("freezeAndClose", "(Lcom/google/android/gms/common/data/DataBuffer;)Ljava/util/ArrayList;", "")]
 		public static global::System.Collections.IList FreezeAndClose (global::Android.Gms.Common.Data.DataBuffer p0)
 		{

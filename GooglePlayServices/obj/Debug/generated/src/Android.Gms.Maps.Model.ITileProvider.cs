@@ -13,6 +13,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr NO_TILE_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/interface[@name='TileProvider']/field[@name='NO_TILE']"
 		[Register ("NO_TILE")]
 		public static global::Android.Gms.Maps.Model.Tile NoTile {
 			get {
@@ -41,9 +42,11 @@ namespace Android.Gms.Maps.Model {
 		}
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.maps.model']/interface[@name='TileProvider']"
 	[Register ("com/google/android/gms/maps/model/TileProvider", "", "Android.Gms.Maps.Model.ITileProviderInvoker")]
 	public partial interface ITileProvider : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/interface[@name='TileProvider']/method[@name='getTile' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int']]"
 		[Register ("getTile", "(III)Lcom/google/android/gms/maps/model/Tile;", "GetGetTile_IIIHandler:Android.Gms.Maps.Model.ITileProviderInvoker, GooglePlayServices")]
 		global::Android.Gms.Maps.Model.Tile GetTile (int p0, int p1, int p2);
 

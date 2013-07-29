@@ -2,13 +2,19 @@ using System;
 using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.CoreLocation;
+using MonoTouch.MapKit;
+using Mappy.Common;
 
 namespace Mappy.iOS
 {
 	public partial class Mappy_iOSViewController : UIViewController
 	{
+		MapViewModel ViewModel;
+
 		public Mappy_iOSViewController () : base ("Mappy_iOSViewController", null)
 		{
+			ViewModel = new MapViewModel ();
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -22,8 +28,19 @@ namespace Mappy.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			
-			// Perform any additional setup after loading the view, typically from a nib.
+			MapView.ShowsUserLocation = true;
+		}
+
+		void CenterOnUser()
+		{
+			MapView.Region = new MKCoordinateRegion(MapView.UserLocation.Coordinate, new MKCoordinateSpan(20, 20));
+		}
+
+		public override void ViewDidAppear (bool animated)
+		{
+			CenterOnUser ();
+
+			//var bankEntities = EntitiesService.fetch (coordinates.Latitude, coordinates.Longitude, userSelection);
 		}
 
 		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)

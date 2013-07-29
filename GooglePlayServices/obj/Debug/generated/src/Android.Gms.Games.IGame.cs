@@ -4,75 +4,94 @@ using Android.Runtime;
 
 namespace Android.Gms.Games {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']"
 	[Register ("com/google/android/gms/games/Game", "", "Android.Gms.Games.IGameInvoker")]
 	public partial interface IGame : global::Android.OS.IParcelable, global::Android.Gms.Common.Data.IFreezable {
 
 		int AchievementTotalCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getAchievementTotalCount' and count(parameter)=0]"
 			[Register ("getAchievementTotalCount", "()I", "GetGetAchievementTotalCountHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		string ApplicationId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getApplicationId' and count(parameter)=0]"
 			[Register ("getApplicationId", "()Ljava/lang/String;", "GetGetApplicationIdHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		string Description {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getDescription' and count(parameter)=0]"
 			[Register ("getDescription", "()Ljava/lang/String;", "GetGetDescriptionHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		string DeveloperName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getDeveloperName' and count(parameter)=0]"
 			[Register ("getDeveloperName", "()Ljava/lang/String;", "GetGetDeveloperNameHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		string DisplayName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getDisplayName' and count(parameter)=0]"
 			[Register ("getDisplayName", "()Ljava/lang/String;", "GetGetDisplayNameHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri FeaturedImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getFeaturedImageUri' and count(parameter)=0]"
 			[Register ("getFeaturedImageUri", "()Landroid/net/Uri;", "GetGetFeaturedImageUriHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		int GameplayAclStatus {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getGameplayAclStatus' and count(parameter)=0]"
 			[Register ("getGameplayAclStatus", "()I", "GetGetGameplayAclStatusHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri HiResImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getHiResImageUri' and count(parameter)=0]"
 			[Register ("getHiResImageUri", "()Landroid/net/Uri;", "GetGetHiResImageUriHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri IconImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getIconImageUri' and count(parameter)=0]"
 			[Register ("getIconImageUri", "()Landroid/net/Uri;", "GetGetIconImageUriHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		string InstancePackageName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getInstancePackageName' and count(parameter)=0]"
 			[Register ("getInstancePackageName", "()Ljava/lang/String;", "GetGetInstancePackageNameHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsInstanceInstalled {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='isInstanceInstalled' and count(parameter)=0]"
 			[Register ("isInstanceInstalled", "()Z", "GetIsInstanceInstalledHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		bool IsPlayEnabledGame {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='isPlayEnabledGame' and count(parameter)=0]"
 			[Register ("isPlayEnabledGame", "()Z", "GetIsPlayEnabledGameHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		int LeaderboardCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getLeaderboardCount' and count(parameter)=0]"
 			[Register ("getLeaderboardCount", "()I", "GetGetLeaderboardCountHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		string PrimaryCategory {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getPrimaryCategory' and count(parameter)=0]"
 			[Register ("getPrimaryCategory", "()Ljava/lang/String;", "GetGetPrimaryCategoryHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
 		string SecondaryCategory {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getSecondaryCategory' and count(parameter)=0]"
 			[Register ("getSecondaryCategory", "()Ljava/lang/String;", "GetGetSecondaryCategoryHandler:Android.Gms.Games.IGameInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getDescription' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDescription", "(Landroid/database/CharArrayBuffer;)V", "GetGetDescription_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.IGameInvoker, GooglePlayServices")]
 		void GetDescription (global::Android.Database.CharArrayBuffer p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getDeveloperName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDeveloperName", "(Landroid/database/CharArrayBuffer;)V", "GetGetDeveloperName_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.IGameInvoker, GooglePlayServices")]
 		void GetDeveloperName (global::Android.Database.CharArrayBuffer p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/interface[@name='Game']/method[@name='getDisplayName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDisplayName", "(Landroid/database/CharArrayBuffer;)V", "GetGetDisplayName_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.IGameInvoker, GooglePlayServices")]
 		void GetDisplayName (global::Android.Database.CharArrayBuffer p0);
 

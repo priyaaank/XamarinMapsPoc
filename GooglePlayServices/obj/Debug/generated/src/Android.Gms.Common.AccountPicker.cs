@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Common {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='AccountPicker']"
 	[global::Android.Runtime.Register ("com/google/android/gms/common/AccountPicker", DoNotGenerateAcw=true)]
 	public sealed partial class AccountPicker : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Common {
 		internal AccountPicker (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_a_Landroid_accounts_Account_Ljava_util_ArrayList_arrayLjava_lang_String_ZLjava_lang_String_Ljava_lang_String_arrayLjava_lang_String_Landroid_os_Bundle_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='AccountPicker']/method[@name='a' and count(parameter)=9 and parameter[1][@type='android.accounts.Account'] and parameter[2][@type='java.util.ArrayList'] and parameter[3][@type='java.lang.String[]'] and parameter[4][@type='boolean'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='java.lang.String[]'] and parameter[8][@type='android.os.Bundle'] and parameter[9][@type='boolean']]"
 		[Register ("a", "(Landroid/accounts/Account;Ljava/util/ArrayList;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Z)Landroid/content/Intent;", "")]
 		public static global::Android.Content.Intent A (global::Android.Accounts.Account p0, global::System.Collections.Generic.IList<global::Android.Accounts.Account> p1, string[] p2, bool p3, string p4, string p5, string[] p6, global::Android.OS.Bundle p7, bool p8)
 		{
@@ -35,7 +37,7 @@ namespace Android.Gms.Common {
 			IntPtr native_p4 = JNIEnv.NewString (p4);
 			IntPtr native_p5 = JNIEnv.NewString (p5);
 			IntPtr native_p6 = JNIEnv.NewArray (p6);
-			global::Android.Content.Intent __ret = global::Java.Lang.Object.GetObject<global::Android.Content.Intent> (JNIEnv.CallStaticObjectMethod  (class_ref, id_a_Landroid_accounts_Account_Ljava_util_ArrayList_arrayLjava_lang_String_ZLjava_lang_String_Ljava_lang_String_arrayLjava_lang_String_Landroid_os_Bundle_Z, new JValue (p0), new JValue (native_p1), new JValue (native_p2), new JValue (p3), new JValue (native_p4), new JValue (native_p5), new JValue (native_p6), new JValue (p7), new JValue (p8)), JniHandleOwnership.TransferLocalRef);
+			global::Android.Content.Intent __ret = global::Java.Lang.Object.GetObject<global::Android.Content.Intent> (JNIEnv.CallStaticObjectMethod  (class_ref, id_a_Landroid_accounts_Account_Ljava_util_ArrayList_arrayLjava_lang_String_ZLjava_lang_String_Ljava_lang_String_arrayLjava_lang_String_Landroid_os_Bundle_Z, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)), new JValue (native_p2), new JValue (p3), new JValue (native_p4), new JValue (native_p5), new JValue (native_p6), new JValue (p7), new JValue (p8)), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p1);
 			if (p2 != null) {
 				JNIEnv.CopyArray (native_p2, p2);
@@ -51,6 +53,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_newChooseAccountIntent_Landroid_accounts_Account_Ljava_util_ArrayList_arrayLjava_lang_String_ZLjava_lang_String_Ljava_lang_String_arrayLjava_lang_String_Landroid_os_Bundle_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='AccountPicker']/method[@name='newChooseAccountIntent' and count(parameter)=8 and parameter[1][@type='android.accounts.Account'] and parameter[2][@type='java.util.ArrayList'] and parameter[3][@type='java.lang.String[]'] and parameter[4][@type='boolean'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='java.lang.String[]'] and parameter[8][@type='android.os.Bundle']]"
 		[Register ("newChooseAccountIntent", "(Landroid/accounts/Account;Ljava/util/ArrayList;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;", "")]
 		public static global::Android.Content.Intent NewChooseAccountIntent (global::Android.Accounts.Account p0, global::System.Collections.Generic.IList<global::Android.Accounts.Account> p1, string[] p2, bool p3, string p4, string p5, string[] p6, global::Android.OS.Bundle p7)
 		{
@@ -61,7 +64,7 @@ namespace Android.Gms.Common {
 			IntPtr native_p4 = JNIEnv.NewString (p4);
 			IntPtr native_p5 = JNIEnv.NewString (p5);
 			IntPtr native_p6 = JNIEnv.NewArray (p6);
-			global::Android.Content.Intent __ret = global::Java.Lang.Object.GetObject<global::Android.Content.Intent> (JNIEnv.CallStaticObjectMethod  (class_ref, id_newChooseAccountIntent_Landroid_accounts_Account_Ljava_util_ArrayList_arrayLjava_lang_String_ZLjava_lang_String_Ljava_lang_String_arrayLjava_lang_String_Landroid_os_Bundle_, new JValue (p0), new JValue (native_p1), new JValue (native_p2), new JValue (p3), new JValue (native_p4), new JValue (native_p5), new JValue (native_p6), new JValue (p7)), JniHandleOwnership.TransferLocalRef);
+			global::Android.Content.Intent __ret = global::Java.Lang.Object.GetObject<global::Android.Content.Intent> (JNIEnv.CallStaticObjectMethod  (class_ref, id_newChooseAccountIntent_Landroid_accounts_Account_Ljava_util_ArrayList_arrayLjava_lang_String_ZLjava_lang_String_Ljava_lang_String_arrayLjava_lang_String_Landroid_os_Bundle_, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)), new JValue (native_p2), new JValue (p3), new JValue (native_p4), new JValue (native_p5), new JValue (native_p6), new JValue (p7)), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p1);
 			if (p2 != null) {
 				JNIEnv.CopyArray (native_p2, p2);

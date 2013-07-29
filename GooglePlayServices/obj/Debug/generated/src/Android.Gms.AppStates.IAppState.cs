@@ -4,28 +4,35 @@ using Android.Runtime;
 
 namespace Android.Gms.AppStates {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='AppState']"
 	[Register ("com/google/android/gms/appstate/AppState", "", "Android.Gms.AppStates.IAppStateInvoker")]
 	public partial interface IAppState : global::Android.Gms.Common.Data.IFreezable {
 
 		string ConflictVersion {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='AppState']/method[@name='getConflictVersion' and count(parameter)=0]"
 			[Register ("getConflictVersion", "()Ljava/lang/String;", "GetGetConflictVersionHandler:Android.Gms.AppStates.IAppStateInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasConflict {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='AppState']/method[@name='hasConflict' and count(parameter)=0]"
 			[Register ("hasConflict", "()Z", "GetHasConflictHandler:Android.Gms.AppStates.IAppStateInvoker, GooglePlayServices")] get;
 		}
 
 		int Key {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='AppState']/method[@name='getKey' and count(parameter)=0]"
 			[Register ("getKey", "()I", "GetGetKeyHandler:Android.Gms.AppStates.IAppStateInvoker, GooglePlayServices")] get;
 		}
 
 		string LocalVersion {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='AppState']/method[@name='getLocalVersion' and count(parameter)=0]"
 			[Register ("getLocalVersion", "()Ljava/lang/String;", "GetGetLocalVersionHandler:Android.Gms.AppStates.IAppStateInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='AppState']/method[@name='getConflictData' and count(parameter)=0]"
 		[Register ("getConflictData", "()[B", "GetGetConflictDataHandler:Android.Gms.AppStates.IAppStateInvoker, GooglePlayServices")]
 		byte[] GetConflictData ();
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='AppState']/method[@name='getLocalData' and count(parameter)=0]"
 		[Register ("getLocalData", "()[B", "GetGetLocalDataHandler:Android.Gms.AppStates.IAppStateInvoker, GooglePlayServices")]
 		byte[] GetLocalData ();
 

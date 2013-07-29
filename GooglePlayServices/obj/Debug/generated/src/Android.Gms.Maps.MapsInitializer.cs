@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='MapsInitializer']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/MapsInitializer", DoNotGenerateAcw=true)]
 	public sealed partial class MapsInitializer : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps {
 		internal MapsInitializer (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_initialize_Landroid_content_Context_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='MapsInitializer']/method[@name='initialize' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register ("initialize", "(Landroid/content/Context;)V", "")]
 		public static void Initialize (global::Android.Content.Context p0)
 		{

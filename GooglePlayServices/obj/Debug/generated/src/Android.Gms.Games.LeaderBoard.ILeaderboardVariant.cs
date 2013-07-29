@@ -11,30 +11,39 @@ namespace Android.Gms.Games.LeaderBoard {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='COLLECTION_PUBLIC']"
 		[Register ("COLLECTION_PUBLIC")]
 		public const int CollectionPublic = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='COLLECTION_SOCIAL']"
 		[Register ("COLLECTION_SOCIAL")]
 		public const int CollectionSocial = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='NUM_SCORES_UNKNOWN']"
 		[Register ("NUM_SCORES_UNKNOWN")]
 		public const int NumScoresUnknown = (int) -1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='NUM_TIME_SPANS']"
 		[Register ("NUM_TIME_SPANS")]
 		public const int NumTimeSpans = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='PLAYER_RANK_UNKNOWN']"
 		[Register ("PLAYER_RANK_UNKNOWN")]
 		public const int PlayerRankUnknown = (int) -1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='PLAYER_SCORE_UNKNOWN']"
 		[Register ("PLAYER_SCORE_UNKNOWN")]
 		public const int PlayerScoreUnknown = (int) -1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='TIME_SPAN_ALL_TIME']"
 		[Register ("TIME_SPAN_ALL_TIME")]
 		public const int TimeSpanAllTime = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='TIME_SPAN_DAILY']"
 		[Register ("TIME_SPAN_DAILY")]
 		public const int TimeSpanDaily = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/field[@name='TIME_SPAN_WEEKLY']"
 		[Register ("TIME_SPAN_WEEKLY")]
 		public const int TimeSpanWeekly = (int) 1;
 	}
@@ -47,38 +56,47 @@ namespace Android.Gms.Games.LeaderBoard {
 		}
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']"
 	[Register ("com/google/android/gms/games/leaderboard/LeaderboardVariant", "", "Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker")]
 	public partial interface ILeaderboardVariant : IJavaObject {
 
 		int Collection {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='getCollection' and count(parameter)=0]"
 			[Register ("getCollection", "()I", "GetGetCollectionHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 
 		string DisplayPlayerRank {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='getDisplayPlayerRank' and count(parameter)=0]"
 			[Register ("getDisplayPlayerRank", "()Ljava/lang/String;", "GetGetDisplayPlayerRankHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 
 		string DisplayPlayerScore {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='getDisplayPlayerScore' and count(parameter)=0]"
 			[Register ("getDisplayPlayerScore", "()Ljava/lang/String;", "GetGetDisplayPlayerScoreHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPlayerInfo {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='hasPlayerInfo' and count(parameter)=0]"
 			[Register ("hasPlayerInfo", "()Z", "GetHasPlayerInfoHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 
 		long NumScores {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='getNumScores' and count(parameter)=0]"
 			[Register ("getNumScores", "()J", "GetGetNumScoresHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 
 		long PlayerRank {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='getPlayerRank' and count(parameter)=0]"
 			[Register ("getPlayerRank", "()J", "GetGetPlayerRankHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 
 		long RawPlayerScore {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='getRawPlayerScore' and count(parameter)=0]"
 			[Register ("getRawPlayerScore", "()J", "GetGetRawPlayerScoreHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 
 		int TimeSpan {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.leaderboard']/interface[@name='LeaderboardVariant']/method[@name='getTimeSpan' and count(parameter)=0]"
 			[Register ("getTimeSpan", "()I", "GetGetTimeSpanHandler:Android.Gms.Games.LeaderBoard.ILeaderboardVariantInvoker, GooglePlayServices")] get;
 		}
 

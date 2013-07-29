@@ -4,36 +4,47 @@ using Android.Runtime;
 
 namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']"
 	[Register ("com/google/android/gms/games/multiplayer/realtime/RoomStatusUpdateListener", "", "Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker")]
 	public partial interface IRoomStatusUpdateListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onConnectedToRoom' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("onConnectedToRoom", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;)V", "GetOnConnectedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnConnectedToRoom (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onDisconnectedFromRoom' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("onDisconnectedFromRoom", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;)V", "GetOnDisconnectedFromRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnDisconnectedFromRoom (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onPeerDeclined' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room'] and parameter[2][@type='java.util.List']]"
 		[Register ("onPeerDeclined", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V", "GetOnPeerDeclined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnPeerDeclined (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onPeerInvitedToRoom' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room'] and parameter[2][@type='java.util.List']]"
 		[Register ("onPeerInvitedToRoom", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V", "GetOnPeerInvitedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnPeerInvitedToRoom (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onPeerJoined' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room'] and parameter[2][@type='java.util.List']]"
 		[Register ("onPeerJoined", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V", "GetOnPeerJoined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnPeerJoined (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onPeerLeft' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room'] and parameter[2][@type='java.util.List']]"
 		[Register ("onPeerLeft", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V", "GetOnPeerLeft_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnPeerLeft (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onPeersConnected' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room'] and parameter[2][@type='java.util.List']]"
 		[Register ("onPeersConnected", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V", "GetOnPeersConnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnPeersConnected (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onPeersDisconnected' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room'] and parameter[2][@type='java.util.List']]"
 		[Register ("onPeersDisconnected", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V", "GetOnPeersDisconnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnPeersDisconnected (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onRoomAutoMatching' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("onRoomAutoMatching", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;)V", "GetOnRoomAutoMatching_Lcom_google_android_gms_games_multiplayer_realtime_Room_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnRoomAutoMatching (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RoomStatusUpdateListener']/method[@name='onRoomConnecting' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.games.multiplayer.realtime.Room']]"
 		[Register ("onRoomConnecting", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;)V", "GetOnRoomConnecting_Lcom_google_android_gms_games_multiplayer_realtime_Room_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListenerInvoker, GooglePlayServices")]
 		void OnRoomConnecting (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0);
 
@@ -93,7 +104,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnConnectedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.OnConnectedToRoom (p0);
 		}
 #pragma warning restore 0169
@@ -118,7 +129,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnDisconnectedFromRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.OnDisconnectedFromRoom (p0);
 		}
 #pragma warning restore 0169
@@ -143,7 +154,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnPeerDeclined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<string> p1 = global::Android.Runtime.JavaList<string>.FromJniHandle (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnPeerDeclined (p0, p1);
 		}
@@ -155,7 +166,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			if (id_onPeerDeclined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ == IntPtr.Zero)
 				id_onPeerDeclined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ = JNIEnv.GetMethodID (class_ref, "onPeerDeclined", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V");
 			IntPtr native_p1 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p1);
-			JNIEnv.CallVoidMethod (Handle, id_onPeerDeclined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (native_p1));
+			JNIEnv.CallVoidMethod (Handle, id_onPeerDeclined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)));
 			JNIEnv.DeleteLocalRef (native_p1);
 		}
 
@@ -171,7 +182,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnPeerInvitedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<string> p1 = global::Android.Runtime.JavaList<string>.FromJniHandle (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnPeerInvitedToRoom (p0, p1);
 		}
@@ -183,7 +194,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			if (id_onPeerInvitedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ == IntPtr.Zero)
 				id_onPeerInvitedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ = JNIEnv.GetMethodID (class_ref, "onPeerInvitedToRoom", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V");
 			IntPtr native_p1 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p1);
-			JNIEnv.CallVoidMethod (Handle, id_onPeerInvitedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (native_p1));
+			JNIEnv.CallVoidMethod (Handle, id_onPeerInvitedToRoom_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)));
 			JNIEnv.DeleteLocalRef (native_p1);
 		}
 
@@ -199,7 +210,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnPeerJoined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<string> p1 = global::Android.Runtime.JavaList<string>.FromJniHandle (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnPeerJoined (p0, p1);
 		}
@@ -211,7 +222,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			if (id_onPeerJoined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ == IntPtr.Zero)
 				id_onPeerJoined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ = JNIEnv.GetMethodID (class_ref, "onPeerJoined", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V");
 			IntPtr native_p1 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p1);
-			JNIEnv.CallVoidMethod (Handle, id_onPeerJoined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (native_p1));
+			JNIEnv.CallVoidMethod (Handle, id_onPeerJoined_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)));
 			JNIEnv.DeleteLocalRef (native_p1);
 		}
 
@@ -227,7 +238,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnPeerLeft_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<string> p1 = global::Android.Runtime.JavaList<string>.FromJniHandle (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnPeerLeft (p0, p1);
 		}
@@ -239,7 +250,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			if (id_onPeerLeft_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ == IntPtr.Zero)
 				id_onPeerLeft_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ = JNIEnv.GetMethodID (class_ref, "onPeerLeft", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V");
 			IntPtr native_p1 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p1);
-			JNIEnv.CallVoidMethod (Handle, id_onPeerLeft_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (native_p1));
+			JNIEnv.CallVoidMethod (Handle, id_onPeerLeft_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)));
 			JNIEnv.DeleteLocalRef (native_p1);
 		}
 
@@ -255,7 +266,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnPeersConnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<string> p1 = global::Android.Runtime.JavaList<string>.FromJniHandle (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnPeersConnected (p0, p1);
 		}
@@ -267,7 +278,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			if (id_onPeersConnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ == IntPtr.Zero)
 				id_onPeersConnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ = JNIEnv.GetMethodID (class_ref, "onPeersConnected", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V");
 			IntPtr native_p1 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p1);
-			JNIEnv.CallVoidMethod (Handle, id_onPeersConnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (native_p1));
+			JNIEnv.CallVoidMethod (Handle, id_onPeersConnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)));
 			JNIEnv.DeleteLocalRef (native_p1);
 		}
 
@@ -283,7 +294,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnPeersDisconnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<string> p1 = global::Android.Runtime.JavaList<string>.FromJniHandle (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.OnPeersDisconnected (p0, p1);
 		}
@@ -295,7 +306,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 			if (id_onPeersDisconnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ == IntPtr.Zero)
 				id_onPeersDisconnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_ = JNIEnv.GetMethodID (class_ref, "onPeersDisconnected", "(Lcom/google/android/gms/games/multiplayer/realtime/Room;Ljava/util/List;)V");
 			IntPtr native_p1 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p1);
-			JNIEnv.CallVoidMethod (Handle, id_onPeersDisconnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (native_p1));
+			JNIEnv.CallVoidMethod (Handle, id_onPeersDisconnected_Lcom_google_android_gms_games_multiplayer_realtime_Room_Ljava_util_List_, new JValue (p0), new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p1)));
 			JNIEnv.DeleteLocalRef (native_p1);
 		}
 
@@ -311,7 +322,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnRoomAutoMatching_Lcom_google_android_gms_games_multiplayer_realtime_Room_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.OnRoomAutoMatching (p0);
 		}
 #pragma warning restore 0169
@@ -336,7 +347,7 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 		static void n_OnRoomConnecting_Lcom_google_android_gms_games_multiplayer_realtime_Room_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener __this = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoomStatusUpdateListener> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0 = (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom)global::Java.Lang.Object.GetObject<global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.OnRoomConnecting (p0);
 		}
 #pragma warning restore 0169
@@ -534,8 +545,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnConnectedToRoom (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0)
 		{
-			if (OnConnectedToRoomHandler != null)
-				OnConnectedToRoomHandler (sender, new ConnectedToRoomEventArgs (p0));
+			var __h = OnConnectedToRoomHandler;
+			if (__h != null)
+				__h (sender, new ConnectedToRoomEventArgs (p0));
 		}
 #pragma warning disable 0649
 		public EventHandler<DisconnectedFromRoomEventArgs> OnDisconnectedFromRoomHandler;
@@ -543,8 +555,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnDisconnectedFromRoom (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0)
 		{
-			if (OnDisconnectedFromRoomHandler != null)
-				OnDisconnectedFromRoomHandler (sender, new DisconnectedFromRoomEventArgs (p0));
+			var __h = OnDisconnectedFromRoomHandler;
+			if (__h != null)
+				__h (sender, new DisconnectedFromRoomEventArgs (p0));
 		}
 #pragma warning disable 0649
 		public EventHandler<PeerDeclinedEventArgs> OnPeerDeclinedHandler;
@@ -552,8 +565,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnPeerDeclined (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1)
 		{
-			if (OnPeerDeclinedHandler != null)
-				OnPeerDeclinedHandler (sender, new PeerDeclinedEventArgs (p0, p1));
+			var __h = OnPeerDeclinedHandler;
+			if (__h != null)
+				__h (sender, new PeerDeclinedEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<PeerInvitedToRoomEventArgs> OnPeerInvitedToRoomHandler;
@@ -561,8 +575,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnPeerInvitedToRoom (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1)
 		{
-			if (OnPeerInvitedToRoomHandler != null)
-				OnPeerInvitedToRoomHandler (sender, new PeerInvitedToRoomEventArgs (p0, p1));
+			var __h = OnPeerInvitedToRoomHandler;
+			if (__h != null)
+				__h (sender, new PeerInvitedToRoomEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<PeerJoinedEventArgs> OnPeerJoinedHandler;
@@ -570,8 +585,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnPeerJoined (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1)
 		{
-			if (OnPeerJoinedHandler != null)
-				OnPeerJoinedHandler (sender, new PeerJoinedEventArgs (p0, p1));
+			var __h = OnPeerJoinedHandler;
+			if (__h != null)
+				__h (sender, new PeerJoinedEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<PeerLeftEventArgs> OnPeerLeftHandler;
@@ -579,8 +595,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnPeerLeft (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1)
 		{
-			if (OnPeerLeftHandler != null)
-				OnPeerLeftHandler (sender, new PeerLeftEventArgs (p0, p1));
+			var __h = OnPeerLeftHandler;
+			if (__h != null)
+				__h (sender, new PeerLeftEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<PeersConnectedEventArgs> OnPeersConnectedHandler;
@@ -588,8 +605,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnPeersConnected (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1)
 		{
-			if (OnPeersConnectedHandler != null)
-				OnPeersConnectedHandler (sender, new PeersConnectedEventArgs (p0, p1));
+			var __h = OnPeersConnectedHandler;
+			if (__h != null)
+				__h (sender, new PeersConnectedEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<PeersDisconnectedEventArgs> OnPeersDisconnectedHandler;
@@ -597,8 +615,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnPeersDisconnected (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0, global::System.Collections.Generic.IList<string> p1)
 		{
-			if (OnPeersDisconnectedHandler != null)
-				OnPeersDisconnectedHandler (sender, new PeersDisconnectedEventArgs (p0, p1));
+			var __h = OnPeersDisconnectedHandler;
+			if (__h != null)
+				__h (sender, new PeersDisconnectedEventArgs (p0, p1));
 		}
 #pragma warning disable 0649
 		public EventHandler<RoomAutoMatchingEventArgs> OnRoomAutoMatchingHandler;
@@ -606,8 +625,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnRoomAutoMatching (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0)
 		{
-			if (OnRoomAutoMatchingHandler != null)
-				OnRoomAutoMatchingHandler (sender, new RoomAutoMatchingEventArgs (p0));
+			var __h = OnRoomAutoMatchingHandler;
+			if (__h != null)
+				__h (sender, new RoomAutoMatchingEventArgs (p0));
 		}
 #pragma warning disable 0649
 		public EventHandler<RoomConnectingEventArgs> OnRoomConnectingHandler;
@@ -615,8 +635,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnRoomConnecting (global::Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRoom p0)
 		{
-			if (OnRoomConnectingHandler != null)
-				OnRoomConnectingHandler (sender, new RoomConnectingEventArgs (p0));
+			var __h = OnRoomConnectingHandler;
+			if (__h != null)
+				__h (sender, new RoomConnectingEventArgs (p0));
 		}
 
 		internal static bool __IsEmpty (IRoomStatusUpdateListenerImplementor value)

@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Auth {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='UserRecoverableAuthException']"
 	[global::Android.Runtime.Register ("com/google/android/gms/auth/UserRecoverableAuthException", DoNotGenerateAcw=true)]
 	public partial class UserRecoverableAuthException : global::Android.Gms.Auth.GoogleAuthException {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Auth {
 		protected UserRecoverableAuthException (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Ljava_lang_String_Landroid_content_Intent_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='UserRecoverableAuthException']/constructor[@name='UserRecoverableAuthException' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='android.content.Intent']]"
 		[Register (".ctor", "(Ljava/lang/String;Landroid/content/Intent;)V", "")]
 		public UserRecoverableAuthException (string p0, global::Android.Content.Intent p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -62,6 +64,7 @@ namespace Android.Gms.Auth {
 
 		static IntPtr id_getIntent;
 		public virtual global::Android.Content.Intent Intent {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='UserRecoverableAuthException']/method[@name='getIntent' and count(parameter)=0]"
 			[Register ("getIntent", "()Landroid/content/Intent;", "GetGetIntentHandler")]
 			get {
 				if (id_getIntent == IntPtr.Zero)

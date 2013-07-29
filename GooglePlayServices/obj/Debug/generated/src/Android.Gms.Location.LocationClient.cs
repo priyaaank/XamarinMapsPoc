@@ -4,15 +4,19 @@ using Android.Runtime;
 
 namespace Android.Gms.Location {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']"
 	[global::Android.Runtime.Register ("com/google/android/gms/location/LocationClient", DoNotGenerateAcw=true)]
 	public partial class LocationClient : global::Java.Lang.Object, global::Android.Gms.Common.IGooglePlayServicesClient {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/field[@name='KEY_LOCATION_CHANGED']"
 		[Register ("KEY_LOCATION_CHANGED")]
 		public const string KeyLocationChanged = (string) "com.google.android.location.LOCATION";
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='LocationClient.OnAddGeofencesResultListener']"
 		[Register ("com/google/android/gms/location/LocationClient$OnAddGeofencesResultListener", "", "Android.Gms.Location.LocationClient/IOnAddGeofencesResultListenerInvoker")]
 		public partial interface IOnAddGeofencesResultListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='LocationClient.OnAddGeofencesResultListener']/method[@name='onAddGeofencesResult' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String[]']]"
 			[Register ("onAddGeofencesResult", "(I[Ljava/lang/String;)V", "GetOnAddGeofencesResult_IarrayLjava_lang_String_Handler:Android.Gms.Location.LocationClient/IOnAddGeofencesResultListenerInvoker, GooglePlayServices")]
 			void OnAddGeofencesResult (int p0, string[] p1);
 
@@ -130,8 +134,9 @@ namespace Android.Gms.Location {
 
 			public void OnAddGeofencesResult (int p0, string[] p1)
 			{
-				if (Handler != null)
-					Handler (sender, new AddGeofencesResultEventArgs (p0, p1));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new AddGeofencesResultEventArgs (p0, p1));
 			}
 
 			internal static bool __IsEmpty (IOnAddGeofencesResultListenerImplementor value)
@@ -141,12 +146,15 @@ namespace Android.Gms.Location {
 		}
 
 
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='LocationClient.OnRemoveGeofencesResultListener']"
 		[Register ("com/google/android/gms/location/LocationClient$OnRemoveGeofencesResultListener", "", "Android.Gms.Location.LocationClient/IOnRemoveGeofencesResultListenerInvoker")]
 		public partial interface IOnRemoveGeofencesResultListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='LocationClient.OnRemoveGeofencesResultListener']/method[@name='onRemoveGeofencesByPendingIntentResult' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='android.app.PendingIntent']]"
 			[Register ("onRemoveGeofencesByPendingIntentResult", "(ILandroid/app/PendingIntent;)V", "GetOnRemoveGeofencesByPendingIntentResult_ILandroid_app_PendingIntent_Handler:Android.Gms.Location.LocationClient/IOnRemoveGeofencesResultListenerInvoker, GooglePlayServices")]
 			void OnRemoveGeofencesByPendingIntentResult (int p0, global::Android.App.PendingIntent p1);
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/interface[@name='LocationClient.OnRemoveGeofencesResultListener']/method[@name='onRemoveGeofencesByRequestIdsResult' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String[]']]"
 			[Register ("onRemoveGeofencesByRequestIdsResult", "(I[Ljava/lang/String;)V", "GetOnRemoveGeofencesByRequestIdsResult_IarrayLjava_lang_String_Handler:Android.Gms.Location.LocationClient/IOnRemoveGeofencesResultListenerInvoker, GooglePlayServices")]
 			void OnRemoveGeofencesByRequestIdsResult (int p0, string[] p1);
 
@@ -308,8 +316,9 @@ namespace Android.Gms.Location {
 
 			public void OnRemoveGeofencesByPendingIntentResult (int p0, global::Android.App.PendingIntent p1)
 			{
-				if (OnRemoveGeofencesByPendingIntentResultHandler != null)
-					OnRemoveGeofencesByPendingIntentResultHandler (sender, new RemoveGeofencesByPendingIntentResultEventArgs (p0, p1));
+				var __h = OnRemoveGeofencesByPendingIntentResultHandler;
+				if (__h != null)
+					__h (sender, new RemoveGeofencesByPendingIntentResultEventArgs (p0, p1));
 			}
 #pragma warning disable 0649
 			public EventHandler<RemoveGeofencesByRequestIdsResultEventArgs> OnRemoveGeofencesByRequestIdsResultHandler;
@@ -317,8 +326,9 @@ namespace Android.Gms.Location {
 
 			public void OnRemoveGeofencesByRequestIdsResult (int p0, string[] p1)
 			{
-				if (OnRemoveGeofencesByRequestIdsResultHandler != null)
-					OnRemoveGeofencesByRequestIdsResultHandler (sender, new RemoveGeofencesByRequestIdsResultEventArgs (p0, p1));
+				var __h = OnRemoveGeofencesByRequestIdsResultHandler;
+				if (__h != null)
+					__h (sender, new RemoveGeofencesByRequestIdsResultEventArgs (p0, p1));
 			}
 
 			internal static bool __IsEmpty (IOnRemoveGeofencesResultListenerImplementor value)
@@ -346,6 +356,7 @@ namespace Android.Gms.Location {
 		protected LocationClient (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Landroid_content_Context_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/constructor[@name='LocationClient' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks'] and parameter[3][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register (".ctor", "(Landroid/content/Context;Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "")]
 		public LocationClient (global::Android.Content.Context p0, global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p1, global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -380,6 +391,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_isConnected;
 		public virtual bool IsConnected {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='isConnected' and count(parameter)=0]"
 			[Register ("isConnected", "()Z", "GetIsConnectedHandler")]
 			get {
 				if (id_isConnected == IntPtr.Zero)
@@ -410,6 +422,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_isConnecting;
 		public virtual bool IsConnecting {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='isConnecting' and count(parameter)=0]"
 			[Register ("isConnecting", "()Z", "GetIsConnectingHandler")]
 			get {
 				if (id_isConnecting == IntPtr.Zero)
@@ -440,6 +453,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getLastLocation;
 		public virtual global::Android.Locations.Location LastLocation {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='getLastLocation' and count(parameter)=0]"
 			[Register ("getLastLocation", "()Landroid/location/Location;", "GetGetLastLocationHandler")]
 			get {
 				if (id_getLastLocation == IntPtr.Zero)
@@ -466,12 +480,13 @@ namespace Android.Gms.Location {
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<Android.Gms.Location.IGeofence> p0 = global::Android.Runtime.JavaList<global::Android.Gms.Location.IGeofence>.FromJniHandle (native_p0, JniHandleOwnership.DoNotTransfer);
 			global::Android.App.PendingIntent p1 = global::Java.Lang.Object.GetObject<global::Android.App.PendingIntent> (native_p1, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Location.LocationClient.IOnAddGeofencesResultListener p2 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient.IOnAddGeofencesResultListener> (native_p2, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Location.LocationClient.IOnAddGeofencesResultListener p2 = (global::Android.Gms.Location.LocationClient.IOnAddGeofencesResultListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient.IOnAddGeofencesResultListener> (native_p2, JniHandleOwnership.DoNotTransfer);
 			__this.AddGeofences (p0, p1, p2);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_addGeofences_Ljava_util_List_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnAddGeofencesResultListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='addGeofences' and count(parameter)=3 and parameter[1][@type='java.util.List'] and parameter[2][@type='android.app.PendingIntent'] and parameter[3][@type='com.google.android.gms.location.LocationClient.OnAddGeofencesResultListener']]"
 		[Register ("addGeofences", "(Ljava/util/List;Landroid/app/PendingIntent;Lcom/google/android/gms/location/LocationClient$OnAddGeofencesResultListener;)V", "GetAddGeofences_Ljava_util_List_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnAddGeofencesResultListener_Handler")]
 		public virtual void AddGeofences (global::System.Collections.Generic.IList<global::Android.Gms.Location.IGeofence> p0, global::Android.App.PendingIntent p1, global::Android.Gms.Location.LocationClient.IOnAddGeofencesResultListener p2)
 		{
@@ -480,9 +495,9 @@ namespace Android.Gms.Location {
 			IntPtr native_p0 = global::Android.Runtime.JavaList<global::Android.Gms.Location.IGeofence>.ToLocalJniHandle (p0);
 
 			if (GetType () == ThresholdType)
-				JNIEnv.CallVoidMethod  (Handle, id_addGeofences_Ljava_util_List_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnAddGeofencesResultListener_, new JValue (native_p0), new JValue (p1), new JValue (p2));
+				JNIEnv.CallVoidMethod  (Handle, id_addGeofences_Ljava_util_List_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnAddGeofencesResultListener_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0)), new JValue (p1), new JValue (p2));
 			else
-				JNIEnv.CallNonvirtualVoidMethod  (Handle, ThresholdClass, id_addGeofences_Ljava_util_List_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnAddGeofencesResultListener_, new JValue (native_p0), new JValue (p1), new JValue (p2));
+				JNIEnv.CallNonvirtualVoidMethod  (Handle, ThresholdClass, id_addGeofences_Ljava_util_List_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnAddGeofencesResultListener_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0)), new JValue (p1), new JValue (p2));
 			JNIEnv.DeleteLocalRef (native_p0);
 		}
 
@@ -503,6 +518,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_connect;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='connect' and count(parameter)=0]"
 		[Register ("connect", "()V", "GetConnectHandler")]
 		public virtual void Connect ()
 		{
@@ -532,6 +548,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_disconnect;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='disconnect' and count(parameter)=0]"
 		[Register ("disconnect", "()V", "GetDisconnectHandler")]
 		public virtual void Disconnect ()
 		{
@@ -545,6 +562,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_getErrorCode_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='getErrorCode' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("getErrorCode", "(Landroid/content/Intent;)I", "")]
 		public static int GetErrorCode (global::Android.Content.Intent p0)
 		{
@@ -555,6 +573,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_getGeofenceTransition_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='getGeofenceTransition' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("getGeofenceTransition", "(Landroid/content/Intent;)I", "")]
 		public static int GetGeofenceTransition (global::Android.Content.Intent p0)
 		{
@@ -565,6 +584,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_getTriggeringGeofences_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='getTriggeringGeofences' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("getTriggeringGeofences", "(Landroid/content/Intent;)Ljava/util/List;", "")]
 		public static global::System.Collections.Generic.IList<global::Android.Gms.Location.IGeofence> GetTriggeringGeofences (global::Android.Content.Intent p0)
 		{
@@ -575,6 +595,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_hasError_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='hasError' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("hasError", "(Landroid/content/Intent;)Z", "")]
 		public static bool HasError (global::Android.Content.Intent p0)
 		{
@@ -596,13 +617,14 @@ namespace Android.Gms.Location {
 		static bool n_IsConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			bool __ret = __this.IsConnectionCallbacksRegistered (p0);
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_isConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='isConnectionCallbacksRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("isConnectionCallbacksRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)Z", "GetIsConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler")]
 		public virtual bool IsConnectionCallbacksRegistered (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -629,13 +651,14 @@ namespace Android.Gms.Location {
 		static bool n_IsConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			bool __ret = __this.IsConnectionFailedListenerRegistered (p0);
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_isConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='isConnectionFailedListenerRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("isConnectionFailedListenerRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)Z", "GetIsConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler")]
 		public virtual bool IsConnectionFailedListenerRegistered (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -662,12 +685,13 @@ namespace Android.Gms.Location {
 		static void n_RegisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RegisterConnectionCallbacks (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_registerConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='registerConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("registerConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "GetRegisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler")]
 		public virtual void RegisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -692,12 +716,13 @@ namespace Android.Gms.Location {
 		static void n_RegisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RegisterConnectionFailedListener (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_registerConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='registerConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("registerConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "GetRegisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler")]
 		public virtual void RegisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -723,12 +748,13 @@ namespace Android.Gms.Location {
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
 			global::Android.App.PendingIntent p0 = global::Java.Lang.Object.GetObject<global::Android.App.PendingIntent> (native_p0, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener p1 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener> (native_p1, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener p1 = (global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener> (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.RemoveGeofences (p0, p1);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_removeGeofences_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='removeGeofences' and count(parameter)=2 and parameter[1][@type='android.app.PendingIntent'] and parameter[2][@type='com.google.android.gms.location.LocationClient.OnRemoveGeofencesResultListener']]"
 		[Register ("removeGeofences", "(Landroid/app/PendingIntent;Lcom/google/android/gms/location/LocationClient$OnRemoveGeofencesResultListener;)V", "GetRemoveGeofences_Landroid_app_PendingIntent_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_Handler")]
 		public virtual void RemoveGeofences (global::Android.App.PendingIntent p0, global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener p1)
 		{
@@ -754,12 +780,13 @@ namespace Android.Gms.Location {
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
 			System.Collections.Generic.IList<string> p0 = global::Android.Runtime.JavaList<string>.FromJniHandle (native_p0, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener p1 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener> (native_p1, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener p1 = (global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener> (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.RemoveGeofences (p0, p1);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_removeGeofences_Ljava_util_List_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='removeGeofences' and count(parameter)=2 and parameter[1][@type='java.util.List'] and parameter[2][@type='com.google.android.gms.location.LocationClient.OnRemoveGeofencesResultListener']]"
 		[Register ("removeGeofences", "(Ljava/util/List;Lcom/google/android/gms/location/LocationClient$OnRemoveGeofencesResultListener;)V", "GetRemoveGeofences_Ljava_util_List_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_Handler")]
 		public virtual void RemoveGeofences (global::System.Collections.Generic.IList<string> p0, global::Android.Gms.Location.LocationClient.IOnRemoveGeofencesResultListener p1)
 		{
@@ -768,9 +795,9 @@ namespace Android.Gms.Location {
 			IntPtr native_p0 = global::Android.Runtime.JavaList<string>.ToLocalJniHandle (p0);
 
 			if (GetType () == ThresholdType)
-				JNIEnv.CallVoidMethod  (Handle, id_removeGeofences_Ljava_util_List_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_, new JValue (native_p0), new JValue (p1));
+				JNIEnv.CallVoidMethod  (Handle, id_removeGeofences_Ljava_util_List_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0)), new JValue (p1));
 			else
-				JNIEnv.CallNonvirtualVoidMethod  (Handle, ThresholdClass, id_removeGeofences_Ljava_util_List_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_, new JValue (native_p0), new JValue (p1));
+				JNIEnv.CallNonvirtualVoidMethod  (Handle, ThresholdClass, id_removeGeofences_Ljava_util_List_Lcom_google_android_gms_location_LocationClient_OnRemoveGeofencesResultListener_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0)), new JValue (p1));
 			JNIEnv.DeleteLocalRef (native_p0);
 		}
 
@@ -792,6 +819,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_removeLocationUpdates_Landroid_app_PendingIntent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='removeLocationUpdates' and count(parameter)=1 and parameter[1][@type='android.app.PendingIntent']]"
 		[Register ("removeLocationUpdates", "(Landroid/app/PendingIntent;)V", "GetRemoveLocationUpdates_Landroid_app_PendingIntent_Handler")]
 		public virtual void RemoveLocationUpdates (global::Android.App.PendingIntent p0)
 		{
@@ -816,12 +844,13 @@ namespace Android.Gms.Location {
 		static void n_RemoveLocationUpdates_Lcom_google_android_gms_location_LocationListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Location.ILocationListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.ILocationListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Location.ILocationListener p0 = (global::Android.Gms.Location.ILocationListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Location.ILocationListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.RemoveLocationUpdates (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_removeLocationUpdates_Lcom_google_android_gms_location_LocationListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='removeLocationUpdates' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.location.LocationListener']]"
 		[Register ("removeLocationUpdates", "(Lcom/google/android/gms/location/LocationListener;)V", "GetRemoveLocationUpdates_Lcom_google_android_gms_location_LocationListener_Handler")]
 		public virtual void RemoveLocationUpdates (global::Android.Gms.Location.ILocationListener p0)
 		{
@@ -853,6 +882,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_requestLocationUpdates_Lcom_google_android_gms_location_LocationRequest_Landroid_app_PendingIntent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='requestLocationUpdates' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.location.LocationRequest'] and parameter[2][@type='android.app.PendingIntent']]"
 		[Register ("requestLocationUpdates", "(Lcom/google/android/gms/location/LocationRequest;Landroid/app/PendingIntent;)V", "GetRequestLocationUpdates_Lcom_google_android_gms_location_LocationRequest_Landroid_app_PendingIntent_Handler")]
 		public virtual void RequestLocationUpdates (global::Android.Gms.Location.LocationRequest p0, global::Android.App.PendingIntent p1)
 		{
@@ -878,12 +908,13 @@ namespace Android.Gms.Location {
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
 			global::Android.Gms.Location.LocationRequest p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationRequest> (native_p0, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Location.ILocationListener p1 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.ILocationListener> (native_p1, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Location.ILocationListener p1 = (global::Android.Gms.Location.ILocationListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Location.ILocationListener> (native_p1, JniHandleOwnership.DoNotTransfer);
 			__this.RequestLocationUpdates (p0, p1);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_requestLocationUpdates_Lcom_google_android_gms_location_LocationRequest_Lcom_google_android_gms_location_LocationListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='requestLocationUpdates' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.location.LocationRequest'] and parameter[2][@type='com.google.android.gms.location.LocationListener']]"
 		[Register ("requestLocationUpdates", "(Lcom/google/android/gms/location/LocationRequest;Lcom/google/android/gms/location/LocationListener;)V", "GetRequestLocationUpdates_Lcom_google_android_gms_location_LocationRequest_Lcom_google_android_gms_location_LocationListener_Handler")]
 		public virtual void RequestLocationUpdates (global::Android.Gms.Location.LocationRequest p0, global::Android.Gms.Location.ILocationListener p1)
 		{
@@ -909,13 +940,14 @@ namespace Android.Gms.Location {
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
 			global::Android.Gms.Location.LocationRequest p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationRequest> (native_p0, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Location.ILocationListener p1 = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.ILocationListener> (native_p1, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Location.ILocationListener p1 = (global::Android.Gms.Location.ILocationListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Location.ILocationListener> (native_p1, JniHandleOwnership.DoNotTransfer);
 			global::Android.OS.Looper p2 = global::Java.Lang.Object.GetObject<global::Android.OS.Looper> (native_p2, JniHandleOwnership.DoNotTransfer);
 			__this.RequestLocationUpdates (p0, p1, p2);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_requestLocationUpdates_Lcom_google_android_gms_location_LocationRequest_Lcom_google_android_gms_location_LocationListener_Landroid_os_Looper_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='requestLocationUpdates' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.location.LocationRequest'] and parameter[2][@type='com.google.android.gms.location.LocationListener'] and parameter[3][@type='android.os.Looper']]"
 		[Register ("requestLocationUpdates", "(Lcom/google/android/gms/location/LocationRequest;Lcom/google/android/gms/location/LocationListener;Landroid/os/Looper;)V", "GetRequestLocationUpdates_Lcom_google_android_gms_location_LocationRequest_Lcom_google_android_gms_location_LocationListener_Landroid_os_Looper_Handler")]
 		public virtual void RequestLocationUpdates (global::Android.Gms.Location.LocationRequest p0, global::Android.Gms.Location.ILocationListener p1, global::Android.OS.Looper p2)
 		{
@@ -940,12 +972,13 @@ namespace Android.Gms.Location {
 		static void n_UnregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0 = (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.UnregisterConnectionCallbacks (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_unregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='unregisterConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("unregisterConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "GetUnregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Handler")]
 		public virtual void UnregisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -970,12 +1003,13 @@ namespace Android.Gms.Location {
 		static void n_UnregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Location.LocationClient __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Location.LocationClient> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0 = (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener)global::Java.Lang.Object.GetObject<global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener> (native_p0, JniHandleOwnership.DoNotTransfer);
 			__this.UnregisterConnectionFailedListener (p0);
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_unregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='LocationClient']/method[@name='unregisterConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("unregisterConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "GetUnregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_Handler")]
 		public virtual void UnregisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{

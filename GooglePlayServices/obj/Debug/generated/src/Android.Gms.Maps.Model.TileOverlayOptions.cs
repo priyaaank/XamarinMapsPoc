@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/TileOverlayOptions", DoNotGenerateAcw=true)]
 	public sealed partial class TileOverlayOptions : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps.Model {
 		internal TileOverlayOptions (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/constructor[@name='TileOverlayOptions' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public TileOverlayOptions () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -43,6 +45,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_isVisible;
 		public bool IsVisible {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='isVisible' and count(parameter)=0]"
 			[Register ("isVisible", "()Z", "GetIsVisibleHandler")]
 			get {
 				if (id_isVisible == IntPtr.Zero)
@@ -53,6 +56,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getTileProvider;
 		public global::Android.Gms.Maps.Model.ITileProvider TileProvider {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='getTileProvider' and count(parameter)=0]"
 			[Register ("getTileProvider", "()Lcom/google/android/gms/maps/model/TileProvider;", "GetGetTileProviderHandler")]
 			get {
 				if (id_getTileProvider == IntPtr.Zero)
@@ -63,6 +67,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getZIndex;
 		public float ZIndex {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='getZIndex' and count(parameter)=0]"
 			[Register ("getZIndex", "()F", "GetGetZIndexHandler")]
 			get {
 				if (id_getZIndex == IntPtr.Zero)
@@ -71,16 +76,18 @@ namespace Android.Gms.Maps.Model {
 			}
 		}
 
-		static IntPtr id_ba;
-		[Register ("ba", "()Landroid/os/IBinder;", "")]
-		public global::Android.OS.IBinder Ba ()
+		static IntPtr id_bb;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='bb' and count(parameter)=0]"
+		[Register ("bb", "()Landroid/os/IBinder;", "")]
+		public global::Android.OS.IBinder Bb ()
 		{
-			if (id_ba == IntPtr.Zero)
-				id_ba = JNIEnv.GetMethodID (class_ref, "ba", "()Landroid/os/IBinder;");
-			return global::Java.Lang.Object.GetObject<global::Android.OS.IBinder> (JNIEnv.CallObjectMethod  (Handle, id_ba), JniHandleOwnership.TransferLocalRef);
+			if (id_bb == IntPtr.Zero)
+				id_bb = JNIEnv.GetMethodID (class_ref, "bb", "()Landroid/os/IBinder;");
+			return global::Java.Lang.Object.GetObject<global::Android.OS.IBinder> (JNIEnv.CallObjectMethod  (Handle, id_bb), JniHandleOwnership.TransferLocalRef);
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -90,6 +97,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_tileProvider_Lcom_google_android_gms_maps_model_TileProvider_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='tileProvider' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.TileProvider']]"
 		[Register ("tileProvider", "(Lcom/google/android/gms/maps/model/TileProvider;)Lcom/google/android/gms/maps/model/TileOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.TileOverlayOptions InvokeTileProvider (global::Android.Gms.Maps.Model.ITileProvider p0)
 		{
@@ -100,6 +108,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -109,6 +118,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_visible_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='visible' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("visible", "(Z)Lcom/google/android/gms/maps/model/TileOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.TileOverlayOptions Visible (bool p0)
 		{
@@ -118,6 +128,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{
@@ -127,6 +138,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_zIndex_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='TileOverlayOptions']/method[@name='zIndex' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("zIndex", "(F)Lcom/google/android/gms/maps/model/TileOverlayOptions;", "")]
 		public global::Android.Gms.Maps.Model.TileOverlayOptions InvokeZIndex (float p0)
 		{

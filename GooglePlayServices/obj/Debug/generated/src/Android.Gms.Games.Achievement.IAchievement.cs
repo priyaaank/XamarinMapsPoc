@@ -11,18 +11,23 @@ namespace Android.Gms.Games.Achievement {
 		{
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/field[@name='STATE_HIDDEN']"
 		[Register ("STATE_HIDDEN")]
 		public const int StateHidden = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/field[@name='STATE_REVEALED']"
 		[Register ("STATE_REVEALED")]
 		public const int StateRevealed = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/field[@name='STATE_UNLOCKED']"
 		[Register ("STATE_UNLOCKED")]
 		public const int StateUnlocked = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/field[@name='TYPE_INCREMENTAL']"
 		[Register ("TYPE_INCREMENTAL")]
 		public const int TypeIncremental = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/field[@name='TYPE_STANDARD']"
 		[Register ("TYPE_STANDARD")]
 		public const int TypeStandard = (int) 0;
 	}
@@ -35,70 +40,88 @@ namespace Android.Gms.Games.Achievement {
 		}
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']"
 	[Register ("com/google/android/gms/games/achievement/Achievement", "", "Android.Gms.Games.Achievement.IAchievementInvoker")]
 	public partial interface IAchievement : IJavaObject {
 
 		string AchievementId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getAchievementId' and count(parameter)=0]"
 			[Register ("getAchievementId", "()Ljava/lang/String;", "GetGetAchievementIdHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		int CurrentSteps {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getCurrentSteps' and count(parameter)=0]"
 			[Register ("getCurrentSteps", "()I", "GetGetCurrentStepsHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		string Description {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getDescription' and count(parameter)=0]"
 			[Register ("getDescription", "()Ljava/lang/String;", "GetGetDescriptionHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		string FormattedCurrentSteps {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getFormattedCurrentSteps' and count(parameter)=0]"
 			[Register ("getFormattedCurrentSteps", "()Ljava/lang/String;", "GetGetFormattedCurrentStepsHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		string FormattedTotalSteps {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getFormattedTotalSteps' and count(parameter)=0]"
 			[Register ("getFormattedTotalSteps", "()Ljava/lang/String;", "GetGetFormattedTotalStepsHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		long LastUpdatedTimestamp {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getLastUpdatedTimestamp' and count(parameter)=0]"
 			[Register ("getLastUpdatedTimestamp", "()J", "GetGetLastUpdatedTimestampHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		string Name {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getName' and count(parameter)=0]"
 			[Register ("getName", "()Ljava/lang/String;", "GetGetNameHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Games.IPlayer Player {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getPlayer' and count(parameter)=0]"
 			[Register ("getPlayer", "()Lcom/google/android/gms/games/Player;", "GetGetPlayerHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri RevealedImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getRevealedImageUri' and count(parameter)=0]"
 			[Register ("getRevealedImageUri", "()Landroid/net/Uri;", "GetGetRevealedImageUriHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		int State {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getState' and count(parameter)=0]"
 			[Register ("getState", "()I", "GetGetStateHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		int TotalSteps {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getTotalSteps' and count(parameter)=0]"
 			[Register ("getTotalSteps", "()I", "GetGetTotalStepsHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		int Type {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getType' and count(parameter)=0]"
 			[Register ("getType", "()I", "GetGetTypeHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Net.Uri UnlockedImageUri {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getUnlockedImageUri' and count(parameter)=0]"
 			[Register ("getUnlockedImageUri", "()Landroid/net/Uri;", "GetGetUnlockedImageUriHandler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")] get;
 		}
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getDescription' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getDescription", "(Landroid/database/CharArrayBuffer;)V", "GetGetDescription_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")]
 		void GetDescription (global::Android.Database.CharArrayBuffer p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getFormattedCurrentSteps' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getFormattedCurrentSteps", "(Landroid/database/CharArrayBuffer;)V", "GetGetFormattedCurrentSteps_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")]
 		void GetFormattedCurrentSteps (global::Android.Database.CharArrayBuffer p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getFormattedTotalSteps' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getFormattedTotalSteps", "(Landroid/database/CharArrayBuffer;)V", "GetGetFormattedTotalSteps_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")]
 		void GetFormattedTotalSteps (global::Android.Database.CharArrayBuffer p0);
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='Achievement']/method[@name='getName' and count(parameter)=1 and parameter[1][@type='android.database.CharArrayBuffer']]"
 		[Register ("getName", "(Landroid/database/CharArrayBuffer;)V", "GetGetName_Landroid_database_CharArrayBuffer_Handler:Android.Gms.Games.Achievement.IAchievementInvoker, GooglePlayServices")]
 		void GetName (global::Android.Database.CharArrayBuffer p0);
 

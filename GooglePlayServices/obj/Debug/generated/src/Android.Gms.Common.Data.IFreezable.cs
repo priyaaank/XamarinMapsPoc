@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Common.Data {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.common.data']/interface[@name='Freezable']"
 	[Register ("com/google/android/gms/common/data/Freezable", "", "Android.Gms.Common.Data.IFreezableInvoker")]
 	public partial interface IFreezable : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common.data']/interface[@name='Freezable']/method[@name='freeze' and count(parameter)=0]"
 		[Register ("freeze", "()Ljava/lang/Object;", "GetFreezeHandler:Android.Gms.Common.Data.IFreezableInvoker, GooglePlayServices")]
 		global::Java.Lang.Object Freeze ();
 

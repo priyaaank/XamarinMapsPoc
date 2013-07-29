@@ -2,20 +2,28 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityMapView.cs">
     <Files>
-      <File FileName="Services/BankEntitiesService.cs" Line="24" Column="33" />
-      <File FileName="BankEntityMapView.cs" Line="26" Column="15" />
+      <File FileName="BankEntityMapView.cs" Line="88" Column="87" />
+      <File FileName="Mappy.Common/Services/BankEntitiesService.cs" Line="9" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
+          <Node name="GooglePlayServices_Froyo" expanded="True" />
           <Node name="Mappy" expanded="True">
-            <Node name="Models" expanded="True" />
-            <Node name="Properties" expanded="True" />
-            <Node name="Resources" expanded="True">
-              <Node name="drawable" expanded="True" />
-            </Node>
-            <Node name="Services" expanded="True" />
             <Node name="BankEntityMapView.cs" selected="True" />
+          </Node>
+          <Node name="Mappy.Common" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Models" expanded="True" />
+            <Node name="Services" expanded="True" />
+            <Node name="ViewModels" expanded="True" />
+          </Node>
+          <Node name="Mappy.Common.Android" expanded="True" />
+          <Node name="Mappy.Common.iOS" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
+          <Node name="Mappy.iOS" expanded="True">
+            <Node name="References" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -28,11 +36,16 @@
           <Value>zoomLevel</Value>
         </State>
       </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="304D19E4975BD19E" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Services/BankEntitiesService.cs" line="28" offsetX="686" offsetY="405" expression="response" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="HT24KW105470" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
 </Properties>

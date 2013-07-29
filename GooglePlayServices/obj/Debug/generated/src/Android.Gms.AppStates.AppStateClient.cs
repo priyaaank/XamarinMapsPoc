@@ -4,45 +4,59 @@ using Android.Runtime;
 
 namespace Android.Gms.AppStates {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']"
 	[global::Android.Runtime.Register ("com/google/android/gms/appstate/AppStateClient", DoNotGenerateAcw=true)]
 	public sealed partial class AppStateClient : global::Java.Lang.Object, global::Android.Gms.Common.IGooglePlayServicesClient {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_CLIENT_RECONNECT_REQUIRED']"
 		[Register ("STATUS_CLIENT_RECONNECT_REQUIRED")]
 		public const int StatusClientReconnectRequired = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_DEVELOPER_ERROR']"
 		[Register ("STATUS_DEVELOPER_ERROR")]
 		public const int StatusDeveloperError = (int) 7;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_INTERNAL_ERROR']"
 		[Register ("STATUS_INTERNAL_ERROR")]
 		public const int StatusInternalError = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_NETWORK_ERROR_NO_DATA']"
 		[Register ("STATUS_NETWORK_ERROR_NO_DATA")]
 		public const int StatusNetworkErrorNoData = (int) 4;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_NETWORK_ERROR_OPERATION_DEFERRED']"
 		[Register ("STATUS_NETWORK_ERROR_OPERATION_DEFERRED")]
 		public const int StatusNetworkErrorOperationDeferred = (int) 5;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_NETWORK_ERROR_OPERATION_FAILED']"
 		[Register ("STATUS_NETWORK_ERROR_OPERATION_FAILED")]
 		public const int StatusNetworkErrorOperationFailed = (int) 6;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_NETWORK_ERROR_STALE_DATA']"
 		[Register ("STATUS_NETWORK_ERROR_STALE_DATA")]
 		public const int StatusNetworkErrorStaleData = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_OK']"
 		[Register ("STATUS_OK")]
 		public const int StatusOk = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_STATE_KEY_LIMIT_EXCEEDED']"
 		[Register ("STATUS_STATE_KEY_LIMIT_EXCEEDED")]
 		public const int StatusStateKeyLimitExceeded = (int) 2003;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_STATE_KEY_NOT_FOUND']"
 		[Register ("STATUS_STATE_KEY_NOT_FOUND")]
 		public const int StatusStateKeyNotFound = (int) 2002;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_WRITE_OUT_OF_DATE_VERSION']"
 		[Register ("STATUS_WRITE_OUT_OF_DATE_VERSION")]
 		public const int StatusWriteOutOfDateVersion = (int) 2000;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/field[@name='STATUS_WRITE_SIZE_EXCEEDED']"
 		[Register ("STATUS_WRITE_SIZE_EXCEEDED")]
 		public const int StatusWriteSizeExceeded = (int) 2001;
+		// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient.Builder']"
 		[global::Android.Runtime.Register ("com/google/android/gms/appstate/AppStateClient$Builder", DoNotGenerateAcw=true)]
 		public sealed partial class Builder : global::Java.Lang.Object {
 
@@ -64,6 +78,7 @@ namespace Android.Gms.AppStates {
 			internal Builder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 			static IntPtr id_ctor_Landroid_content_Context_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+			// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient.Builder']/constructor[@name='AppStateClient.Builder' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks'] and parameter[3][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 			[Register (".ctor", "(Landroid/content/Context;Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "")]
 			public Builder (global::Android.Content.Context p0, global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p1, global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 			{
@@ -81,6 +96,7 @@ namespace Android.Gms.AppStates {
 			}
 
 			static IntPtr id_create;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient.Builder']/method[@name='create' and count(parameter)=0]"
 			[Register ("create", "()Lcom/google/android/gms/appstate/AppStateClient;", "")]
 			public global::Android.Gms.AppStates.AppStateClient Create ()
 			{
@@ -90,6 +106,7 @@ namespace Android.Gms.AppStates {
 			}
 
 			static IntPtr id_setAccountName_Ljava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient.Builder']/method[@name='setAccountName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 			[Register ("setAccountName", "(Ljava/lang/String;)Lcom/google/android/gms/appstate/AppStateClient$Builder;", "")]
 			public global::Android.Gms.AppStates.AppStateClient.Builder SetAccountName (string p0)
 			{
@@ -102,6 +119,7 @@ namespace Android.Gms.AppStates {
 			}
 
 			static IntPtr id_setScopes_arrayLjava_lang_String_;
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient.Builder']/method[@name='setScopes' and count(parameter)=1 and parameter[1][@type='java.lang.String[]']]"
 			[Register ("setScopes", "([Ljava/lang/String;)Lcom/google/android/gms/appstate/AppStateClient$Builder;", "")]
 			public global::Android.Gms.AppStates.AppStateClient.Builder SetScopes (params  string[] p0)
 			{
@@ -137,6 +155,7 @@ namespace Android.Gms.AppStates {
 
 		static IntPtr id_isConnected;
 		public bool IsConnected {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='isConnected' and count(parameter)=0]"
 			[Register ("isConnected", "()Z", "GetIsConnectedHandler")]
 			get {
 				if (id_isConnected == IntPtr.Zero)
@@ -147,6 +166,7 @@ namespace Android.Gms.AppStates {
 
 		static IntPtr id_isConnecting;
 		public bool IsConnecting {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='isConnecting' and count(parameter)=0]"
 			[Register ("isConnecting", "()Z", "GetIsConnectingHandler")]
 			get {
 				if (id_isConnecting == IntPtr.Zero)
@@ -157,6 +177,7 @@ namespace Android.Gms.AppStates {
 
 		static IntPtr id_getMaxNumKeys;
 		public int MaxNumKeys {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='getMaxNumKeys' and count(parameter)=0]"
 			[Register ("getMaxNumKeys", "()I", "GetGetMaxNumKeysHandler")]
 			get {
 				if (id_getMaxNumKeys == IntPtr.Zero)
@@ -167,6 +188,7 @@ namespace Android.Gms.AppStates {
 
 		static IntPtr id_getMaxStateSize;
 		public int MaxStateSize {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='getMaxStateSize' and count(parameter)=0]"
 			[Register ("getMaxStateSize", "()I", "GetGetMaxStateSizeHandler")]
 			get {
 				if (id_getMaxStateSize == IntPtr.Zero)
@@ -176,6 +198,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_connect;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='connect' and count(parameter)=0]"
 		[Register ("connect", "()V", "")]
 		public void Connect ()
 		{
@@ -185,6 +208,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_deleteState_Lcom_google_android_gms_appstate_OnStateDeletedListener_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='deleteState' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.appstate.OnStateDeletedListener'] and parameter[2][@type='int']]"
 		[Register ("deleteState", "(Lcom/google/android/gms/appstate/OnStateDeletedListener;I)V", "")]
 		public void DeleteState (global::Android.Gms.AppStates.IOnStateDeletedListener p0, int p1)
 		{
@@ -194,6 +218,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_disconnect;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='disconnect' and count(parameter)=0]"
 		[Register ("disconnect", "()V", "")]
 		public void Disconnect ()
 		{
@@ -203,6 +228,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_isConnectionCallbacksRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='isConnectionCallbacksRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("isConnectionCallbacksRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)Z", "")]
 		public bool IsConnectionCallbacksRegistered (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -213,6 +239,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_isConnectionFailedListenerRegistered_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='isConnectionFailedListenerRegistered' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("isConnectionFailedListenerRegistered", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)Z", "")]
 		public bool IsConnectionFailedListenerRegistered (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -223,6 +250,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_listStates_Lcom_google_android_gms_appstate_OnStateListLoadedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='listStates' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.appstate.OnStateListLoadedListener']]"
 		[Register ("listStates", "(Lcom/google/android/gms/appstate/OnStateListLoadedListener;)V", "")]
 		public void ListStates (global::Android.Gms.AppStates.IOnStateListLoadedListener p0)
 		{
@@ -232,6 +260,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_loadState_Lcom_google_android_gms_appstate_OnStateLoadedListener_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='loadState' and count(parameter)=2 and parameter[1][@type='com.google.android.gms.appstate.OnStateLoadedListener'] and parameter[2][@type='int']]"
 		[Register ("loadState", "(Lcom/google/android/gms/appstate/OnStateLoadedListener;I)V", "")]
 		public void LoadState (global::Android.Gms.AppStates.IOnStateLoadedListener p0, int p1)
 		{
@@ -241,6 +270,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_reconnect;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='reconnect' and count(parameter)=0]"
 		[Register ("reconnect", "()V", "")]
 		public void Reconnect ()
 		{
@@ -250,6 +280,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_registerConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='registerConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("registerConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "")]
 		public void RegisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -259,6 +290,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_registerConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='registerConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("registerConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "")]
 		public void RegisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -268,6 +300,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_resolveState_Lcom_google_android_gms_appstate_OnStateLoadedListener_ILjava_lang_String_arrayB;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='resolveState' and count(parameter)=4 and parameter[1][@type='com.google.android.gms.appstate.OnStateLoadedListener'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='byte[]']]"
 		[Register ("resolveState", "(Lcom/google/android/gms/appstate/OnStateLoadedListener;ILjava/lang/String;[B)V", "")]
 		public void ResolveState (global::Android.Gms.AppStates.IOnStateLoadedListener p0, int p1, string p2, byte[] p3)
 		{
@@ -284,6 +317,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_signOut;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='signOut' and count(parameter)=0]"
 		[Register ("signOut", "()V", "")]
 		public void SignOut ()
 		{
@@ -293,6 +327,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_signOut_Lcom_google_android_gms_appstate_OnSignOutCompleteListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='signOut' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.appstate.OnSignOutCompleteListener']]"
 		[Register ("signOut", "(Lcom/google/android/gms/appstate/OnSignOutCompleteListener;)V", "")]
 		public void SignOut (global::Android.Gms.AppStates.IOnSignOutCompleteListener p0)
 		{
@@ -302,6 +337,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_unregisterConnectionCallbacks_Lcom_google_android_gms_common_GooglePlayServicesClient_ConnectionCallbacks_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='unregisterConnectionCallbacks' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks']]"
 		[Register ("unregisterConnectionCallbacks", "(Lcom/google/android/gms/common/GooglePlayServicesClient$ConnectionCallbacks;)V", "")]
 		public void UnregisterConnectionCallbacks (global::Android.Gms.Common.IGooglePlayServicesClientConnectionCallbacks p0)
 		{
@@ -311,6 +347,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_unregisterConnectionFailedListener_Lcom_google_android_gms_common_GooglePlayServicesClient_OnConnectionFailedListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='unregisterConnectionFailedListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener']]"
 		[Register ("unregisterConnectionFailedListener", "(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V", "")]
 		public void UnregisterConnectionFailedListener (global::Android.Gms.Common.IGooglePlayServicesClientOnConnectionFailedListener p0)
 		{
@@ -320,6 +357,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_updateState_IarrayB;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='updateState' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='byte[]']]"
 		[Register ("updateState", "(I[B)V", "")]
 		public void UpdateState (int p0, byte[] p1)
 		{
@@ -334,6 +372,7 @@ namespace Android.Gms.AppStates {
 		}
 
 		static IntPtr id_updateStateImmediate_Lcom_google_android_gms_appstate_OnStateLoadedListener_IarrayB;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/class[@name='AppStateClient']/method[@name='updateStateImmediate' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.appstate.OnStateLoadedListener'] and parameter[2][@type='int'] and parameter[3][@type='byte[]']]"
 		[Register ("updateStateImmediate", "(Lcom/google/android/gms/appstate/OnStateLoadedListener;I[B)V", "")]
 		public void UpdateStateImmediate (global::Android.Gms.AppStates.IOnStateLoadedListener p0, int p1, byte[] p2)
 		{

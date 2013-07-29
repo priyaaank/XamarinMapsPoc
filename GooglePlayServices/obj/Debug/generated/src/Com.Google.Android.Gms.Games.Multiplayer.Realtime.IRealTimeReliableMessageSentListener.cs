@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RealTimeReliableMessageSentListener']"
 	[Register ("com/google/android/gms/games/multiplayer/realtime/RealTimeReliableMessageSentListener", "", "Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRealTimeReliableMessageSentListenerInvoker")]
 	public partial interface IRealTimeReliableMessageSentListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer.realtime']/interface[@name='RealTimeReliableMessageSentListener']/method[@name='onRealTimeMessageSent' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String']]"
 		[Register ("onRealTimeMessageSent", "(IILjava/lang/String;)V", "GetOnRealTimeMessageSent_IILjava_lang_String_Handler:Com.Google.Android.Gms.Games.Multiplayer.Realtime.IRealTimeReliableMessageSentListenerInvoker, GooglePlayServices")]
 		void OnRealTimeMessageSent (int p0, int p1, string p2);
 
@@ -125,8 +127,9 @@ namespace Com.Google.Android.Gms.Games.Multiplayer.Realtime {
 
 		public void OnRealTimeMessageSent (int p0, int p1, string p2)
 		{
-			if (Handler != null)
-				Handler (sender, new RealTimeReliableMessageSentEventArgs (p0, p1, p2));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new RealTimeReliableMessageSentEventArgs (p0, p1, p2));
 		}
 
 		internal static bool __IsEmpty (IRealTimeReliableMessageSentListenerImplementor value)

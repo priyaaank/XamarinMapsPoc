@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/CircleOptions", DoNotGenerateAcw=true)]
 	public sealed partial class CircleOptions : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps.Model {
 		internal CircleOptions (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/constructor[@name='CircleOptions' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public CircleOptions () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -43,6 +45,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getCenter;
 		public global::Android.Gms.Maps.Model.LatLng Center {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='getCenter' and count(parameter)=0]"
 			[Register ("getCenter", "()Lcom/google/android/gms/maps/model/LatLng;", "GetGetCenterHandler")]
 			get {
 				if (id_getCenter == IntPtr.Zero)
@@ -53,6 +56,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getFillColor;
 		public int FillColor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='getFillColor' and count(parameter)=0]"
 			[Register ("getFillColor", "()I", "GetGetFillColorHandler")]
 			get {
 				if (id_getFillColor == IntPtr.Zero)
@@ -63,6 +67,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_isVisible;
 		public bool IsVisible {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='isVisible' and count(parameter)=0]"
 			[Register ("isVisible", "()Z", "GetIsVisibleHandler")]
 			get {
 				if (id_isVisible == IntPtr.Zero)
@@ -73,6 +78,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getRadius;
 		public double Radius {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='getRadius' and count(parameter)=0]"
 			[Register ("getRadius", "()D", "GetGetRadiusHandler")]
 			get {
 				if (id_getRadius == IntPtr.Zero)
@@ -83,6 +89,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getStrokeColor;
 		public int StrokeColor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='getStrokeColor' and count(parameter)=0]"
 			[Register ("getStrokeColor", "()I", "GetGetStrokeColorHandler")]
 			get {
 				if (id_getStrokeColor == IntPtr.Zero)
@@ -93,6 +100,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getStrokeWidth;
 		public float StrokeWidth {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='getStrokeWidth' and count(parameter)=0]"
 			[Register ("getStrokeWidth", "()F", "GetGetStrokeWidthHandler")]
 			get {
 				if (id_getStrokeWidth == IntPtr.Zero)
@@ -103,6 +111,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr id_getZIndex;
 		public float ZIndex {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='getZIndex' and count(parameter)=0]"
 			[Register ("getZIndex", "()F", "GetGetZIndexHandler")]
 			get {
 				if (id_getZIndex == IntPtr.Zero)
@@ -112,6 +121,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_center_Lcom_google_android_gms_maps_model_LatLng_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='center' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.model.LatLng']]"
 		[Register ("center", "(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/CircleOptions;", "")]
 		public global::Android.Gms.Maps.Model.CircleOptions InvokeCenter (global::Android.Gms.Maps.Model.LatLng p0)
 		{
@@ -122,6 +132,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -131,6 +142,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_fillColor_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='fillColor' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("fillColor", "(I)Lcom/google/android/gms/maps/model/CircleOptions;", "")]
 		public global::Android.Gms.Maps.Model.CircleOptions InvokeFillColor (int p0)
 		{
@@ -140,6 +152,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_radius_D;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='radius' and count(parameter)=1 and parameter[1][@type='double']]"
 		[Register ("radius", "(D)Lcom/google/android/gms/maps/model/CircleOptions;", "")]
 		public global::Android.Gms.Maps.Model.CircleOptions InvokeRadius (double p0)
 		{
@@ -149,6 +162,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_strokeColor_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='strokeColor' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("strokeColor", "(I)Lcom/google/android/gms/maps/model/CircleOptions;", "")]
 		public global::Android.Gms.Maps.Model.CircleOptions InvokeStrokeColor (int p0)
 		{
@@ -158,6 +172,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_strokeWidth_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='strokeWidth' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("strokeWidth", "(F)Lcom/google/android/gms/maps/model/CircleOptions;", "")]
 		public global::Android.Gms.Maps.Model.CircleOptions InvokeStrokeWidth (float p0)
 		{
@@ -167,6 +182,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -176,6 +192,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_visible_Z;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='visible' and count(parameter)=1 and parameter[1][@type='boolean']]"
 		[Register ("visible", "(Z)Lcom/google/android/gms/maps/model/CircleOptions;", "")]
 		public global::Android.Gms.Maps.Model.CircleOptions Visible (bool p0)
 		{
@@ -185,6 +202,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{
@@ -194,6 +212,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_zIndex_F;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='CircleOptions']/method[@name='zIndex' and count(parameter)=1 and parameter[1][@type='float']]"
 		[Register ("zIndex", "(F)Lcom/google/android/gms/maps/model/CircleOptions;", "")]
 		public global::Android.Gms.Maps.Model.CircleOptions InvokeZIndex (float p0)
 		{

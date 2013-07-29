@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='RuntimeRemoteException']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/RuntimeRemoteException", DoNotGenerateAcw=true)]
 	public sealed partial class RuntimeRemoteException : global::Java.Lang.RuntimeException {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps.Model {
 		internal RuntimeRemoteException (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Landroid_os_RemoteException_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='RuntimeRemoteException']/constructor[@name='RuntimeRemoteException' and count(parameter)=1 and parameter[1][@type='android.os.RemoteException']]"
 		[Register (".ctor", "(Landroid/os/RemoteException;)V", "")]
 		public RuntimeRemoteException (global::Android.OS.RemoteException p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{

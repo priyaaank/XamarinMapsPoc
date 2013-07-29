@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.AppStates {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='OnStateListLoadedListener']"
 	[Register ("com/google/android/gms/appstate/OnStateListLoadedListener", "", "Android.Gms.AppStates.IOnStateListLoadedListenerInvoker")]
 	public partial interface IOnStateListLoadedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='OnStateListLoadedListener']/method[@name='onStateListLoaded' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='com.google.android.gms.appstate.AppStateBuffer']]"
 		[Register ("onStateListLoaded", "(ILcom/google/android/gms/appstate/AppStateBuffer;)V", "GetOnStateListLoaded_ILcom_google_android_gms_appstate_AppStateBuffer_Handler:Android.Gms.AppStates.IOnStateListLoadedListenerInvoker, GooglePlayServices")]
 		void OnStateListLoaded (int p0, global::Android.Gms.AppStates.AppStateBuffer p1);
 
@@ -117,8 +119,9 @@ namespace Android.Gms.AppStates {
 
 		public void OnStateListLoaded (int p0, global::Android.Gms.AppStates.AppStateBuffer p1)
 		{
-			if (Handler != null)
-				Handler (sender, new StateListLoadedEventArgs (p0, p1));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new StateListLoadedEventArgs (p0, p1));
 		}
 
 		internal static bool __IsEmpty (IOnStateListLoadedListenerImplementor value)

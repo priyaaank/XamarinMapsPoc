@@ -4,18 +4,56 @@ using Android.Runtime;
 
 namespace Android.Gms.Common {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']"
 	[global::Android.Runtime.Register ("com/google/android/gms/common/GooglePlayServicesUtil", DoNotGenerateAcw=true)]
 	public sealed partial class GooglePlayServicesUtil : global::Java.Lang.Object {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/field[@name='GOOGLE_PLAY_SERVICES_PACKAGE']"
 		[Register ("GOOGLE_PLAY_SERVICES_PACKAGE")]
 		public const string GooglePlayServicesPackage = (string) "com.google.android.gms";
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/field[@name='GOOGLE_PLAY_SERVICES_VERSION_CODE']"
 		[Register ("GOOGLE_PLAY_SERVICES_VERSION_CODE")]
-		public const int GooglePlayServicesVersionCode = (int) 3136100;
+		public const int GooglePlayServicesVersionCode = (int) 3159100;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/field[@name='GOOGLE_PLAY_STORE_PACKAGE']"
 		[Register ("GOOGLE_PLAY_STORE_PACKAGE")]
 		public const string GooglePlayStorePackage = (string) "com.android.vending";
+
+		static IntPtr H_jfieldId;
+
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/field[@name='H']"
+		[Register ("H")]
+		public static bool H {
+			get {
+				if (H_jfieldId == IntPtr.Zero)
+					H_jfieldId = JNIEnv.GetStaticFieldID (class_ref, "H", "Z");
+				return JNIEnv.GetStaticBooleanField (class_ref, H_jfieldId);
+			}
+			set {
+				if (H_jfieldId == IntPtr.Zero)
+					H_jfieldId = JNIEnv.GetStaticFieldID (class_ref, "H", "Z");
+				JNIEnv.SetStaticField (class_ref, H_jfieldId, value);
+			}
+		}
+
+		static IntPtr I_jfieldId;
+
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/field[@name='I']"
+		[Register ("I")]
+		public static bool I {
+			get {
+				if (I_jfieldId == IntPtr.Zero)
+					I_jfieldId = JNIEnv.GetStaticFieldID (class_ref, "I", "Z");
+				return JNIEnv.GetStaticBooleanField (class_ref, I_jfieldId);
+			}
+			set {
+				if (I_jfieldId == IntPtr.Zero)
+					I_jfieldId = JNIEnv.GetStaticFieldID (class_ref, "I", "Z");
+				JNIEnv.SetStaticField (class_ref, I_jfieldId, value);
+			}
+		}
 		internal static IntPtr java_class_handle;
 		internal static IntPtr class_ref {
 			get {
@@ -34,6 +72,7 @@ namespace Android.Gms.Common {
 		internal GooglePlayServicesUtil (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_a_Landroid_content_Context_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='a' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int']]"
 		[Register ("a", "(Landroid/content/Context;I)Ljava/lang/String;", "")]
 		public static string A (global::Android.Content.Context p0, int p1)
 		{
@@ -44,6 +83,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_a_Landroid_content_Context_II;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='a' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int']]"
 		[Register ("a", "(Landroid/content/Context;II)Landroid/content/Intent;", "")]
 		public static global::Android.Content.Intent A (global::Android.Content.Context p0, int p1, int p2)
 		{
@@ -54,6 +94,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_a_Landroid_content_res_Resources_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='a' and count(parameter)=1 and parameter[1][@type='android.content.res.Resources']]"
 		[Register ("a", "(Landroid/content/res/Resources;)Z", "")]
 		public static bool A (global::Android.Content.Res.Resources p0)
 		{
@@ -64,6 +105,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_a_ILandroid_app_Activity_ILandroid_content_DialogInterface_OnCancelListener_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='a' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='android.app.Activity'] and parameter[3][@type='int'] and parameter[4][@type='android.content.DialogInterface.OnCancelListener'] and parameter[5][@type='int']]"
 		[Register ("a", "(ILandroid/app/Activity;ILandroid/content/DialogInterface$OnCancelListener;I)Landroid/app/Dialog;", "")]
 		public static global::Android.App.Dialog A (int p0, global::Android.App.Activity p1, int p2, global::Android.Content.IDialogInterfaceOnCancelListener p3, int p4)
 		{
@@ -74,6 +116,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_b_Landroid_content_Context_II;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='b' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int']]"
 		[Register ("b", "(Landroid/content/Context;II)Ljava/lang/String;", "")]
 		public static string B (global::Android.Content.Context p0, int p1, int p2)
 		{
@@ -84,6 +127,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_getErrorDialog_ILandroid_app_Activity_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='getErrorDialog' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='android.app.Activity'] and parameter[3][@type='int']]"
 		[Register ("getErrorDialog", "(ILandroid/app/Activity;I)Landroid/app/Dialog;", "")]
 		public static global::Android.App.Dialog GetErrorDialog (int p0, global::Android.App.Activity p1, int p2)
 		{
@@ -94,6 +138,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_getErrorDialog_ILandroid_app_Activity_ILandroid_content_DialogInterface_OnCancelListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='getErrorDialog' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='android.app.Activity'] and parameter[3][@type='int'] and parameter[4][@type='android.content.DialogInterface.OnCancelListener']]"
 		[Register ("getErrorDialog", "(ILandroid/app/Activity;ILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;", "")]
 		public static global::Android.App.Dialog GetErrorDialog (int p0, global::Android.App.Activity p1, int p2, global::Android.Content.IDialogInterfaceOnCancelListener p3)
 		{
@@ -104,6 +149,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_getErrorPendingIntent_ILandroid_content_Context_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='getErrorPendingIntent' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='android.content.Context'] and parameter[3][@type='int']]"
 		[Register ("getErrorPendingIntent", "(ILandroid/content/Context;I)Landroid/app/PendingIntent;", "")]
 		public static global::Android.App.PendingIntent GetErrorPendingIntent (int p0, global::Android.Content.Context p1, int p2)
 		{
@@ -114,6 +160,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_getErrorString_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='getErrorString' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("getErrorString", "(I)Ljava/lang/String;", "")]
 		public static string GetErrorString (int p0)
 		{
@@ -123,6 +170,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_getOpenSourceSoftwareLicenseInfo_Landroid_content_Context_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='getOpenSourceSoftwareLicenseInfo' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register ("getOpenSourceSoftwareLicenseInfo", "(Landroid/content/Context;)Ljava/lang/String;", "")]
 		public static string GetOpenSourceSoftwareLicenseInfo (global::Android.Content.Context p0)
 		{
@@ -133,6 +181,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_getRemoteContext_Landroid_content_Context_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='getRemoteContext' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register ("getRemoteContext", "(Landroid/content/Context;)Landroid/content/Context;", "")]
 		public static global::Android.Content.Context GetRemoteContext (global::Android.Content.Context p0)
 		{
@@ -143,6 +192,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_getRemoteResource_Landroid_content_Context_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='getRemoteResource' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register ("getRemoteResource", "(Landroid/content/Context;)Landroid/content/res/Resources;", "")]
 		public static global::Android.Content.Res.Resources GetRemoteResource (global::Android.Content.Context p0)
 		{
@@ -153,6 +203,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_isGooglePlayServicesAvailable_Landroid_content_Context_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='isGooglePlayServicesAvailable' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register ("isGooglePlayServicesAvailable", "(Landroid/content/Context;)I", "")]
 		public static int IsGooglePlayServicesAvailable (global::Android.Content.Context p0)
 		{
@@ -163,6 +214,7 @@ namespace Android.Gms.Common {
 		}
 
 		static IntPtr id_isUserRecoverableError_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesUtil']/method[@name='isUserRecoverableError' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("isUserRecoverableError", "(I)Z", "")]
 		public static bool IsUserRecoverableError (int p0)
 		{

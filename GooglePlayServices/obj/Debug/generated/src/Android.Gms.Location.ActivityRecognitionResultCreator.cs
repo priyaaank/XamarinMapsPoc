@@ -4,10 +4,12 @@ using Android.Runtime;
 
 namespace Android.Gms.Location {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResultCreator']"
 	[global::Android.Runtime.Register ("com/google/android/gms/location/ActivityRecognitionResultCreator", DoNotGenerateAcw=true)]
 	public partial class ActivityRecognitionResultCreator : global::Java.Lang.Object, global::Android.OS.IParcelableCreator {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResultCreator']/field[@name='CONTENT_DESCRIPTION']"
 		[Register ("CONTENT_DESCRIPTION")]
 		public const int ContentDescription = (int) 0;
 		internal static IntPtr java_class_handle;
@@ -28,6 +30,7 @@ namespace Android.Gms.Location {
 		protected ActivityRecognitionResultCreator (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResultCreator']/constructor[@name='ActivityRecognitionResultCreator' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public ActivityRecognitionResultCreator () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -63,6 +66,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_createFromParcel_Landroid_os_Parcel_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResultCreator']/method[@name='createFromParcel' and count(parameter)=1 and parameter[1][@type='android.os.Parcel']]"
 		[Register ("createFromParcel", "(Landroid/os/Parcel;)Lcom/google/android/gms/location/ActivityRecognitionResult;", "GetCreateFromParcel_Landroid_os_Parcel_Handler")]
 		public virtual global::Java.Lang.Object CreateFromParcel (global::Android.OS.Parcel p0)
 		{
@@ -94,6 +98,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_newArray_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResultCreator']/method[@name='newArray' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("newArray", "(I)[Lcom/google/android/gms/location/ActivityRecognitionResult;", "GetNewArray_IHandler")]
 		public virtual global::Java.Lang.Object[] NewArray (int p0)
 		{

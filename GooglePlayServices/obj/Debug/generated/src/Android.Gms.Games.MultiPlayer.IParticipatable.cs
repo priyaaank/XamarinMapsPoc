@@ -4,10 +4,12 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.MultiPlayer {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participatable']"
 	[Register ("com/google/android/gms/games/multiplayer/Participatable", "", "Android.Gms.Games.MultiPlayer.IParticipatableInvoker")]
 	public partial interface IParticipatable : IJavaObject {
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Games.MultiPlayer.IParticipant> Participants {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.multiplayer']/interface[@name='Participatable']/method[@name='getParticipants' and count(parameter)=0]"
 			[Register ("getParticipants", "()Ljava/util/ArrayList;", "GetGetParticipantsHandler:Android.Gms.Games.MultiPlayer.IParticipatableInvoker, GooglePlayServices")] get;
 		}
 

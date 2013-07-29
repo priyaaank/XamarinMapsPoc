@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Location {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']"
 	[global::Android.Runtime.Register ("com/google/android/gms/location/ActivityRecognitionResult", DoNotGenerateAcw=true)]
 	public partial class ActivityRecognitionResult : global::Java.Lang.Object {
 
 
 		static IntPtr CREATOR_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/field[@name='CREATOR']"
 		[Register ("CREATOR")]
 		public static global::Android.Gms.Location.ActivityRecognitionResultCreator Creator {
 			get {
@@ -27,6 +29,7 @@ namespace Android.Gms.Location {
 			}
 		}
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/field[@name='EXTRA_ACTIVITY_RESULT']"
 		[Register ("EXTRA_ACTIVITY_RESULT")]
 		public const string ExtraActivityResult = (string) "com.google.android.location.internal.EXTRA_ACTIVITY_RESULT";
 		internal static IntPtr java_class_handle;
@@ -47,6 +50,7 @@ namespace Android.Gms.Location {
 		protected ActivityRecognitionResult (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/constructor[@name='ActivityRecognitionResult' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public ActivityRecognitionResult () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -64,6 +68,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_ctor_Lcom_google_android_gms_location_DetectedActivity_JJ;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/constructor[@name='ActivityRecognitionResult' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.location.DetectedActivity'] and parameter[2][@type='long'] and parameter[3][@type='long']]"
 		[Register (".ctor", "(Lcom/google/android/gms/location/DetectedActivity;JJ)V", "")]
 		public ActivityRecognitionResult (global::Android.Gms.Location.DetectedActivity p0, long p1, long p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -81,6 +86,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_ctor_Ljava_util_List_JJ;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/constructor[@name='ActivityRecognitionResult' and count(parameter)=3 and parameter[1][@type='java.util.List'] and parameter[2][@type='long'] and parameter[3][@type='long']]"
 		[Register (".ctor", "(Ljava/util/List;JJ)V", "")]
 		public ActivityRecognitionResult (global::System.Collections.Generic.IList<global::Android.Gms.Location.DetectedActivity> p0, long p1, long p2) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -89,14 +95,14 @@ namespace Android.Gms.Location {
 
 			IntPtr native_p0 = global::Android.Runtime.JavaList<global::Android.Gms.Location.DetectedActivity>.ToLocalJniHandle (p0);;
 			if (GetType () != typeof (ActivityRecognitionResult)) {
-				SetHandle (global::Android.Runtime.JNIEnv.CreateInstance (GetType (), "(Ljava/util/List;JJ)V", new JValue (native_p0), new JValue (p1), new JValue (p2)), JniHandleOwnership.TransferLocalRef);
+				SetHandle (global::Android.Runtime.JNIEnv.CreateInstance (GetType (), "(Ljava/util/List;JJ)V", new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0)), new JValue (p1), new JValue (p2)), JniHandleOwnership.TransferLocalRef);
 				JNIEnv.DeleteLocalRef (native_p0);
 				return;
 			}
 
 			if (id_ctor_Ljava_util_List_JJ == IntPtr.Zero)
 				id_ctor_Ljava_util_List_JJ = JNIEnv.GetMethodID (class_ref, "<init>", "(Ljava/util/List;JJ)V");
-			SetHandle (JNIEnv.NewObject (class_ref, id_ctor_Ljava_util_List_JJ, new JValue (native_p0), new JValue (p1), new JValue (p2)), JniHandleOwnership.TransferLocalRef);
+			SetHandle (JNIEnv.NewObject (class_ref, id_ctor_Ljava_util_List_JJ, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0)), new JValue (p1), new JValue (p2)), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p0);
 		}
 
@@ -118,6 +124,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getElapsedRealtimeMillis;
 		public virtual long ElapsedRealtimeMillis {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='getElapsedRealtimeMillis' and count(parameter)=0]"
 			[Register ("getElapsedRealtimeMillis", "()J", "GetGetElapsedRealtimeMillisHandler")]
 			get {
 				if (id_getElapsedRealtimeMillis == IntPtr.Zero)
@@ -148,6 +155,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getMostProbableActivity;
 		public virtual global::Android.Gms.Location.DetectedActivity MostProbableActivity {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='getMostProbableActivity' and count(parameter)=0]"
 			[Register ("getMostProbableActivity", "()Lcom/google/android/gms/location/DetectedActivity;", "GetGetMostProbableActivityHandler")]
 			get {
 				if (id_getMostProbableActivity == IntPtr.Zero)
@@ -178,6 +186,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getProbableActivities;
 		public virtual global::System.Collections.Generic.IList<global::Android.Gms.Location.DetectedActivity> ProbableActivities {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='getProbableActivities' and count(parameter)=0]"
 			[Register ("getProbableActivities", "()Ljava/util/List;", "GetGetProbableActivitiesHandler")]
 			get {
 				if (id_getProbableActivities == IntPtr.Zero)
@@ -208,6 +217,7 @@ namespace Android.Gms.Location {
 
 		static IntPtr id_getTime;
 		public virtual long Time {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='getTime' and count(parameter)=0]"
 			[Register ("getTime", "()J", "GetGetTimeHandler")]
 			get {
 				if (id_getTime == IntPtr.Zero)
@@ -237,6 +247,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "GetDescribeContentsHandler")]
 		public virtual int DescribeContents ()
 		{
@@ -250,6 +261,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_extractResult_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='extractResult' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("extractResult", "(Landroid/content/Intent;)Lcom/google/android/gms/location/ActivityRecognitionResult;", "")]
 		public static global::Android.Gms.Location.ActivityRecognitionResult ExtractResult (global::Android.Content.Intent p0)
 		{
@@ -276,6 +288,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_getActivityConfidence_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='getActivityConfidence' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("getActivityConfidence", "(I)I", "GetGetActivityConfidence_IHandler")]
 		public virtual int GetActivityConfidence (int p0)
 		{
@@ -289,6 +302,7 @@ namespace Android.Gms.Location {
 		}
 
 		static IntPtr id_hasResult_Landroid_content_Intent_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='hasResult' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 		[Register ("hasResult", "(Landroid/content/Intent;)Z", "")]
 		public static bool HasResult (global::Android.Content.Intent p0)
 		{
@@ -316,6 +330,7 @@ namespace Android.Gms.Location {
 #pragma warning restore 0169
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.location']/class[@name='ActivityRecognitionResult']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "GetWriteToParcel_Landroid_os_Parcel_IHandler")]
 		public virtual void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

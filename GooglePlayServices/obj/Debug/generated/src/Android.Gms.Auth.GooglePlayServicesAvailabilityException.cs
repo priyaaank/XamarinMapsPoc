@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Auth {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GooglePlayServicesAvailabilityException']"
 	[global::Android.Runtime.Register ("com/google/android/gms/auth/GooglePlayServicesAvailabilityException", DoNotGenerateAcw=true)]
 	public partial class GooglePlayServicesAvailabilityException : global::Android.Gms.Auth.UserRecoverableAuthException {
 
@@ -42,6 +43,7 @@ namespace Android.Gms.Auth {
 
 		static IntPtr id_getConnectionStatusCode;
 		public virtual int ConnectionStatusCode {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.auth']/class[@name='GooglePlayServicesAvailabilityException']/method[@name='getConnectionStatusCode' and count(parameter)=0]"
 			[Register ("getConnectionStatusCode", "()I", "GetGetConnectionStatusCodeHandler")]
 			get {
 				if (id_getConnectionStatusCode == IntPtr.Zero)

@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Plus.Model.Moments {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/model/moments/ItemScope$Builder", DoNotGenerateAcw=true)]
 	public partial class ItemScopeBuilder : global::Java.Lang.Object {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Plus.Model.Moments {
 		protected ItemScopeBuilder (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/constructor[@name='ItemScope.Builder' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public ItemScopeBuilder () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -58,6 +60,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_build;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='build' and count(parameter)=0]"
 		[Register ("build", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetBuildHandler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.IItemScope Build ()
 		{
@@ -82,13 +85,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetAbout_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetAbout (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setAbout_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAbout' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setAbout", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAbout_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAbout (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -122,6 +126,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAdditionalName_Ljava_util_List_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAdditionalName' and count(parameter)=1 and parameter[1][@type='java.util.List']]"
 		[Register ("setAdditionalName", "(Ljava/util/List;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAdditionalName_Ljava_util_List_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAdditionalName (global::System.Collections.Generic.IList<string> p0)
 		{
@@ -131,9 +136,9 @@ namespace Android.Gms.Plus.Model.Moments {
 
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __ret;
 			if (GetType () == ThresholdType)
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAdditionalName_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAdditionalName_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			else
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAdditionalName_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAdditionalName_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p0);
 			return __ret;
 		}
@@ -150,13 +155,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetAddress_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetAddress (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setAddress_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setAddress", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAddress_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAddress (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -190,6 +196,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAddressCountry_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAddressCountry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setAddressCountry", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAddressCountry_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAddressCountry (string p0)
 		{
@@ -225,6 +232,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAddressLocality_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAddressLocality' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setAddressLocality", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAddressLocality_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAddressLocality (string p0)
 		{
@@ -260,6 +268,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAddressRegion_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAddressRegion' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setAddressRegion", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAddressRegion_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAddressRegion (string p0)
 		{
@@ -295,6 +304,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAssociated_media_Ljava_util_List_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAssociated_media' and count(parameter)=1 and parameter[1][@type='java.util.List']]"
 		[Register ("setAssociated_media", "(Ljava/util/List;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAssociated_media_Ljava_util_List_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAssociated_media (global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> p0)
 		{
@@ -304,9 +314,9 @@ namespace Android.Gms.Plus.Model.Moments {
 
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __ret;
 			if (GetType () == ThresholdType)
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAssociated_media_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAssociated_media_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			else
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAssociated_media_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAssociated_media_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p0);
 			return __ret;
 		}
@@ -328,6 +338,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAttendeeCount_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAttendeeCount' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setAttendeeCount", "(I)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAttendeeCount_IHandler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAttendeeCount (int p0)
 		{
@@ -359,6 +370,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAttendees_Ljava_util_List_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAttendees' and count(parameter)=1 and parameter[1][@type='java.util.List']]"
 		[Register ("setAttendees", "(Ljava/util/List;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAttendees_Ljava_util_List_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAttendees (global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> p0)
 		{
@@ -368,9 +380,9 @@ namespace Android.Gms.Plus.Model.Moments {
 
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __ret;
 			if (GetType () == ThresholdType)
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAttendees_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAttendees_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			else
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAttendees_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAttendees_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p0);
 			return __ret;
 		}
@@ -387,13 +399,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetAudio_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetAudio (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setAudio_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAudio' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setAudio", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAudio_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAudio (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -427,6 +440,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setAuthor_Ljava_util_List_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setAuthor' and count(parameter)=1 and parameter[1][@type='java.util.List']]"
 		[Register ("setAuthor", "(Ljava/util/List;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetAuthor_Ljava_util_List_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetAuthor (global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> p0)
 		{
@@ -436,9 +450,9 @@ namespace Android.Gms.Plus.Model.Moments {
 
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __ret;
 			if (GetType () == ThresholdType)
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAuthor_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setAuthor_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			else
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAuthor_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setAuthor_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p0);
 			return __ret;
 		}
@@ -462,6 +476,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setBestRating_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setBestRating' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setBestRating", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetBestRating_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetBestRating (string p0)
 		{
@@ -497,6 +512,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setBirthDate_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setBirthDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setBirthDate", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetBirthDate_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetBirthDate (string p0)
 		{
@@ -525,13 +541,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetByArtist_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetByArtist (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setByArtist_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setByArtist' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setByArtist", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetByArtist_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetByArtist (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -565,6 +582,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setCaption_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setCaption' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setCaption", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetCaption_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetCaption (string p0)
 		{
@@ -600,6 +618,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setContentSize_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setContentSize' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setContentSize", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetContentSize_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetContentSize (string p0)
 		{
@@ -635,6 +654,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setContentUrl_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setContentUrl' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setContentUrl", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetContentUrl_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetContentUrl (string p0)
 		{
@@ -670,6 +690,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setContributor_Ljava_util_List_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setContributor' and count(parameter)=1 and parameter[1][@type='java.util.List']]"
 		[Register ("setContributor", "(Ljava/util/List;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetContributor_Ljava_util_List_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetContributor (global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> p0)
 		{
@@ -679,9 +700,9 @@ namespace Android.Gms.Plus.Model.Moments {
 
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __ret;
 			if (GetType () == ThresholdType)
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setContributor_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setContributor_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			else
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setContributor_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setContributor_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p0);
 			return __ret;
 		}
@@ -705,6 +726,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setDateCreated_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setDateCreated' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setDateCreated", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetDateCreated_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetDateCreated (string p0)
 		{
@@ -740,6 +762,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setDateModified_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setDateModified' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setDateModified", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetDateModified_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetDateModified (string p0)
 		{
@@ -775,6 +798,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setDatePublished_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setDatePublished' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setDatePublished", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetDatePublished_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetDatePublished (string p0)
 		{
@@ -810,6 +834,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setDescription_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setDescription' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setDescription", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetDescription_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetDescription (string p0)
 		{
@@ -845,6 +870,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setDuration_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setDuration' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setDuration", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetDuration_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetDuration (string p0)
 		{
@@ -880,6 +906,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setEmbedUrl_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setEmbedUrl' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setEmbedUrl", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetEmbedUrl_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetEmbedUrl (string p0)
 		{
@@ -915,6 +942,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setEndDate_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setEndDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setEndDate", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetEndDate_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetEndDate (string p0)
 		{
@@ -950,6 +978,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setFamilyName_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setFamilyName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setFamilyName", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetFamilyName_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetFamilyName (string p0)
 		{
@@ -985,6 +1014,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setGender_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setGender' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setGender", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetGender_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetGender (string p0)
 		{
@@ -1013,13 +1043,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetGeo_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetGeo (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setGeo_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setGeo' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setGeo", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetGeo_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetGeo (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -1053,6 +1084,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setGivenName_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setGivenName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setGivenName", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetGivenName_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetGivenName (string p0)
 		{
@@ -1088,6 +1120,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setHeight_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setHeight' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setHeight", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetHeight_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetHeight (string p0)
 		{
@@ -1123,6 +1156,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setId_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setId", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetId_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetId (string p0)
 		{
@@ -1158,6 +1192,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setImage_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setImage' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setImage", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetImage_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetImage (string p0)
 		{
@@ -1186,13 +1221,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetInAlbum_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetInAlbum (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setInAlbum_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setInAlbum' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setInAlbum", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetInAlbum_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetInAlbum (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -1224,6 +1260,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setLatitude_D;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setLatitude' and count(parameter)=1 and parameter[1][@type='double']]"
 		[Register ("setLatitude", "(D)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetLatitude_DHandler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetLatitude (double p0)
 		{
@@ -1248,13 +1285,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetLocation_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetLocation (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setLocation_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setLocation' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setLocation", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetLocation_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetLocation (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -1286,6 +1324,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setLongitude_D;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setLongitude' and count(parameter)=1 and parameter[1][@type='double']]"
 		[Register ("setLongitude", "(D)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetLongitude_DHandler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetLongitude (double p0)
 		{
@@ -1317,6 +1356,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setName_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setName", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetName_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetName (string p0)
 		{
@@ -1345,13 +1385,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetPartOfTVSeries_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetPartOfTVSeries (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setPartOfTVSeries_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setPartOfTVSeries' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setPartOfTVSeries", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetPartOfTVSeries_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetPartOfTVSeries (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -1385,6 +1426,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setPerformers_Ljava_util_List_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setPerformers' and count(parameter)=1 and parameter[1][@type='java.util.List']]"
 		[Register ("setPerformers", "(Ljava/util/List;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetPerformers_Ljava_util_List_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetPerformers (global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> p0)
 		{
@@ -1394,9 +1436,9 @@ namespace Android.Gms.Plus.Model.Moments {
 
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __ret;
 			if (GetType () == ThresholdType)
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setPerformers_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallObjectMethod  (Handle, id_setPerformers_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			else
-				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setPerformers_Ljava_util_List_, new JValue (native_p0)), JniHandleOwnership.TransferLocalRef);
+				__ret = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (JNIEnv.CallNonvirtualObjectMethod  (Handle, ThresholdClass, id_setPerformers_Ljava_util_List_, new JValue (Java.Interop.JavaObjectExtensions.ToInteroperableCollection (p0))), JniHandleOwnership.TransferLocalRef);
 			JNIEnv.DeleteLocalRef (native_p0);
 			return __ret;
 		}
@@ -1420,6 +1462,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setPlayerType_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setPlayerType' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setPlayerType", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetPlayerType_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetPlayerType (string p0)
 		{
@@ -1455,6 +1498,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setPostOfficeBoxNumber_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setPostOfficeBoxNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setPostOfficeBoxNumber", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetPostOfficeBoxNumber_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetPostOfficeBoxNumber (string p0)
 		{
@@ -1490,6 +1534,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setPostalCode_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setPostalCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setPostalCode", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetPostalCode_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetPostalCode (string p0)
 		{
@@ -1525,6 +1570,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setRatingValue_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setRatingValue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setRatingValue", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetRatingValue_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetRatingValue (string p0)
 		{
@@ -1553,13 +1599,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetReviewRating_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetReviewRating (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setReviewRating_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setReviewRating' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setReviewRating", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetReviewRating_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetReviewRating (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -1593,6 +1640,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setStartDate_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setStartDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setStartDate", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetStartDate_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetStartDate (string p0)
 		{
@@ -1628,6 +1676,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setStreetAddress_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setStreetAddress' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setStreetAddress", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetStreetAddress_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetStreetAddress (string p0)
 		{
@@ -1663,6 +1712,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setText_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setText' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setText", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetText_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetText (string p0)
 		{
@@ -1691,13 +1741,14 @@ namespace Android.Gms.Plus.Model.Moments {
 		static IntPtr n_SetThumbnail_Lcom_google_android_gms_plus_model_moments_ItemScope_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
 		{
 			global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder __this = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder> (native__this, JniHandleOwnership.DoNotTransfer);
-			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
+			global::Android.Gms.Plus.Model.Moments.IItemScope p0 = (global::Android.Gms.Plus.Model.Moments.IItemScope)global::Java.Lang.Object.GetObject<global::Android.Gms.Plus.Model.Moments.IItemScope> (native_p0, JniHandleOwnership.DoNotTransfer);
 			IntPtr __ret = JNIEnv.ToLocalJniHandle (__this.SetThumbnail (p0));
 			return __ret;
 		}
 #pragma warning restore 0169
 
 		static IntPtr id_setThumbnail_Lcom_google_android_gms_plus_model_moments_ItemScope_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setThumbnail' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.model.moments.ItemScope']]"
 		[Register ("setThumbnail", "(Lcom/google/android/gms/plus/model/moments/ItemScope;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetThumbnail_Lcom_google_android_gms_plus_model_moments_ItemScope_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetThumbnail (global::Android.Gms.Plus.Model.Moments.IItemScope p0)
 		{
@@ -1731,6 +1782,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setThumbnailUrl_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setThumbnailUrl' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setThumbnailUrl", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetThumbnailUrl_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetThumbnailUrl (string p0)
 		{
@@ -1766,6 +1818,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setTickerSymbol_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setTickerSymbol' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setTickerSymbol", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetTickerSymbol_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetTickerSymbol (string p0)
 		{
@@ -1801,6 +1854,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setType_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setType' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setType", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetType_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetType (string p0)
 		{
@@ -1836,6 +1890,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setUrl_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setUrl' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setUrl", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetUrl_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetUrl (string p0)
 		{
@@ -1871,6 +1926,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setWidth_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setWidth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setWidth", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetWidth_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetWidth (string p0)
 		{
@@ -1906,6 +1962,7 @@ namespace Android.Gms.Plus.Model.Moments {
 #pragma warning restore 0169
 
 		static IntPtr id_setWorstRating_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/class[@name='ItemScope.Builder']/method[@name='setWorstRating' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
 		[Register ("setWorstRating", "(Ljava/lang/String;)Lcom/google/android/gms/plus/model/moments/ItemScope$Builder;", "GetSetWorstRating_Ljava_lang_String_Handler")]
 		public virtual global::Android.Gms.Plus.Model.Moments.ItemScopeBuilder SetWorstRating (string p0)
 		{
@@ -1924,438 +1981,547 @@ namespace Android.Gms.Plus.Model.Moments {
 
 	}
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']"
 	[Register ("com/google/android/gms/plus/model/moments/ItemScope", "", "Android.Gms.Plus.Model.Moments.IItemScopeInvoker")]
 	public partial interface IItemScope : global::Android.Gms.Common.Data.IFreezable {
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope About {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAbout' and count(parameter)=0]"
 			[Register ("getAbout", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetAboutHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<string> AdditionalName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAdditionalName' and count(parameter)=0]"
 			[Register ("getAdditionalName", "()Ljava/util/List;", "GetGetAdditionalNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope Address {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAddress' and count(parameter)=0]"
 			[Register ("getAddress", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetAddressHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string AddressCountry {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAddressCountry' and count(parameter)=0]"
 			[Register ("getAddressCountry", "()Ljava/lang/String;", "GetGetAddressCountryHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string AddressLocality {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAddressLocality' and count(parameter)=0]"
 			[Register ("getAddressLocality", "()Ljava/lang/String;", "GetGetAddressLocalityHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string AddressRegion {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAddressRegion' and count(parameter)=0]"
 			[Register ("getAddressRegion", "()Ljava/lang/String;", "GetGetAddressRegionHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> Associated_media {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAssociated_media' and count(parameter)=0]"
 			[Register ("getAssociated_media", "()Ljava/util/List;", "GetGetAssociated_mediaHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		int AttendeeCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAttendeeCount' and count(parameter)=0]"
 			[Register ("getAttendeeCount", "()I", "GetGetAttendeeCountHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> Attendees {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAttendees' and count(parameter)=0]"
 			[Register ("getAttendees", "()Ljava/util/List;", "GetGetAttendeesHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope Audio {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAudio' and count(parameter)=0]"
 			[Register ("getAudio", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetAudioHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> Author {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getAuthor' and count(parameter)=0]"
 			[Register ("getAuthor", "()Ljava/util/List;", "GetGetAuthorHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string BestRating {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getBestRating' and count(parameter)=0]"
 			[Register ("getBestRating", "()Ljava/lang/String;", "GetGetBestRatingHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string BirthDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getBirthDate' and count(parameter)=0]"
 			[Register ("getBirthDate", "()Ljava/lang/String;", "GetGetBirthDateHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope ByArtist {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getByArtist' and count(parameter)=0]"
 			[Register ("getByArtist", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetByArtistHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Caption {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getCaption' and count(parameter)=0]"
 			[Register ("getCaption", "()Ljava/lang/String;", "GetGetCaptionHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string ContentSize {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getContentSize' and count(parameter)=0]"
 			[Register ("getContentSize", "()Ljava/lang/String;", "GetGetContentSizeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string ContentUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getContentUrl' and count(parameter)=0]"
 			[Register ("getContentUrl", "()Ljava/lang/String;", "GetGetContentUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> Contributor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getContributor' and count(parameter)=0]"
 			[Register ("getContributor", "()Ljava/util/List;", "GetGetContributorHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string DateCreated {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getDateCreated' and count(parameter)=0]"
 			[Register ("getDateCreated", "()Ljava/lang/String;", "GetGetDateCreatedHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string DateModified {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getDateModified' and count(parameter)=0]"
 			[Register ("getDateModified", "()Ljava/lang/String;", "GetGetDateModifiedHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string DatePublished {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getDatePublished' and count(parameter)=0]"
 			[Register ("getDatePublished", "()Ljava/lang/String;", "GetGetDatePublishedHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Description {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getDescription' and count(parameter)=0]"
 			[Register ("getDescription", "()Ljava/lang/String;", "GetGetDescriptionHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Duration {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getDuration' and count(parameter)=0]"
 			[Register ("getDuration", "()Ljava/lang/String;", "GetGetDurationHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string EmbedUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getEmbedUrl' and count(parameter)=0]"
 			[Register ("getEmbedUrl", "()Ljava/lang/String;", "GetGetEmbedUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string EndDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getEndDate' and count(parameter)=0]"
 			[Register ("getEndDate", "()Ljava/lang/String;", "GetGetEndDateHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string FamilyName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getFamilyName' and count(parameter)=0]"
 			[Register ("getFamilyName", "()Ljava/lang/String;", "GetGetFamilyNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Gender {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getGender' and count(parameter)=0]"
 			[Register ("getGender", "()Ljava/lang/String;", "GetGetGenderHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope Geo {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getGeo' and count(parameter)=0]"
 			[Register ("getGeo", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetGeoHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string GivenName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getGivenName' and count(parameter)=0]"
 			[Register ("getGivenName", "()Ljava/lang/String;", "GetGetGivenNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAbout {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAbout' and count(parameter)=0]"
 			[Register ("hasAbout", "()Z", "GetHasAboutHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAdditionalName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAdditionalName' and count(parameter)=0]"
 			[Register ("hasAdditionalName", "()Z", "GetHasAdditionalNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAddress {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAddress' and count(parameter)=0]"
 			[Register ("hasAddress", "()Z", "GetHasAddressHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAddressCountry {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAddressCountry' and count(parameter)=0]"
 			[Register ("hasAddressCountry", "()Z", "GetHasAddressCountryHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAddressLocality {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAddressLocality' and count(parameter)=0]"
 			[Register ("hasAddressLocality", "()Z", "GetHasAddressLocalityHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAddressRegion {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAddressRegion' and count(parameter)=0]"
 			[Register ("hasAddressRegion", "()Z", "GetHasAddressRegionHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAssociated_media {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAssociated_media' and count(parameter)=0]"
 			[Register ("hasAssociated_media", "()Z", "GetHasAssociated_mediaHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAttendeeCount {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAttendeeCount' and count(parameter)=0]"
 			[Register ("hasAttendeeCount", "()Z", "GetHasAttendeeCountHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAttendees {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAttendees' and count(parameter)=0]"
 			[Register ("hasAttendees", "()Z", "GetHasAttendeesHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAudio {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAudio' and count(parameter)=0]"
 			[Register ("hasAudio", "()Z", "GetHasAudioHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasAuthor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasAuthor' and count(parameter)=0]"
 			[Register ("hasAuthor", "()Z", "GetHasAuthorHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasBestRating {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasBestRating' and count(parameter)=0]"
 			[Register ("hasBestRating", "()Z", "GetHasBestRatingHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasBirthDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasBirthDate' and count(parameter)=0]"
 			[Register ("hasBirthDate", "()Z", "GetHasBirthDateHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasByArtist {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasByArtist' and count(parameter)=0]"
 			[Register ("hasByArtist", "()Z", "GetHasByArtistHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasCaption {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasCaption' and count(parameter)=0]"
 			[Register ("hasCaption", "()Z", "GetHasCaptionHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasContentSize {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasContentSize' and count(parameter)=0]"
 			[Register ("hasContentSize", "()Z", "GetHasContentSizeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasContentUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasContentUrl' and count(parameter)=0]"
 			[Register ("hasContentUrl", "()Z", "GetHasContentUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasContributor {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasContributor' and count(parameter)=0]"
 			[Register ("hasContributor", "()Z", "GetHasContributorHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDateCreated {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasDateCreated' and count(parameter)=0]"
 			[Register ("hasDateCreated", "()Z", "GetHasDateCreatedHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDateModified {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasDateModified' and count(parameter)=0]"
 			[Register ("hasDateModified", "()Z", "GetHasDateModifiedHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDatePublished {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasDatePublished' and count(parameter)=0]"
 			[Register ("hasDatePublished", "()Z", "GetHasDatePublishedHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDescription {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasDescription' and count(parameter)=0]"
 			[Register ("hasDescription", "()Z", "GetHasDescriptionHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasDuration {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasDuration' and count(parameter)=0]"
 			[Register ("hasDuration", "()Z", "GetHasDurationHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasEmbedUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasEmbedUrl' and count(parameter)=0]"
 			[Register ("hasEmbedUrl", "()Z", "GetHasEmbedUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasEndDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasEndDate' and count(parameter)=0]"
 			[Register ("hasEndDate", "()Z", "GetHasEndDateHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasFamilyName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasFamilyName' and count(parameter)=0]"
 			[Register ("hasFamilyName", "()Z", "GetHasFamilyNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasGender {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasGender' and count(parameter)=0]"
 			[Register ("hasGender", "()Z", "GetHasGenderHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasGeo {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasGeo' and count(parameter)=0]"
 			[Register ("hasGeo", "()Z", "GetHasGeoHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasGivenName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasGivenName' and count(parameter)=0]"
 			[Register ("hasGivenName", "()Z", "GetHasGivenNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasHeight {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasHeight' and count(parameter)=0]"
 			[Register ("hasHeight", "()Z", "GetHasHeightHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasId {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasId' and count(parameter)=0]"
 			[Register ("hasId", "()Z", "GetHasIdHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasImage {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasImage' and count(parameter)=0]"
 			[Register ("hasImage", "()Z", "GetHasImageHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasInAlbum {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasInAlbum' and count(parameter)=0]"
 			[Register ("hasInAlbum", "()Z", "GetHasInAlbumHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasLatitude {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasLatitude' and count(parameter)=0]"
 			[Register ("hasLatitude", "()Z", "GetHasLatitudeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasLocation {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasLocation' and count(parameter)=0]"
 			[Register ("hasLocation", "()Z", "GetHasLocationHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasLongitude {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasLongitude' and count(parameter)=0]"
 			[Register ("hasLongitude", "()Z", "GetHasLongitudeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasName {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasName' and count(parameter)=0]"
 			[Register ("hasName", "()Z", "GetHasNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPartOfTVSeries {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasPartOfTVSeries' and count(parameter)=0]"
 			[Register ("hasPartOfTVSeries", "()Z", "GetHasPartOfTVSeriesHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPerformers {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasPerformers' and count(parameter)=0]"
 			[Register ("hasPerformers", "()Z", "GetHasPerformersHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPlayerType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasPlayerType' and count(parameter)=0]"
 			[Register ("hasPlayerType", "()Z", "GetHasPlayerTypeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPostalCode {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasPostalCode' and count(parameter)=0]"
 			[Register ("hasPostalCode", "()Z", "GetHasPostalCodeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasPostOfficeBoxNumber {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasPostOfficeBoxNumber' and count(parameter)=0]"
 			[Register ("hasPostOfficeBoxNumber", "()Z", "GetHasPostOfficeBoxNumberHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasRatingValue {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasRatingValue' and count(parameter)=0]"
 			[Register ("hasRatingValue", "()Z", "GetHasRatingValueHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasReviewRating {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasReviewRating' and count(parameter)=0]"
 			[Register ("hasReviewRating", "()Z", "GetHasReviewRatingHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasStartDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasStartDate' and count(parameter)=0]"
 			[Register ("hasStartDate", "()Z", "GetHasStartDateHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasStreetAddress {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasStreetAddress' and count(parameter)=0]"
 			[Register ("hasStreetAddress", "()Z", "GetHasStreetAddressHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasText {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasText' and count(parameter)=0]"
 			[Register ("hasText", "()Z", "GetHasTextHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasThumbnail {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasThumbnail' and count(parameter)=0]"
 			[Register ("hasThumbnail", "()Z", "GetHasThumbnailHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasThumbnailUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasThumbnailUrl' and count(parameter)=0]"
 			[Register ("hasThumbnailUrl", "()Z", "GetHasThumbnailUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasTickerSymbol {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasTickerSymbol' and count(parameter)=0]"
 			[Register ("hasTickerSymbol", "()Z", "GetHasTickerSymbolHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasType' and count(parameter)=0]"
 			[Register ("hasType", "()Z", "GetHasTypeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasUrl' and count(parameter)=0]"
 			[Register ("hasUrl", "()Z", "GetHasUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasWidth {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasWidth' and count(parameter)=0]"
 			[Register ("hasWidth", "()Z", "GetHasWidthHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		bool HasWorstRating {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='hasWorstRating' and count(parameter)=0]"
 			[Register ("hasWorstRating", "()Z", "GetHasWorstRatingHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Height {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getHeight' and count(parameter)=0]"
 			[Register ("getHeight", "()Ljava/lang/String;", "GetGetHeightHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Id {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getId' and count(parameter)=0]"
 			[Register ("getId", "()Ljava/lang/String;", "GetGetIdHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Image {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getImage' and count(parameter)=0]"
 			[Register ("getImage", "()Ljava/lang/String;", "GetGetImageHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope InAlbum {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getInAlbum' and count(parameter)=0]"
 			[Register ("getInAlbum", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetInAlbumHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		double Latitude {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getLatitude' and count(parameter)=0]"
 			[Register ("getLatitude", "()D", "GetGetLatitudeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope Location {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getLocation' and count(parameter)=0]"
 			[Register ("getLocation", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetLocationHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		double Longitude {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getLongitude' and count(parameter)=0]"
 			[Register ("getLongitude", "()D", "GetGetLongitudeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Name {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getName' and count(parameter)=0]"
 			[Register ("getName", "()Ljava/lang/String;", "GetGetNameHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope PartOfTVSeries {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getPartOfTVSeries' and count(parameter)=0]"
 			[Register ("getPartOfTVSeries", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetPartOfTVSeriesHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::System.Collections.Generic.IList<global::Android.Gms.Plus.Model.Moments.IItemScope> Performers {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getPerformers' and count(parameter)=0]"
 			[Register ("getPerformers", "()Ljava/util/List;", "GetGetPerformersHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string PlayerType {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getPlayerType' and count(parameter)=0]"
 			[Register ("getPlayerType", "()Ljava/lang/String;", "GetGetPlayerTypeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string PostalCode {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getPostalCode' and count(parameter)=0]"
 			[Register ("getPostalCode", "()Ljava/lang/String;", "GetGetPostalCodeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string PostOfficeBoxNumber {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getPostOfficeBoxNumber' and count(parameter)=0]"
 			[Register ("getPostOfficeBoxNumber", "()Ljava/lang/String;", "GetGetPostOfficeBoxNumberHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string RatingValue {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getRatingValue' and count(parameter)=0]"
 			[Register ("getRatingValue", "()Ljava/lang/String;", "GetGetRatingValueHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope ReviewRating {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getReviewRating' and count(parameter)=0]"
 			[Register ("getReviewRating", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetReviewRatingHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string StartDate {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getStartDate' and count(parameter)=0]"
 			[Register ("getStartDate", "()Ljava/lang/String;", "GetGetStartDateHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string StreetAddress {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getStreetAddress' and count(parameter)=0]"
 			[Register ("getStreetAddress", "()Ljava/lang/String;", "GetGetStreetAddressHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Text {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getText' and count(parameter)=0]"
 			[Register ("getText", "()Ljava/lang/String;", "GetGetTextHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		global::Android.Gms.Plus.Model.Moments.IItemScope Thumbnail {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getThumbnail' and count(parameter)=0]"
 			[Register ("getThumbnail", "()Lcom/google/android/gms/plus/model/moments/ItemScope;", "GetGetThumbnailHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string ThumbnailUrl {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getThumbnailUrl' and count(parameter)=0]"
 			[Register ("getThumbnailUrl", "()Ljava/lang/String;", "GetGetThumbnailUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string TickerSymbol {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getTickerSymbol' and count(parameter)=0]"
 			[Register ("getTickerSymbol", "()Ljava/lang/String;", "GetGetTickerSymbolHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Type {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getType' and count(parameter)=0]"
 			[Register ("getType", "()Ljava/lang/String;", "GetGetTypeHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Url {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getUrl' and count(parameter)=0]"
 			[Register ("getUrl", "()Ljava/lang/String;", "GetGetUrlHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string Width {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getWidth' and count(parameter)=0]"
 			[Register ("getWidth", "()Ljava/lang/String;", "GetGetWidthHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 
 		string WorstRating {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus.model.moments']/interface[@name='ItemScope']/method[@name='getWorstRating' and count(parameter)=0]"
 			[Register ("getWorstRating", "()Ljava/lang/String;", "GetGetWorstRatingHandler:Android.Gms.Plus.Model.Moments.IItemScopeInvoker, GooglePlayServices")] get;
 		}
 

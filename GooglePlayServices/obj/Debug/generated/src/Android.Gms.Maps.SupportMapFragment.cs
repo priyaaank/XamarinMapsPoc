@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='SupportMapFragment']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/SupportMapFragment", DoNotGenerateAcw=true)]
 	public partial class SupportMapFragment : global::Android.Support.V4.App.Fragment {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Maps {
 		protected SupportMapFragment (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='SupportMapFragment']/constructor[@name='SupportMapFragment' and count(parameter)=0]"
 		[Register (".ctor", "()V", "")]
 		public SupportMapFragment () : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -43,6 +45,7 @@ namespace Android.Gms.Maps {
 
 		static IntPtr id_getMap;
 		public global::Android.Gms.Maps.GoogleMap Map {
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='SupportMapFragment']/method[@name='getMap' and count(parameter)=0]"
 			[Register ("getMap", "()Lcom/google/android/gms/maps/GoogleMap;", "GetGetMapHandler")]
 			get {
 				if (id_getMap == IntPtr.Zero)
@@ -52,6 +55,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_newInstance;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='SupportMapFragment']/method[@name='newInstance' and count(parameter)=0]"
 		[Register ("newInstance", "()Lcom/google/android/gms/maps/SupportMapFragment;", "")]
 		public static global::Android.Gms.Maps.SupportMapFragment NewInstance ()
 		{
@@ -61,6 +65,7 @@ namespace Android.Gms.Maps {
 		}
 
 		static IntPtr id_newInstance_Lcom_google_android_gms_maps_GoogleMapOptions_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps']/class[@name='SupportMapFragment']/method[@name='newInstance' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.maps.GoogleMapOptions']]"
 		[Register ("newInstance", "(Lcom/google/android/gms/maps/GoogleMapOptions;)Lcom/google/android/gms/maps/SupportMapFragment;", "")]
 		public static global::Android.Gms.Maps.SupportMapFragment NewInstance (global::Android.Gms.Maps.GoogleMapOptions p0)
 		{

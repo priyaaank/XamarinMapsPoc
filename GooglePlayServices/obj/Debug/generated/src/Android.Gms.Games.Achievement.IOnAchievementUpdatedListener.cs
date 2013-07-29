@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.Games.Achievement {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='OnAchievementUpdatedListener']"
 	[Register ("com/google/android/gms/games/achievement/OnAchievementUpdatedListener", "", "Android.Gms.Games.Achievement.IOnAchievementUpdatedListenerInvoker")]
 	public partial interface IOnAchievementUpdatedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games.achievement']/interface[@name='OnAchievementUpdatedListener']/method[@name='onAchievementUpdated' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String']]"
 		[Register ("onAchievementUpdated", "(ILjava/lang/String;)V", "GetOnAchievementUpdated_ILjava_lang_String_Handler:Android.Gms.Games.Achievement.IOnAchievementUpdatedListenerInvoker, GooglePlayServices")]
 		void OnAchievementUpdated (int p0, string p1);
 
@@ -119,8 +121,9 @@ namespace Android.Gms.Games.Achievement {
 
 		public void OnAchievementUpdated (int p0, string p1)
 		{
-			if (Handler != null)
-				Handler (sender, new AchievementUpdatedEventArgs (p0, p1));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new AchievementUpdatedEventArgs (p0, p1));
 		}
 
 		internal static bool __IsEmpty (IOnAchievementUpdatedListenerImplementor value)

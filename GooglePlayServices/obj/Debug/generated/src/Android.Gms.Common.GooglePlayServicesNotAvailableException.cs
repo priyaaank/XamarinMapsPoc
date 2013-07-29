@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Common {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesNotAvailableException']"
 	[global::Android.Runtime.Register ("com/google/android/gms/common/GooglePlayServicesNotAvailableException", DoNotGenerateAcw=true)]
 	public sealed partial class GooglePlayServicesNotAvailableException : global::Java.Lang.Exception {
 
 
 		static IntPtr errorCode_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesNotAvailableException']/field[@name='errorCode']"
 		[Register ("errorCode")]
 		public int ErrorCode {
 			get {
@@ -41,6 +43,7 @@ namespace Android.Gms.Common {
 		internal GooglePlayServicesNotAvailableException (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_I;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.common']/class[@name='GooglePlayServicesNotAvailableException']/constructor[@name='GooglePlayServicesNotAvailableException' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register (".ctor", "(I)V", "")]
 		public GooglePlayServicesNotAvailableException (int p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{

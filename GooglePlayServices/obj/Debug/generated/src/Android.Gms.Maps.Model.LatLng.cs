@@ -4,12 +4,14 @@ using Android.Runtime;
 
 namespace Android.Gms.Maps.Model {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLng']"
 	[global::Android.Runtime.Register ("com/google/android/gms/maps/model/LatLng", DoNotGenerateAcw=true)]
 	public sealed partial class LatLng : global::Java.Lang.Object {
 
 
 		static IntPtr latitude_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLng']/field[@name='latitude']"
 		[Register ("latitude")]
 		public double Latitude {
 			get {
@@ -26,6 +28,7 @@ namespace Android.Gms.Maps.Model {
 
 		static IntPtr longitude_jfieldId;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLng']/field[@name='longitude']"
 		[Register ("longitude")]
 		public double Longitude {
 			get {
@@ -57,6 +60,7 @@ namespace Android.Gms.Maps.Model {
 		internal LatLng (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_DD;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLng']/constructor[@name='LatLng' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]"
 		[Register (".ctor", "(DD)V", "")]
 		public LatLng (double p0, double p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -74,6 +78,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_describeContents;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLng']/method[@name='describeContents' and count(parameter)=0]"
 		[Register ("describeContents", "()I", "")]
 		public int DescribeContents ()
 		{
@@ -83,6 +88,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_u;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLng']/method[@name='u' and count(parameter)=0]"
 		[Register ("u", "()I", "")]
 		public int U ()
 		{
@@ -92,6 +98,7 @@ namespace Android.Gms.Maps.Model {
 		}
 
 		static IntPtr id_writeToParcel_Landroid_os_Parcel_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.maps.model']/class[@name='LatLng']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]"
 		[Register ("writeToParcel", "(Landroid/os/Parcel;I)V", "")]
 		public void WriteToParcel (global::Android.OS.Parcel p0, int p1)
 		{

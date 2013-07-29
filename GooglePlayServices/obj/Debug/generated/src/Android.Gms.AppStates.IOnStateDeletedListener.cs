@@ -4,9 +4,11 @@ using Android.Runtime;
 
 namespace Android.Gms.AppStates {
 
+	// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='OnStateDeletedListener']"
 	[Register ("com/google/android/gms/appstate/OnStateDeletedListener", "", "Android.Gms.AppStates.IOnStateDeletedListenerInvoker")]
 	public partial interface IOnStateDeletedListener : IJavaObject {
 
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.appstate']/interface[@name='OnStateDeletedListener']/method[@name='onStateDeleted' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]"
 		[Register ("onStateDeleted", "(II)V", "GetOnStateDeleted_IIHandler:Android.Gms.AppStates.IOnStateDeletedListenerInvoker, GooglePlayServices")]
 		void OnStateDeleted (int p0, int p1);
 
@@ -116,8 +118,9 @@ namespace Android.Gms.AppStates {
 
 		public void OnStateDeleted (int p0, int p1)
 		{
-			if (Handler != null)
-				Handler (sender, new StateDeletedEventArgs (p0, p1));
+			var __h = Handler;
+			if (__h != null)
+				__h (sender, new StateDeletedEventArgs (p0, p1));
 		}
 
 		internal static bool __IsEmpty (IOnStateDeletedListenerImplementor value)

@@ -4,33 +4,43 @@ using Android.Runtime;
 
 namespace Android.Gms.Plus {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']"
 	[global::Android.Runtime.Register ("com/google/android/gms/plus/PlusOneButton", DoNotGenerateAcw=true)]
 	public sealed partial class PlusOneButton : global::Android.Views.ViewGroup {
 
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/field[@name='ANNOTATION_BUBBLE']"
 		[Register ("ANNOTATION_BUBBLE")]
 		public const int AnnotationBubble = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/field[@name='ANNOTATION_INLINE']"
 		[Register ("ANNOTATION_INLINE")]
 		public const int AnnotationInline = (int) 2;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/field[@name='ANNOTATION_NONE']"
 		[Register ("ANNOTATION_NONE")]
 		public const int AnnotationNone = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/field[@name='SIZE_MEDIUM']"
 		[Register ("SIZE_MEDIUM")]
 		public const int SizeMedium = (int) 1;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/field[@name='SIZE_SMALL']"
 		[Register ("SIZE_SMALL")]
 		public const int SizeSmall = (int) 0;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/field[@name='SIZE_STANDARD']"
 		[Register ("SIZE_STANDARD")]
 		public const int SizeStandard = (int) 3;
 
+		// Metadata.xml XPath field reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/field[@name='SIZE_TALL']"
 		[Register ("SIZE_TALL")]
 		public const int SizeTall = (int) 2;
+		// Metadata.xml XPath interface reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusOneButton.OnPlusOneClickListener']"
 		[Register ("com/google/android/gms/plus/PlusOneButton$OnPlusOneClickListener", "", "Android.Gms.Plus.PlusOneButton/IOnPlusOneClickListenerInvoker")]
 		public partial interface IOnPlusOneClickListener : IJavaObject {
 
+			// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/interface[@name='PlusOneButton.OnPlusOneClickListener']/method[@name='onPlusOneClick' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]"
 			[Register ("onPlusOneClick", "(Landroid/content/Intent;)V", "GetOnPlusOneClick_Landroid_content_Intent_Handler:Android.Gms.Plus.PlusOneButton/IOnPlusOneClickListenerInvoker, GooglePlayServices")]
 			void OnPlusOneClick (global::Android.Content.Intent p0);
 
@@ -135,8 +145,9 @@ namespace Android.Gms.Plus {
 
 			public void OnPlusOneClick (global::Android.Content.Intent p0)
 			{
-				if (Handler != null)
-					Handler (sender, new PlusOneClickEventArgs (p0));
+				var __h = Handler;
+				if (__h != null)
+					__h (sender, new PlusOneClickEventArgs (p0));
 			}
 
 			internal static bool __IsEmpty (IOnPlusOneClickListenerImplementor value)
@@ -164,6 +175,7 @@ namespace Android.Gms.Plus {
 		internal PlusOneButton (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_ctor_Landroid_content_Context_Landroid_util_AttributeSet_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/constructor[@name='PlusOneButton' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]"
 		[Register (".ctor", "(Landroid/content/Context;Landroid/util/AttributeSet;)V", "")]
 		public PlusOneButton (global::Android.Content.Context p0, global::Android.Util.IAttributeSet p1) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -181,6 +193,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_ctor_Landroid_content_Context_;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/constructor[@name='PlusOneButton' and count(parameter)=1 and parameter[1][@type='android.content.Context']]"
 		[Register (".ctor", "(Landroid/content/Context;)V", "")]
 		public PlusOneButton (global::Android.Content.Context p0) : base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
 		{
@@ -198,6 +211,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_initialize_Lcom_google_android_gms_plus_PlusClient_Ljava_lang_String_Lcom_google_android_gms_plus_PlusOneButton_OnPlusOneClickListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/method[@name='initialize' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.plus.PlusClient'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='com.google.android.gms.plus.PlusOneButton.OnPlusOneClickListener']]"
 		[Register ("initialize", "(Lcom/google/android/gms/plus/PlusClient;Ljava/lang/String;Lcom/google/android/gms/plus/PlusOneButton$OnPlusOneClickListener;)V", "")]
 		public void Initialize (global::Android.Gms.Plus.PlusClient p0, string p1, global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListener p2)
 		{
@@ -209,6 +223,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_initialize_Lcom_google_android_gms_plus_PlusClient_Ljava_lang_String_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/method[@name='initialize' and count(parameter)=3 and parameter[1][@type='com.google.android.gms.plus.PlusClient'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='int']]"
 		[Register ("initialize", "(Lcom/google/android/gms/plus/PlusClient;Ljava/lang/String;I)V", "")]
 		public void Initialize (global::Android.Gms.Plus.PlusClient p0, string p1, int p2)
 		{
@@ -220,6 +235,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_onLayout_ZIIII;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/method[@name='onLayout' and count(parameter)=5 and parameter[1][@type='boolean'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int']]"
 		[Register ("onLayout", "(ZIIII)V", "")]
 		protected override void OnLayout (bool p0, int p1, int p2, int p3, int p4)
 		{
@@ -229,6 +245,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_setAnnotation_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/method[@name='setAnnotation' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setAnnotation", "(I)V", "")]
 		public void SetAnnotation (int p0)
 		{
@@ -238,6 +255,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_setOnPlusOneClickListener_Lcom_google_android_gms_plus_PlusOneButton_OnPlusOneClickListener_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/method[@name='setOnPlusOneClickListener' and count(parameter)=1 and parameter[1][@type='com.google.android.gms.plus.PlusOneButton.OnPlusOneClickListener']]"
 		[Register ("setOnPlusOneClickListener", "(Lcom/google/android/gms/plus/PlusOneButton$OnPlusOneClickListener;)V", "")]
 		public void SetOnPlusOneClickListener (global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListener p0)
 		{
@@ -247,6 +265,7 @@ namespace Android.Gms.Plus {
 		}
 
 		static IntPtr id_setSize_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.plus']/class[@name='PlusOneButton']/method[@name='setSize' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("setSize", "(I)V", "")]
 		public void SetSize (int p0)
 		{
@@ -258,17 +277,17 @@ namespace Android.Gms.Plus {
 #region "Event implementation for Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListener"
 		public event EventHandler<global::Android.Gms.Plus.PlusOneButton.PlusOneClickEventArgs> PlusOneClick {
 			add {
-				global::Java.Interop.AndroidEventHelper.AddEventHandler<global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListener, global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListenerImplementor>(
+				global::Java.Interop.EventHelper.AddEventHandler<global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListener, global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListenerImplementor>(
 						ref weak_implementor_SetOnPlusOneClickListener,
 						__CreateIOnPlusOneClickListenerImplementor,
 						SetOnPlusOneClickListener,
 						__h => __h.Handler += value);
 			}
 			remove {
-				global::Java.Interop.AndroidEventHelper.RemoveEventHandler<global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListener, global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListenerImplementor>(
+				global::Java.Interop.EventHelper.RemoveEventHandler<global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListener, global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListenerImplementor>(
 						ref weak_implementor_SetOnPlusOneClickListener,
 						global::Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListenerImplementor.__IsEmpty,
-						SetOnPlusOneClickListener,
+						__v => SetOnPlusOneClickListener (null),
 						__h => __h.Handler -= value);
 			}
 		}

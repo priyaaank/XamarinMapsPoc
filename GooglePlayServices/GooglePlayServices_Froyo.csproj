@@ -13,6 +13,7 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AssemblyName>GooglePlayServices</AssemblyName>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -57,8 +58,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Xamarin.Android.Bindings.targets" />
   <ItemGroup>
-    <LibraryProjectProperties Include="..\google-play-services_lib\project.properties">
-      <Link>project.properties</Link>
-    </LibraryProjectProperties>
+    <EmbeddedJar Include="Jars\google-play-services.jar" />
   </ItemGroup>
 </Project>

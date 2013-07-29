@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Android.Gms.Games {
 
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='GameBuffer']"
 	[global::Android.Runtime.Register ("com/google/android/gms/games/GameBuffer", DoNotGenerateAcw=true)]
 	public sealed partial class GameBuffer : global::Android.Gms.Common.Data.DataBuffer {
 
@@ -25,6 +26,7 @@ namespace Android.Gms.Games {
 		internal GameBuffer (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
 
 		static IntPtr id_get_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.google.android.gms.games']/class[@name='GameBuffer']/method[@name='get' and count(parameter)=1 and parameter[1][@type='int']]"
 		[Register ("get", "(I)Lcom/google/android/gms/games/Game;", "")]
 		public override global::Java.Lang.Object Get (int p0)
 		{
