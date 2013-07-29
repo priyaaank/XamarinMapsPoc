@@ -9,19 +9,42 @@ namespace Mappy
 {
 	public class BankEntitiesService
 	{
-		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results={2}&checkboxes={3}";
+		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results={2}&checkboxes=ATM,Branch";
 		private List<Type> Filters; 
+		private static BankEntitiesService SingleInstance = new BankEntitiesService();
+		private EntityCache LocalEntityCache;
 
-		public BankEntitiesService ()
+		private List<CacheChangeListener> Listeners = new List<CacheChangeListener>();
+
+		private BankEntitiesService()
 		{
-			Filters = new List<Type> ();
+			LocalEntityCache = new EntityCache (this);
 		}
 
-		public List<BankEntity> fetch(double latitude, double longitude, int numberOfRecords, Options selectedOptions) 
+		public static BankEntitiesService Instance()
 		{
-			Filters = selectedOptions.FiltersForSelection ();
+			return SingleInstance;
+		}
 
-			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, numberOfRecords, selectedOptions.SelectionCriteria()));
+		public void Register(CacheChangeListener listener)
+		{
+			if(!Listeners.Contains(listener)) Listeners.Add (listener);
+		}
+
+		public void Deregister(CacheChangeListener listener)
+		{
+			if(Listeners.Contains(listener)) Listeners.Remove(listener);
+		}
+
+		public void CacheUpdated()
+		{
+			foreach (CacheChangeListener listener in Listeners)
+				listener.FetchAndUpdate ();
+		}
+
+		public void QueueServiceRequest(double latitude, double longitude, int numberOfRecords) 
+		{
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, numberOfRecords));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 
@@ -36,14 +59,13 @@ namespace Mappy
 						Console.Out.WriteLine("Response contained empty body...");
 					}
 					else {
-						return SerializeJsonToEntities (content);
+						SerializeJsonToEntities (content);
 					}
 				}
-				return null;
 			}
 		}
 
-		private List<BankEntity> SerializeJsonToEntities (string content)
+		private void SerializeJsonToEntities (string content)
 		{
 			JsonArray bankEntities = JsonObject.Parse (content)["locations"] as JsonArray;
 
@@ -54,8 +76,20 @@ namespace Mappy
 				entity = aBankEntity.ContainsKey("ATMId") ? BankEntity.AtmFromJsonObject(aBankEntity) as BankEntity : BankEntity.BranchFromJsonObject(aBankEntity) as BankEntity;
 				if (entity != null) bankEntityList.Add (entity);
 			}
+			LocalEntityCache.AddAll (bankEntityList);
+		}
 
-			return Filtered( bankEntityList );
+		public List<BankEntity> Fetch(ViewportFilter<LatLngBounds> filter, Options filterOptions)
+		{
+			var filteredEntities = LocalEntityCache.FilteredEntities (filter);
+
+			List<BankEntity> filteredEntitiesCopy = new List<BankEntity>(filteredEntities);
+			foreach (Type aEntityFilter in filterOptions.FiltersForSelection()) 
+			{
+				filteredEntitiesCopy = ((EntityFilter)Activator.CreateInstance (aEntityFilter, filteredEntitiesCopy)).FilteredList ();
+			}
+
+			return filteredEntitiesCopy;
 		}
 
 		private List<BankEntity> Filtered (List<BankEntity> bankEntityList)

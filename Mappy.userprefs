@@ -1,14 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityMapView.cs">
+    <Files>
+      <File FileName="BankEntityMapView.cs" Line="124" Column="6" />
+      <File FileName="Services/EntityCache.cs" Line="37" Column="1" />
+      <File FileName="Services/CacheChangeListener.cs" Line="4" Column="19" />
+      <File FileName="Services/BankEntitiesService.cs" Line="80" Column="1" />
+      <File FileName="Services/ExcludeOwnAtmsFilter.cs" Line="9" Column="3" />
+      <File FileName="Services/ExcludeOwnBranchesFilter.cs" Line="4" Column="19" />
+      <File FileName="Services/ViewportFilter.cs" Line="14" Column="1" />
+      <File FileName="AndroidViewportFilter.cs" Line="20" Column="1" />
+      <File FileName="BankEntityLocator.cs" Line="87" Column="4" />
+      <File FileName="EntityMarker.cs" Line="78" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Mappy" expanded="True">
-            <Node name="Models" expanded="True" />
-            <Node name="Services" expanded="True" />
-            <Node name="BankEntityMapView.cs" selected="True" />
-          </Node>
+          <Node name="Mappy" selected="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -23,7 +31,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/suncorp/Projects/Mappy/BankEntityMapView.cs" line="116" column="33" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="651A0002FFFC0000" AndroidDeviceId-Release="304D19E4975BD19E" />

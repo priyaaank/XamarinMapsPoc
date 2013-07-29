@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mappy
 {
-	interface ViewportFilter<B>
+	public interface ViewportFilter<B>
 	{
 		bool CoordinateEnclosed (BankEntity entity);
 	}

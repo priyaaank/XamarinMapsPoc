@@ -12,19 +12,14 @@ namespace Mappy
 		private const int MaxQueueSize = 1000;
 
 		private ConcurrentQueue<BankEntity> BankEntities = new ConcurrentQueue<BankEntity>();
-		private List<CacheChangeListener> ListenersList = new List<CacheChangeListener> (); 
+		private BankEntitiesService Service;
 
-		public void RegisterListener(CacheChangeListener listener)
+		public EntityCache(BankEntitiesService service)
 		{
-			ListenersList.Add (listener);
+			this.Service = service;
 		}
 
-		public void DeregisterListener(CacheChangeListener listener)
-		{
-			ListenersList.Remove (listener);
-		}
-
-		public List<BankEntity> EntitiesWithin(ViewportFilter<LatLngBounds> filter)
+		public List<BankEntity> FilteredEntities(ViewportFilter<LatLngBounds> filter)
 		{
 			List<BankEntity> matchingEntities = new List<BankEntity> ();
 
@@ -52,12 +47,9 @@ namespace Mappy
 			if (modificationsMade) CacheUpdated ();
 		}
 
-		private void CacheUpdated ()
+		void CacheUpdated ()
 		{
-			foreach ( CacheChangeListener listener in ListenersList)
-			{
-				listener.EntityCacheUpdated();
-			}
+			Service.CacheUpdated ();
 		}
 
 		private void RemoveStaleElements ()

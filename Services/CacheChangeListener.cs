@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Mappy
 {
-	interface CacheChangeListener
+	public interface CacheChangeListener
 	{
 
-		void EntityCacheUpdated();
+		void FetchAndUpdateMap();
 
 	}
 }
