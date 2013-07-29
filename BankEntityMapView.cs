@@ -15,15 +15,15 @@ using Android.Gms.Maps.Model;
 using System.Threading;
 using Java.Util;
 using Mappy.Common;
+using Android.Gms.Location;
+using Android.Gms.Common;
 
 namespace Mappy
 {
 	public class BankEntityMapView : SupportMapFragment
 	{
 		MapViewModel ViewModel;
-		//private BankEntitiesService EntitiesService = new BankEntitiesService ();
 
-		private TouchableWrapper WrapperView;
 		private const float MaxSupportedZoomLevel = 3.5f;
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
 		private float LastZoomLevel = 0;
@@ -47,27 +47,18 @@ namespace Mappy
 			ViewModel = new MapViewModel ();
 		}
 
-		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			var view = base.OnCreateView(inflater, container, savedInstanceState);
-
-			WrapperView = new TouchableWrapper(this.Activity);
-			WrapperView.AddView(view);
-
-			return WrapperView;
-		}
-
-		public override void OnResume()
+		public override void OnViewCreated (View view, Bundle savedInstanceState)
 		{
-			base.OnResume ();
+			base.OnViewCreated (view, savedInstanceState);
 			InitializeMap ();
 		}
 
 		void InitializeMap ()
 		{
 			if (this.Map != null) {
+				this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				ConfigureMapUiSettings ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
-				this.Map.MyLocationChange += FlyDownInitially;
 				FlyDownToMyLocation ();
 			}
 		}
@@ -150,10 +141,10 @@ namespace Mappy
 		}
 
 		float CurrentZoomLevel {
-		get {
-			return this.Map.CameraPosition.Zoom;
+			get {
+				return this.Map.CameraPosition.Zoom;
+			}
 		}
-	}
 
 
 		EntityMarker.IconType IconForCurrentZoomLevel ()

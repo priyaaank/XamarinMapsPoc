@@ -34,10 +34,13 @@ namespace Mappy
 			GpsManager = new GpsManager (this);
 			GpsManager.PrepareGPS ();
 
-			MapViewFragment = new BankEntityMapView ();
-
 			BindBankEntityOptionsView ();
-			this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MapFragmentView).Commit ();
+
+			MapViewFragment = SupportFragmentManager.FindFragmentById(Resource.Id.map) as BankEntityMapView;
+			if (MapViewFragment == null) {
+				MapViewFragment = new BankEntityMapView ();
+				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MapFragmentView).Commit ();
+			}
 		}
 
 		void BindBankEntityOptionsView ()
