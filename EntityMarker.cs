@@ -32,7 +32,7 @@ namespace Mappy
 		};
 
 		private MarkerOptions MapMarker;
-		private BankEntity Entity;
+		public BankEntity Entity;
 		private MarkerType Type;
 
 		public EntityMarker(BankEntity entity, EntityMarker.IconType iconType)

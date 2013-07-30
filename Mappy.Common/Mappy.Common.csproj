@@ -46,6 +46,9 @@
     <Compile Include="Services\ExcludePartnerEstablishmentsFilter.cs" />
     <Compile Include="Services\Options.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
+    <Compile Include="Services\CacheChangeListener.cs" />
+    <Compile Include="Services\EntityCache.cs" />
+    <Compile Include="Services\ViewportFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

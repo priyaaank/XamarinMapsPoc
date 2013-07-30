@@ -1,23 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mappy.Common/ViewModels/MapViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mappy.Common/Services/BankEntitiesService.cs">
     <Files>
-      <File FileName="BankEntityLocator.cs" Line="6" Column="23" />
-      <File FileName="BankEntityMapView.cs" Line="125" Column="55" />
-      <File FileName="EntityMarker.cs" Line="59" Column="40" />
-      <File FileName="Mappy.Common/ViewModels/MapViewModel.cs" Line="24" Column="1" />
+      <File FileName="Mappy.Common/Services/BankEntitiesService.cs" Line="28" Column="53" />
+      <File FileName="Mappy.Common/Services/EntityFilter.cs" Line="20" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Mappy.Common" expanded="True" selected="True">
-            <Node name="Services" expanded="True" />
-            <Node name="ViewModels" expanded="True" />
+          <Node name="Mappy.Common.Android" expanded="True" />
+          <Node name="Mappy.Common.iOS" expanded="True">
+            <Node name="Services" expanded="True">
+              <Node name="BankEntitiesService.cs" selected="True" />
+            </Node>
           </Node>
-          <Node name="Mappy.Common.Android" expanded="True">
-            <Node name="ViewModels" expanded="True" />
-          </Node>
-          <Node name="Mappy.iOS" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -38,7 +34,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="Services/BankEntitiesService.cs" line="28" offsetX="686" offsetY="405" expression="response" liveUpdate="False" />
+    <Watch file="../../tmp/XamarinMapsPoc/Services/BankEntitiesService.cs" line="28" offsetX="686" offsetY="405" expression="response" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="651A0002FFFC0000" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
 </Properties>

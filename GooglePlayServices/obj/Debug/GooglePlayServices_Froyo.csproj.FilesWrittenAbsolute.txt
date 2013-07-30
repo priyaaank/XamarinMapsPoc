@@ -1,9 +1,3 @@
-/Users/webcontent/Projects/XamarinMapsPoc/GooglePlayServices/obj/Debug/MonoAndroid,Version=v4.2.AssemblyAttribute.cs
-/Users/webcontent/Projects/XamarinMapsPoc/GooglePlayServices/obj/Debug/GooglePlayServices.Jars.google-play-services.jar
-/Users/webcontent/Projects/XamarinMapsPoc/GooglePlayServices/bin/Debug/GooglePlayServices.dll.mdb
-/Users/webcontent/Projects/XamarinMapsPoc/GooglePlayServices/bin/Debug/GooglePlayServices.dll
-/Users/webcontent/Projects/XamarinMapsPoc/GooglePlayServices/obj/Debug/GooglePlayServices.dll
-/Users/webcontent/Projects/XamarinMapsPoc/GooglePlayServices/obj/Debug/GooglePlayServices.dll.mdb
 /Users/suncorp/Projects/XamarinMapsPoc/GooglePlayServices/obj/Debug/MonoAndroid,Version=v4.2.AssemblyAttribute.cs
 /Users/suncorp/Projects/XamarinMapsPoc/GooglePlayServices/obj/Debug/GooglePlayServices.Jars.google-play-services.jar
 /Users/suncorp/Projects/XamarinMapsPoc/GooglePlayServices/bin/Debug/GooglePlayServices.dll.mdb

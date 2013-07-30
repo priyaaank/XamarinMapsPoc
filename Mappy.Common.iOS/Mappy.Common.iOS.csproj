@@ -75,5 +75,14 @@
     <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
       <Link>ViewModels\MapViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\Mappy.Common\Services\CacheChangeListener.cs">
+      <Link>Services\CacheChangeListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\ViewportFilter.cs">
+      <Link>Services\ViewportFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\EntityCache.cs">
+      <Link>Services\EntityCache.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>

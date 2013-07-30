@@ -20,7 +20,7 @@ using Android.Gms.Common;
 
 namespace Mappy
 {
-	public class BankEntityMapView : SupportMapFragment
+	public class BankEntityMapView : SupportMapFragment, CacheChangeListener
 	{
 		MapViewModel ViewModel;
 
@@ -79,6 +79,19 @@ namespace Mappy
 			}
 		}
 
+		public override void OnResume()
+		{
+			base.OnResume ();
+			ViewModel.Register (this);
+		}
+
+
+		public override void OnPause()
+		{
+			base.OnPause ();
+			ViewModel.Deregister (this);
+		}
+
 		public void UpdateMap (Options userSelection)
 		{
 			var zoomLevel = CurrentZoomLevel;
@@ -89,7 +102,8 @@ namespace Mappy
 			} 
 			if (zoomLevel > MaxSupportedZoomLevel) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				ShowEntitiesOnMap (coordinates, userSelection, 20);
+				ThreadPool.QueueUserWorkItem (o => ShowEntitiesOnMap (coordinates, 300));
+				FetchAndUpdate ();
 			} else {
 				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
@@ -101,31 +115,24 @@ namespace Mappy
 		private void UpdateMapBasedOnZoomThreshold ()
 		{
 			this.Map.Clear ();
-//			EntityMarker.IconType icon = IconForCurrentZoomLevel ();
-//			if (icon != EntityMarker.IconType.None) {
-//				foreach (EntityMarker location in LocationsPlottedOnMap) {
-//					location.ChangeIcon (icon);
-//					location.UpdateIcon (this.Map);
-//				}
-//			}
+			EntityMarker.IconType icon = IconForCurrentZoomLevel ();
+			if (icon != EntityMarker.IconType.None) {
+				foreach (EntityMarker location in LocationsPlottedOnMap) {
+					location.UpdateIcon (icon);
+					location.AddMarkerTo (this.Map);
+				}
+			}
 		}
 
 		public void ResetMap()
 		{
 			this.Map.Clear ();
+			this.LocationsPlottedOnMap.Clear ();
 		}
 
-		async void ShowEntitiesOnMap (LatLng coordinates, Options userSelection, int noOfRecords)
+		void ShowEntitiesOnMap (LatLng coordinates, int noOfRecords)
 		{
-			List<BankEntity> bankEntities = await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, userSelection);
-
-			var iconType = IconForCurrentZoomLevel ();
-			if(iconType == EntityMarker.IconType.None) return;
-			foreach (BankEntity aEntity in bankEntities) {
-				var marker = new EntityMarker (aEntity, iconType);
-				marker.AddMarkerTo(this.Map);
-				LocationsPlottedOnMap.Add(marker);
-			}
+			ThreadPool.QueueUserWorkItem (o =>  ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, noOfRecords));
 		}
 
 		private void ConfigureMapUiSettings ()
@@ -184,6 +191,37 @@ namespace Mappy
 //					ClosestBankEntityMarker.AddMarkerTo (this.Map);
 //				}
 //			}
+		}
+
+		public void FetchAndUpdate()
+		{
+			BankEntityLocator parentActivity = this.Activity as BankEntityLocator;
+			parentActivity.RunOnUiThread (() => {
+				LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
+				List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), parentActivity.UserSelection);
+
+				UpdateViewWithEntities (entities);
+			});
+		}
+
+		void UpdateViewWithEntities (List<BankEntity> entities)
+		{
+			var iconType = IconForCurrentZoomLevel ();
+			if(iconType == EntityMarker.IconType.None) return;
+
+			List<BankEntity> plottedEntities = new List<BankEntity>();
+
+			foreach (EntityMarker marker in LocationsPlottedOnMap) {
+				plottedEntities.Add (marker.Entity);
+			}
+
+			var entitiesToPlot = entities.Except (plottedEntities);
+
+			foreach (BankEntity aEntity in entitiesToPlot) {
+				var marker = new EntityMarker (aEntity, iconType);
+				marker.AddMarkerTo(this.Map);
+				LocationsPlottedOnMap.Add(marker);
+			}
 		}
 
 		public void UserLocationUpdated ()

@@ -6,20 +6,31 @@ namespace Mappy.Common
 {
 	public class MapViewModel
 	{
-		public BankEntitiesService EntitiesService { get; set; }
+		public BankEntitiesService EntitiesService;
 
 		public MapViewModel ()
 		{
-			EntitiesService = new BankEntitiesService ();
+			EntitiesService = BankEntitiesService.Instance ();
 		}
 
-		public async Task<List<BankEntity>> FetchEntitiesAsync(double latitude, double longitude, Options selectedOptions)
+		public void FetchEntitiesAsync(double latitude, double longitude, int noOfRecords)
 		{
-			var task = new Task<List<BankEntity>> (()=>{
-				return EntitiesService.fetch (latitude, longitude, selectedOptions);
-			});
-			task.Start ();
-			return await task;
+			EntitiesService.QueueServiceRequest (latitude, longitude, noOfRecords);
+		}
+
+		public void Deregister (CacheChangeListener listener)
+		{
+			EntitiesService.Deregister (listener);
+		}
+
+		public void Register (CacheChangeListener listener)
+		{
+			EntitiesService.Register (listener);
+		}
+
+		public List<BankEntity> Fetch (ViewportFilter viewportFilter, Options userSelection)
+		{
+			return EntitiesService.Fetch (viewportFilter, userSelection);
 		}
 	}
 }

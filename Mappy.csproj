@@ -59,6 +59,7 @@
     <Compile Include="GpsManager.cs" />
     <Compile Include="EntityMarker.cs" />
     <Compile Include="ZoomPair.cs" />
+    <Compile Include="AndroidViewportFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

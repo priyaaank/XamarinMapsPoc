@@ -53,9 +53,6 @@
     <Compile Include="..\Mappy.Common\Models\Branch.cs">
       <Link>Models\Branch.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\BankEntitiesService.cs">
-      <Link>Services\BankEntitiesService.cs</Link>
-    </Compile>
     <Compile Include="..\Mappy.Common\Services\EntityFilter.cs">
       <Link>Services\EntityFilter.cs</Link>
     </Compile>
@@ -73,6 +70,18 @@
     </Compile>
     <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
       <Link>ViewModels\MapViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\CacheChangeListener.cs">
+      <Link>Services\CacheChangeListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\EntityCache.cs">
+      <Link>Services\EntityCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\ViewportFilter.cs">
+      <Link>Services\ViewportFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\BankEntitiesService.cs">
+      <Link>Services\BankEntitiesService.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
