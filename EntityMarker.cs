@@ -16,7 +16,8 @@ namespace Mappy
 {
 	public class EntityMarker
 	{
-		public enum IconType {Micro, Small, Medium, None};
+		public enum MarkerType { Regular, Nearest };
+		public enum IconType { Micro, Small, Medium, None, Closest};
 
 		private static readonly Dictionary<EntityMarker.IconType, int> AtmIcons = new Dictionary<EntityMarker.IconType, int>{
 			{ EntityMarker.IconType.Micro, Resource.Drawable.atm_micro },
@@ -32,14 +33,22 @@ namespace Mappy
 
 		private MarkerOptions MapMarker;
 		private BankEntity Entity;
+		private MarkerType Type;
 
-		public EntityMarker(BankEntity entity, EntityMarker.IconType iconSize, LatLng position)
+		public EntityMarker(BankEntity entity, EntityMarker.IconType iconType)
 		{
 			this.Entity = entity;
 			this.MapMarker = new MarkerOptions ();
 			this.MapMarker.SetTitle (entity.Description());
-			this.MapMarker.SetPosition (position);
-			this.ChangeIcon (iconSize);
+			this.MapMarker.SetPosition (new LatLng(entity.Latitude, entity.Longitude));
+			this.UpdateIcon (iconType);
+			this.Type = MarkerType.Regular;
+		}
+
+		public EntityMarker(BankEntity entity, EntityMarker.IconType iconType, MarkerType markerType) : this(entity, iconType)
+		{
+			this.Type = markerType;
+			this.UpdateIcon (IconType.Closest);
 		}
 
 		public void AddMarkerTo(GoogleMap map)
@@ -47,9 +56,20 @@ namespace Mappy
 			map.AddMarker (this.MapMarker);
 		}
 
-		public void ChangeIcon(EntityMarker.IconType changeIconTo)
+		public void UpdateIcon(IconType iconType)
 		{
-			this.MapMarker.InvokeIcon (BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(changeIconTo)));
+			var icon = (iconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
+			this.MapMarker.InvokeIcon (icon);
+		}
+
+		public bool IsNearestToUser()
+		{
+			return this.Type == MarkerType.Nearest;
+		}
+
+		public void ResetIconFromClosest (IconType iconType)
+		{
+			UpdateIcon (iconType);
 		}
 
 		private int EntityIconForZoomLevel (EntityMarker.IconType changeIconTo)

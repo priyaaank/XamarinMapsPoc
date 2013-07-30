@@ -9,14 +9,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V4.App;
+using Android.Locations;
 
 namespace Mappy
 {
 	[Activity (Label = "BankEntityLocator", MainLauncher = true)]			
-	public class BankEntityLocator : FragmentActivity, MapUpdateListener
+	public class BankEntityLocator : FragmentActivity, MapUpdateListener, ILocationListener
 	{
 		private BankEntityMapView MapViewFragment;
 		private GpsManager GpsManager;
+		private LocationManager LocManager;
 	
 		const string MapFragmentView        = "mapView";
 		const bool   SelectAtms             = true;
@@ -34,6 +36,8 @@ namespace Mappy
 			GpsManager = new GpsManager (this);
 			GpsManager.PrepareGPS ();
 
+			LocManager = GetSystemService (Context.LocationService) as LocationManager;
+
 			BindBankEntityOptionsView ();
 
 			MapViewFragment = SupportFragmentManager.FindFragmentById(Resource.Id.map) as BankEntityMapView;
@@ -41,6 +45,18 @@ namespace Mappy
 				MapViewFragment = new BankEntityMapView ();
 				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MapFragmentView).Commit ();
 			}
+		}
+
+		protected override void OnResume ()
+       	{
+			base.OnResume ();
+			LocManager.RequestLocationUpdates (LocationManager.GpsProvider, 2000, 1, this);
+       	}
+	    
+		protected override void OnPause ()
+		{
+	       base.OnPause ();
+	       LocManager.RemoveUpdates (this);
 		}
 
 		void BindBankEntityOptionsView ()
@@ -73,6 +89,30 @@ namespace Mappy
 		{
 			MapViewFragment.UpdateMap (UserSelection);
 		}
+
+		#region ILocationListener implementation
+
+		public void OnLocationChanged (Location location)
+		{
+			MapViewFragment.UserLocationUpdated ();
+		}
+
+		public void OnProviderDisabled (string provider)
+		{
+			//do nothing
+		}
+
+		public void OnProviderEnabled (string provider)
+		{
+			//do nothing
+		}
+
+		public void OnStatusChanged (string provider, Availability status, Bundle extras)
+		{
+			//do nothing
+		}
+
+		#endregion
 	}
 
 }
