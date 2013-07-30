@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappy", "Mappy.csproj", "{D4FC530F-D7CD-47AF-A375-A8CEFC5DA5A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooglePlayServices_Froyo", "GooglePlayServices\GooglePlayServices_Froyo.csproj", "{70373165-8CA9-401F-908C-BFEC698A56B2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappy.iOS", "Mappy.iOS\Mappy.iOS.csproj", "{81EC03C8-6005-4369-927E-ED134B38331A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappy.Common", "Mappy.Common\Mappy.Common.csproj", "{A7025ED5-B104-45CA-816B-1B0BCEFEFE33}"
@@ -12,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappy.Common.Android", "Mappy.Common.Android\Mappy.Common.Android.csproj", "{E208BD4F-0E63-4417-A709-10F619CAB244}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappy.Common.iOS", "Mappy.Common.iOS\Mappy.Common.iOS.csproj", "{E6900DE8-A4EB-4E9C-8AC0-3C3320024E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooglePlayServices", "..\GooglePlayServices\GooglePlayServices.csproj", "{70373165-8CA9-401F-908C-BFEC698A56B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,6 +136,6 @@ Global
 		{E6900DE8-A4EB-4E9C-8AC0-3C3320024E8E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Mappy.csproj
+		StartupItem = Mappy.iOS\Mappy.iOS.csproj
 	EndGlobalSection
 EndGlobal

@@ -58,6 +58,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Xamarin.Android.Bindings.targets" />
   <ItemGroup>
-    <EmbeddedJar Include="Jars\google-play-services.jar" />
+    <InputJar Include="Jars\google-play-services.jar" />
   </ItemGroup>
 </Project>

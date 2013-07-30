@@ -10,5 +10,7 @@
 	</array>
 	<key>MinimumOSVersion</key>
 	<string>6.0</string>
+	<key>CFBundleIdentifier</key>
+	<string>au.com.suncorp.Mappy</string>
 </dict>
 </plist>

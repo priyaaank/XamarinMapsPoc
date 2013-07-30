@@ -42,6 +42,7 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Types\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -75,5 +76,17 @@
     <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
       <Link>ViewModels\MapViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\Mappy.Common\Types\ZoomPair.cs">
+      <Link>Types\ZoomPair.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\IconType.cs">
+      <Link>Types\IconType.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mappy.Common\Mappy.Common.csproj">
+      <Project>{A7025ED5-B104-45CA-816B-1B0BCEFEFE33}</Project>
+      <Name>Mappy.Common</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -24,19 +24,7 @@ namespace Mappy
 	{
 		MapViewModel ViewModel;
 
-		private const float MaxSupportedZoomLevel = 3.5f;
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
-		private float LastZoomLevel = 0;
-
-		public static readonly float MICRO_TO_SMALL_THRESHOLD_ZOOM_LEVEL = 14.0f;
-		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 17.0f;
-
-		static List<ZoomPair> ZoomPairs = new List<ZoomPair> () {
-			new ZoomPair(SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL, EntityMarker.IconType.Medium),
-			new ZoomPair(MICRO_TO_SMALL_THRESHOLD_ZOOM_LEVEL, EntityMarker.IconType.Small),
-			new ZoomPair(MaxSupportedZoomLevel, EntityMarker.IconType.Micro)
-
-		};
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
@@ -56,7 +44,7 @@ namespace Mappy
 		void InitializeMap ()
 		{
 			if (this.Map != null) {
-				this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
+				//this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				ConfigureMapUiSettings ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				FlyDownToMyLocation ();
@@ -74,7 +62,7 @@ namespace Mappy
 			if(this.Map.MyLocation != null)
 			{
 				LatLng myLocation = new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude); 
-				CameraPosition position = new CameraPosition.Builder ().Target (myLocation).Zoom (SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL).Build();
+				CameraPosition position = new CameraPosition.Builder ().Target (myLocation).Zoom (MapViewModel.DEFAULT_ZOOM_LEVEL).Build();
 				CameraUpdate camUpdate = CameraUpdateFactory.NewCameraPosition(position);
 				this.Map.AnimateCamera (camUpdate);
 			}
@@ -85,17 +73,17 @@ namespace Mappy
 			var zoomLevel = this.Map.CameraPosition.Zoom;
 			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = zoomLevel.ToString();
 
-			if (ShouldIconChange ()) {
+			if (ViewModel.ShouldIconChange (CurrentZoomLevel)) {
 				UpdateMapBasedOnZoomThreshold ();
 			} 
-			if (zoomLevel > MaxSupportedZoomLevel) {
+			if (zoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
 				ShowEntitiesOnMap (coordinates, userSelection);
 			} else {
 				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
 
-			LastZoomLevel = CurrentZoomLevel;
+			ViewModel.LastZoomLevel = CurrentZoomLevel;
 		}
 
 		//Currently behaves a lot better just by clearing hte app. Otherwise locations stack. Maybe better to reenable this when service is better.
@@ -120,9 +108,11 @@ namespace Mappy
 		{
 			List<BankEntity> bankEntities = await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, userSelection);
 
-			if(IconForCurrentZoomLevel() == EntityMarker.IconType.None) return;
+			var iconSize = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
+			if(iconSize == IconType.None) return;
+
 			foreach (BankEntity aEntity in bankEntities) {
-				var marker = new EntityMarker(aEntity, IconForCurrentZoomLevel(), new LatLng(aEntity.Latitude, aEntity.Longitude));
+				var marker = new EntityMarker(aEntity, iconSize, new LatLng(aEntity.Latitude, aEntity.Longitude));
 				marker.AddMarkerTo(this.Map);
 				LocationsPlottedOnMap.Add(marker);
 			}
@@ -144,28 +134,6 @@ namespace Mappy
 			get {
 				return this.Map.CameraPosition.Zoom;
 			}
-		}
-
-
-		EntityMarker.IconType IconForCurrentZoomLevel ()
-		{
-			foreach (var zoomPair in ZoomPairs) {
-				if (CurrentZoomLevel >= zoomPair.ZoomLevel) {
-					return zoomPair.Icon;
-				}
-			}
-
-			return EntityMarker.IconType.None;
-		}
-
-		bool ShouldIconChange () {
-			foreach (var zoomPair in ZoomPairs) {
-				if (LastZoomLevel < zoomPair.ZoomLevel && CurrentZoomLevel >= zoomPair.ZoomLevel
-					|| LastZoomLevel > zoomPair.ZoomLevel && CurrentZoomLevel <= zoomPair.ZoomLevel)
-					return true;
-			}
-
-			return false;
 		}
 	}
 }

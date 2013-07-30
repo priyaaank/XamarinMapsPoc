@@ -9,6 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Mappy.Common</RootNamespace>
     <AssemblyName>Mappy.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +34,7 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Types\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Atm.cs" />
@@ -45,6 +47,8 @@
     <Compile Include="Services\ExcludePartnerEstablishmentsFilter.cs" />
     <Compile Include="Services\Options.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
+    <Compile Include="Types\ZoomPair.cs" />
+    <Compile Include="Types\IconType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

@@ -10,9 +10,9 @@ namespace Mappy
 		private const string Atm = "ATM";
 		private const string Branch = "Branch";
 
-		private bool SelectOwnAtms;
-		private bool SelectOwnBranches;
-		private bool SelectPartnerAtms;
+		public bool SelectOwnAtms {get; set;}
+		public bool SelectOwnBranches {get; set;}
+		public bool SelectPartnerAtms {get; set;}
 
 		public Options(bool selectOwnAtms, bool selectOwnBranches, bool SelectPartnerAtms)
 		{

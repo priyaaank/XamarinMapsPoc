@@ -58,7 +58,6 @@
     <Compile Include="MapUpdateListener.cs" />
     <Compile Include="GpsManager.cs" />
     <Compile Include="EntityMarker.cs" />
-    <Compile Include="ZoomPair.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -81,13 +80,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="GooglePlayServices\GooglePlayServices_Froyo.csproj">
-      <Project>{70373165-8CA9-401F-908C-BFEC698A56B2}</Project>
-      <Name>GooglePlayServices_Froyo</Name>
-    </ProjectReference>
     <ProjectReference Include="Mappy.Common.Android\Mappy.Common.Android.csproj">
       <Project>{E208BD4F-0E63-4417-A709-10F619CAB244}</Project>
       <Name>Mappy.Common.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GooglePlayServices\GooglePlayServices.csproj">
+      <Project>{70373165-8CA9-401F-908C-BFEC698A56B2}</Project>
+      <Name>GooglePlayServices</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
