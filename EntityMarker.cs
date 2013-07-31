@@ -31,7 +31,7 @@ namespace Mappy
 
 		private MarkerOptions MarkerOptions;
 		private Marker Marker;
-		public BankEntity Entity;
+		public BankEntity Entity {get; set;}
 		private MarkerType Type;
 
 		public EntityMarker(BankEntity entity, IconType iconType)

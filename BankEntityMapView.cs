@@ -44,7 +44,7 @@ namespace Mappy
 		void InitializeMap ()
 		{
 			if (this.Map != null) {
-				this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
+				//this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				ConfigureMapUiSettings ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				FlyDownToMyLocation ();
@@ -165,12 +165,7 @@ namespace Mappy
 			var iconType = ViewModel.IconForCurrentZoomLevel(CurrentZoomLevel);
 			if(iconType == IconType.None) return;
 
-			List<BankEntity> plottedEntities = new List<BankEntity>();
-
-			foreach (EntityMarker marker in LocationsPlottedOnMap) {
-				plottedEntities.Add (marker.Entity);
-			}
-
+			List<BankEntity> plottedEntities = (from marker in LocationsPlottedOnMap select marker.Entity).ToList ();
 			var entitiesToPlot = entities.Except (plottedEntities);
 
 			foreach (BankEntity aEntity in entitiesToPlot) {

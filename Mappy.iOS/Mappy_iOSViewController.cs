@@ -8,11 +8,13 @@ using Mappy.Common;
 using System.Collections.Generic;
 using Google.Maps;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Mappy.iOS
 {
 	public partial class Mappy_iOSViewController : UIViewController
-	{
+	{	
+		DateTime LastMapUpdate;
 		List<EntityMarker> LocationsPlottedOnMap;
 		UIBarButtonItem OptionsButton;
 		MapView MapView;
@@ -29,7 +31,7 @@ namespace Mappy.iOS
 		public Mappy_iOSViewController () : base ()
 		{
 			ViewModel = new MapViewModel ();
-			Markers = new List<Marker> ();
+			Markers = new List<EntityMarker> ();
 			MapOptions = new Options (true, true, true);
 			LocationsPlottedOnMap = new List<EntityMarker>();
 		}
@@ -111,15 +113,15 @@ namespace Mappy.iOS
 		{
 			base.ViewWillAppear (animated);
 			MapView.StartRendering ();
-			LoadMap ();
 			StartPanToUserLocation ();
-			MapView.CameraPositionChanged += (sender, e) => UpdateMap();
-		}
-
-		async void LoadMap ()
-		{
-			await Task.Delay (4000);
-			UpdateMap ();
+			MapView.CameraPositionChanged += (sender, e) => {
+				Console.Out.WriteLine ((DateTime.Now - LastMapUpdate).TotalSeconds);
+				if ((DateTime.Now - LastMapUpdate).TotalSeconds > 1.0d) {
+					LastMapUpdate = DateTime.Now;
+					Console.Out.WriteLine ("Updating map");
+					UpdateMap ();
+				}
+			};
 		}
 
 		public override void ViewDidDisappear (bool animated)
@@ -176,7 +178,18 @@ namespace Mappy.iOS
 
 		void UpdateViewWithEntities (List<BankEntity> entities)
 		{
-			throw new NotImplementedException ();
+			var iconType = ViewModel.IconForCurrentZoomLevel(CurrentZoomLevel);
+			if(iconType == IconType.None) return;
+
+			List<BankEntity> plottedEntities = (from marker in LocationsPlottedOnMap select marker.Entity).ToList ();
+			var entitiesToPlot = entities.Except (plottedEntities);
+
+			foreach (BankEntity aEntity in entitiesToPlot) {
+				var marker = new EntityMarker (aEntity, iconType);
+
+				marker.AddMarkerTo(MapView);
+				LocationsPlottedOnMap.Add(marker);
+			}
 		}
 
 //		async void ShowEntitiesOnMap ()
