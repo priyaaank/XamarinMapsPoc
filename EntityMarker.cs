@@ -17,7 +17,7 @@ namespace Mappy
 {
 	public class EntityMarker
 	{
-		private static readonly Dictionary<IconType, int> AtmIcons = new Dictionary<IconType, int>{
+		private static readonly Dictionary<IconType, int> AtmIcons = new Dictionary<IconType, int> {
 			{ IconType.Micro, Resource.Drawable.atm_micro },
 			{ IconType.Small, Resource.Drawable.atm_small },
 			{ IconType.Medium, Resource.Drawable.atm_medium }
@@ -29,26 +29,48 @@ namespace Mappy
 			{ IconType.Medium, Resource.Drawable.branch_medium }
 		};
 
-		private MarkerOptions MapMarker;
-		private BankEntity Entity;
+		private MarkerOptions MarkerOptions;
+		private Marker Marker;
+		public BankEntity Entity;
+		private MarkerType Type;
 
-		public EntityMarker(BankEntity entity, IconType iconSize, LatLng position)
+		public EntityMarker(BankEntity entity, IconType iconType)
 		{
 			this.Entity = entity;
-			this.MapMarker = new MarkerOptions ();
-			this.MapMarker.SetTitle (entity.Description());
-			this.MapMarker.SetPosition (position);
-			this.ChangeIcon (iconSize);
+			this.MarkerOptions = new MarkerOptions ();
+			this.MarkerOptions.SetTitle (entity.Description());
+			this.MarkerOptions.SetPosition (new LatLng(entity.Latitude, entity.Longitude));
+			this.UpdateIcon (iconType);
+			this.Type = MarkerType.Regular;
+		}
+
+		public EntityMarker(BankEntity entity, IconType iconType, MarkerType markerType) : this(entity, iconType)
+		{
+			this.Type = markerType;
+			this.UpdateIcon (IconType.Closest);
 		}
 
 		public void AddMarkerTo(GoogleMap map)
 		{
-			map.AddMarker (this.MapMarker);
+			Marker = map.AddMarker (this.MarkerOptions);
 		}
 
-		public void ChangeIcon(IconType changeIconTo)
+		public void UpdateIcon(IconType iconType)
 		{
-			this.MapMarker.InvokeIcon (BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(changeIconTo)));
+			var icon = (iconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
+			MarkerOptions.InvokeIcon (icon);
+			if (Marker != null)
+				Marker.SetIcon (icon);
+		}
+
+		public bool IsNearestToUser()
+		{
+			return this.Type == MarkerType.Nearest;
+		}
+
+		public void ResetIconFromClosest (IconType iconType)
+		{
+			UpdateIcon (iconType);
 		}
 
 		private int EntityIconForZoomLevel (IconType changeIconTo)

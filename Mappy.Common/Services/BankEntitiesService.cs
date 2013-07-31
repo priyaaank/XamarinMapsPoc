@@ -8,19 +8,36 @@ namespace Mappy
 {
 	public class BankEntitiesService
 	{
-		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results=300&checkboxes={2}";
-		private List<Type> Filters; 
+		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results={2}&checkboxes=ATM,Branch";
+//		private List<EntityFilter> Filters;
+		private static BankEntitiesService SingleInstance = new BankEntitiesService();
+		private EntityCache LocalEntityCache;
 
-		public BankEntitiesService ()
+		private List<CacheChangeListener> Listeners = new List<CacheChangeListener>();
+
+		private BankEntitiesService()
 		{
-			Filters = new List<Type> ();
+			LocalEntityCache = new EntityCache (this);
 		}
 
-		public List<BankEntity> fetch(double latitude, double longitude, Options selectedOptions) 
+		public static BankEntitiesService Instance()
 		{
-			Filters = selectedOptions.FiltersForSelection ();
+			return SingleInstance;
+		}
 
-			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, selectedOptions.SelectionCriteria()));
+		public void Register(CacheChangeListener listener)
+		{
+			if(!Listeners.Contains(listener)) Listeners.Add (listener);
+		}
+
+		public void Deregister(CacheChangeListener listener)
+		{
+			if(Listeners.Contains(listener)) Listeners.Remove(listener);
+		}
+
+		public void QueueServiceRequest(double latitude, double longitude, int numberOfRecords)
+		{
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, numberOfRecords));
 			request.ContentType = "application/json";
 			request.Method = "GET";
 
@@ -35,40 +52,57 @@ namespace Mappy
 						Console.Out.WriteLine("Response contained empty body...");
 					}
 					else {
-						return SerializeJsonToEntities (content);
+						SerializeJsonToEntities (content);
 					}
 				}
-				return null;
 			}
 		}
 
-		private List<BankEntity> SerializeJsonToEntities (string content)
+		public void CacheUpdated()
+		{
+			foreach (CacheChangeListener listener in Listeners)
+				listener.FetchAndUpdate ();
+		}
+
+		private void SerializeJsonToEntities (string content)
 		{
 			JsonArray bankEntities = JsonObject.Parse (content)["locations"] as JsonArray;
 
-			List<BankEntity> bankEntityList = new List<BankEntity>() ; 
+			List<BankEntity> bankEntityList = new List<BankEntity>() ;
 			BankEntity entity = null;
-			foreach (JsonObject aBankEntity in bankEntities) 
+			foreach (JsonObject aBankEntity in bankEntities)
 			{
 				entity = aBankEntity.ContainsKey("ATMId") ? BankEntity.AtmFromJsonObject(aBankEntity) as BankEntity : BankEntity.BranchFromJsonObject(aBankEntity) as BankEntity;
 				if (entity != null) bankEntityList.Add (entity);
 			}
-
-			return Filtered( bankEntityList );
+			LocalEntityCache.AddAll (bankEntityList);
 		}
 
-		private List<BankEntity> Filtered (List<BankEntity> bankEntityList)
+		public List<BankEntity> Fetch(ViewportFilter filter, Options filterOptions)
 		{
-			if (Filters == null || Filters.Count == 0) return bankEntityList;
+			var filteredEntities = LocalEntityCache.FilteredEntities (filter);
 
-			List<BankEntity> bankEntityListCopy = new List<BankEntity>(bankEntityList);
-			foreach (Type aEntityFilter in Filters) 
+			List<BankEntity> filteredEntitiesCopy = new List<BankEntity>(filteredEntities);
+			foreach (Type aEntityFilter in filterOptions.FiltersForSelection())
 			{
-				bankEntityListCopy = ((EntityFilter)Activator.CreateInstance (aEntityFilter, bankEntityListCopy)).FilteredList ();
+				filteredEntitiesCopy = ((EntityFilter)Activator.CreateInstance (aEntityFilter, filteredEntitiesCopy)).FilteredList ();
 			}
 
-			return bankEntityListCopy;
+			return filteredEntitiesCopy;
 		}
+
+//		private List<BankEntity> Filtered (List<BankEntity> bankEntityList)
+//		{
+//			if (Filters == null || Filters.Count == 0) return bankEntityList;
+//
+//			List<BankEntity> bankEntityListCopy = new List<BankEntity>(bankEntityList);
+//			foreach (Type aEntityFilter in Filters)
+//			{
+//				bankEntityListCopy = ((EntityFilter)Activator.CreateInstance (aEntityFilter, bankEntityListCopy)).FilteredList ();
+//			}
+//
+//			return bankEntityListCopy;
+//		}
 	}
 }
 

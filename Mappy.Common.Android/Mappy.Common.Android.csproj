@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E208BD4F-0E63-4417-A709-10F619CAB244}</ProjectGuid>
+    <ProjectGuid>{88C87C3E-DBB8-4BFC-B30A-73EAE06F2540}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>Mappy.Common.Android</RootNamespace>
@@ -14,7 +14,6 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AssemblyName>Mappy.Common.Android</AssemblyName>
-    <TargetFrameworkVersion>v4.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +56,12 @@
     <Compile Include="..\Mappy.Common\Services\BankEntitiesService.cs">
       <Link>Services\BankEntitiesService.cs</Link>
     </Compile>
+    <Compile Include="..\Mappy.Common\Services\CacheChangeListener.cs">
+      <Link>Services\CacheChangeListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Services\EntityCache.cs">
+      <Link>Services\EntityCache.cs</Link>
+    </Compile>
     <Compile Include="..\Mappy.Common\Services\EntityFilter.cs">
       <Link>Services\EntityFilter.cs</Link>
     </Compile>
@@ -72,14 +77,20 @@
     <Compile Include="..\Mappy.Common\Services\Options.cs">
       <Link>Services\Options.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
-      <Link>ViewModels\MapViewModel.cs</Link>
+    <Compile Include="..\Mappy.Common\Services\ViewportFilter.cs">
+      <Link>Services\ViewportFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\IconType.cs">
+      <Link>Types\IconType.cs</Link>
     </Compile>
     <Compile Include="..\Mappy.Common\Types\ZoomPair.cs">
       <Link>Types\ZoomPair.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Types\IconType.cs">
-      <Link>Types\IconType.cs</Link>
+    <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
+      <Link>ViewModels\MapViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\MarkerType.cs">
+      <Link>Types\MarkerType.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -92,7 +103,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Types\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>

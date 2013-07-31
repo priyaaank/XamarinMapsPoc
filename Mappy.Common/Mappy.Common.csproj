@@ -49,6 +49,10 @@
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="Types\ZoomPair.cs" />
     <Compile Include="Types\IconType.cs" />
+    <Compile Include="Services\CacheChangeListener.cs" />
+    <Compile Include="Services\EntityCache.cs" />
+    <Compile Include="Services\ViewportFilter.cs" />
+    <Compile Include="Types\MarkerType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

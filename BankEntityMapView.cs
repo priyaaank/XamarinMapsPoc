@@ -20,7 +20,7 @@ using Android.Gms.Common;
 
 namespace Mappy
 {
-	public class BankEntityMapView : SupportMapFragment
+	public class BankEntityMapView : SupportMapFragment, CacheChangeListener
 	{
 		MapViewModel ViewModel;
 
@@ -44,10 +44,11 @@ namespace Mappy
 		void InitializeMap ()
 		{
 			if (this.Map != null) {
-				//this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
+				this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				ConfigureMapUiSettings ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				FlyDownToMyLocation ();
+				UpdateClosestEntityMarker ();
 			}
 		}
 
@@ -61,16 +62,27 @@ namespace Mappy
 		{
 			if(this.Map.MyLocation != null)
 			{
-				LatLng myLocation = new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude); 
-				CameraPosition position = new CameraPosition.Builder ().Target (myLocation).Zoom (MapViewModel.DEFAULT_ZOOM_LEVEL).Build();
-				CameraUpdate camUpdate = CameraUpdateFactory.NewCameraPosition(position);
+				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (GetMyLocation (), MapViewModel.DEFAULT_ZOOM_LEVEL);
 				this.Map.AnimateCamera (camUpdate);
 			}
 		}
 
-		public void UpdateMap (Options userSelection)
+		public override void OnResume()
 		{
-			var zoomLevel = this.Map.CameraPosition.Zoom;
+			base.OnResume ();
+			ViewModel.Register (this);
+		}
+
+
+		public override void OnPause()
+		{
+			base.OnPause ();
+			ViewModel.Deregister (this);
+		}
+
+		public async void UpdateMap (Options userSelection)
+		{
+			var zoomLevel = CurrentZoomLevel;
 			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = zoomLevel.ToString();
 
 			if (ViewModel.ShouldIconChange (CurrentZoomLevel)) {
@@ -78,7 +90,8 @@ namespace Mappy
 			} 
 			if (zoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				ShowEntitiesOnMap (coordinates, userSelection);
+				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 300);
+				FetchAndUpdate ();
 			} else {
 				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
@@ -89,36 +102,23 @@ namespace Mappy
 		//Currently behaves a lot better just by clearing hte app. Otherwise locations stack. Maybe better to reenable this when service is better.
 		private void UpdateMapBasedOnZoomThreshold ()
 		{
-			this.Map.Clear ();
-//			EntityMarker.IconType icon = IconForCurrentZoomLevel ();
-//			if (icon != EntityMarker.IconType.None) {
-//				foreach (EntityMarker location in LocationsPlottedOnMap) {
-//					location.ChangeIcon (icon);
-//					location.AddMarkerTo (this.Map);
-//				}
-//			}
+			//this.Map.Clear ();
+			IconType icon = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
+			if (icon != IconType.None) {
+				foreach (EntityMarker location in LocationsPlottedOnMap) {
+					location.UpdateIcon (icon);
+					//location.AddMarkerTo (this.Map);
+				}
+			}
 		}
 
 		public void ResetMap()
 		{
 			this.Map.Clear ();
+			this.LocationsPlottedOnMap.Clear ();
 		}
 
-		async void ShowEntitiesOnMap (LatLng coordinates, Options userSelection)
-		{
-			List<BankEntity> bankEntities = await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, userSelection);
-
-			var iconSize = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
-			if(iconSize == IconType.None) return;
-
-			foreach (BankEntity aEntity in bankEntities) {
-				var marker = new EntityMarker(aEntity, iconSize, new LatLng(aEntity.Latitude, aEntity.Longitude));
-				marker.AddMarkerTo(this.Map);
-				LocationsPlottedOnMap.Add(marker);
-			}
-		}
-
-		void ConfigureMapUiSettings ()
+		private void ConfigureMapUiSettings ()
 		{
 			this.Map.MapType = GoogleMap.MapTypeNormal;
 			this.Map.MyLocationEnabled = true;
@@ -130,10 +130,64 @@ namespace Mappy
 			mapUISettings.SetAllGesturesEnabled (true);
 		}
 
-		float CurrentZoomLevel {
+		private float CurrentZoomLevel {
 			get {
 				return this.Map.CameraPosition.Zoom;
 			}
+		}
+
+		private LatLng GetMyLocation ()
+       	{
+	       return new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude);
+       	}
+
+		private void UpdateClosestEntityMarker ()
+		{
+//			if (this.Map.MyLocation != null) {
+//				var allEntities = EntitiesService.fetch (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude, 1, (this.Activity as BankEntityLocator).UserSelection);
+//				if (allEntities != null && allEntities.Count > 0) {
+//					if(ClosestBankEntityMarker != null) ClosestBankEntityMarker.ResetIconFromClosest (IconForCurrentZoomLevel ());
+//					BankEntity closestBankEntity = allEntities.First ();
+//					ClosestBankEntityMarker = new EntityMarker (closestBankEntity, EntityMarker.IconType.Closest, EntityMarker.MarkerType.Nearest);
+//					ClosestBankEntityMarker.AddMarkerTo (this.Map);
+//				}
+//			}
+		}
+
+		public void FetchAndUpdate()
+		{
+			BankEntityLocator parentActivity = this.Activity as BankEntityLocator;
+			parentActivity.RunOnUiThread (() => {
+				LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
+				List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), parentActivity.UserSelection);
+
+				UpdateViewWithEntities (entities);
+			});
+		}
+
+		void UpdateViewWithEntities (List<BankEntity> entities)
+		{
+			var iconType = ViewModel.IconForCurrentZoomLevel(CurrentZoomLevel);
+			if(iconType == IconType.None) return;
+
+			List<BankEntity> plottedEntities = new List<BankEntity>();
+
+			foreach (EntityMarker marker in LocationsPlottedOnMap) {
+				plottedEntities.Add (marker.Entity);
+			}
+
+			var entitiesToPlot = entities.Except (plottedEntities);
+
+			foreach (BankEntity aEntity in entitiesToPlot) {
+				var marker = new EntityMarker (aEntity, iconType);
+				marker.AddMarkerTo(this.Map);
+				LocationsPlottedOnMap.Add(marker);
+			}
+		}
+
+		public void UserLocationUpdated ()
+		{
+			UpdateClosestEntityMarker ();
 		}
 	}
 }
