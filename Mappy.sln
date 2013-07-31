@@ -136,6 +136,6 @@ Global
 		{F075D359-E576-4B51-BA59-4F18C1A4473A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Mappy.iOS\Mappy.iOS.csproj
+		StartupItem = Mappy.csproj
 	EndGlobalSection
 EndGlobal

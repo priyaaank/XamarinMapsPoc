@@ -8,9 +8,9 @@ namespace Mappy.Common
 	{
 		public BankEntitiesService EntitiesService;
 
-		public static readonly float MAX_SUPPORTED_ZOOM_LEVEL = 3.5f;
-		public static readonly float MICRO_TO_SMALL_THRESHOLD_ZOOM_LEVEL = 14.0f;
-		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 17.0f;
+		public static readonly float MAX_SUPPORTED_ZOOM_LEVEL = 10.0f;
+		public static readonly float MICRO_TO_SMALL_THRESHOLD_ZOOM_LEVEL = 12.0f;
+		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 16.0f;
 		public static readonly float DEFAULT_ZOOM_LEVEL = 15.0f;
 
 		public float LastZoomLevel { get; set; }

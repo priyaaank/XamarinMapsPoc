@@ -57,10 +57,17 @@ namespace Mappy
 
 		public void UpdateIcon(IconType iconType)
 		{
-			var icon = (iconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
-			MarkerOptions.InvokeIcon (icon);
-			if (Marker != null)
-				Marker.SetIcon (icon);
+			if (iconType == IconType.None && Marker != null)
+				Marker.Visible = false;
+			else {
+				var icon = (iconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
+				MarkerOptions.InvokeIcon (icon);
+
+				if (Marker != null) {
+					Marker.Visible = true;
+					Marker.SetIcon (icon);
+				}
+			}
 		}
 
 		public bool IsNearestToUser()

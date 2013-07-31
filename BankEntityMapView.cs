@@ -44,7 +44,7 @@ namespace Mappy
 		void InitializeMap ()
 		{
 			if (this.Map != null) {
-				//this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
+				this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				ConfigureMapUiSettings ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				FlyDownToMyLocation ();
@@ -102,10 +102,8 @@ namespace Mappy
 		private void UpdateMapBasedOnZoomThreshold ()
 		{
 			IconType icon = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
-			if (icon != IconType.None) {
-				foreach (EntityMarker location in LocationsPlottedOnMap) {
-					location.UpdateIcon (icon);				}
-			}
+			foreach (EntityMarker location in LocationsPlottedOnMap)
+				location.UpdateIcon (icon);
 		}
 
 		public void ResetMap()
@@ -168,11 +166,13 @@ namespace Mappy
 			List<BankEntity> plottedEntities = (from marker in LocationsPlottedOnMap select marker.Entity).ToList ();
 			var entitiesToPlot = entities.Except (plottedEntities);
 
-			foreach (BankEntity aEntity in entitiesToPlot) {
-				var marker = new EntityMarker (aEntity, iconType);
-				marker.AddMarkerTo(this.Map);
-				LocationsPlottedOnMap.Add(marker);
-			}
+			Activity.RunOnUiThread (() => {
+				foreach (BankEntity aEntity in entitiesToPlot) {
+					var marker = new EntityMarker (aEntity, iconType);
+					marker.AddMarkerTo (this.Map);
+					LocationsPlottedOnMap.Add (marker);
+				}
+			});
 		}
 
 		public void UserLocationUpdated ()
