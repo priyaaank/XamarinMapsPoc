@@ -82,15 +82,14 @@ namespace Mappy
 
 		public async void UpdateMap (Options userSelection)
 		{
-			var zoomLevel = CurrentZoomLevel;
-			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = zoomLevel.ToString();
+			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = CurrentZoomLevel.ToString();
 
 			if (ViewModel.ShouldIconChange (CurrentZoomLevel)) {
 				UpdateMapBasedOnZoomThreshold ();
 			} 
-			if (zoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
+			if (CurrentZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 300);
+				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 1000);
 				FetchAndUpdate ();
 			} else {
 				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
@@ -102,13 +101,10 @@ namespace Mappy
 		//Currently behaves a lot better just by clearing hte app. Otherwise locations stack. Maybe better to reenable this when service is better.
 		private void UpdateMapBasedOnZoomThreshold ()
 		{
-			//this.Map.Clear ();
 			IconType icon = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
 			if (icon != IconType.None) {
 				foreach (EntityMarker location in LocationsPlottedOnMap) {
-					location.UpdateIcon (icon);
-					//location.AddMarkerTo (this.Map);
-				}
+					location.UpdateIcon (icon);				}
 			}
 		}
 
@@ -156,10 +152,9 @@ namespace Mappy
 
 		public void FetchAndUpdate()
 		{
-			BankEntityLocator parentActivity = this.Activity as BankEntityLocator;
-			parentActivity.RunOnUiThread (() => {
+			Activity.RunOnUiThread (() => {
 				LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
-				List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), parentActivity.UserSelection);
+				List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as BankEntityLocator).UserSelection);
 
 				UpdateViewWithEntities (entities);
 			});

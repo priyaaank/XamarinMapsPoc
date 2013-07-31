@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace Mappy
 {
-	public interface ViewportFilter
+	public interface IViewportFilter
 	{
 		List<BankEntity> FilteredList (IEnumerable<BankEntity> unfilteredList);
 	}

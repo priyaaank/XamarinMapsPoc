@@ -8,8 +8,10 @@ namespace Mappy
 {
 	public class BankEntitiesService
 	{
+
+		//private static readonly string SERVICE_URI = "http://servicelocatorsuncorpbankdev.int.corp.sun/api/locate?lng={0}&lat={1}&results={2}&RadiusKm=500&checkboxes=ATM,Branch";
 		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results={2}&checkboxes=ATM,Branch";
-//		private List<EntityFilter> Filters;
+	//		private List<EntityFilter> Filters;
 		private static BankEntitiesService SingleInstance = new BankEntitiesService();
 		private EntityCache LocalEntityCache;
 
@@ -78,7 +80,7 @@ namespace Mappy
 			LocalEntityCache.AddAll (bankEntityList);
 		}
 
-		public List<BankEntity> Fetch(ViewportFilter filter, Options filterOptions)
+		public List<BankEntity> Fetch(IViewportFilter filter, Options filterOptions)
 		{
 			var filteredEntities = LocalEntityCache.FilteredEntities (filter);
 

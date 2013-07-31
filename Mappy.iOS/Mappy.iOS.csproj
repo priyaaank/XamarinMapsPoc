@@ -99,6 +99,8 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Mappy_iOSViewController.cs" />
+    <Compile Include="EntityMarker.cs" />
+    <Compile Include="iOSViewportFilter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

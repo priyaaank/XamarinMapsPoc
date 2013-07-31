@@ -13,10 +13,11 @@ namespace Mappy.iOS
 {
 	public partial class Mappy_iOSViewController : UIViewController
 	{
+		List<EntityMarker> LocationsPlottedOnMap;
 		UIBarButtonItem OptionsButton;
 		MapView MapView;
 		MapViewModel ViewModel;
-		List<Marker> Markers;
+		List<EntityMarker> Markers;
 		Options MapOptions;
 
 		const int AlertMarginX = 20;
@@ -30,6 +31,7 @@ namespace Mappy.iOS
 			ViewModel = new MapViewModel ();
 			Markers = new List<Marker> ();
 			MapOptions = new Options (true, true, true);
+			LocationsPlottedOnMap = new List<EntityMarker>();
 		}
 
 		public override void ViewDidLoad ()
@@ -80,7 +82,7 @@ namespace Mappy.iOS
 			okButton.TouchUpInside += (object sender, EventArgs e) => {
 				MapOptions = new Options(atmsCheckbox.Selected, branchesCheckbox.Selected, partnerCheckbox.Selected);
 				alert.RemoveFromSuperview();
-				ShowEntitiesOnMap();
+				UpdateMap();
 			};
 			alert.AddSubview (okButton);
 
@@ -110,14 +112,14 @@ namespace Mappy.iOS
 			base.ViewWillAppear (animated);
 			MapView.StartRendering ();
 			LoadMap ();
-			//MapView.CameraPositionChanged += (sender, e) => ShowEntitiesOnMap();
-			//MapView.RegionChanged += (sender, e) => ShowEntitiesOnMap ();
+			StartPanToUserLocation ();
+			MapView.CameraPositionChanged += (sender, e) => UpdateMap();
 		}
 
 		async void LoadMap ()
 		{
 			await Task.Delay (4000);
-			ShowEntitiesOnMap ();
+			UpdateMap ();
 		}
 
 		public override void ViewDidDisappear (bool animated)
@@ -126,7 +128,7 @@ namespace Mappy.iOS
 			MapView.StopRendering ();
 		}
 
-		void GetLocation ()
+		void StartPanToUserLocation ()
 		{
 			var locationManager = new CLLocationManager ();
 			locationManager.LocationsUpdated += (object sender, CLLocationsUpdatedEventArgs e) => {
@@ -134,33 +136,73 @@ namespace Mappy.iOS
 				MapView.Camera = new CameraPosition(coordinate, MapViewModel.DEFAULT_ZOOM_LEVEL, 0.0d, 0.0d);
 				locationManager.StopUpdatingLocation();
 			};
-			locationManager.StartUpdatingLocation ();
 		}
 
-		async void ShowEntitiesOnMap ()
+		async void UpdateMap ()
 		{
-			MapView.Clear ();
-			var entities = await ViewModel.FetchEntitiesAsync (MapView.Camera.Target.Latitude, MapView.Camera.Target.Longitude, MapOptions);
-			foreach (var entity in entities) {
-				var marker = new Marker () {
-					Position = new CLLocationCoordinate2D(entity.Latitude, entity.Longitude),
-					Title = entity.Name,
-					Map = MapView
-				};
-				Markers.Add (marker);
+			if (ViewModel.ShouldIconChange (CurrentZoomLevel)) {
+				UpdateMapBasedOnZoomThreshold ();
+			} 
+			if (CurrentZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
+				var coordinates = MapView.Camera.Target;
+				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 100);
+				FetchAndUpdate ();
+			} else {
+				//Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
+			}
+
+			ViewModel.LastZoomLevel = CurrentZoomLevel;
+		}
+
+		void FetchAndUpdate ()
+		{
+			InvokeOnMainThread (() => {
+				var mapBounds = MapView.Projection.VisibleRegion;
+				List<BankEntity> entities = ViewModel.Fetch (new iOSViewportFilter (mapBounds), MapOptions);
+
+				UpdateViewWithEntities (entities);
+			});
+
+		}
+
+		void UpdateMapBasedOnZoomThreshold ()
+		{
+			IconType icon = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
+			if (icon != IconType.None) {
+				foreach (EntityMarker location in LocationsPlottedOnMap)
+					location.UpdateIcon (icon);
 			}
 		}
+
+		void UpdateViewWithEntities (List<BankEntity> entities)
+		{
+			throw new NotImplementedException ();
+		}
+
+//		async void ShowEntitiesOnMap ()
+//		{
+//			MapView.Clear ();
+//			var entities = await ViewModel.FetchEntitiesAsync (MapView.Camera.Target.Latitude, MapView.Camera.Target.Longitude, MapOptions);
+//			foreach (var entity in entities) {
+//				var marker = new Marker () {
+//					Position = new CLLocationCoordinate2D(entity.Latitude, entity.Longitude),
+//					Title = entity.Name,
+//					Map = MapView
+//				};
+//				Markers.Add (marker);
+//			}
+//		}
 
 
 		void CenterOnUser()
 		{
 		}
 
-		public override void ViewDidAppear (bool animated)
-		{
-			GetLocation ();
+		float CurrentZoomLevel {
+			get {
+				return MapView.Camera.Zoom;
+			}
 		}
-
 	}
 }
 

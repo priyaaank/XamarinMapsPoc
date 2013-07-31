@@ -13,7 +13,7 @@ using System.Collections;
 
 namespace Mappy
 {
-	class AndroidViewportFilter : ViewportFilter
+	class AndroidViewportFilter : IViewportFilter
 	{
 
 		private LatLngBounds viewportBounds;

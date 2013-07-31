@@ -27,9 +27,9 @@ namespace Mappy.Common
 			EntitiesService = BankEntitiesService.Instance ();
 		}
 
-		public async Task FetchEntitiesAsync(double latitude, double longitude, int noOfRecords)
+		public Task FetchEntitiesAsync(double latitude, double longitude, int noOfRecords)
 		{
-			await Task.Factory.StartNew(()=>EntitiesService.QueueServiceRequest (latitude, longitude, noOfRecords));
+			return Task.Factory.StartNew(()=>EntitiesService.QueueServiceRequest (latitude, longitude, noOfRecords));
 		}
 
 		public void Deregister (CacheChangeListener listener)
@@ -42,7 +42,7 @@ namespace Mappy.Common
 			EntitiesService.Register (listener);
 		}
 
-		public List<BankEntity> Fetch (ViewportFilter viewportFilter, Options userSelection)
+		public List<BankEntity> Fetch (IViewportFilter viewportFilter, Options userSelection)
 		{
 			return EntitiesService.Fetch (viewportFilter, userSelection);
 		}

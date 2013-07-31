@@ -41,18 +41,18 @@
     <Compile Include="Models\BankEntity.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Services\BankEntitiesService.cs" />
-    <Compile Include="Services\EntityFilter.cs" />
-    <Compile Include="Services\ExcludeOwnAtmsFilter.cs" />
-    <Compile Include="Services\ExcludeOwnBranchesFilter.cs" />
-    <Compile Include="Services\ExcludePartnerEstablishmentsFilter.cs" />
-    <Compile Include="Services\Options.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="Types\ZoomPair.cs" />
     <Compile Include="Types\IconType.cs" />
-    <Compile Include="Services\CacheChangeListener.cs" />
-    <Compile Include="Services\EntityCache.cs" />
-    <Compile Include="Services\ViewportFilter.cs" />
     <Compile Include="Types\MarkerType.cs" />
+    <Compile Include="Types\IViewportFilter.cs" />
+    <Compile Include="Types\CacheChangeListener.cs" />
+    <Compile Include="Types\EntityCache.cs" />
+    <Compile Include="Types\EntityFilter.cs" />
+    <Compile Include="Types\ExcludeOwnAtmsFilter.cs" />
+    <Compile Include="Types\ExcludeOwnBranchesFilter.cs" />
+    <Compile Include="Types\ExcludePartnerEstablishmentsFilter.cs" />
+    <Compile Include="Types\Options.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

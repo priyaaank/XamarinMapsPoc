@@ -14,6 +14,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AssemblyName>Mappy.Common.Android</AssemblyName>
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,44 +54,44 @@
     <Compile Include="..\Mappy.Common\Models\Branch.cs">
       <Link>Models\Branch.cs</Link>
     </Compile>
+    <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
+      <Link>ViewModels\MapViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\Mappy.Common\Services\BankEntitiesService.cs">
       <Link>Services\BankEntitiesService.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\CacheChangeListener.cs">
-      <Link>Services\CacheChangeListener.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\CacheChangeListener.cs">
+      <Link>Types\CacheChangeListener.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\EntityCache.cs">
-      <Link>Services\EntityCache.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\EntityCache.cs">
+      <Link>Types\EntityCache.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\EntityFilter.cs">
-      <Link>Services\EntityFilter.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\EntityFilter.cs">
+      <Link>Types\EntityFilter.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\ExcludeOwnAtmsFilter.cs">
-      <Link>Services\ExcludeOwnAtmsFilter.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\ExcludeOwnAtmsFilter.cs">
+      <Link>Types\ExcludeOwnAtmsFilter.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\ExcludeOwnBranchesFilter.cs">
-      <Link>Services\ExcludeOwnBranchesFilter.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\ExcludeOwnBranchesFilter.cs">
+      <Link>Types\ExcludeOwnBranchesFilter.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\ExcludePartnerEstablishmentsFilter.cs">
-      <Link>Services\ExcludePartnerEstablishmentsFilter.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\ExcludePartnerEstablishmentsFilter.cs">
+      <Link>Types\ExcludePartnerEstablishmentsFilter.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Services\Options.cs">
-      <Link>Services\Options.cs</Link>
-    </Compile>
-    <Compile Include="..\Mappy.Common\Services\ViewportFilter.cs">
-      <Link>Services\ViewportFilter.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\IViewportFilter.cs">
+      <Link>Types\IViewportFilter.cs</Link>
     </Compile>
     <Compile Include="..\Mappy.Common\Types\IconType.cs">
       <Link>Types\IconType.cs</Link>
     </Compile>
-    <Compile Include="..\Mappy.Common\Types\ZoomPair.cs">
-      <Link>Types\ZoomPair.cs</Link>
-    </Compile>
-    <Compile Include="..\Mappy.Common\ViewModels\MapViewModel.cs">
-      <Link>ViewModels\MapViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\Mappy.Common\Types\MarkerType.cs">
       <Link>Types\MarkerType.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\Options.cs">
+      <Link>Types\Options.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\ZoomPair.cs">
+      <Link>Types\ZoomPair.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -102,8 +103,8 @@
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
     <Folder Include="Types\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>
