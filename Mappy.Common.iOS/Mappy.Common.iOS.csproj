@@ -103,5 +103,14 @@
     <Compile Include="..\Mappy.Common\Services\BankEntitiesService.cs">
       <Link>Services\BankEntitiesService.cs</Link>
     </Compile>
+    <Compile Include="..\Mappy.Common\Types\IJsonClient.cs">
+      <Link>Types\IJsonClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\JsonClientImpl.cs">
+      <Link>Types\JsonClientImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Models\LocatorResponseItem.cs">
+      <Link>Models\LocatorResponseItem.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>

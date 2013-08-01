@@ -76,6 +76,12 @@
     <AndroidResource Include="Resources\drawable\branch_medium.png" />
     <AndroidResource Include="Resources\drawable\atm_micro.png" />
     <AndroidResource Include="Resources\drawable\branch_micro.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\atm_medium.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\atm_micro.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\atm_small.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\branch_medium.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\branch_micro.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\branch_small.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -87,5 +93,8 @@
       <Project>{88C87C3E-DBB8-4BFC-B30A-73EAE06F2540}</Project>
       <Name>Mappy.Common.Android</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-xhdpi\" />
   </ItemGroup>
 </Project>

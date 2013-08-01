@@ -53,6 +53,9 @@
     <Compile Include="Types\ExcludeOwnBranchesFilter.cs" />
     <Compile Include="Types\ExcludePartnerEstablishmentsFilter.cs" />
     <Compile Include="Types\Options.cs" />
+    <Compile Include="Types\IJsonClient.cs" />
+    <Compile Include="Types\JsonClientImpl.cs" />
+    <Compile Include="Models\LocatorResponseItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
@@ -60,6 +63,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Json">
       <HintPath>..\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\gac\android\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\gac\android\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\gac\android\ServiceStack.Text.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

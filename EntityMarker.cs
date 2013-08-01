@@ -17,22 +17,27 @@ namespace Mappy
 {
 	public class EntityMarker
 	{
-		private static readonly Dictionary<IconType, int> AtmIcons = new Dictionary<IconType, int> {
-			{ IconType.Micro, Resource.Drawable.atm_micro },
-			{ IconType.Small, Resource.Drawable.atm_small },
-			{ IconType.Medium, Resource.Drawable.atm_medium }
-		};
-
-		private static readonly Dictionary<IconType, int> BranchIcons = new Dictionary<IconType, int>{
-			{ IconType.Micro, Resource.Drawable.branch_micro },
-			{ IconType.Small, Resource.Drawable.branch_small },
-			{ IconType.Medium, Resource.Drawable.branch_medium }
+		static readonly Dictionary<BankEntity.Type, Dictionary<IconType, int>> Icons = new Dictionary<BankEntity.Type, Dictionary<IconType, int>> {
+			{BankEntity.Type.Atm,
+				new Dictionary<IconType, int> {
+					{ IconType.Micro, Resource.Drawable.atm_micro},
+					{ IconType.Small,  Resource.Drawable.atm_small},
+					{ IconType.Medium,  Resource.Drawable.atm_medium}
+				}
+			}, {BankEntity.Type.Branch,
+				new Dictionary<IconType, int> {
+					{ IconType.Micro, Resource.Drawable.branch_micro},
+					{ IconType.Small, Resource.Drawable.branch_small},
+					{ IconType.Medium, Resource.Drawable.branch_medium}
+				}
+			}
 		};
 
 		private MarkerOptions MarkerOptions;
 		private Marker Marker;
 		public BankEntity Entity {get; set;}
 		private MarkerType Type;
+		private IconType iconType;
 
 		public EntityMarker(BankEntity entity, IconType iconType)
 		{
@@ -40,14 +45,14 @@ namespace Mappy
 			this.MarkerOptions = new MarkerOptions ();
 			this.MarkerOptions.SetTitle (entity.Description());
 			this.MarkerOptions.SetPosition (new LatLng(entity.Latitude, entity.Longitude));
-			this.UpdateIcon (iconType);
 			this.Type = MarkerType.Regular;
+			IconType = iconType;
 		}
 
 		public EntityMarker(BankEntity entity, IconType iconType, MarkerType markerType) : this(entity, iconType)
 		{
 			this.Type = markerType;
-			this.UpdateIcon (IconType.Closest);
+			IconType = IconType.Closest;
 		}
 
 		public void AddMarkerTo(GoogleMap map)
@@ -55,12 +60,24 @@ namespace Mappy
 			Marker = map.AddMarker (this.MarkerOptions);
 		}
 
-		public void UpdateIcon(IconType iconType)
+		public IconType IconType {
+			get {
+				return iconType;
+			}
+			set {
+				iconType = value;
+				UpdateIconFromType();
+			}
+		}
+
+		void UpdateIconFromType ()
 		{
-			if (iconType == IconType.None && Marker != null)
-				Marker.Visible = false;
-			else {
-				var icon = (iconType == IconType.Closest) ? BitmapDescriptorFactory.DefaultMarker() : BitmapDescriptorFactory.FromResource(EntityIconForZoomLevel(iconType));
+			if (iconType == IconType.None) {
+				MarkerOptions.Visible (false);
+				if (Marker != null)
+					Marker.Visible = false;
+			} else {
+				var icon = EntityIconForIconType;
 				MarkerOptions.InvokeIcon (icon);
 
 				if (Marker != null) {
@@ -75,14 +92,14 @@ namespace Mappy
 			return this.Type == MarkerType.Nearest;
 		}
 
-		public void ResetIconFromClosest (IconType iconType)
+		BitmapDescriptor EntityIconForIconType
 		{
-			UpdateIcon (iconType);
-		}
-
-		private int EntityIconForZoomLevel (IconType changeIconTo)
-		{
-			return Entity.IsAtm () ? AtmIcons[changeIconTo] : BranchIcons[changeIconTo];
+			get {
+				if (IconType == IconType.Closest)
+					return BitmapDescriptorFactory.DefaultMarker ();
+				else
+					return BitmapDescriptorFactory.FromResource(Icons [Entity.EntityType] [IconType]);
+			}
 		}
 	}
 }

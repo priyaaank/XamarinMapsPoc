@@ -39,6 +39,13 @@ namespace Mappy
 		{
 			base.OnViewCreated (view, savedInstanceState);
 			InitializeMap ();
+			ViewModel.IconTypeChanged += UpdateIcons;
+		}
+
+		public override void OnDestroyView ()
+		{
+			base.OnDestroyView ();
+			ViewModel.IconTypeChanged -= UpdateIcons;
 		}
 
 		void InitializeMap ()
@@ -82,28 +89,20 @@ namespace Mappy
 
 		public async void UpdateMap (Options userSelection)
 		{
-			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = CurrentZoomLevel.ToString();
+			ViewModel.ZoomLevel = Map.CameraPosition.Zoom;
+			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = ViewModel.ZoomLevel.ToString();
 
-			if (ViewModel.ShouldIconChange (CurrentZoomLevel)) {
-				UpdateMapBasedOnZoomThreshold ();
-			} 
-			if (CurrentZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
+			if (ViewModel.ZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
 				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 1000);
 				FetchAndUpdate ();
-			} else {
-				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
-
-			ViewModel.LastZoomLevel = CurrentZoomLevel;
 		}
 
-		//Currently behaves a lot better just by clearing hte app. Otherwise locations stack. Maybe better to reenable this when service is better.
-		private void UpdateMapBasedOnZoomThreshold ()
+		void UpdateIcons (object sender, EventArgs e)
 		{
-			IconType icon = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
 			foreach (EntityMarker location in LocationsPlottedOnMap)
-				location.UpdateIcon (icon);
+				location.IconType = ViewModel.IconType;
 		}
 
 		public void ResetMap()
@@ -122,12 +121,6 @@ namespace Mappy
 			mapUISettings.ZoomControlsEnabled = false;
 			mapUISettings.ScrollGesturesEnabled = true;
 			mapUISettings.SetAllGesturesEnabled (true);
-		}
-
-		private float CurrentZoomLevel {
-			get {
-				return this.Map.CameraPosition.Zoom;
-			}
 		}
 
 		private LatLng GetMyLocation ()
@@ -150,25 +143,26 @@ namespace Mappy
 
 		public void FetchAndUpdate()
 		{
-			Activity.RunOnUiThread (() => {
-				LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
-				List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as BankEntityLocator).UserSelection);
+			if (Activity != null) {
+				Activity.RunOnUiThread (() => {
+					LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
+					List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as BankEntityLocator).UserSelection);
 
-				UpdateViewWithEntities (entities);
-			});
+					UpdateViewWithEntities (entities);
+				});
+			}
 		}
 
 		void UpdateViewWithEntities (List<BankEntity> entities)
 		{
-			var iconType = ViewModel.IconForCurrentZoomLevel(CurrentZoomLevel);
-			if(iconType == IconType.None) return;
+		//	if(iconType == IconType.None) return;
 
 			List<BankEntity> plottedEntities = (from marker in LocationsPlottedOnMap select marker.Entity).ToList ();
 			var entitiesToPlot = entities.Except (plottedEntities);
 
 			Activity.RunOnUiThread (() => {
 				foreach (BankEntity aEntity in entitiesToPlot) {
-					var marker = new EntityMarker (aEntity, iconType);
+					var marker = new EntityMarker (aEntity, ViewModel.IconType);
 					marker.AddMarkerTo (this.Map);
 					LocationsPlottedOnMap.Add (marker);
 				}

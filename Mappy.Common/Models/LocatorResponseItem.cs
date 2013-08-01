@@ -2,7 +2,7 @@ using System;
 
 namespace Mappy.Common
 {
-	public class LocatorItem
+	public class LocatorResponseItem
 	{
 		//ATM specific
 		public int ATMId { get; set; }
@@ -23,6 +23,7 @@ namespace Mappy.Common
 		public string SundayHours {get; set; }
 
 		//Common fields
+		public int LocationId {get; set;}
 		public string LocationType { get; set; }
 		public string Street1 { get; set; }
 		public string Street2 { get; set; }
@@ -30,12 +31,13 @@ namespace Mappy.Common
 		public string Suburb { get; set; }
 		public string State { get; set; }
 		public string Postcode { get; set; }
-		public float Latitude { get; set; }
-		public float Distance { get; set; }
+		public double Latitude { get; set; }
+		public double Longitude { get; set; }
+		public double Distance { get; set; }
 
 
 
-		public LocatorItem ()
+		public LocatorResponseItem ()
 		{
 		}
 	}

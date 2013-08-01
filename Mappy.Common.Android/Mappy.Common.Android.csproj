@@ -42,6 +42,15 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Json" />
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\gac\android\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\gac\android\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\gac\android\ServiceStack.Text.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -92,6 +101,15 @@
     </Compile>
     <Compile Include="..\Mappy.Common\Types\ZoomPair.cs">
       <Link>Types\ZoomPair.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\IJsonClient.cs">
+      <Link>Types\IJsonClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Types\JsonClientImpl.cs">
+      <Link>Types\JsonClientImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\Mappy.Common\Models\LocatorResponseItem.cs">
+      <Link>Models\LocatorResponseItem.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

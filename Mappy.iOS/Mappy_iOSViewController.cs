@@ -21,6 +21,7 @@ namespace Mappy.iOS
 		MapViewModel ViewModel;
 		List<EntityMarker> Markers;
 		Options MapOptions;
+		MarkerBundle MarkerBundle;
 
 		const int AlertMarginX = 20;
 		const int AlertY = 60;
@@ -34,6 +35,7 @@ namespace Mappy.iOS
 			Markers = new List<EntityMarker> ();
 			MapOptions = new Options (true, true, true);
 			LocationsPlottedOnMap = new List<EntityMarker>();
+			MarkerBundle = new MarkerBundle ();
 		}
 
 		public override void ViewDidLoad ()
@@ -60,7 +62,6 @@ namespace Mappy.iOS
 
 		UIView BuildOptionsView ()
 		{
-
 			var screenWidth = UIScreen.MainScreen.Bounds.Width;
 
 			var alert = new UIView(new RectangleF(AlertMarginX, AlertY, screenWidth - 2*AlertMarginX, AlertHeight));
@@ -84,7 +85,7 @@ namespace Mappy.iOS
 			okButton.TouchUpInside += (object sender, EventArgs e) => {
 				MapOptions = new Options(atmsCheckbox.Selected, branchesCheckbox.Selected, partnerCheckbox.Selected);
 				alert.RemoveFromSuperview();
-				UpdateMap();
+				FetchAndUpdate();
 			};
 			alert.AddSubview (okButton);
 
@@ -114,20 +115,28 @@ namespace Mappy.iOS
 			base.ViewWillAppear (animated);
 			MapView.StartRendering ();
 			StartPanToUserLocation ();
+			MapView.CameraPositionChanged += (sender, e) => ViewModel.ZoomLevel = MapView.Camera.Zoom;;
 			MapView.CameraPositionChanged += (sender, e) => {
 				Console.Out.WriteLine ((DateTime.Now - LastMapUpdate).TotalSeconds);
 				if ((DateTime.Now - LastMapUpdate).TotalSeconds > 1.0d) {
 					LastMapUpdate = DateTime.Now;
-					Console.Out.WriteLine ("Updating map");
-					UpdateMap ();
+					UpdateLocations();
 				}
 			};
+			ViewModel.IconTypeChanged += UpdateMapIcons;
+		}
+
+		void UpdateMapIcons (object sender, EventArgs e)
+		{
+			foreach (EntityMarker location in LocationsPlottedOnMap)
+				location.IconType = ViewModel.IconType;
 		}
 
 		public override void ViewDidDisappear (bool animated)
 		{
 			base.ViewDidDisappear (animated);
 			MapView.StopRendering ();
+			ViewModel.IconTypeChanged += UpdateMapIcons;
 		}
 
 		void StartPanToUserLocation ()
@@ -140,20 +149,13 @@ namespace Mappy.iOS
 			};
 		}
 
-		async void UpdateMap ()
+		async void UpdateLocations()
 		{
-			if (ViewModel.ShouldIconChange (CurrentZoomLevel)) {
-				UpdateMapBasedOnZoomThreshold ();
-			} 
 			if (CurrentZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				var coordinates = MapView.Camera.Target;
 				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 100);
 				FetchAndUpdate ();
-			} else {
-				//Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
-
-			ViewModel.LastZoomLevel = CurrentZoomLevel;
 		}
 
 		void FetchAndUpdate ()
@@ -167,25 +169,15 @@ namespace Mappy.iOS
 
 		}
 
-		void UpdateMapBasedOnZoomThreshold ()
-		{
-			IconType icon = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
-			if (icon != IconType.None) {
-				foreach (EntityMarker location in LocationsPlottedOnMap)
-					location.UpdateIcon (icon);
-			}
-		}
-
 		void UpdateViewWithEntities (List<BankEntity> entities)
 		{
-			var iconType = ViewModel.IconForCurrentZoomLevel(CurrentZoomLevel);
-			if(iconType == IconType.None) return;
+			//if(iconType == IconType.None) return;
 
 			List<BankEntity> plottedEntities = (from marker in LocationsPlottedOnMap select marker.Entity).ToList ();
 			var entitiesToPlot = entities.Except (plottedEntities);
 
 			foreach (BankEntity aEntity in entitiesToPlot) {
-				var marker = new EntityMarker (aEntity, iconType);
+				var marker = new EntityMarker (aEntity, ViewModel.IconType, MarkerBundle);
 
 				marker.AddMarkerTo(MapView);
 				LocationsPlottedOnMap.Add(marker);

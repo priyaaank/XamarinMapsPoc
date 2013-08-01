@@ -1,8 +1,6 @@
 using System;
 using ServiceStack.ServiceClient.Web;
 using ServiceStack.Common.Web;
-using BankApp.Common.Lib.Domain;
-using BankApp.Common.Lib.Models;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 
@@ -30,7 +28,13 @@ namespace BankApp.Common.Lib
             client.GetAsync<T> ("", r => successCallback(r), (r, ex) => failureCallback(ex));
         }
 
-
+		public T DoGetRequestSync<T> (string url)
+		{
+			var client = new JsonServiceClient(url);
+			client.HttpMethod = HttpMethods.Get;
+			client.Timeout = TimeSpan.FromSeconds(TIMEOUT);
+			return client.Get<T> (url);
+		}
 
         public void DoPostRequest<Req, Res> (string url, Req request, Action<Req, Res> successCallback, Action<Req, Res, Exception> failureCallback)
         {

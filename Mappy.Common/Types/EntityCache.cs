@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections.Concurrent;
 using System.Collections;
 
-namespace Mappy
+namespace Mappy.Common
 {
 	class EntityCache
 	{

@@ -6,21 +6,49 @@ namespace Mappy.Common
 {
 	public class MapViewModel
 	{
+		public event EventHandler IconTypeChanged;
+
 		public BankEntitiesService EntitiesService;
 
 		public static readonly float MAX_SUPPORTED_ZOOM_LEVEL = 10.0f;
-		public static readonly float MICRO_TO_SMALL_THRESHOLD_ZOOM_LEVEL = 12.0f;
+		public static readonly float MICRO_TO_SMALL_THRESHOLD_ZOOM_LEVEL = 14.0f;
 		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 16.0f;
 		public static readonly float DEFAULT_ZOOM_LEVEL = 15.0f;
 
-		public float LastZoomLevel { get; set; }
+		//public float LastZoomLevel { get; set; }
 
 		static List<ZoomPair> ZoomPairs = new List<ZoomPair> () {
 			new ZoomPair(SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL, IconType.Medium),
 			new ZoomPair(MICRO_TO_SMALL_THRESHOLD_ZOOM_LEVEL, IconType.Small),
-			new ZoomPair(MAX_SUPPORTED_ZOOM_LEVEL, IconType.Micro)
+			new ZoomPair(MAX_SUPPORTED_ZOOM_LEVEL, IconType.Micro),
+			new ZoomPair(0.0f, IconType.None)
 
 		};
+
+		public float zoomLevel;
+
+		public float ZoomLevel {
+			get {
+				return zoomLevel;
+			}
+			set {
+				zoomLevel = value;
+				if (IconForCurrentZoomLevel != IconType)
+					IconType = IconForCurrentZoomLevel;
+			}
+		}
+
+		IconType iconType;
+		public IconType IconType {
+			get {
+				return iconType;
+			}
+			set {
+				iconType = value;
+				if (IconTypeChanged != null)
+					IconTypeChanged (this, null);
+			}
+		}
 
 		public MapViewModel ()
 		{
@@ -47,25 +75,17 @@ namespace Mappy.Common
 			return EntitiesService.Fetch (viewportFilter, userSelection);
 		}
 
-		public IconType IconForCurrentZoomLevel (float currentZoomLevel)
+		public IconType IconForCurrentZoomLevel
 		{
-			foreach (var zoomPair in ZoomPairs) {
-				if (currentZoomLevel >= zoomPair.ZoomLevel) {
-					return zoomPair.Icon;
+			get {
+				foreach (var zoomPair in ZoomPairs) {
+					if (ZoomLevel >= zoomPair.ZoomLevel) {
+						return zoomPair.Icon;
+					}
 				}
+
+				return IconType.None;
 			}
-
-			return IconType.None;
-		}
-
-		public bool ShouldIconChange (float currentZoomLevel) {
-			foreach (var zoomPair in ZoomPairs) {
-				if (LastZoomLevel < zoomPair.ZoomLevel && currentZoomLevel >= zoomPair.ZoomLevel
-				    || LastZoomLevel > zoomPair.ZoomLevel && currentZoomLevel <= zoomPair.ZoomLevel)
-					return true;
-			}
-
-			return false;
 		}
 	}
 }

@@ -101,6 +101,7 @@
     <Compile Include="Mappy_iOSViewController.cs" />
     <Compile Include="EntityMarker.cs" />
     <Compile Include="iOSViewportFilter.cs" />
+    <Compile Include="MarkerBundle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -115,5 +116,19 @@
       <Project>{F075D359-E576-4B51-BA59-4F18C1A4473A}</Project>
       <Name>Mappy.Common.iOS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="atm_medium.png" />
+    <BundleResource Include="atm_micro.png" />
+    <BundleResource Include="atm_small.png" />
+    <BundleResource Include="branch_medium.png" />
+    <BundleResource Include="branch_micro.png" />
+    <BundleResource Include="branch_small.png" />
+    <BundleResource Include="atm_medium%402x.png" />
+    <BundleResource Include="atm_micro%402x.png" />
+    <BundleResource Include="atm_small%402x.png" />
+    <BundleResource Include="branch_medium%402x.png" />
+    <BundleResource Include="branch_micro%402x.png" />
+    <BundleResource Include="branch_small%402x.png" />
   </ItemGroup>
 </Project>

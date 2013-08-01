@@ -9,6 +9,8 @@ namespace BankApp.Common.Lib
 
         void DoGetRequest<T> (string url, Action<T> successCallback, Action<Exception> failureCallback);
 
+		T DoGetRequestSync<T> (string url);
+
         void DoPostRequest<Req, Res> (string url, Req request, Action<Req, Res> successCallback, Action<Req, Res, Exception> failureCallback);
     }
 }
