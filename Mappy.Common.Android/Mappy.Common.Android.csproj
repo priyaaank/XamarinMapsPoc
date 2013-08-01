@@ -110,6 +110,8 @@
     </Compile>
     <Compile Include="..\Mappy.Common\Models\LocatorResponseItem.cs">
       <Link>Models\LocatorResponseItem.cs</Link>
+    <Compile Include="..\Mappy.Common\Types\SortedConcurrentDictionary.cs">
+      <Link>Types\SortedConcurrentDictionary.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -124,5 +126,11 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
     <Folder Include="Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mappy.Common\Mappy.Common.csproj">
+      <Project>{A7025ED5-B104-45CA-816B-1B0BCEFEFE33}</Project>
+      <Name>Mappy.Common</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

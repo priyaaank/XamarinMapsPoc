@@ -26,6 +26,8 @@ namespace Mappy
 
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
 
+		const int LocationBatchSize = 200;
+
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
 		}
@@ -94,15 +96,26 @@ namespace Mappy
 
 			if (ViewModel.ZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 1000);
 				FetchAndUpdate ();
+<<<<<<< HEAD
+=======
+				ViewModel.LastZoomLevel = CurrentZoomLevel;
+				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, LocationBatchSize);
+			} else {
+				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
+>>>>>>> 724cb2df8ccf04213d89cbd9934233e6cb37d041
 			}
 		}
 
 		void UpdateIcons (object sender, EventArgs e)
 		{
+<<<<<<< HEAD
 			foreach (EntityMarker location in LocationsPlottedOnMap)
 				location.IconType = ViewModel.IconType;
+=======
+			ResetMap ();
+			FetchAndUpdate ();
+>>>>>>> 724cb2df8ccf04213d89cbd9934233e6cb37d041
 		}
 
 		public void ResetMap()

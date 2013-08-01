@@ -7,11 +7,11 @@ using System.Collections;
 
 namespace Mappy.Common
 {
-	class EntityCache
+	public class EntityCache
 	{
-		private const int MaxQueueSize = 1000;
+		private const int MaxQueueSize = 5000;
 
-		private ConcurrentQueue<BankEntity> BankEntities = new ConcurrentQueue<BankEntity>();
+		private SortedConcurrentDictionary BankEntities = new SortedConcurrentDictionary(MaxQueueSize);
 		private BankEntitiesService Service;
 
 		public EntityCache(BankEntitiesService service)
@@ -21,41 +21,18 @@ namespace Mappy.Common
 
 		public List<BankEntity> FilteredEntities(IViewportFilter filter)
 		{
-			return filter.FilteredList (BankEntities as IEnumerable<BankEntity>);
+			return filter.FilteredList (BankEntities.GetListOfAllEntitities() as IEnumerable<BankEntity>);
 		}
 
 		public void AddAll(List<BankEntity> entities)
 		{
-			bool modificationsMade = false;
-			foreach (BankEntity entity in entities)
-			{
-				if (!BankEntities.Contains (entity)) {
-					modificationsMade = true;
-					BankEntities.Enqueue (entity);
-				}
-			}
 
-			RemoveStaleElements ();
-
-			if (modificationsMade) CacheUpdated ();
+			if (BankEntities.AddEntities(entities)) CacheUpdated ();
 		}
 
 		void CacheUpdated ()
 		{
 			Service.CacheUpdated ();
-		}
-
-		private void RemoveStaleElements ()
-		{
-			if (BankEntities.Count > MaxQueueSize)
-			{
-				BankEntity o = null;
-				var excessElementsCount = BankEntities.Count - MaxQueueSize;
-				for (int index = 0; index < excessElementsCount; index++)
-				{
-					BankEntities.TryDequeue (out o);
-				}
-			}
 		}
 	}
 }
