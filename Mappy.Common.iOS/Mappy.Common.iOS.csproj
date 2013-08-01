@@ -103,5 +103,14 @@
     <Compile Include="..\Mappy.Common\Services\BankEntitiesService.cs">
       <Link>Services\BankEntitiesService.cs</Link>
     </Compile>
+    <Compile Include="..\Mappy.Common\Types\SortedConcurrentDictionary.cs">
+      <Link>Types\SortedConcurrentDictionary.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mappy.Common\Mappy.Common.csproj">
+      <Project>{A7025ED5-B104-45CA-816B-1B0BCEFEFE33}</Project>
+      <Name>Mappy.Common</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

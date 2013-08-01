@@ -53,6 +53,7 @@
     <Compile Include="Types\ExcludeOwnBranchesFilter.cs" />
     <Compile Include="Types\ExcludePartnerEstablishmentsFilter.cs" />
     <Compile Include="Types\Options.cs" />
+    <Compile Include="Types\SortedConcurrentDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

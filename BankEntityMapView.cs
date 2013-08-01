@@ -26,6 +26,8 @@ namespace Mappy
 
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
 
+		const int LocationBatchSize = 200;
+
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
 		}
@@ -89,8 +91,9 @@ namespace Mappy
 			} 
 			if (CurrentZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, 1000);
 				FetchAndUpdate ();
+				ViewModel.LastZoomLevel = CurrentZoomLevel;
+				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, LocationBatchSize);
 			} else {
 				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
 			}
@@ -101,9 +104,8 @@ namespace Mappy
 		//Currently behaves a lot better just by clearing hte app. Otherwise locations stack. Maybe better to reenable this when service is better.
 		private void UpdateMapBasedOnZoomThreshold ()
 		{
-			IconType icon = ViewModel.IconForCurrentZoomLevel (CurrentZoomLevel);
-			foreach (EntityMarker location in LocationsPlottedOnMap)
-				location.UpdateIcon (icon);
+			ResetMap ();
+			FetchAndUpdate ();
 		}
 
 		public void ResetMap()
