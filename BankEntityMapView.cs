@@ -124,11 +124,6 @@ namespace Mappy
 			mapUISettings.SetAllGesturesEnabled (true);
 		}
 
-		private LatLng GetMyLocation ()
-       	{
-	       return new LatLng (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude);
-       	}
-
 		private void UpdateClosestEntityMarker ()
 		{
 //			if (this.Map.MyLocation != null) {
