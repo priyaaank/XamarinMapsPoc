@@ -8,8 +8,7 @@ namespace Mappy.Common
 	{
 
 		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/api/locate?Longitude={0}&Latitude={1}&RadiusKm=5000&MaxRecords={2}&Types=ATM,Branch";
-		//private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/Home/GetLocations?lng={0}&lat={1}&results={2}&checkboxes=ATM,Branch";
-	//		private List<EntityFilter> Filters;
+
 		private static BankEntitiesService SingleInstance = new BankEntitiesService();
 		private EntityCache LocalEntityCache;
 		IJsonClient JsonClient;

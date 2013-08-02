@@ -26,20 +26,6 @@ namespace Mappy
 			this.EntityType = entityType;
 		}
 
-		public static Atm AtmFromJsonObject(JsonObject jsonObject)
-		{
-			if (jsonObject == null)
-				return null;
-			return new Atm (jsonObject["ATMId"], jsonObject["Brand"], jsonObject["ATMName"], jsonObject["LocationId"], jsonObject["Latitude"], jsonObject["Longitude"], jsonObject["Distance"]);
-		}
-
-		public static Branch BranchFromJsonObject(JsonObject jsonObject)
-		{
-			if (jsonObject == null)
-				return null;
-			return new Branch (jsonObject["BranchId"], jsonObject["BranchName"], jsonObject["LocationId"], jsonObject["Latitude"], jsonObject["Longitude"], jsonObject["Distance"], jsonObject["BranchPhone"]);
-		}
-
 		public string Description ()
 		{
 			var type = this.IsBranch() ? "Branch" : "Atm";

@@ -88,7 +88,7 @@ namespace Mappy
 			ViewModel.Deregister (this);
 		}
 
-		public async void UpdateMap (Options userSelection)
+		public void UpdateMap (Options userSelection)
 		{
 			ViewModel.ZoomLevel = Map.CameraPosition.Zoom;
 			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = ViewModel.ZoomLevel.ToString();
@@ -96,7 +96,7 @@ namespace Mappy
 			if (ViewModel.ZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
 
-				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, LocationBatchSize);
+				ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, LocationBatchSize);
 			}
 		}
 
