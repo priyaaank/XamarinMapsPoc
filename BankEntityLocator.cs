@@ -10,15 +10,18 @@ using Android.Views;
 using Android.Widget;
 using Android.Support.V4.App;
 using Android.Locations;
+using Android.Gms.Location;
+using Android.Gms.Common;
 
 namespace Mappy
 {
 	[Activity (Label = "BankEntityLocator", MainLauncher = true)]			
-	public class BankEntityLocator : FragmentActivity, MapUpdateListener, ILocationListener
+	public class BankEntityLocator : FragmentActivity, MapUpdateListener, IGooglePlayServicesClientConnectionCallbacks, IGooglePlayServicesClientOnConnectionFailedListener, Android.Gms.Location.ILocationListener
 	{
 		private BankEntityMapView MapViewFragment;
 		private GpsManager GpsManager;
-		private LocationManager LocManager;
+		public LocationClient LocationClient {get; set;}
+		public bool LocationClientConnected { get; set; }
 	
 		const string MapFragmentView        = "mapView";
 		const bool   SelectAtms             = true;
@@ -36,7 +39,8 @@ namespace Mappy
 			GpsManager = new GpsManager (this);
 			GpsManager.PrepareGPS ();
 
-			LocManager = GetSystemService (Context.LocationService) as LocationManager;
+			//LocManager = GetSystemService (Context.LocationService) as LocationManager;
+			LocationClient = new LocationClient (this, this, this);
 
 			BindBankEntityOptionsView ();
 
@@ -47,16 +51,26 @@ namespace Mappy
 			}
 		}
 
+		protected override void OnStart ()
+		{
+			base.OnStart ();
+			LocationClient.Connect ();
+		}
+
+		protected override void OnStop ()
+		{
+			base.OnStop ();
+			LocationClient.Disconnect ();
+		}
+
 		protected override void OnResume ()
        	{
 			base.OnResume ();
-			LocManager.RequestLocationUpdates (LocationManager.GpsProvider, 2000, 1, this);
        	}
 	    
 		protected override void OnPause ()
 		{
 	       base.OnPause ();
-	       LocManager.RemoveUpdates (this);
 		}
 
 		void BindBankEntityOptionsView ()
@@ -87,7 +101,7 @@ namespace Mappy
 
 		public void UpdateMapView()
 		{
-			MapViewFragment.UpdateMap (UserSelection);
+			MapViewFragment.FetchAndUpdate ();
 		}
 
 		#region ILocationListener implementation
@@ -96,20 +110,33 @@ namespace Mappy
 		{
 			MapViewFragment.UserLocationUpdated ();
 		}
+		#endregion
 
-		public void OnProviderDisabled (string provider)
+		#region IGooglePlayServicesClientConnectionCallbacks implementation
+
+		public void OnConnected (Bundle p0)
 		{
-			//do nothing
+			LocationClientConnected = true;
+			var locationRequest = new LocationRequest ();
+			locationRequest.SetInterval (5000);
+			locationRequest.SetFastestInterval (1000);
+			LocationClient.RequestLocationUpdates (locationRequest, this);
+			if (MapViewFragment != null)
+				MapViewFragment.FlyDownToMyLocation ();
 		}
 
-		public void OnProviderEnabled (string provider)
+		public void OnDisconnected ()
 		{
-			//do nothing
+			LocationClientConnected = false;
 		}
 
-		public void OnStatusChanged (string provider, Availability status, Bundle extras)
+		#endregion
+
+		#region IGooglePlayServicesClientOnConnectionFailedListener implementation
+
+		public void OnConnectionFailed (ConnectionResult p0)
 		{
-			//do nothing
+			LocationClientConnected = false;
 		}
 
 		#endregion

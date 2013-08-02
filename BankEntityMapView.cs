@@ -56,23 +56,22 @@ namespace Mappy
 				this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
 				ConfigureMapUiSettings ();
 				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
-				FlyDownToMyLocation ();
 				UpdateClosestEntityMarker ();
 			}
 		}
 
-		void FlyDownInitially (object sender, GoogleMap.MyLocationChangeEventArgs e)
+		public void FlyDownToMyLocation ()
 		{
-			FlyDownToMyLocation ();
-			this.Map.MyLocationChange -= FlyDownInitially;
+			if ((this.Activity as BankEntityLocator).LocationClientConnected) {
+				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (MyLocation, MapViewModel.DEFAULT_ZOOM_LEVEL);
+				this.Map.MoveCamera (camUpdate);
+			}
 		}
 
-		private void FlyDownToMyLocation ()
-		{
-			if(this.Map.MyLocation != null)
-			{
-				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (GetMyLocation (), MapViewModel.DEFAULT_ZOOM_LEVEL);
-				this.Map.AnimateCamera (camUpdate);
+		LatLng MyLocation {
+			get {
+				var location = (Activity as BankEntityLocator).LocationClient.LastLocation;
+				return new LatLng (location.Latitude, location.Longitude);
 			}
 		}
 
@@ -96,26 +95,15 @@ namespace Mappy
 
 			if (ViewModel.ZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-				FetchAndUpdate ();
-<<<<<<< HEAD
-=======
-				ViewModel.LastZoomLevel = CurrentZoomLevel;
+
 				await ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, LocationBatchSize);
-			} else {
-				Toast.MakeText(this.Activity, "Zoom in to view more locations", ToastLength.Short).Show();
->>>>>>> 724cb2df8ccf04213d89cbd9934233e6cb37d041
 			}
 		}
 
 		void UpdateIcons (object sender, EventArgs e)
 		{
-<<<<<<< HEAD
 			foreach (EntityMarker location in LocationsPlottedOnMap)
 				location.IconType = ViewModel.IconType;
-=======
-			ResetMap ();
-			FetchAndUpdate ();
->>>>>>> 724cb2df8ccf04213d89cbd9934233e6cb37d041
 		}
 
 		public void ResetMap()

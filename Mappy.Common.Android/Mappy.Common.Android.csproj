@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="..\Mappy.Common\Models\LocatorResponseItem.cs">
       <Link>Models\LocatorResponseItem.cs</Link>
+    </Compile>
     <Compile Include="..\Mappy.Common\Types\SortedConcurrentDictionary.cs">
       <Link>Types\SortedConcurrentDictionary.cs</Link>
     </Compile>

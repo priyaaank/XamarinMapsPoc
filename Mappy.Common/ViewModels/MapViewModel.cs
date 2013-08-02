@@ -15,7 +15,6 @@ namespace Mappy.Common
 		public static readonly float SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL = 16.0f;
 		public static readonly float DEFAULT_ZOOM_LEVEL = 15.0f;
 
-		//public float LastZoomLevel { get; set; }
 
 		static List<ZoomPair> ZoomPairs = new List<ZoomPair> () {
 			new ZoomPair(SMALL_TO_MEDIUM_THRESHOLD_ZOOM_LEVEL, IconType.Medium),

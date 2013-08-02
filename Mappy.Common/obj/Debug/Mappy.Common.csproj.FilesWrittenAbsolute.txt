@@ -1,6 +1,0 @@
-/Users/suncorp/Projects/XamarinMapsPoc/Mappy.Common/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/suncorp/Projects/XamarinMapsPoc/Mappy.Common/bin/Debug/Mappy.Common.dll.mdb
-/Users/suncorp/Projects/XamarinMapsPoc/Mappy.Common/bin/Debug/Mappy.Common.dll
-/Users/suncorp/Projects/XamarinMapsPoc/Mappy.Common/obj/Debug/Mappy.Common.dll
-/Users/suncorp/Projects/XamarinMapsPoc/Mappy.Common/obj/Debug/Mappy.Common.dll.mdb
-/Users/suncorp/Projects/XamarinMapsPoc/Mappy.Common/bin/Debug/System.Json.dll
