@@ -1,27 +1,29 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mappy.Common/Types/EntityCache.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityMapView.cs">
     <Files>
-      <File FileName="BankEntityMapView.cs" Line="1" Column="1" />
-      <File FileName="BankEntityLocator.cs" Line="1" Column="1" />
-      <File FileName="Mappy.Common/Types/EntityCache.cs" Line="20" Column="4" />
-      <File FileName="Properties/AndroidManifest.xml" Line="1" Column="1" />
-      <File FileName="AndroidViewportFilter.cs" Line="1" Column="1" />
+      <File FileName="BankEntityMapView.cs" Line="16" Column="17" />
+      <File FileName="Mappy.Common/ViewModels/MapViewModel.cs" Line="57" Column="3" />
+      <File FileName="Mappy.Common/Services/BankEntitiesService.cs" Line="113" Column="15" />
+      <File FileName="BankEntityLocator.cs" Line="111" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Mappy" expanded="True">
-            <Node name="Properties" expanded="True" />
+            <Node name="BankEntityMapView.cs" selected="True" />
           </Node>
           <Node name="Mappy.Common" expanded="True">
-            <Node name="Types" expanded="True">
-              <Node name="EntityCache.cs" selected="True" />
-            </Node>
-          </Node>
-          <Node name="Mappy.Common.Android" expanded="True" />
-          <Node name="Mappy.Common.iOS" expanded="True">
+            <Node name="Models" expanded="True" />
+            <Node name="Services" expanded="True" />
             <Node name="Types" expanded="True" />
+            <Node name="ViewModels" expanded="True" />
+          </Node>
+          <Node name="Mappy.Common.Android" expanded="True">
+            <Node name="Models" expanded="True" />
+          </Node>
+          <Node name="Mappy.Common.iOS" expanded="True">
+            <Node name="Models" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -47,5 +49,4 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../tmp/XamarinMapsPoc/Services/BankEntitiesService.cs" line="28" offsetX="686" offsetY="405" expression="response" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="HT24KW105470" />
 </Properties>

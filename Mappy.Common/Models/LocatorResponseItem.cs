@@ -1,6 +1,6 @@
 using System;
 
-namespace Mappy.Common
+namespace Mappy
 {
 	public class LocatorResponseItem
 	{
