@@ -2,3 +2,4 @@ bin/**
 obj/**
 */bin/*
 */obj/*
+Resource/Resource.designer.cs

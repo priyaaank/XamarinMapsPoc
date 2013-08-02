@@ -16,7 +16,7 @@ using Android.Gms.Common;
 namespace Mappy
 {
 	[Activity (Label = "BankEntityLocator", MainLauncher = true)]			
-	public class BankEntityLocator : FragmentActivity, MapUpdateListener, IGooglePlayServicesClientConnectionCallbacks, IGooglePlayServicesClientOnConnectionFailedListener, Android.Gms.Location.ILocationListener
+	public class BankEntityLocator : FragmentActivity, IMapActivity, MapUpdateListener, IGooglePlayServicesClientConnectionCallbacks, IGooglePlayServicesClientOnConnectionFailedListener, Android.Gms.Location.ILocationListener
 	{
 		private BankEntityMapView MapViewFragment;
 		private GpsManager GpsManager;
@@ -28,7 +28,16 @@ namespace Mappy
 		const bool   SelectBranches         = true;
 		const bool   DontSelectPartnerAtms  = false;
 
-		public Options UserSelection = new Options(SelectAtms, SelectBranches, DontSelectPartnerAtms);
+		Options mapOptions;
+		public Options MapOptions {
+			get {
+				return mapOptions;
+			}
+			set {
+				mapOptions = value;
+				UpdateMapView ();
+			}
+		}
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -39,16 +48,29 @@ namespace Mappy
 			GpsManager = new GpsManager (this);
 			GpsManager.PrepareGPS ();
 
-			//LocManager = GetSystemService (Context.LocationService) as LocationManager;
 			LocationClient = new LocationClient (this, this, this);
-
-			BindBankEntityOptionsView ();
 
 			MapViewFragment = SupportFragmentManager.FindFragmentById(Resource.Id.map) as BankEntityMapView;
 			if (MapViewFragment == null) {
 				MapViewFragment = new BankEntityMapView ();
 				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MapFragmentView).Commit ();
 			}
+			MapOptions = new Options(SelectAtms, SelectBranches, DontSelectPartnerAtms);
+		}
+
+		public override bool OnCreateOptionsMenu (IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.map_menu, menu);
+			return true;
+		}
+
+		public override bool OnOptionsItemSelected (IMenuItem item)
+		{
+			if (item.ItemId == Resource.Id.MapOptions) {
+				MapOptionsDialog.NewInstance ().Show (SupportFragmentManager, "dialog");
+				return true;
+			}
+			return base.OnOptionsItemSelected (item);
 		}
 
 		protected override void OnStart ()
@@ -73,34 +95,19 @@ namespace Mappy
 	       base.OnPause ();
 		}
 
-		void BindBankEntityOptionsView ()
-		{
-			LinearLayout bankEntityOptionsView = FindViewById<LinearLayout> (Resource.Id.BankEntityOptions);
-			Button optionsButton = FindViewById<Button> (Resource.Id.OptionsButton);
-			optionsButton.Click += (object sender, EventArgs e) => bankEntityOptionsView.Visibility = ViewStates.Visible;
-
-			Button okButton = FindViewById<Button> (Resource.Id.OkButton);
-			okButton.Click += (object sender, EventArgs e) => {
-				bankEntityOptionsView.Visibility = ViewStates.Gone;
-				UpdateMapWithSelectedTypes ();
-			};
-
-			Button cancelButton = FindViewById<Button> (Resource.Id.CancelButton);
-			cancelButton.Click += (object sender, EventArgs e) => bankEntityOptionsView.Visibility = ViewStates.Gone;
-		}
-
-		private void UpdateMapWithSelectedTypes () 
-		{
-			CheckBox atmCheckBox = FindViewById<CheckBox> (Resource.Id.SelectAtm);
-			CheckBox branchCheckBox = FindViewById<CheckBox> (Resource.Id.SelectBranch);
-			CheckBox partnerAtmCheckbox = FindViewById<CheckBox> (Resource.Id.SelectPartnerAtms);
-			UserSelection = new Options (atmCheckBox.Checked, branchCheckBox.Checked, partnerAtmCheckbox.Checked);
-			MapViewFragment.ResetMap ();
-			UpdateMapView ();
-		}
+//		private void UpdateMapWithSelectedTypes () 
+//		{
+//			CheckBox atmCheckBox = FindViewById<CheckBox> (Resource.Id.SelectAtm);
+//			CheckBox branchCheckBox = FindViewById<CheckBox> (Resource.Id.SelectBranch);
+//			CheckBox partnerAtmCheckbox = FindViewById<CheckBox> (Resource.Id.SelectPartnerAtms);
+//			UserSelection = new Options (atmCheckBox.Checked, branchCheckBox.Checked, partnerAtmCheckbox.Checked);
+//			MapViewFragment.ResetMap ();
+//			UpdateMapView ();
+//		}
 
 		public void UpdateMapView()
 		{
+			MapViewFragment.ResetMap ();
 			MapViewFragment.FetchAndUpdate ();
 		}
 

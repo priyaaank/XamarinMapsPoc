@@ -53,16 +53,16 @@ namespace Mappy
 		void InitializeMap ()
 		{
 			if (this.Map != null) {
-				this.Map.CameraChange += (sender, e) => UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
+				this.Map.CameraChange += (sender, e) => UpdateMap ();
 				ConfigureMapUiSettings ();
-				UpdateMap ((this.Activity as BankEntityLocator).UserSelection);
+				UpdateMap ();
 				UpdateClosestEntityMarker ();
 			}
 		}
 
 		public void FlyDownToMyLocation ()
 		{
-			if ((this.Activity as BankEntityLocator).LocationClientConnected) {
+			if ((this.Activity as IMapActivity).LocationClientConnected) {
 				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (MyLocation, MapViewModel.DEFAULT_ZOOM_LEVEL);
 				this.Map.MoveCamera (camUpdate);
 			}
@@ -70,7 +70,7 @@ namespace Mappy
 
 		LatLng MyLocation {
 			get {
-				var location = (Activity as BankEntityLocator).LocationClient.LastLocation;
+				var location = (Activity as IMapActivity).LocationClient.LastLocation;
 				return new LatLng (location.Latitude, location.Longitude);
 			}
 		}
@@ -88,7 +88,7 @@ namespace Mappy
 			ViewModel.Deregister (this);
 		}
 
-		public void UpdateMap (Options userSelection)
+		public void UpdateMap ()
 		{
 			ViewModel.ZoomLevel = Map.CameraPosition.Zoom;
 			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = ViewModel.ZoomLevel.ToString();
@@ -108,7 +108,8 @@ namespace Mappy
 
 		public void ResetMap()
 		{
-			this.Map.Clear ();
+			if (this.Map != null)
+				this.Map.Clear ();
 			this.LocationsPlottedOnMap.Clear ();
 		}
 
@@ -142,7 +143,7 @@ namespace Mappy
 			if (Activity != null) {
 				Activity.RunOnUiThread (() => {
 					LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
-					List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as BankEntityLocator).UserSelection);
+					List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as IMapActivity).MapOptions);
 
 					UpdateViewWithEntities (entities);
 				});

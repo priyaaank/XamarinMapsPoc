@@ -59,6 +59,8 @@
     <Compile Include="GpsManager.cs" />
     <Compile Include="EntityMarker.cs" />
     <Compile Include="AndroidViewportFilter.cs" />
+    <Compile Include="Dialogs\MapOptionsDialog.cs" />
+    <Compile Include="Dialogs\IMapActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -82,6 +84,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\branch_medium.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\branch_micro.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\branch_small.png" />
+    <AndroidResource Include="Resources\menu\map_menu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -96,5 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Dialogs\" />
+    <Folder Include="Resources\menu\" />
   </ItemGroup>
 </Project>

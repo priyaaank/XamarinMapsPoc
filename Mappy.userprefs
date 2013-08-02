@@ -1,25 +1,38 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mappy.Common/Types/EntityCache.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityMapView.cs">
     <Files>
-      <File FileName="BankEntityMapView.cs" Line="1" Column="1" />
-      <File FileName="BankEntityLocator.cs" Line="1" Column="1" />
-      <File FileName="Mappy.Common/Types/EntityCache.cs" Line="20" Column="4" />
+      <File FileName="BankEntityMapView.cs" Line="94" Column="33" />
+      <File FileName="BankEntityLocator.cs" Line="61" Column="4" />
+      <File FileName="Mappy.Common/Types/EntityCache.cs" Line="26" Column="3" />
       <File FileName="Properties/AndroidManifest.xml" Line="1" Column="1" />
       <File FileName="AndroidViewportFilter.cs" Line="1" Column="1" />
+      <File FileName="Mappy.Common/Types/SortedConcurrentDictionary.cs" Line="9" Column="18" />
+      <File FileName="Mappy.Common/ViewModels/MapViewModel.cs" Line="22" Column="59" />
+      <File FileName="Mappy.Common/Services/BankEntitiesService.cs" Line="61" Column="30" />
+      <File FileName="Mappy.Common/Types/ZoomPair.cs" Line="1" Column="1" />
+      <File FileName="EntityMarker.cs" Line="1" Column="1" />
+      <File FileName="../GooglePlayServices/obj/Debug/generated/src/Android.Gms.Location.LocationClient.cs" Line="463" Column="1" />
+      <File FileName="GpsManager.cs" Line="39" Column="26" />
+      <File FileName="Mappy.Common/Types/CacheChangeListener.cs" Line="1" Column="1" />
+      <File FileName="Mappy.Common/Models/Atm.cs" Line="1" Column="1" />
+      <File FileName="Mappy.Common/Models/BankEntity.cs" Line="28" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Mappy" expanded="True">
             <Node name="Properties" expanded="True" />
+            <Node name="BankEntityMapView.cs" selected="True" />
           </Node>
           <Node name="Mappy.Common" expanded="True">
-            <Node name="Types" expanded="True">
-              <Node name="EntityCache.cs" selected="True" />
-            </Node>
+            <Node name="Services" expanded="True" />
+            <Node name="Types" expanded="True" />
+            <Node name="ViewModels" expanded="True" />
           </Node>
-          <Node name="Mappy.Common.Android" expanded="True" />
+          <Node name="Mappy.Common.Android" expanded="True">
+            <Node name="Models" expanded="True" />
+          </Node>
           <Node name="Mappy.Common.iOS" expanded="True">
             <Node name="Types" expanded="True" />
           </Node>
