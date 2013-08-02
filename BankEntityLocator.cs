@@ -115,13 +115,13 @@ namespace Mappy
 
 		public void OnLocationChanged (Location location)
 		{
-			MapViewFragment.UserLocationUpdated ();
+			MapViewFragment.UserLocationUpdated (location);
 		}
 		#endregion
 
 		#region IGooglePlayServicesClientConnectionCallbacks implementation
 
-		public void OnConnected (Bundle p0)
+		public void OnConnected (Bundle bundle)
 		{
 			LocationClientConnected = true;
 			var locationRequest = new LocationRequest ();

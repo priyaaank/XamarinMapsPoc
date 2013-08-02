@@ -26,7 +26,6 @@ namespace Mappy.Common
 
 		public void AddAll(List<BankEntity> entities)
 		{
-
 			if (BankEntities.AddEntities(entities)) CacheUpdated ();
 		}
 

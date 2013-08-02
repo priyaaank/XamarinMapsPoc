@@ -17,6 +17,7 @@ using Java.Util;
 using Mappy.Common;
 using Android.Gms.Location;
 using Android.Gms.Common;
+using Android.Locations;
 
 namespace Mappy
 {
@@ -25,6 +26,7 @@ namespace Mappy
 		MapViewModel ViewModel;
 
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
+		private EntityMarker EntityClosestToUser;
 
 		const int LocationBatchSize = 200;
 
@@ -56,18 +58,25 @@ namespace Mappy
 				this.Map.CameraChange += (sender, e) => UpdateMap ();
 				ConfigureMapUiSettings ();
 				UpdateMap ();
-				UpdateClosestEntityMarker ();
 			}
 		}
 
 		public void FlyDownToMyLocation ()
 		{
-			if ((this.Activity as IMapActivity).LocationClientConnected) {
-				CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (MyLocation, MapViewModel.DEFAULT_ZOOM_LEVEL);
-				this.Map.MoveCamera (camUpdate);
+			if ((this.Activity as BankEntityLocator).LocationClientConnected) {
+				if(MyLocation != null)
+				{
+					CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (MyLocation, MapViewModel.DEFAULT_ZOOM_LEVEL);
+					this.Map.MoveCamera (camUpdate);
+				}
 			}
 		}
 
+		public void UserLocationUpdated (Location userLocation)
+		{
+			FetchClosestAtmOrBranch (userLocation.Latitude, userLocation.Longitude);
+		}
+			
 		LatLng MyLocation {
 			get {
 				var location = (Activity as IMapActivity).LocationClient.LastLocation;
@@ -125,19 +134,6 @@ namespace Mappy
 			mapUISettings.SetAllGesturesEnabled (true);
 		}
 
-		private void UpdateClosestEntityMarker ()
-		{
-//			if (this.Map.MyLocation != null) {
-//				var allEntities = EntitiesService.fetch (this.Map.MyLocation.Latitude, this.Map.MyLocation.Longitude, 1, (this.Activity as BankEntityLocator).UserSelection);
-//				if (allEntities != null && allEntities.Count > 0) {
-//					if(ClosestBankEntityMarker != null) ClosestBankEntityMarker.ResetIconFromClosest (IconForCurrentZoomLevel ());
-//					BankEntity closestBankEntity = allEntities.First ();
-//					ClosestBankEntityMarker = new EntityMarker (closestBankEntity, EntityMarker.IconType.Closest, EntityMarker.MarkerType.Nearest);
-//					ClosestBankEntityMarker.AddMarkerTo (this.Map);
-//				}
-//			}
-		}
-
 		public void FetchAndUpdate()
 		{
 			if (Activity != null) {
@@ -150,10 +146,29 @@ namespace Mappy
 			}
 		}
 
+		public void FetchAndUpdateClosest()
+		{
+			BankEntity closestBankEntity = ViewModel.ClosestEntity ((this.Activity as BankEntityLocator).MapOptions);
+			if (EntityClosestToUser != null && closestBankEntity.Equals (EntityClosestToUser)) return;
+			if (closestBankEntity != null) {
+				Activity.RunOnUiThread (() => {
+					if(EntityClosestToUser != null) EntityClosestToUser.IconType = ViewModel.IconType;
+					EntityMarker plottedEntity = LocationsPlottedOnMap.Find (e => e.Entity.LocationId == closestBankEntity.LocationId);
+					if (plottedEntity != null) {
+						EntityClosestToUser = plottedEntity;
+						plottedEntity.IconType = IconType.Closest;
+					} else {
+						var marker = new EntityMarker (closestBankEntity, IconType.Closest);
+						marker.AddMarkerTo (this.Map);
+						EntityClosestToUser = marker;
+						LocationsPlottedOnMap.Add (marker);
+					}
+				});
+			}
+		}
+
 		void UpdateViewWithEntities (List<BankEntity> entities)
 		{
-		//	if(iconType == IconType.None) return;
-
 			List<BankEntity> plottedEntities = (from marker in LocationsPlottedOnMap select marker.Entity).ToList ();
 			var entitiesToPlot = entities.Except (plottedEntities);
 
@@ -166,9 +181,9 @@ namespace Mappy
 			});
 		}
 
-		public void UserLocationUpdated ()
+		private void FetchClosestAtmOrBranch (double latitude, double longitude)
 		{
-			UpdateClosestEntityMarker ();
+			ViewModel.FetchEntitiesClosestToLocationAsync (latitude, longitude);
 		}
 	}
 }

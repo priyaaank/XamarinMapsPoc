@@ -21,6 +21,21 @@ namespace Mappy
 			this.SelectPartnerAtms = SelectPartnerAtms;
 		}
 
+		public bool SelectAnyEntity()
+		{
+			return (SelectAnyAtm() && this.SelectOwnBranches);
+		}
+
+		public bool SelectAnySuncorpEntity ()
+		{
+			return (SelectOwnAtms && SelectOwnBranches);
+		}
+
+		public bool SelectAnyAtm()
+		{
+			return (this.SelectOwnAtms && this.SelectPartnerAtms);
+		}
+
 		public List<Type> FiltersForSelection()
 		{
 			List<Type> filtersForSelectedOptions = new List<Type> ();

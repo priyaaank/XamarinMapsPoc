@@ -59,6 +59,11 @@ namespace Mappy.Common
 			return Task.Factory.StartNew(()=>EntitiesService.QueueServiceRequest (latitude, longitude, noOfRecords));
 		}
 
+		public Task FetchEntitiesClosestToLocationAsync (double latitude, double longitude)
+		{
+			return Task.Factory.StartNew(()=>EntitiesService.QueueServiceRequestForClosestLocations (latitude, longitude));
+		}
+
 		public void Deregister (CacheChangeListener listener)
 		{
 			EntitiesService.Deregister (listener);
@@ -86,6 +91,12 @@ namespace Mappy.Common
 				return IconType.None;
 			}
 		}
+
+		public BankEntity ClosestEntity (Options userSelection)
+		{
+			return EntitiesService.ClosestEntity (userSelection);
+		}
+
 	}
 }
 

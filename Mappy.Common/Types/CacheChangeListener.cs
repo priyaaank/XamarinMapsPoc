@@ -10,5 +10,7 @@ namespace Mappy
 
 		void FetchAndUpdate();
 
+		void FetchAndUpdateClosest();
+
 	}
 }
