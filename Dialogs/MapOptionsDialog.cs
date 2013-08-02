@@ -39,9 +39,9 @@ namespace Mappy
 			CheckBox branchCheckBox = view.FindViewById<CheckBox> (Resource.Id.SelectBranch);
 			CheckBox partnerAtmCheckbox = view.FindViewById<CheckBox> (Resource.Id.SelectPartnerAtms);
 			var options = (Activity as IMapActivity).MapOptions;
-			atmCheckBox.Selected = options.SelectOwnAtms;
-			branchCheckBox.Selected = options.SelectOwnBranches;
-			partnerAtmCheckbox.Selected = options.SelectPartnerAtms;
+			atmCheckBox.Checked = options.SelectOwnAtms;
+			branchCheckBox.Checked = options.SelectOwnBranches;
+			partnerAtmCheckbox.Checked = options.SelectPartnerAtms;
 
 			builder.SetView (view);
 			var dialog = builder.Create ();

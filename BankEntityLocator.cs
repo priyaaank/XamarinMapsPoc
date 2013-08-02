@@ -95,16 +95,6 @@ namespace Mappy
 	       base.OnPause ();
 		}
 
-//		private void UpdateMapWithSelectedTypes () 
-//		{
-//			CheckBox atmCheckBox = FindViewById<CheckBox> (Resource.Id.SelectAtm);
-//			CheckBox branchCheckBox = FindViewById<CheckBox> (Resource.Id.SelectBranch);
-//			CheckBox partnerAtmCheckbox = FindViewById<CheckBox> (Resource.Id.SelectPartnerAtms);
-//			UserSelection = new Options (atmCheckBox.Checked, branchCheckBox.Checked, partnerAtmCheckbox.Checked);
-//			MapViewFragment.ResetMap ();
-//			UpdateMapView ();
-//		}
-
 		public void UpdateMapView()
 		{
 			MapViewFragment.ResetMap ();
