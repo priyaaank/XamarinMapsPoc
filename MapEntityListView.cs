@@ -10,6 +10,8 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Mappy.Common;
+using Android.Locations;
+using Android.Gms.Maps.Model;
 
 namespace Mappy
 {
@@ -42,6 +44,13 @@ namespace Mappy
 		{
 			base.OnPause ();
 		}
+	
+		public override void OnListItemClick(ListView l, View v, int position, long id)
+		{
+			BankEntity bankEntitySelected = (this.ListAdapter as EntityAdapter).GetItem (position);
+			(this.Activity as BankEntityLocator).MapViewFragment.BringLocationToCenter (new LatLng(bankEntitySelected.Latitude, bankEntitySelected.Longitude));
+		}
+
 
 		void InitializeList ()
 		{
@@ -53,6 +62,6 @@ namespace Mappy
 			(this.ListAdapter as EntityAdapter).UpdateData(entities);
 		}
 
-	}
+	}														
 }
 

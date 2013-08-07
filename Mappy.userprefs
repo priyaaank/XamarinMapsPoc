@@ -1,25 +1,29 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Resources/Resource.designer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityMapView.cs">
     <Files>
-      <File FileName="MapEntityListView.cs" Line="58" Column="4" />
-      <File FileName="BankEntityLocator.cs" Line="128" Column="46" />
-      <File FileName="EntityAdapter.cs" Line="43" Column="88" />
-      <File FileName="EntityMarker.cs" Line="32" Column="6" />
-      <File FileName="Resources/Resource.designer.cs" Line="303" Column="56" />
+      <File FileName="BankEntityLocator.cs" Line="123" Column="4" />
+      <File FileName="MapEntityListView.cs" Line="53" Column="84" />
+      <File FileName="BankEntityMapView.cs" Line="19" Column="26" />
+      <File FileName="Mappy.Common/ViewModels/MapViewModel.cs" Line="29" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
+          <Node name="GooglePlayServices" expanded="True">
+            <Node name="Transforms" expanded="True" />
+          </Node>
           <Node name="Mappy" expanded="True">
             <Node name="Resources" expanded="True">
               <Node name="layout" expanded="True" />
+              <Node name="menu" expanded="True">
+                <Node name="map_menu.xml" expanded="True" />
+              </Node>
               <Node name="values" expanded="True" />
-              <Node name="Resource.designer.cs" selected="True" />
             </Node>
+            <Node name="BankEntityMapView.cs" selected="True" />
           </Node>
           <Node name="Mappy.Common" expanded="True">
-            <Node name="Services" expanded="True" />
             <Node name="ViewModels" expanded="True" />
           </Node>
         </State>
@@ -31,6 +35,8 @@
         <State>
           <Value>aBankEntity.Brand</Value>
           <Value>zoomLevel</Value>
+          <Value>entity</Value>
+          <Value>entity.Distance</Value>
         </State>
       </Pad>
       <Pad Id="ConnectionManagerPad">
@@ -41,6 +47,8 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/suncorp/Projects/XamarinMapsPoc/Mappy.Common/Services/EntityCache.cs" line="48" column="1" />
+      <Breakpoint file="/Users/suncorp/Projects/XamarinMapsPoc/EntityAdapter.cs" line="25" column="1" />
+      <Breakpoint file="/Users/suncorp/Projects/XamarinMapsPoc/EntityAdapter.cs" line="27" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

@@ -18,7 +18,7 @@ namespace Mappy
 	[Activity (Label = "BankEntityLocator", MainLauncher = true)]			
 	public class BankEntityLocator : FragmentActivity, IMapActivity, MapUpdateListener, IGooglePlayServicesClientConnectionCallbacks, IGooglePlayServicesClientOnConnectionFailedListener, Android.Gms.Location.ILocationListener
 	{
-		private BankEntityMapView MapViewFragment;
+		public BankEntityMapView MapViewFragment;
 		private MapEntityListView ListViewFragment;
 		private GpsManager GpsManager;
 		public LocationClient LocationClient {get; set;}

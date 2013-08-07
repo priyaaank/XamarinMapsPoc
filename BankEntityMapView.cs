@@ -119,6 +119,12 @@ namespace Mappy
 			}
 		}
 
+		public void BringLocationToCenter (LatLng selectedLocation)
+		{
+			CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (selectedLocation, ViewModel.ZoomLevel);
+			this.Map.MoveCamera (camUpdate);
+		}
+
 		void UpdateIcons (object sender, EventArgs e)
 		{
 			foreach (EntityMarker location in LocationsPlottedOnMap)
