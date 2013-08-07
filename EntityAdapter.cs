@@ -23,7 +23,7 @@ namespace Mappy
 		public void UpdateData (List<BankEntity> entities)
 		{
 			this.Clear ();
-			foreach (BankEntity entity in entities) {
+			foreach (BankEntity entity in entities.OrderBy (e => e.Distance)) {
 				this.Add (entity);
 			}
 			this.NotifyDataSetChanged ();
@@ -31,7 +31,7 @@ namespace Mappy
 
 		public override View GetView (int position, View convertView, ViewGroup parent)
 		{
-
+			 
 			View row = convertView;
 			BankEntityHolder holder = null;
 			BankEntity currentEntity;
