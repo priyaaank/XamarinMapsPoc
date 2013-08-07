@@ -75,6 +75,13 @@ namespace Mappy
 		public void UserLocationUpdated (Location userLocation)
 		{
 			FetchClosestAtmOrBranch (userLocation.Latitude, userLocation.Longitude);
+			if (MyLocationIsWithinViewPort (userLocation)) UpdateMap ();
+		}
+
+		private bool MyLocationIsWithinViewPort (Location userLocation)
+		{
+			LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
+			return viewBounds.Contains (new LatLng (userLocation.Latitude, userLocation.Longitude));
 		}
 			
 		LatLng MyLocation {
