@@ -19,11 +19,13 @@ namespace Mappy
 	public class BankEntityLocator : FragmentActivity, IMapActivity, MapUpdateListener, IGooglePlayServicesClientConnectionCallbacks, IGooglePlayServicesClientOnConnectionFailedListener, Android.Gms.Location.ILocationListener
 	{
 		private BankEntityMapView MapViewFragment;
+		private MapEntityListView ListViewFragment;
 		private GpsManager GpsManager;
 		public LocationClient LocationClient {get; set;}
 		public bool LocationClientConnected { get; set; }
 	
-		const string MapFragmentView        = "mapView";
+		const string MapFragmentViewName        = "mapView";
+		const string ListFragmentViewName        = "listView";
 		const bool   SelectAtms             = true;
 		const bool   SelectBranches         = true;
 		const bool   DontSelectPartnerAtms  = false;
@@ -53,8 +55,15 @@ namespace Mappy
 			MapViewFragment = SupportFragmentManager.FindFragmentById(Resource.Id.map) as BankEntityMapView;
 			if (MapViewFragment == null) {
 				MapViewFragment = new BankEntityMapView ();
-				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MapFragmentView).Commit ();
+				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.map, MapViewFragment, MapFragmentViewName).Commit ();
 			}
+
+			ListViewFragment = SupportFragmentManager.FindFragmentByTag(ListFragmentViewName) as MapEntityListView;
+			if (ListViewFragment == null) {
+				ListViewFragment = new MapEntityListView ();
+				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.entity_list_container, ListViewFragment, ListFragmentViewName).Commit();
+			}
+
 			MapOptions = new Options(SelectAtms, SelectBranches, DontSelectPartnerAtms);
 		}
 
@@ -99,6 +108,11 @@ namespace Mappy
 		{
 			MapViewFragment.ResetMap ();
 			MapViewFragment.FetchAndUpdate ();
+		}
+
+		public void UpdateListView (List<BankEntity> entities)
+		{
+			ListViewFragment.UpdateList (entities);
 		}
 
 		#region ILocationListener implementation

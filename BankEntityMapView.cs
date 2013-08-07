@@ -80,7 +80,11 @@ namespace Mappy
 		LatLng MyLocation {
 			get {
 				var location = (Activity as IMapActivity).LocationClient.LastLocation;
-				return new LatLng (location.Latitude, location.Longitude);
+				if(location != null)
+				{
+					return new LatLng (location.Latitude, location.Longitude);
+				}
+				return null;
 			}
 		}
 
@@ -104,7 +108,6 @@ namespace Mappy
 
 			if (ViewModel.ZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = this.Map.CameraPosition.Target;
-
 				ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, LocationBatchSize);
 			}
 		}
@@ -136,12 +139,13 @@ namespace Mappy
 
 		public void FetchAndUpdate()
 		{
-			if (Activity != null) {
+			if (Activity != null && this.Map != null) {
 				Activity.RunOnUiThread (() => {
 					LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
 					List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as IMapActivity).MapOptions);
 
 					UpdateViewWithEntities (entities);
+					(Activity as BankEntityLocator).UpdateListView(entities);
 				});
 			}
 		}

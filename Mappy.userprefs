@@ -1,11 +1,27 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Resources/Resource.designer.cs">
+    <Files>
+      <File FileName="MapEntityListView.cs" Line="58" Column="4" />
+      <File FileName="BankEntityLocator.cs" Line="128" Column="46" />
+      <File FileName="EntityAdapter.cs" Line="43" Column="88" />
+      <File FileName="EntityMarker.cs" Line="32" Column="6" />
+      <File FileName="Resources/Resource.designer.cs" Line="303" Column="56" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="GooglePlayServices" selected="True" />
-          <Node name="Mappy" expanded="True" />
+          <Node name="Mappy" expanded="True">
+            <Node name="Resources" expanded="True">
+              <Node name="layout" expanded="True" />
+              <Node name="values" expanded="True" />
+              <Node name="Resource.designer.cs" selected="True" />
+            </Node>
+          </Node>
+          <Node name="Mappy.Common" expanded="True">
+            <Node name="Services" expanded="True" />
+            <Node name="ViewModels" expanded="True" />
+          </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -30,4 +46,5 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../tmp/XamarinMapsPoc/Services/BankEntitiesService.cs" line="28" offsetX="686" offsetY="405" expression="response" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="651A0002FFFC0000" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
 </Properties>

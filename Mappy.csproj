@@ -61,6 +61,11 @@
     <Compile Include="AndroidViewportFilter.cs" />
     <Compile Include="Dialogs\MapOptionsDialog.cs" />
     <Compile Include="Dialogs\IMapActivity.cs" />
+    <Compile Include="MapEntityListView.cs" />
+    <Compile Include="Resources\menu\ListViewModel.cs">
+      <DependentUpon>map_menu.xml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -85,16 +90,17 @@
     <AndroidResource Include="Resources\drawable-xhdpi\branch_micro.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\branch_small.png" />
     <AndroidResource Include="Resources\menu\map_menu.xml" />
+    <AndroidResource Include="Resources\layout\EntityListRow.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\GooglePlayServices\GooglePlayServices.csproj">
-      <Project>{C388951C-C427-4F44-A54B-5A64BAE0DA39}</Project>
-      <Name>GooglePlayServices</Name>
-    </ProjectReference>
     <ProjectReference Include="Mappy.Common.Android\Mappy.Common.Android.csproj">
       <Project>{88C87C3E-DBB8-4BFC-B30A-73EAE06F2540}</Project>
       <Name>Mappy.Common.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="GooglePlayServices\GooglePlayServices.csproj">
+      <Project>{54AC6F23-2A0C-432F-BDDD-4838AF0BAA96}</Project>
+      <Name>GooglePlayServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
