@@ -51,6 +51,12 @@ namespace Mappy
 			(this.Activity as BankEntityLocator).MapViewFragment.BringLocationToCenter (new LatLng(bankEntitySelected.Latitude, bankEntitySelected.Longitude));
 		}
 
+		public void Navigate(View navigationView)
+		{
+			var latlngForDestination = navigationView.Tag as LatLng;
+			Intent intent = new Intent(Android.Content.Intent.ActionView, Android.Net.Uri.Parse("google.navigation:q="+latlngForDestination.Latitude +","+latlngForDestination.Longitude+""));
+			StartActivity (intent)
+		}
 
 		void InitializeList ()
 		{

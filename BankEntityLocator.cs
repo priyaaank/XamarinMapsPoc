@@ -12,6 +12,7 @@ using Android.Support.V4.App;
 using Android.Locations;
 using Android.Gms.Location;
 using Android.Gms.Common;
+using Java.Interop;
 
 namespace Mappy
 {
@@ -113,6 +114,12 @@ namespace Mappy
 		public void UpdateListView (List<BankEntity> entities)
 		{
 			ListViewFragment.UpdateList (entities);
+		}
+
+		[Export]
+		public void Navigate(View v)
+		{
+			ListViewFragment.Navigate (v);
 		}
 
 		#region ILocationListener implementation

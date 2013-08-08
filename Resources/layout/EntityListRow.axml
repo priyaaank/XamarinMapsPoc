@@ -8,10 +8,9 @@
         android:id="@+id/distance"
         android:layout_height="match_parent"
         android:layout_width="0dp"
-        android:text="200m"
         android:gravity="center"
         android:padding="5dip"
-        android:layout_weight="1" />
+        android:layout_weight="1.2" />
     <LinearLayout
         android:id="@+id/details_container"
         android:layout_height="match_parent"
@@ -43,8 +42,9 @@
         android:id="@+id/navigation"
         android:layout_height="match_parent"
         android:layout_width="0dp"
-        android:layout_weight="1"
-        android:src="@drawable/icon"
-        android:padding="3dip"
-        android:layount_weight="0.2" />
+        android:layout_weight=".8"
+        android:src="@drawable/navigation"
+        android:clickable="true"
+        android:onClick="Navigate"
+        android:padding="3dip" />
 </LinearLayout>

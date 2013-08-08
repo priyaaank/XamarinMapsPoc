@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Gms.Maps.Model;
 
 namespace Mappy
 {
@@ -57,7 +58,8 @@ namespace Mappy
 			holder.EntityName.Text = currentEntity.Name;
 			holder.EntityType.Text = currentEntity.EntityType.ToString();
 			holder.EntityAddress.Text = currentEntity.Description();
-			holder.EntityDistance.Text =Math.Round (currentEntity.Distance, 2).ToString();
+			holder.EntityDistance.Text = currentEntity.FormattedDistance ();
+			holder.EntityNavigation.Tag = new LatLng (currentEntity.Latitude, currentEntity.Longitude);
 
 			return row;
 		}

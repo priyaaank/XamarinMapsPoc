@@ -234,6 +234,9 @@ namespace Mappy
 			// aapt resource value: 0x7f02001f
 			public const int monoandroidsplash = 2130837535;
 			
+			// aapt resource value: 0x7f020020
+			public const int navigation = 2130837536;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

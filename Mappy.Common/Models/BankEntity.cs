@@ -15,6 +15,10 @@ namespace Mappy
 		public double Distance { get; private set;}
 		public Type EntityType { get; private set;}
 
+		const int MetersPerKm = 1000;
+		const string MeterSymbol = "m";
+		const string KilometerSymbol = "Kms";
+
 		public BankEntity(long id, string name, long locationId, double latitude, double longitude, double distance, Type entityType)
 		{
 			this.Id = id;
@@ -49,6 +53,31 @@ namespace Mappy
 				return false;
 
 			return (LocationId == anotherBankEntity.LocationId);
+		}
+
+		public string FormattedDistance()
+		{
+			return DistanceIsLessThanAKm() ? DistanceInMeters() : DistanceInKms();
+		}
+
+		private string DistanceInMeters ()
+		{
+			return (RoundedDistance() * MetersPerKm).ToString () + MeterSymbol;
+		}
+
+		private string DistanceInKms ()
+		{
+			return RoundedDistance() + KilometerSymbol;
+		}
+
+		private bool DistanceIsLessThanAKm ()
+		{
+			return RoundedDistance() < 1;
+		}
+
+		private double RoundedDistance()
+		{
+			return Math.Round (this.Distance, 2);
 		}
 
 		public override int GetHashCode()
