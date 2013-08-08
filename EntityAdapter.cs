@@ -57,7 +57,7 @@ namespace Mappy
 			holder.EntityName.Text = currentEntity.Name;
 			holder.EntityType.Text = currentEntity.EntityType.ToString();
 			holder.EntityAddress.Text = currentEntity.Description();
-			holder.EntityDistance.Text = currentEntity.Distance.ToString();
+			holder.EntityDistance.Text =Math.Round (currentEntity.Distance, 2).ToString();
 
 			return row;
 		}
