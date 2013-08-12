@@ -14,12 +14,14 @@ namespace Mappy
 		public double Longitude { get; private set;}
 		public double Distance { get; private set;}
 		public Type EntityType { get; private set;}
+		public string LocationType{get; private set;}
+		public string Notes { get; private set;}
 
 		const int MetersPerKm = 1000;
 		const string MeterSymbol = "m";
 		const string KilometerSymbol = "Kms";
 
-		public BankEntity(long id, string name, long locationId, double latitude, double longitude, double distance, Type entityType)
+		public BankEntity(long id, string name, long locationId, double latitude, double longitude, double distance, Type entityType, string locationType)
 		{
 			this.Id = id;
 			this.Name = name;
@@ -28,13 +30,12 @@ namespace Mappy
 			this.Longitude = longitude;
 			this.Distance = distance;
 			this.EntityType = entityType;
+			this.LocationType = locationType;
 		}
 
 		public string Description ()
 		{
-			var type = this.IsBranch() ? "Branch" : "Atm";
-			var brand = this.IsOwnBrand () ? "Suncorp" : "Other";
-			return type + " " + brand + " " + this.Name;
+			return BrandName () + this.LocationType;
 		}
 
 		public abstract bool IsBranch();
@@ -43,17 +44,8 @@ namespace Mappy
 
 		public abstract bool IsOwnBrand ();
 
-		public override bool Equals(System.Object obj)
-		{
-			if (obj == null)
-				return false;
-
-			BankEntity anotherBankEntity = obj as BankEntity;
-			if ((System.Object)anotherBankEntity == null)
-				return false;
-
-			return (LocationId == anotherBankEntity.LocationId);
-		}
+		public abstract string BrandName ();
+	
 
 		public string FormattedDistance()
 		{
@@ -83,6 +75,18 @@ namespace Mappy
 		public override int GetHashCode()
 		{
 			return (int) LocationId;
+		}
+
+		public override bool Equals(System.Object obj)
+		{
+			if (obj == null)
+				return false;
+
+			BankEntity anotherBankEntity = obj as BankEntity;
+			if ((System.Object)anotherBankEntity == null)
+				return false;
+
+			return (LocationId == anotherBankEntity.LocationId);
 		}
 	}
 }

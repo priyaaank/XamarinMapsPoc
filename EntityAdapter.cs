@@ -15,15 +15,18 @@ namespace Mappy
 	public class EntityAdapter: ArrayAdapter<BankEntity>
 	{
 		private int ResourceLayoutId;
+		private bool IsRelativeToUserLocation;
 
 		public EntityAdapter(Context context, int layoutId, List<BankEntity> entities): base (context,layoutId,entities)
 		{
 			this.ResourceLayoutId = layoutId;
+			this.IsRelativeToUserLocation = true;
 		}
 
-		public void UpdateData (List<BankEntity> entities)
+		public void UpdateData (List<BankEntity> entities, bool userPresentInView)
 		{
 			this.Clear ();
+			this.IsRelativeToUserLocation = userPresentInView;
 			foreach (BankEntity entity in entities.OrderBy (e => e.Distance)) {
 				this.Add (entity);
 			}
@@ -60,6 +63,10 @@ namespace Mappy
 			holder.EntityAddress.Text = currentEntity.Description();
 			holder.EntityDistance.Text = currentEntity.FormattedDistance ();
 			holder.EntityNavigation.Tag = new LatLng (currentEntity.Latitude, currentEntity.Longitude);
+
+			ViewStates currentState = IsRelativeToUserLocation ? ViewStates.Visible : ViewStates.Invisible;
+			holder.EntityNavigation.Visibility = currentState;
+			holder.EntityDistance.Visibility = currentState;
 
 			return row;
 		}

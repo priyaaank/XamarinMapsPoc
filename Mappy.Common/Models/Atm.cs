@@ -9,9 +9,9 @@ namespace Mappy
 	{
 
 		public string Brand { get; private set; }
-		private const string BrandName = "suncorp";
+		private const string SunCorpBrandName = "suncorp";
 
-		public Atm(long id, string brand, string name, long locationId, double latitude, double longitude, double distance) : base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.Atm)
+		public Atm(long id, string brand, string name, long locationId, double latitude, double longitude, double distance, string locationType) : base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.Atm,locationType )
 		{
 			this.Brand = brand;
 		}
@@ -30,8 +30,16 @@ namespace Mappy
 		{
 			if (Brand == null)
 				return true;
-			return string.Equals (BrandName, Brand, StringComparison.OrdinalIgnoreCase);
+			return string.Equals (SunCorpBrandName, Brand, StringComparison.OrdinalIgnoreCase);
 		}
+
+
+		#region implemented abstract members of BankEntity
+		public override string BrandName ()
+		{
+			return this.Brand;
+		}
+		#endregion
 	}
 }
 

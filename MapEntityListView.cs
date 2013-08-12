@@ -55,7 +55,7 @@ namespace Mappy
 		{
 			var latlngForDestination = navigationView.Tag as LatLng;
 			Intent intent = new Intent(Android.Content.Intent.ActionView, Android.Net.Uri.Parse("google.navigation:q="+latlngForDestination.Latitude +","+latlngForDestination.Longitude+""));
-			StartActivity (intent)
+			StartActivity (intent);
 		}
 
 		void InitializeList ()
@@ -63,9 +63,10 @@ namespace Mappy
 			this.ListAdapter = new EntityAdapter (Activity,Resource.Layout.EntityListRow, BankEntities);
 		}
 
-		public void UpdateList (List<BankEntity> entities)
+		public void UpdateList (List<BankEntity> entities, bool userInViewport)
 		{
-			(this.ListAdapter as EntityAdapter).UpdateData(entities);
+
+			(this.ListAdapter as EntityAdapter).UpdateData(entities, userInViewport);
 		}
 
 	}														

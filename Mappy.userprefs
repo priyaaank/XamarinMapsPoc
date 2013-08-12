@@ -1,28 +1,28 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MapEntityListView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mappy.Common/Models/Atm.cs">
     <Files>
-      <File FileName="MapEntityListView.cs" Line="27" Column="67" />
-      <File FileName="BankEntityMapView.cs" Line="1" Column="1" />
-      <File FileName="Mappy.Common/ViewModels/MapViewModel.cs" Line="1" Column="1" />
+      <File FileName="Mappy.Common/Models/BankEntity.cs" Line="33" Column="37" />
+      <File FileName="Mappy.Common/Models/Atm.cs" Line="30" Column="4" />
+      <File FileName="Mappy.Common/Models/Branch.cs" Line="10" Column="49" />
+      <File FileName="Mappy.Common/Services/BankEntitiesService.cs" Line="55" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="GooglePlayServices" expanded="True">
-            <Node name="Transforms" expanded="True" />
-          </Node>
+          <Node name="GooglePlayServices" expanded="True" />
           <Node name="Mappy" expanded="True">
+            <Node name="Assets" expanded="True" />
+            <Node name="Dialogs" expanded="True" />
             <Node name="Resources" expanded="True">
               <Node name="layout" expanded="True" />
-              <Node name="menu" expanded="True">
-                <Node name="map_menu.xml" expanded="True" />
-              </Node>
-              <Node name="values" expanded="True" />
             </Node>
-            <Node name="MapEntityListView.cs" selected="True" />
           </Node>
           <Node name="Mappy.Common" expanded="True">
+            <Node name="Models" expanded="True">
+              <Node name="Atm.cs" selected="True" />
+            </Node>
+            <Node name="Services" expanded="True" />
             <Node name="ViewModels" expanded="True" />
           </Node>
         </State>
@@ -51,5 +51,5 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../tmp/XamarinMapsPoc/Services/BankEntitiesService.cs" line="28" offsetX="686" offsetY="405" expression="response" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Mappy AndroidDeviceId-Debug="651A0002FFFC0000" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
+  <MonoDevelop.Ide.ItemProperties.Mappy MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
 </Properties>

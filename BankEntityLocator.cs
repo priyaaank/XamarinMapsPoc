@@ -111,9 +111,9 @@ namespace Mappy
 			MapViewFragment.FetchAndUpdate ();
 		}
 
-		public void UpdateListView (List<BankEntity> entities)
+		public void UpdateListView (List<BankEntity> entities, bool userIsInViewport)
 		{
-			ListViewFragment.UpdateList (entities);
+			ListViewFragment.UpdateList (entities, userIsInViewport);
 		}
 
 		[Export]

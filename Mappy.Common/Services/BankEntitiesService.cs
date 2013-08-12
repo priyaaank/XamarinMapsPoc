@@ -78,7 +78,8 @@ namespace Mappy.Common
                 item.LocationId,
                 item.Latitude,
                 item.Longitude,
-                item.Distance
+                item.Distance,
+				item.LocationType
 			);
 		}
 
@@ -91,7 +92,8 @@ namespace Mappy.Common
 				item.Latitude,
 				item.Longitude,
 				item.Distance,
-				item.BranchPhone
+				item.BranchPhone,
+				item.LocationType			
 			);
 		}
 

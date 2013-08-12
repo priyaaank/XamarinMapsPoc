@@ -15,8 +15,8 @@ using Android.Gms.Maps.Model;
 using System.Threading;
 using Java.Util;
 using Mappy.Common;
-using Android.Gms.Location;
 using Android.Gms.Common;
+using Android.Gms.Location;
 using Android.Locations;
 
 namespace Mappy
@@ -66,7 +66,8 @@ namespace Mappy
 			if ((this.Activity as BankEntityLocator).LocationClientConnected) {
 				if(MyLocation != null)
 				{
-					CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (MyLocation, MapViewModel.DEFAULT_ZOOM_LEVEL);
+					Location myLocation = MyLocation;
+					CameraUpdate camUpdate = CameraUpdateFactory.NewLatLngZoom (new LatLng (myLocation.Latitude, myLocation.Longitude), MapViewModel.DEFAULT_ZOOM_LEVEL);
 					this.Map.MoveCamera (camUpdate);
 				}
 			}
@@ -84,14 +85,9 @@ namespace Mappy
 			return viewBounds.Contains (new LatLng (userLocation.Latitude, userLocation.Longitude));
 		}
 			
-		LatLng MyLocation {
+		Location MyLocation {
 			get {
-				var location = (Activity as IMapActivity).LocationClient.LastLocation;
-				if(location != null)
-				{
-					return new LatLng (location.Latitude, location.Longitude);
-				}
-				return null;
+				return (Activity as IMapActivity).LocationClient.LastLocation;
 			}
 		}
 
@@ -114,9 +110,14 @@ namespace Mappy
 			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = ViewModel.ZoomLevel.ToString();
 
 			if (ViewModel.ZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
-				LatLng coordinates = this.Map.CameraPosition.Target;
+				LatLng coordinates = ReferenceLocationToFetchEntities ();
 				ViewModel.FetchEntitiesAsync (coordinates.Latitude, coordinates.Longitude, LocationBatchSize);
 			}
+		}
+
+		LatLng ReferenceLocationToFetchEntities ()
+		{
+			return (MyLocation != null  && MyLocationIsWithinViewPort(MyLocation)) ? new LatLng(MyLocation.Latitude, MyLocation.Longitude) : this.Map.CameraPosition.Target;
 		}
 
 		public void BringLocationToCenter (LatLng selectedLocation)
@@ -158,7 +159,7 @@ namespace Mappy
 					List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as IMapActivity).MapOptions);
 
 					UpdateViewWithEntities (entities);
-					(Activity as BankEntityLocator).UpdateListView(entities);
+					(Activity as BankEntityLocator).UpdateListView(entities, MyLocationIsWithinViewPort(MyLocation));
 				});
 			}
 		}
