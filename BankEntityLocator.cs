@@ -13,6 +13,7 @@ using Android.Locations;
 using Android.Gms.Location;
 using Android.Gms.Common;
 using Java.Interop;
+using Android.Views.Animations;
 
 namespace Mappy
 {
@@ -122,6 +123,12 @@ namespace Mappy
 			ListViewFragment.Navigate (v);
 		}
 
+		[Export]
+		public void ToggleState(View v)
+		{
+		
+		}
+
 		#region ILocationListener implementation
 
 		public void OnLocationChanged (Location location)
@@ -158,7 +165,44 @@ namespace Mappy
 		}
 
 		#endregion
+
+		public void CustomAnimate()
+		{
+			View entityListView = this.FindViewById (Resource.Id.entity_list_container);
+			Animation a = new CustomAnimation (entityListView, 300);
+//			a.Duration = (int) (300 / mapView.Context.Resources.DisplayMetrics.Density);
+			a.Duration = 1000;
+			entityListView.StartAnimation (a);
+		}
+
+		class CustomAnimation : Animation
+		{
+
+			View ViewObject;
+			int TargetHeight;
+
+			public CustomAnimation(View v, int targetHeight)
+			{
+				this.ViewObject = v;
+				this.TargetHeight = targetHeight;
+			}
+
+			protected override void ApplyTransformation (float interpolatedTime, Transformation t)
+			{
+				this.ViewObject.LayoutParameters.Height = (int)(interpolatedTime * this.TargetHeight);
+				this.ViewObject.RequestLayout ();
+			}
+
+			public override bool WillChangeBounds ()
+			{
+				return true;
+			}
+		}
 	}
 
+	class ToggleStates()
+	{
+
+	}
 }
 

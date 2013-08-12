@@ -250,8 +250,8 @@ namespace Mappy
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050012
-			public const int MapOptions = 2131034130;
+			// aapt resource value: 0x7f050013
+			public const int MapOptions = 2131034131;
 			
 			// aapt resource value: 0x7f050006
 			public const int SelectAtm = 2131034118;
@@ -271,8 +271,8 @@ namespace Mappy
 			// aapt resource value: 0x7f05000c
 			public const int entity_address = 2131034124;
 			
-			// aapt resource value: 0x7f050011
-			public const int entity_list_container = 2131034129;
+			// aapt resource value: 0x7f050012
+			public const int entity_list_container = 2131034130;
 			
 			// aapt resource value: 0x7f05000a
 			public const int entity_name = 2131034122;
@@ -286,8 +286,8 @@ namespace Mappy
 			// aapt resource value: 0x7f050004
 			public const int hybrid = 2131034116;
 			
-			// aapt resource value: 0x7f05000f
-			public const int map = 2131034127;
+			// aapt resource value: 0x7f050010
+			public const int map = 2131034128;
 			
 			// aapt resource value: 0x7f05000e
 			public const int navigation = 2131034126;
@@ -301,11 +301,14 @@ namespace Mappy
 			// aapt resource value: 0x7f050002
 			public const int satellite = 2131034114;
 			
+			// aapt resource value: 0x7f050011
+			public const int state_button = 2131034129;
+			
+			// aapt resource value: 0x7f05000f
+			public const int tabularView = 2131034127;
+			
 			// aapt resource value: 0x7f050003
 			public const int terrain = 2131034115;
-			
-			// aapt resource value: 0x7f050010
-			public const int zoomLevel = 2131034128;
 			
 			static Id()
 			{

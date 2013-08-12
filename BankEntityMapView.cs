@@ -75,12 +75,17 @@ namespace Mappy
 
 		public void UserLocationUpdated (Location userLocation)
 		{
-			FetchClosestAtmOrBranch (userLocation.Latitude, userLocation.Longitude);
-			if (MyLocationIsWithinViewPort (userLocation)) UpdateMap ();
+			if (userLocation != null) 
+			{
+				FetchClosestAtmOrBranch (userLocation.Latitude, userLocation.Longitude);
+				if (MyLocationIsWithinViewPort (userLocation))
+					UpdateMap ();
+			}
 		}
 
 		private bool MyLocationIsWithinViewPort (Location userLocation)
 		{
+			if (userLocation == null) return false;
 			LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
 			return viewBounds.Contains (new LatLng (userLocation.Latitude, userLocation.Longitude));
 		}
@@ -107,7 +112,6 @@ namespace Mappy
 		public void UpdateMap ()
 		{
 			ViewModel.ZoomLevel = Map.CameraPosition.Zoom;
-			Activity.FindViewById<TextView> (Resource.Id.zoomLevel).Text = ViewModel.ZoomLevel.ToString();
 
 			if (ViewModel.ZoomLevel > MapViewModel.MAX_SUPPORTED_ZOOM_LEVEL) {
 				LatLng coordinates = ReferenceLocationToFetchEntities ();

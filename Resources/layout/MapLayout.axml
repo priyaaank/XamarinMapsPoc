@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tabularView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="7">
     <FrameLayout
         android:id="@+id/map"
-        android:layout_width="fill_parent"
-        android:layout_height="300dp"
-        android:minWidth="25px"
-        android:minHeight="25px" />
-    <TextView
-        android:text="Text"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3" />
+    <Button
+        android:id="@+id/state_button"
         android:layout_height="wrap_content"
-        android:id="@+id/zoomLevel"
-        android:background="#66000000"
-        android:padding="4dp" />
+        android:layout_width="match_parent"
+        android:text="..." />
     <FrameLayout
         android:id="@+id/entity_list_container"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/map"
-        android:layout_alignParentBottom="true"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:background="#000000" />
-</RelativeLayout>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:layout_weight="3" />
+</LinearLayout>
