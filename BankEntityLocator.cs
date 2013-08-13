@@ -32,6 +32,8 @@ namespace Mappy
 		const bool   SelectBranches         = true;
 		const bool   DontSelectPartnerAtms  = false;
 
+		public static int ClickNum = 0;
+
 		Options mapOptions;
 		public Options MapOptions {
 			get {
@@ -65,6 +67,8 @@ namespace Mappy
 				ListViewFragment = new MapEntityListView ();
 				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.entity_list_container, ListViewFragment, ListFragmentViewName).Commit();
 			}
+
+			((TextView)this.FindViewById (Resource.Id.state_button)).Click += delegate { ToggleState(); };
 
 			MapOptions = new Options(SelectAtms, SelectBranches, DontSelectPartnerAtms);
 		}
@@ -124,9 +128,28 @@ namespace Mappy
 		}
 
 		[Export]
-		public void ToggleState(View v)
+		public void ToggleState()
 		{
-		
+			//TODO Refactor the hell out of this function to remote duplication and conditionals
+			ViewStates entityListState = ViewStates.Visible;
+			ViewStates mapState = ViewStates.Visible;
+
+			ClickNum++;
+			if (ClickNum == 1) {
+				entityListState = ViewStates.Gone;
+				mapState = ViewStates.Visible;
+			} else if (ClickNum == 2) {
+				entityListState = ViewStates.Visible;
+			} else if (ClickNum == 3) {
+				entityListState = ViewStates.Visible;
+				mapState = ViewStates.Gone;
+			} else if (ClickNum == 4) {
+				mapState = ViewStates.Visible;
+				ClickNum = 0;
+			}
+
+			((FrameLayout)this.FindViewById (Resource.Id.entity_list_container)).Visibility = entityListState;
+			((FrameLayout)this.FindViewById (Resource.Id.map)).Visibility = mapState;
 		}
 
 		#region ILocationListener implementation
@@ -165,43 +188,6 @@ namespace Mappy
 		}
 
 		#endregion
-
-		public void CustomAnimate()
-		{
-			View entityListView = this.FindViewById (Resource.Id.entity_list_container);
-			Animation a = new CustomAnimation (entityListView, 300);
-//			a.Duration = (int) (300 / mapView.Context.Resources.DisplayMetrics.Density);
-			a.Duration = 1000;
-			entityListView.StartAnimation (a);
-		}
-
-		class CustomAnimation : Animation
-		{
-
-			View ViewObject;
-			int TargetHeight;
-
-			public CustomAnimation(View v, int targetHeight)
-			{
-				this.ViewObject = v;
-				this.TargetHeight = targetHeight;
-			}
-
-			protected override void ApplyTransformation (float interpolatedTime, Transformation t)
-			{
-				this.ViewObject.LayoutParameters.Height = (int)(interpolatedTime * this.TargetHeight);
-				this.ViewObject.RequestLayout ();
-			}
-
-			public override bool WillChangeBounds ()
-			{
-				return true;
-			}
-		}
-	}
-
-	class ToggleStates()
-	{
 
 	}
 }

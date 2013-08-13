@@ -1,16 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityLocator.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="AppStore|iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Properties/AndroidManifest.xml">
     <Files>
       <File FileName="BankEntityMapView.cs" Line="197" Column="24" />
-      <File FileName="BankEntityLocator.cs" Line="155" Column="4" />
+      <File FileName="BankEntityLocator.cs" Line="69" Column="5" />
+      <File FileName="Properties/AndroidManifest.xml" Line="21" Column="93" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Mappy" expanded="True">
+          <Node name="Mappy" expanded="True" selected="True">
             <Node name="Properties" expanded="True" />
-            <Node name="Resources" selected="True" />
+            <Node name="Resources" expanded="True">
+              <Node name="layout" expanded="True" />
+            </Node>
           </Node>
           <Node name="Mappy.Common" expanded="True">
             <Node name="Models" expanded="True" />
