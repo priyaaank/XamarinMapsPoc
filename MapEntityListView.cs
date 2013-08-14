@@ -38,11 +38,7 @@ namespace Mappy
 		{
 			base.OnResume ();
 			InitializeList ();
-		}
-
-		public override void OnPause()
-		{
-			base.OnPause ();
+			this.ListView.Visibility = ViewStates.Gone;
 		}
 	
 		public override void OnListItemClick(ListView l, View v, int position, long id)
@@ -58,7 +54,7 @@ namespace Mappy
 			StartActivity (intent);
 		}
 
-		void InitializeList ()
+		private void InitializeList ()
 		{
 			this.ListAdapter = new EntityAdapter (Activity,Resource.Layout.EntityListRow, BankEntities);
 		}

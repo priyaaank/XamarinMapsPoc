@@ -15,7 +15,6 @@ namespace Mappy
 		public double Distance { get; private set;}
 		public Type EntityType { get; private set;}
 		public string LocationType{get; private set;}
-		public string Notes { get; private set;}
 
 		const int MetersPerKm = 1000;
 		const string MeterSymbol = "m";

@@ -92,7 +92,6 @@ namespace Mappy.Common
 				item.Latitude,
 				item.Longitude,
 				item.Distance,
-				item.BranchPhone,
 				item.LocationType			
 			);
 		}

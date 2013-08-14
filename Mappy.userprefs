@@ -1,24 +1,25 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="AppStore|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Properties/AndroidManifest.xml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BankEntityMapView.cs">
     <Files>
-      <File FileName="BankEntityMapView.cs" Line="197" Column="24" />
-      <File FileName="BankEntityLocator.cs" Line="69" Column="5" />
-      <File FileName="Properties/AndroidManifest.xml" Line="21" Column="93" />
+      <File FileName="BankEntityMapView.cs" Line="29" Column="44" />
+      <File FileName="BankEntityLocator.cs" Line="159" Column="8" />
+      <File FileName="MapEntityListView.cs" Line="35" Column="4" />
+      <File FileName="Mappy.Common/Services/BankEntitiesService.cs" Line="163" Column="4" />
+      <File FileName="Mappy.Common/Types/IJsonClient.cs" Line="12" Column="21" />
+      <File FileName="Mappy.Common/Models/BankEntity.cs" Line="92" Column="31" />
+      <File FileName="Mappy.Common/Models/Atm.cs" Line="14" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Mappy" expanded="True" selected="True">
             <Node name="Properties" expanded="True" />
-            <Node name="Resources" expanded="True">
-              <Node name="layout" expanded="True" />
-            </Node>
           </Node>
           <Node name="Mappy.Common" expanded="True">
             <Node name="Models" expanded="True" />
+            <Node name="Services" expanded="True" />
             <Node name="Types" expanded="True" />
-            <Node name="ViewModels" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -46,5 +47,5 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../tmp/XamarinMapsPoc/Services/BankEntitiesService.cs" line="28" offsetX="686" offsetY="405" expression="response" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Mappy MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Debug="651A0002FFFC0000" />
+  <MonoDevelop.Ide.ItemProperties.Mappy MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Debug="651A0002FFFC0000" AndroidDeviceId-Release="651A0002FFFC0000" />
 </Properties>

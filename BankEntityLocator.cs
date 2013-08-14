@@ -14,6 +14,7 @@ using Android.Gms.Location;
 using Android.Gms.Common;
 using Java.Interop;
 using Android.Views.Animations;
+using Android.Support.V4.View; 
 
 namespace Mappy
 {
@@ -22,15 +23,17 @@ namespace Mappy
 	{
 		public BankEntityMapView MapViewFragment;
 		private MapEntityListView ListViewFragment;
+		private Android.Support.V4.View.ViewPager EntityListSlider;
+		private int EntityListSliderId = 66;
 		private GpsManager GpsManager;
 		public LocationClient LocationClient {get; set;}
 		public bool LocationClientConnected { get; set; }
 	
-		const string MapFragmentViewName        = "mapView";
-		const string ListFragmentViewName        = "listView";
-		const bool   SelectAtms             = true;
-		const bool   SelectBranches         = true;
-		const bool   DontSelectPartnerAtms  = false;
+		private const string MapFragmentViewName        = "mapView";
+		private const string ListFragmentViewName        = "listView";
+		private const bool   SelectAtms             = true;
+		private const bool   SelectBranches         = true;
+		private const bool   DontSelectPartnerAtms  = false;
 
 		public static int ClickNum = 0;
 
@@ -67,6 +70,14 @@ namespace Mappy
 				ListViewFragment = new MapEntityListView ();
 				this.SupportFragmentManager.BeginTransaction ().Add (Resource.Id.entity_list_container, ListViewFragment, ListFragmentViewName).Commit();
 			}
+
+			FrameLayout parent = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
+
+			EntityListSlider = new ViewPager (this);
+			EntityListSlider.LayoutParameters = new ViewGroup.LayoutParams (ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent);
+			EntityListSlider.Id = EntityListSliderId;
+			EntityListSlider.Adapter = new EntityViewPageAdapter (this.SupportFragmentManager);
+			parent.AddView (EntityListSlider);
 
 			((TextView)this.FindViewById (Resource.Id.state_button)).Click += delegate { ToggleState(); };
 
@@ -119,6 +130,7 @@ namespace Mappy
 		public void UpdateListView (List<BankEntity> entities, bool userIsInViewport)
 		{
 			ListViewFragment.UpdateList (entities, userIsInViewport);
+			((EntityViewPageAdapter)EntityListSlider.Adapter).UpdateList (entities, userIsInViewport);
 		}
 
 		[Export]
@@ -130,6 +142,7 @@ namespace Mappy
 		[Export]
 		public void ToggleState()
 		{
+
 			//TODO Refactor the hell out of this function to remote duplication and conditionals
 			ViewStates entityListState = ViewStates.Visible;
 			ViewStates mapState = ViewStates.Visible;
@@ -141,6 +154,7 @@ namespace Mappy
 			} else if (ClickNum == 2) {
 				entityListState = ViewStates.Visible;
 			} else if (ClickNum == 3) {
+
 				entityListState = ViewStates.Visible;
 				mapState = ViewStates.Gone;
 			} else if (ClickNum == 4) {

@@ -29,10 +29,6 @@
             android:id="@+id/entity_address"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
-        <TextView
-            android:id="@+id/entity_notes"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
     </LinearLayout>
     <ImageView
         android:id="@+id/navigation"
