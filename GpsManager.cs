@@ -36,25 +36,25 @@ namespace Mappy
 			}
 		}
 
-		void ShowGPSSettings ()
+		private void ShowGPSSettings ()
 		{
 			Intent intent = new Intent(Settings.ActionLocationSourceSettings);
 			ApplicationContext.StartActivity (intent);
 		}
 
-		bool GPSEnabled()
+		private bool GPSEnabled()
 		{
 			LocationManager manager = (LocationManager) ApplicationContext.GetSystemService(Context.LocationService);
 			return manager.IsProviderEnabled (LocationManager.GpsProvider);
 		}
 
-		bool GPSPresent()
+		private bool GPSPresent()
 		{
 			PackageManager packageManager = ApplicationContext.PackageManager;
 			return packageManager.HasSystemFeature (PackageManager.FeatureLocationGps);
 		}
 
-		bool DontHave (bool condition)
+		private bool DontHave (bool condition)
 		{
 			return !condition;
 		}

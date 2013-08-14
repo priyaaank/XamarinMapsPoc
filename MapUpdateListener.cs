@@ -13,9 +13,7 @@ namespace Mappy
 {
 	interface MapUpdateListener
 	{
-
 		void UpdateMapView();
-
 	}
 }
 

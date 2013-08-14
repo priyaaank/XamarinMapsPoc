@@ -35,7 +35,6 @@ namespace Mappy
 
 		public override View GetView (int position, View convertView, ViewGroup parent)
 		{
-			 
 			View row = convertView;
 			BankEntityHolder holder = null;
 			BankEntity currentEntity;
@@ -43,32 +42,31 @@ namespace Mappy
 			if (row == null) {
 				LayoutInflater inflater = ((Activity)Context).LayoutInflater;
 				row = inflater.Inflate (ResourceLayoutId, parent, false);
-
-				holder = new BankEntityHolder ();
-				holder.EntityDistance = (TextView)row.FindViewById (Resource.Id.distance);
-				holder.EntityName = (TextView)row.FindViewById (Resource.Id.entity_name);
-				holder.EntityType = (TextView)row.FindViewById (Resource.Id.entity_type);
-				holder.EntityAddress = (TextView)row.FindViewById (Resource.Id.entity_address);
-				holder.EntityNotes = (TextView)row.FindViewById (Resource.Id.entity_notes);
-				holder.EntityNavigation = (ImageView)row.FindViewById (Resource.Id.navigation);
-
+				holder = PopulateEntityHolder (row);
 				row.Tag = holder;
 			} else {
 				holder = row.Tag as BankEntityHolder;
 			}
 
 			currentEntity = this.GetItem (position);
-			holder.EntityName.Text = currentEntity.Name;
-			holder.EntityType.Text = currentEntity.EntityType.ToString();
-			holder.EntityAddress.Text = currentEntity.Description();
-			holder.EntityDistance.Text = currentEntity.FormattedDistance ();
-			holder.EntityNavigation.Tag = new LatLng (currentEntity.Latitude, currentEntity.Longitude);
+			holder.SetPropertyValues (currentEntity);
 
 			ViewStates currentState = IsRelativeToUserLocation ? ViewStates.Visible : ViewStates.Invisible;
 			holder.EntityNavigation.Visibility = currentState;
 			holder.EntityDistance.Visibility = currentState;
 
 			return row;
+		}
+
+		private BankEntityHolder PopulateEntityHolder (View row)
+		{
+			BankEntityHolder  holder = new BankEntityHolder ();
+			holder.EntityDistance = (TextView)row.FindViewById (Resource.Id.distance);
+			holder.EntityName = (TextView)row.FindViewById (Resource.Id.entity_name);
+			holder.EntityType = (TextView)row.FindViewById (Resource.Id.entity_type);
+			holder.EntityAddress = (TextView)row.FindViewById (Resource.Id.entity_address);
+			holder.EntityNavigation = (ImageView)row.FindViewById (Resource.Id.navigation);
+			return holder;
 		}
 
 		public class BankEntityHolder : Java.Lang.Object
@@ -78,7 +76,15 @@ namespace Mappy
 			public TextView EntityName { get; set;}
 			public TextView EntityType { get; set;}
 			public TextView EntityAddress { get; set;}
-			public TextView EntityNotes { get; set;}
+
+			public void SetPropertyValues(BankEntity currentEntity)
+			{
+				this.EntityName.Text = currentEntity.Name;
+				this.EntityType.Text = currentEntity.EntityType.ToString();
+				this.EntityAddress.Text = currentEntity.Description();
+				this.EntityDistance.Text = currentEntity.FormattedDistance ();
+				this.EntityNavigation.Tag = new LatLng (currentEntity.Latitude, currentEntity.Longitude);
+			}
 		}
 	}
 }

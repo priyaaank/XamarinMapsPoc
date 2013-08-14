@@ -15,12 +15,11 @@ namespace Mappy
 {
 	class AndroidViewportFilter : IViewportFilter
 	{
-
-		private LatLngBounds viewportBounds;
+		private LatLngBounds ViewportBounds;
 
 		public AndroidViewportFilter(LatLngBounds viewportBounds)
 		{
-			this.viewportBounds = viewportBounds;
+			this.ViewportBounds = viewportBounds;
 		}
 	
 		public List<BankEntity> FilteredList (IEnumerable<BankEntity> unfilteredList)
@@ -28,7 +27,7 @@ namespace Mappy
 			List<BankEntity> filteredList = new List<BankEntity>();
 			foreach (BankEntity aEntity in unfilteredList) 
 			{
-				if (viewportBounds.Contains (new LatLng (aEntity.Latitude, aEntity.Longitude))) filteredList.Add(aEntity); 
+				if (ViewportBounds.Contains (new LatLng (aEntity.Latitude, aEntity.Longitude))) filteredList.Add(aEntity); 
 			}
 			return filteredList;
 		}

@@ -7,10 +7,7 @@ namespace Mappy
 {
 	public interface CacheChangeListener
 	{
-
 		void FetchAndUpdate();
-
 		void FetchAndUpdateClosest();
-
 	}
 }

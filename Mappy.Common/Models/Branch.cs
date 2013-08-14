@@ -9,9 +9,9 @@ namespace Mappy
 	{
 		public string PhoneNumber { get; private set;}
 
-		public Branch(long id, string name, long locationId, double latitude, double longitude, double distance, string phoneNumber, string locationType) : base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.Branch, locationType)
+		public Branch(long id, string name, long locationId, double latitude, double longitude, double distance, string locationType) : base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.Branch, locationType)
 		{
-			this.PhoneNumber = phoneNumber;
+
 		}
 
 		public override bool IsBranch()
@@ -30,10 +30,12 @@ namespace Mappy
 		}
 
 		#region implemented abstract members of BankEntity
+
 		public override string BrandName ()
 		{
 			return "Suncorp";
 		}
+
 		#endregion
 	}
 }

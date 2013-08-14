@@ -33,7 +33,6 @@ namespace Mappy
 			return string.Equals (SunCorpBrandName, Brand, StringComparison.OrdinalIgnoreCase);
 		}
 
-
 		#region implemented abstract members of BankEntity
 		public override string BrandName ()
 		{

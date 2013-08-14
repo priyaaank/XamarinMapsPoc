@@ -2,33 +2,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using Android.App;
 using Android.Content;
+using Android.Gms.Common;
+using Android.Gms.Location;
+using Android.Gms.Maps;
+using Android.Gms.Maps.Model;
+using Android.Locations;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.Gms.Maps;
 using Java.Lang;
-using Android.Gms.Maps.Model;
-using System.Threading;
 using Java.Util;
 using Mappy.Common;
-using Android.Gms.Common;
-using Android.Gms.Location;
-using Android.Locations;
 
 namespace Mappy
 {
 	public class BankEntityMapView : SupportMapFragment, CacheChangeListener
 	{
-		MapViewModel ViewModel;
-
+		private MapViewModel ViewModel;
 		private List<EntityMarker> LocationsPlottedOnMap = new List<EntityMarker>();
 		private EntityMarker EntityClosestToUser;
-
-		const int LocationBatchSize = 200;
+		private const int LocationBatchSize = 200;
 
 		public static BankEntityMapView newInstance() {
 			return new BankEntityMapView();
@@ -52,7 +50,7 @@ namespace Mappy
 			ViewModel.IconTypeChanged -= UpdateIcons;
 		}
 
-		void InitializeMap ()
+		private void InitializeMap ()
 		{
 			if (this.Map != null) {
 				this.Map.CameraChange += (sender, e) => UpdateMap ();
@@ -90,7 +88,7 @@ namespace Mappy
 			return viewBounds.Contains (new LatLng (userLocation.Latitude, userLocation.Longitude));
 		}
 			
-		Location MyLocation {
+		private Location MyLocation {
 			get {
 				return (Activity as IMapActivity).LocationClient.LastLocation;
 			}
@@ -119,7 +117,7 @@ namespace Mappy
 			}
 		}
 
-		LatLng ReferenceLocationToFetchEntities ()
+		private LatLng ReferenceLocationToFetchEntities ()
 		{
 			return (MyLocation != null  && MyLocationIsWithinViewPort(MyLocation)) ? new LatLng(MyLocation.Latitude, MyLocation.Longitude) : this.Map.CameraPosition.Target;
 		}
@@ -130,7 +128,7 @@ namespace Mappy
 			this.Map.MoveCamera (camUpdate);
 		}
 
-		void UpdateIcons (object sender, EventArgs e)
+		private void UpdateIcons (object sender, EventArgs e)
 		{
 			foreach (EntityMarker location in LocationsPlottedOnMap)
 				location.IconType = ViewModel.IconType;
@@ -161,7 +159,6 @@ namespace Mappy
 				Activity.RunOnUiThread (() => {
 					LatLngBounds viewBounds = this.Map.Projection.VisibleRegion.LatLngBounds;
 					List<BankEntity> entities = ViewModel.Fetch (new AndroidViewportFilter (viewBounds), (Activity as IMapActivity).MapOptions);
-
 					UpdateViewWithEntities (entities);
 					(Activity as BankEntityLocator).UpdateListView(entities, MyLocationIsWithinViewPort(MyLocation));
 				});
@@ -189,7 +186,7 @@ namespace Mappy
 			}
 		}
 
-		void UpdateViewWithEntities (List<BankEntity> entities)
+		private void UpdateViewWithEntities (List<BankEntity> entities)
 		{
 			List<BankEntity> plottedEntities = (from marker in LocationsPlottedOnMap select marker.Entity).ToList ();
 			var entitiesToPlot = entities.Except (plottedEntities);
