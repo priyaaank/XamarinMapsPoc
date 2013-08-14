@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using BankApp.Common.Lib;
 using System.Linq;
 using System.Collections.Concurrent;
+using System.Net;
+using System.IO;
+using System.Json;
 
 
 namespace Mappy.Common
@@ -10,7 +13,7 @@ namespace Mappy.Common
 	public class BankEntitiesService
 	{
 
-		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/api/locate?Longitude={0}&Latitude={1}&RadiusKm=5000&MaxRecords={2}&Types={3}";
+		private static readonly string SERVICE_URI = "http://servicelocator.suncorpbank.com.au/api/locate?Longitude={0}&Latitude={1}&RadiusKm=5000&MaxRecords={2}&Types=ATM,Branch";
 
 		private static BankEntitiesService SingleInstance = new BankEntitiesService();
 		private EntityCache LocalEntityCache;
@@ -42,34 +45,59 @@ namespace Mappy.Common
 
 		public void QueueServiceRequest(double latitude, double longitude, int numberOfRecords)
 		{
-			var requestString = ServiceURIForBoth(longitude, latitude, numberOfRecords);
-			var responseItems = JsonClient.DoGetRequestSync<List<LocatorResponseItem>> (requestString);
-			var entityItems = (from item in responseItems select EntityForResponseItem (item)).ToList ();
-			LocalEntityCache.AddAll (entityItems);
-			CacheUpdated ();
+//			var requestString = ServiceURIForBoth(longitude, latitude, numberOfRecords);
+//			var responseItems = JsonClient.DoGetRequestSync<List<LocatorResponseItem>> (requestString);
+//			Console.WriteLine ("DEBUGG ::: Number of items " + responseItems.Count);
+//			Console.WriteLine ("DEBUGG ::: Getting response " + responseItems);
+//			var entityItems = (from item in responseItems select EntityForResponseItem (item)).ToList ();
+//			LocalEntityCache.AddAll (entityItems);
+//			CacheUpdated ();
+
+			var request = HttpWebRequest.Create(string.Format(SERVICE_URI, longitude, latitude, numberOfRecords));
+			request.ContentType = "application/json";
+			request.Method = "GET";
+			using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+		     {
+		       	if (response.StatusCode != HttpStatusCode.OK)
+			   		Console.Out.WriteLine("Error fetching data. Server returned status code: {0}", response.StatusCode);
+		       	using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+				{
+		         	var content = reader.ReadToEnd();
+			        if(string.IsNullOrWhiteSpace(content)) {
+				    	Console.Out.WriteLine("Response contained empty body...");
+				 	}
+			    	else {
+				   		SerializeJsonToEntities (content);
+				    }
+			    }
+			}
 		}
 
 		public void QueueServiceRequestForClosestLocations (double latitude, double longitude)
 		{
 			foreach (BankEntity.Type entityType in Enum.GetValues(typeof(BankEntity.Type)))
 			{
-				var requestString = ServiceURIFor(longitude, latitude, 1, entityType);
-				var responseItems = JsonClient.DoGetRequestSync<List<LocatorResponseItem>> (requestString);
+				var responseItems = JsonClient.DoGetRequestSync<List<LocatorResponseItem>> (ServiceURIFor(longitude, latitude, 1, entityType));
 				var entityItems = (from item in responseItems select EntityForResponseItem (item)).ToList ();
 				EntitiesClosestToUser [entityType] = entityItems [0];
 			}
 			ClosestEntitiesUpdated ();
 		}
 
-		BankEntity EntityForResponseItem(LocatorResponseItem item)
+		private BankEntity EntityForResponseItem(LocatorResponseItem item)
 		{
-			if (item.LocationType == "ATM")
+			if  (item.LocationType == "ATM") 
+			{
 				return AtmFromLocatorResponseItem (item);
+			} 
 			else
+			{
 				return BranchFromLocatorResponseItem (item);
+			}
 		}
 
-		Atm AtmFromLocatorResponseItem(LocatorResponseItem item)
+
+		private Atm AtmFromLocatorResponseItem(LocatorResponseItem item)
 		{
 			return new Atm (
 				item.ATMId,
@@ -83,7 +111,7 @@ namespace Mappy.Common
 			);
 		}
 
-		Branch BranchFromLocatorResponseItem(LocatorResponseItem item)
+		private Branch BranchFromLocatorResponseItem(LocatorResponseItem item)
 		{
 			return new Branch (
 				item.BranchId,
@@ -92,7 +120,6 @@ namespace Mappy.Common
 				item.Latitude,
 				item.Longitude,
 				item.Distance,
-				item.BranchPhone,
 				item.LocationType			
 			);
 		}
@@ -104,7 +131,7 @@ namespace Mappy.Common
 				listener.FetchAndUpdate ();
 		}
 
-		void ClosestEntitiesUpdated ()
+		private void ClosestEntitiesUpdated ()
 		{
 			foreach (CacheChangeListener listener in Listeners)
 				listener.FetchAndUpdateClosest ();
@@ -148,6 +175,19 @@ namespace Mappy.Common
 			return string.Format (SERVICE_URI, longitude, latitude, maxRecords, @"ATM,Branch");
 		}
 
+		private void SerializeJsonToEntities (string content)
+		{
+			List<BankEntity> bankEntityList = new List<BankEntity>() ;
+			JsonArray bankEntities = JsonObject.Parse (content) as JsonArray;
+			BankEntity entity = null;
+			foreach (JsonObject aBankEntity in bankEntities)
+			{
+				entity = aBankEntity.ContainsKey("ATMId") ? BankEntity.AtmFromJsonObject(aBankEntity) as BankEntity : BankEntity.BranchFromJsonObject(aBankEntity) as BankEntity;
+				if (entity != null) bankEntityList.Add (entity);
+			}
+			LocalEntityCache.AddAll (bankEntityList);
+			CacheUpdated ();
+		}
 
 	}
 }

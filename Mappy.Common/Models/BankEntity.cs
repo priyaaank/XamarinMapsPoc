@@ -15,7 +15,6 @@ namespace Mappy
 		public double Distance { get; private set;}
 		public Type EntityType { get; private set;}
 		public string LocationType{get; private set;}
-		public string Notes { get; private set;}
 
 		const int MetersPerKm = 1000;
 		const string MeterSymbol = "m";
@@ -38,14 +37,13 @@ namespace Mappy
 			return BrandName () + this.LocationType;
 		}
 
+		public abstract String BrandName();
+
 		public abstract bool IsBranch();
 
 		public abstract bool IsAtm ();
 
 		public abstract bool IsOwnBrand ();
-
-		public abstract string BrandName ();
-	
 
 		public string FormattedDistance()
 		{
@@ -88,6 +86,20 @@ namespace Mappy
 
 			return (LocationId == anotherBankEntity.LocationId);
 		}
+
+	     public static Atm AtmFromJsonObject(JsonObject jsonObject)
+	     {
+	       if (jsonObject == null)
+		         return null;
+	       return new Atm (jsonObject["ATMId"], jsonObject["Brand"], jsonObject["ATMName"], jsonObject["LocationId"], jsonObject["Latitude"], jsonObject["Longitude"], jsonObject["Distance"], jsonObject["LocationType"]);
+	     }
+ 
+	     public static Branch BranchFromJsonObject(JsonObject jsonObject)
+		 {
+	       if (jsonObject == null)
+		         return null;
+			return new Branch (jsonObject["BranchId"], jsonObject["BranchName"], jsonObject["LocationId"], jsonObject["Latitude"], jsonObject["Longitude"], jsonObject["Distance"] ,jsonObject["LocationType"]);
+	     }
 	}
 }
 
