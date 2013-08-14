@@ -38,7 +38,7 @@ namespace Mappy
 		{
 			base.OnResume ();
 			InitializeList ();
-			this.ListView.Visibility = ViewStates.Gone;
+			HideListView ();
 		}
 	
 		public override void OnListItemClick(ListView l, View v, int position, long id)
@@ -65,6 +65,15 @@ namespace Mappy
 			(this.ListAdapter as EntityAdapter).UpdateData(entities, userInViewport);
 		}
 
+		public void ShowListView ()
+		{
+			this.ListView.Visibility = ViewStates.Visible;
+		}
+
+		public void HideListView()
+		{
+			this.ListView.Visibility = ViewStates.Gone;
+		}
 	}														
 }
 

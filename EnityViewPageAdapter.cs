@@ -38,7 +38,6 @@ namespace Mappy
 			foreach (BankEntity entity in entities.OrderBy (e => e.Distance)) {
 				this.BankEntities.Add (entity);
 			}
-
 			this.NotifyDataSetChanged ();
 		}
 
@@ -51,7 +50,6 @@ namespace Mappy
 		{
 			return FragmentPagerAdapter.PositionNone;
 		}
-
 	}
 
 	 class EntityViewFragment: Android.Support.V4.App.Fragment

@@ -142,28 +142,30 @@ namespace Mappy
 		[Export]
 		public void ToggleState()
 		{
-
-			//TODO Refactor the hell out of this function to remote duplication and conditionals
-			ViewStates entityListState = ViewStates.Visible;
-			ViewStates mapState = ViewStates.Visible;
-
+			var matchParent = LinearLayout.LayoutParams.MatchParent;
 			ClickNum++;
+
 			if (ClickNum == 1) {
-				entityListState = ViewStates.Gone;
-				mapState = ViewStates.Visible;
+				EntityListSlider.Visibility = ViewStates.Gone;
+				ListViewFragment.ShowListView ();
+				var listingContainer = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
+				var map = (FrameLayout)this.FindViewById (Resource.Id.map);
+				map.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 10);
+				listingContainer.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 30);
 			} else if (ClickNum == 2) {
-				entityListState = ViewStates.Visible;
+				ListViewFragment.HideListView ();
+				var listingContainer = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
+				var map = (FrameLayout)this.FindViewById (Resource.Id.map);
+				listingContainer.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 0);
+				map.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 40);
 			} else if (ClickNum == 3) {
-
-				entityListState = ViewStates.Visible;
-				mapState = ViewStates.Gone;
-			} else if (ClickNum == 4) {
-				mapState = ViewStates.Visible;
+				EntityListSlider.Visibility = ViewStates.Visible;
+				var listingContainer = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
+				var map = (FrameLayout)this.FindViewById (Resource.Id.map);
+				listingContainer.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 70);
+				map.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 33);
 				ClickNum = 0;
-			}
-
-			((FrameLayout)this.FindViewById (Resource.Id.entity_list_container)).Visibility = entityListState;
-			((FrameLayout)this.FindViewById (Resource.Id.map)).Visibility = mapState;
+			} 
 		}
 
 		#region ILocationListener implementation
