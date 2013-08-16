@@ -101,13 +101,17 @@ namespace Mappy
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			View view;
+			var entityLocation = new LatLng (BankEntity.Latitude, BankEntity.Longitude);
 			view = inflater.Inflate (Resource.Layout.EntityListRow, container, false);
 			((TextView)view.FindViewById (Resource.Id.distance)).Text = BankEntity.FormattedDistance();
 			((TextView)view.FindViewById (Resource.Id.entity_name)).Text = BankEntity.Name;
 			((TextView)view.FindViewById (Resource.Id.entity_type)).Text = BankEntity.EntityType.ToString ();
 			((TextView)view.FindViewById (Resource.Id.entity_address)).Text = BankEntity.Description();
-			((ImageView)view.FindViewById (Resource.Id.navigation)).Tag = new LatLng (BankEntity.Latitude, BankEntity.Longitude);
-			((ImageView)view.FindViewById (Resource.Id.navigation)).Click += (object sender, EventArgs e) => Clicked(sender, e);
+			((ImageView)view.FindViewById (Resource.Id.navigation)).Tag = entityLocation;
+			((LinearLayout)view.FindViewById (Resource.Id.details_container)).Tag = entityLocation;
+
+			((LinearLayout)view.FindViewById(Resource.Id.details_container)).Click += (object sender, EventArgs e) => CenterToMap(sender,e);
+			((ImageView)view.FindViewById (Resource.Id.navigation)).Click += (object sender, EventArgs e) => Navigate(sender, e);
 
 			ViewStates currentState = IsRelativeToUserLocation ? ViewStates.Visible : ViewStates.Invisible;
 			view.FindViewById(Resource.Id.navigation).Visibility = currentState;
@@ -116,9 +120,14 @@ namespace Mappy
 			return view;
 		}
 
-		public void Clicked(object sender, EventArgs e)
+		public void Navigate(object sender, EventArgs e)
 		{
 			(Activity as BankEntityLocator).Navigate (sender as View);
+		}
+
+		public void CenterToMap(object sender, EventArgs e)
+		{
+			(Activity as BankEntityLocator).CenterMapOnSelectedEntity (sender as View);
 		}
 
 	}
