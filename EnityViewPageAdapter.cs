@@ -76,7 +76,6 @@ namespace Mappy
 			return entityViewFragment;
 		}
 
-	
 		public override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
@@ -108,12 +107,18 @@ namespace Mappy
 			((TextView)view.FindViewById (Resource.Id.entity_type)).Text = BankEntity.EntityType.ToString ();
 			((TextView)view.FindViewById (Resource.Id.entity_address)).Text = BankEntity.Description();
 			((ImageView)view.FindViewById (Resource.Id.navigation)).Tag = new LatLng (BankEntity.Latitude, BankEntity.Longitude);
+			((ImageView)view.FindViewById (Resource.Id.navigation)).Click += (object sender, EventArgs e) => Clicked(sender, e);
 
 			ViewStates currentState = IsRelativeToUserLocation ? ViewStates.Visible : ViewStates.Invisible;
 			view.FindViewById(Resource.Id.navigation).Visibility = currentState;
 			view.FindViewById(Resource.Id.distance).Visibility = currentState;
 
 			return view;
+		}
+
+		public void Clicked(object sender, EventArgs e)
+		{
+			(Activity as BankEntityLocator).Navigate (sender as View);
 		}
 
 	}

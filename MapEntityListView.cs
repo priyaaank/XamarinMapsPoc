@@ -74,6 +74,11 @@ namespace Mappy
 		{
 			this.ListView.Visibility = ViewStates.Gone;
 		}
+
+		public bool IsVisible ()
+		{
+			return (this.ListView.Visibility == ViewStates.Visible);
+		}
 	}														
 }
 

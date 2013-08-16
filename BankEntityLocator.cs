@@ -14,7 +14,8 @@ using Android.Gms.Location;
 using Android.Gms.Common;
 using Java.Interop;
 using Android.Views.Animations;
-using Android.Support.V4.View; 
+using Android.Support.V4.View;
+using Android.Gms.Maps.Model; 
 
 namespace Mappy
 {
@@ -28,6 +29,7 @@ namespace Mappy
 		private GpsManager GpsManager;
 		public LocationClient LocationClient {get; set;}
 		public bool LocationClientConnected { get; set; }
+
 	
 		private const string MapFragmentViewName        = "mapView";
 		private const string ListFragmentViewName        = "listView";
@@ -129,8 +131,8 @@ namespace Mappy
 
 		public void UpdateListView (List<BankEntity> entities, bool userIsInViewport)
 		{
-			ListViewFragment.UpdateList (entities, userIsInViewport);
-			((EntityViewPageAdapter)EntityListSlider.Adapter).UpdateList (entities, userIsInViewport);
+			if(EntityListSlider.Visibility == ViewStates.Visible) ((EntityViewPageAdapter)EntityListSlider.Adapter).UpdateList (entities, userIsInViewport);
+			if(ListViewFragment.IsVisible()) ListViewFragment.UpdateList (entities, userIsInViewport);
 		}
 
 		[Export]
@@ -139,33 +141,41 @@ namespace Mappy
 			ListViewFragment.Navigate (v);
 		}
 
+
+		public void CenterMapOnSelectedEntity (View view)
+		{
+			var latlngForDestination = view.Tag as LatLng;
+			MapViewFragment.BringLocationToCenter (latlngForDestination);
+		}
+
 		[Export]
 		public void ToggleState()
 		{
 			var matchParent = LinearLayout.LayoutParams.MatchParent;
 			ClickNum++;
+			int mapViewWeight = 33;
+			int listContainerViewWeight = 7;
 
 			if (ClickNum == 1) {
 				EntityListSlider.Visibility = ViewStates.Gone;
 				ListViewFragment.ShowListView ();
-				var listingContainer = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
-				var map = (FrameLayout)this.FindViewById (Resource.Id.map);
-				map.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 10);
-				listingContainer.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 30);
+				mapViewWeight = 10;
+				listContainerViewWeight = 30;
 			} else if (ClickNum == 2) {
 				ListViewFragment.HideListView ();
-				var listingContainer = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
-				var map = (FrameLayout)this.FindViewById (Resource.Id.map);
-				listingContainer.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 0);
-				map.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 40);
+				listContainerViewWeight = 0;
+				mapViewWeight = 40;
 			} else if (ClickNum == 3) {
 				EntityListSlider.Visibility = ViewStates.Visible;
-				var listingContainer = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
-				var map = (FrameLayout)this.FindViewById (Resource.Id.map);
-				listingContainer.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 70);
-				map.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, 33);
+				listContainerViewWeight = 7;
+				mapViewWeight = 33;
 				ClickNum = 0;
 			} 
+
+			var listingContainer = (FrameLayout)this.FindViewById (Resource.Id.entity_list_container);
+			var map = (FrameLayout)this.FindViewById (Resource.Id.map);
+			map.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, mapViewWeight);
+			listingContainer.LayoutParameters = new LinearLayout.LayoutParams (matchParent, 0, listContainerViewWeight);
 		}
 
 		#region ILocationListener implementation
