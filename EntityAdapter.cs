@@ -80,8 +80,8 @@ namespace Mappy
 			public void SetPropertyValues(BankEntity currentEntity)
 			{
 				this.EntityName.Text = currentEntity.Name;
-				this.EntityType.Text = currentEntity.EntityType.ToString();
-				this.EntityAddress.Text = currentEntity.Description();
+				this.EntityType.Text = currentEntity.Description ();
+				this.EntityAddress.Text = currentEntity.Address;
 				this.EntityDistance.Text = currentEntity.FormattedDistance ();
 				this.EntityNavigation.Tag = new LatLng (currentEntity.Latitude, currentEntity.Longitude);
 			}

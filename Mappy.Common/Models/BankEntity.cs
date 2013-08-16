@@ -15,12 +15,13 @@ namespace Mappy
 		public double Distance { get; private set;}
 		public Type EntityType { get; private set;}
 		public string LocationType{get; private set;}
+		public string Address{ get; private set;}
 
 		const int MetersPerKm = 1000;
 		const string MeterSymbol = "m";
 		const string KilometerSymbol = "Kms";
 
-		public BankEntity(long id, string name, long locationId, double latitude, double longitude, double distance, Type entityType, string locationType)
+		public BankEntity(long id, string name, long locationId, double latitude, double longitude, double distance, Type entityType, string locationType, string address)
 		{
 			this.Id = id;
 			this.Name = name;
@@ -30,11 +31,13 @@ namespace Mappy
 			this.Distance = distance;
 			this.EntityType = entityType;
 			this.LocationType = locationType;
+			this.Address = address;
 		}
 
 		public string Description ()
 		{
-			return BrandName () + this.LocationType;
+			var type = this.LocationType.Equals ("ATM") ? "Atm" : "Branch";
+			return BrandName () + " " + type;
 		}
 
 		public abstract bool IsBranch();

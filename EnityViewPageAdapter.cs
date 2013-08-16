@@ -70,6 +70,7 @@ namespace Mappy
 			args.PutLong ("LocationId", bankEntity.LocationId);
 			args.PutLong ("Id", bankEntity.Id);
 			args.PutString ("Brand", bankEntity.BrandName ());
+			args.PutString ("Address", bankEntity.Address);
 			args.PutBoolean ("IsRelativeToUserLocation", IsRelativeToUserLocation);
 
 			entityViewFragment.Arguments =  args;
@@ -89,12 +90,13 @@ namespace Mappy
 				double distance = Arguments.GetDouble("Distance");
 				string locationType = Arguments.GetString("LocationType");
 				string brand = Arguments.GetString ("Brand");
+				string address = Arguments.GetString ("Address");
 				IsRelativeToUserLocation = Arguments.GetBoolean ("IsRelativeToUserLocation");
 
 
 				BankEntity = locationType == "ATM" ? 
-					new Atm (id, brand, name, locationId, latitude, longitude, distance, locationType) as BankEntity : 
-					new Branch (id, name, locationId, latitude, longitude, distance, locationType) as BankEntity;
+					new Atm (id, brand, name, locationId, latitude, longitude, distance, locationType, address) as BankEntity : 
+					new Branch (id, name, locationId, latitude, longitude, distance, locationType, address) as BankEntity;
 			}
 		}
 
@@ -105,8 +107,8 @@ namespace Mappy
 			view = inflater.Inflate (Resource.Layout.EntityListRow, container, false);
 			((TextView)view.FindViewById (Resource.Id.distance)).Text = BankEntity.FormattedDistance();
 			((TextView)view.FindViewById (Resource.Id.entity_name)).Text = BankEntity.Name;
-			((TextView)view.FindViewById (Resource.Id.entity_type)).Text = BankEntity.EntityType.ToString ();
-			((TextView)view.FindViewById (Resource.Id.entity_address)).Text = BankEntity.Description();
+			((TextView)view.FindViewById (Resource.Id.entity_type)).Text = BankEntity.Description();
+			((TextView)view.FindViewById (Resource.Id.entity_address)).Text = BankEntity.Address;
 			((ImageView)view.FindViewById (Resource.Id.navigation)).Tag = entityLocation;
 			((LinearLayout)view.FindViewById (Resource.Id.details_container)).Tag = entityLocation;
 

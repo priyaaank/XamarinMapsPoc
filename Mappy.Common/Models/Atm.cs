@@ -11,7 +11,8 @@ namespace Mappy
 		public string Brand { get; private set; }
 		private const string SunCorpBrandName = "suncorp";
 
-		public Atm(long id, string brand, string name, long locationId, double latitude, double longitude, double distance, string locationType) : base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.Atm,locationType )
+		public Atm(long id, string brand, string name, long locationId, double latitude, double longitude, double distance, string locationType,string address) : 
+			base(id, name, locationId, latitude, longitude, distance, BankEntity.Type.Atm,locationType, address )
 		{
 			this.Brand = brand;
 		}

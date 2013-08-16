@@ -71,6 +71,7 @@ namespace Mappy.Common
 
 		Atm AtmFromLocatorResponseItem(LocatorResponseItem item)
 		{
+			string address = item.Street1 + " " + item.Street2 + " " + item.Street3;
 			return new Atm (
 				item.ATMId,
                 item.Brand,
@@ -79,12 +80,14 @@ namespace Mappy.Common
                 item.Latitude,
                 item.Longitude,
                 item.Distance,
-				item.LocationType
+				item.LocationType,
+				address
 			);
 		}
 
 		Branch BranchFromLocatorResponseItem(LocatorResponseItem item)
 		{
+			string address = item.Street1 + " " + item.Street2 + " " + item.Street3;
 			return new Branch (
 				item.BranchId,
 				item.BranchName,
@@ -92,7 +95,8 @@ namespace Mappy.Common
 				item.Latitude,
 				item.Longitude,
 				item.Distance,
-				item.LocationType			
+				item.LocationType,
+				address
 			);
 		}
 
